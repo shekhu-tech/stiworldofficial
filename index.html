@@ -95,7 +95,7 @@
         .footer-glow { position: absolute; top:0; left:50%; transform:translateX(-50%); width:70%; height:2px; background: linear-gradient(90deg,transparent,#FFD700,transparent); box-shadow:0 0 40px #FFD700; }
 
         /* MODAL perfect for iPhone 12 mini (512x512 but scaled down on small) */
-        .modal-512 { width: 95%; max-width: 440px; aspect-ratio: 1/1; }  /* perfect for 12 mini */
+        .modal-512 { width: 95%; max-width: 440px; aspect-ratio: 1/1; }
 
         /* iPhone 12 mini specific fine-tuning */
         @media (max-width: 380px) {
@@ -107,24 +107,31 @@
         .gold-border-glow { box-shadow: 0 0 15px rgba(255,215,0,0.3), inset 0 0 20px rgba(255,215,0,0.1); }
         .rotate-3d { transition: transform 0.4s; }
         .rotate-3d:hover { transform: perspective(800px) rotateY(4deg) rotateX(2deg); }
+        
+        /* force brand name to show on mobile too */
+        .brand-name-mobile { display: inline-block; }
+        @media (max-width: 640px) {
+            .brand-name-mobile { display: inline-block !important; }
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen" id="mainBody">
     <div class="bg-mesh"></div>
     <div class="bg-particles"></div>
 
-    <!-- HEADER 11D -->
+    <!-- HEADER 11D - with name always visible on mobile -->
     <header id="mainHeader" class="fixed w-full z-[100] top-0 header-main flex items-center">
         <div class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold-400 to-transparent opacity-80"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="flex items-center justify-between">
-                <!-- Logo + 11D name -->
+                <!-- Logo + 11D name (always visible now) -->
                 <div class="flex-shrink-0 cursor-pointer group flex items-center gap-2 sm:gap-3">
                     <div class="relative">
                         <div class="absolute inset-0 bg-gold-500 blur-xl opacity-40 group-hover:opacity-70 transition-all"></div>
                         <img src="sti.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STI" class="h-9 sm:h-11 object-contain relative z-10 filter drop-shadow-[0_0_12px_gold]">
                     </div>
-                    <span class="text-11d-ultra text-xs sm:text-base hidden sm:block animate-pulse-11d">STIWORLDOFFICIAL</span>
+                    <!-- brand name: hidden on smallest? No - we override with brand-name-mobile -->
+                    <span class="text-11d-ultra text-xs sm:text-base brand-name-mobile animate-pulse-11d">STIWORLDOFFICIAL</span>
                 </div>
                 <!-- desktop nav -->
                 <div class="hidden md:block">
@@ -195,7 +202,7 @@
             <button id="nextBtn" class="w-12 h-12 rounded-full border-2 border-gold-500/70 text-gold-400 hover:bg-gold-500 hover:text-black hover:shadow-[0_0_35px_gold] transition-all flex items-center justify-center bg-black/50 backdrop-blur-xl active:scale-90"><i class="fa-solid fa-arrow-right text-lg"></i></button>
         </div>
 
-        <!-- ECOSYSTEM CARDS (fully responsive for iPhone 12 mini) -->
+        <!-- ECOSYSTEM CARDS -->
         <div id="apps" class="max-w-7xl mx-auto px-4 mt-2 pb-20 w-full">
             <div class="flex items-center justify-center mb-8">
                 <div class="h-[2px] w-16 bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
@@ -250,7 +257,7 @@
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
                 <div class="text-center md:text-left flex flex-col md:flex-row items-center gap-4">
-                    <img src="sti.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STI" class="h-16 w-16 object-contain filter drop-shadow-[0_0_25px_gold] animate-float">
+                    <img src="stione.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STI" class="h-16 w-16 object-contain filter drop-shadow-[0_0_25px_gold] animate-float">
                     <div>
                         <h3 class="text-xl font-black text-11d-ultra mb-1">STIWORLDOFFICIAL</h3>
                         <p class="text-gray-500 text-[8px] uppercase tracking-[0.3em] font-black">Ultra Gold 11D Ecosystem</p>
@@ -273,7 +280,7 @@
         </div>
     </footer>
 
-    <!-- MODAL (perfected for iPhone 12 mini – no overlay, perfect 512 ratio with scaling) -->
+    <!-- MODAL (with updated button labels: for Android / for Windows) -->
     <div id="appModal" class="fixed inset-0 z-[150] hidden flex items-center justify-center p-3 bg-black/95 backdrop-blur-3xl transition-opacity duration-300 opacity-0">
         <div class="bg-[#0f0f0f] modal-512 rounded-3xl border-2 border-gold-500/30 p-5 transform transition-all duration-300 translate-y-10 relative overflow-hidden shadow-[0_0_90px_gold] flex flex-col justify-center gold-border-glow">
             <div class="absolute -top-20 -right-20 w-60 h-60 bg-gold-500/20 rounded-full blur-[100px]"></div>
@@ -361,11 +368,35 @@
             scene.addEventListener('touchstart', ()=>clearInterval(autoRun));
             scene.addEventListener('mouseleave', ()=> autoRun = setInterval(()=>{ selectedIndex++; rotateCarousel(); }, 3500));
 
-            // App data
+            // App data with updated labels: first button "for Android", second "for Windows"
             const appsData = {
-                'stipro': { name:'STIPRO', desc:'Your all-in-one fitness coach. Gym, Calisthenics, Yoga & Desi Mehnat.', icon:'<i class="fa-solid fa-heart-pulse"></i>', platforms:[ { name:'Play Store', icon:'fa-google-play', url:'#', color:'hover:bg-green-900/70' }, { name:'App Store', icon:'fa-apple', url:'#', color:'hover:bg-blue-900/70' } ] },
-                'stiskilli': { name:'STISKILLI', desc:'Master AI tools & crack govt exams. Future learning.', icon:'<i class="fa-solid fa-graduation-cap"></i>', platforms:[ { name:'Web Portal', icon:'fa-globe', url:'#', color:'hover:bg-purple-900/70' }, { name:'Android', icon:'fa-android', url:'#', color:'hover:bg-green-900/70' } ] },
-                'rentist': { name:'RENTIST', desc:'Global Rental Solutions. Flats, PGs, Shops & Hostels.', icon:'<i class="fa-solid fa-map-location-dot"></i>', platforms:[ { name:'Search', icon:'fa-magnifying-glass', url:'#', color:'hover:bg-red-900/70' }, { name:'List', icon:'fa-plus', url:'#', color:'hover:bg-gray-800' } ] }
+                'stipro': {
+                    name:'STIPRO',
+                    desc:'Your all-in-one fitness coach. Gym, Calisthenics, Yoga & Desi Mehnat.',
+                    icon:'<i class="fa-solid fa-heart-pulse"></i>',
+                    platforms:[
+                        { name:'for Android', icon:'fa-android', url:'#', color:'hover:bg-green-900/70' },
+                        { name:'for Windows', icon:'fa-windows', url:'#', color:'hover:bg-blue-900/70' }
+                    ]
+                },
+                'stiskilli': {
+                    name:'STISKILLI',
+                    desc:'Master AI tools & crack govt exams. Future learning.',
+                    icon:'<i class="fa-solid fa-graduation-cap"></i>',
+                    platforms:[
+                        { name:'for Android', icon:'fa-android', url:'#', color:'hover:bg-green-900/70' },
+                        { name:'for Windows', icon:'fa-windows', url:'#', color:'hover:bg-purple-900/70' }
+                    ]
+                },
+                'rentist': {
+                    name:'RENTIST',
+                    desc:'Global Rental Solutions. Flats, PGs, Shops & Hostels.',
+                    icon:'<i class="fa-solid fa-map-location-dot"></i>',
+                    platforms:[
+                        { name:'for Android', icon:'fa-android', url:'#', color:'hover:bg-green-900/70' },
+                        { name:'for Windows', icon:'fa-windows', url:'#', color:'hover:bg-gray-800' }
+                    ]
+                }
             };
             window.openPopup = (id) => {
                 const modal = document.getElementById('appModal'), inner = modal.firstElementChild;

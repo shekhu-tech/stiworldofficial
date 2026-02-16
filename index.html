@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>STI World · 11D Ultra Gold</title>
+    
+    <!-- SEO + 11D vibe -->
+    <meta name="description" content="STI World Official – STIPRO · STISKILLI · RENTIST. Ultra Gold 11D ecosystem.">
+    
+    <!-- Tailwind + custom config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: { 300: '#FFE55C', 400: '#FFD700', 500: '#FFC107', 600: '#D4AF37', 700: '#B8860B' },
+                        obsidian: '#0a0a0a',
+                    },
+                    fontFamily: { display: ['Syncopate', 'sans-serif'], body: ['Exo 2', 'sans-serif'] },
+                    animation: {
+                        'spin-slow': 'spin 8s linear infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'shimmer': 'shimmer 3s linear infinite',
+                        'glow-pulse': 'glowPulse 3s infinite alternate',
+                        'gold-shine': 'shine 3s linear infinite',
+                        'border-dance': 'borderDance 4s linear infinite',
+                        'pulse-11d': 'pulse11d 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
+                        shimmer: { '0%': { backgroundPosition: '-1000px 0' }, '100%': { backgroundPosition: '1000px 0' } },
+                        glowPulse: { '0%': { boxShadow: '0 0 10px rgba(255, 215, 0, 0.2)' }, '100%': { boxShadow: '0 0 35px rgba(255, 215, 0, 0.7)' } },
+                        shine: { '0%': { backgroundPosition: '200% center' }, '100%': { backgroundPosition: '-200% center' } },
+                        borderDance: { '0%,100%': { borderColor: '#FFD700' }, '25%': { borderColor: '#FFFFFF' }, '50%': { borderColor: '#D4AF37' }, '75%': { borderColor: '#FFF5B0' } },
+                        pulse11d: { '0%,100%': { opacity: 1, filter: 'drop-shadow(0 0 5px gold)' }, '50%': { opacity: 0.9, filter: 'drop-shadow(0 0 20px #FFD700)' } }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome + Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700;900&family=Exo+2:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --neon-gold: #FFD700; --deep-gold: #D4AF37; --dark-bg: #050505; }
+        body { font-family: 'Exo 2', sans-serif; background: #050505; color: #f0f0f0; overflow-x: hidden; }
+        h1,h2,h3,.brand-font { font-family: 'Syncopate', sans-serif; }
+
+        /* animated mesh + particles */
+        .bg-mesh { position: fixed; inset:0; z-index:-2; background: radial-gradient(circle at 40% 50%, #1e1a10 0%, #000 100%); }
+        .bg-particles { position: fixed; inset:0; z-index:-1; background-image: radial-gradient(var(--deep-gold) 1.2px, transparent 1px); background-size: 45px 45px; opacity: 0.1; }
+
+        /* 11D super shiny text — WHITE + GOLD, BOLD, NO ITALIC */
+        .text-11d-ultra {
+            background: linear-gradient(90deg, #FFFFFF 0%, #FFD700 15%, #FFFFFF 30%, #FFD700 45%, #FFFFFF 60%, #FFD700 75%, #FFFFFF 90%);
+            background-size: 250% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            animation: shine 3.5s linear infinite;
+            text-shadow: 0 0 15px rgba(255,255,255,0.4), 0 0 30px rgba(255,215,0,0.3);
+        }
+        /* header & sidebar ultra */
+        .header-main { background: rgba(5,5,5,0.6); backdrop-filter: blur(20px); border-bottom: 1px solid transparent; border-image: linear-gradient(90deg, transparent, gold, transparent) 1; transition: all 0.4s; height: 75px; }
+        .header-scrolled { background: #000; backdrop-filter: blur(30px); border-bottom: 1px solid #FFD700; box-shadow: 0 0 30px rgba(255,215,0,0.2); height: 65px; }
+        .nav-link { position: relative; letter-spacing: 2px; }
+        .nav-link::before { content: ''; position: absolute; inset: -6px -12px; background: #FFD700; opacity: 0; transform: skewX(-20deg); transition: 0.3s; z-index:-1; }
+        .nav-link:hover::before { opacity: 0.15; }
+        .nav-link:hover { color: #FFD700; text-shadow: 0 0 12px gold; }
+
+        /* SIDEBAR 11D */
+        .sidebar-overlay { position: fixed; inset:0; background: rgba(0,0,0,0.9); backdrop-filter: blur(12px); z-index:90; opacity:0; visibility:hidden; transition:0.4s; }
+        .sidebar-menu { position: fixed; top:75px; right:-100%; width:340px; height:calc(100vh - 75px); background: linear-gradient(145deg, #0b0a07 0%, #1a170e 70%, #000 100%); backdrop-filter: blur(50px); border-left: 2px solid #FFD700; box-shadow: -15px 0 50px rgba(255,215,0,0.25); z-index:95; transition: right 0.6s cubic-bezier(0.2, 0.9, 0.3, 1); }
+        .sidebar-open .sidebar-overlay { opacity:1; visibility:visible; }
+        .sidebar-open .sidebar-menu { right:0; }
+        .sidebar-link { display:flex; align-items:center; font-size:1.2rem; font-weight:800; color:#ccc; margin-bottom:1.2rem; padding:18px 22px; border-left: 4px solid transparent; transition:0.3s; background: transparent; letter-spacing:2px; }
+        .sidebar-link:hover { background: linear-gradient(90deg, rgba(255,215,0,0.15), transparent); border-left-color:#FFD700; color:#fff; padding-left:30px; }
+        .sidebar-link i { width:40px; color:#FFD700; filter:drop-shadow(0 0 5px gold); transition:0.3s; }
+        .sidebar-link:hover i { transform: scale(1.2) translateX(5px); }
+
+        /* 3D CAROUSEL */
+        .scene { perspective: 1600px; width:100%; display:flex; justify-content:center; align-items:center; margin:0; padding:0; position:relative; }
+        .carousel { width:100%; height:100%; position:absolute; transform-style: preserve-3d; transition: transform 1s cubic-bezier(0.15, 0.9, 0.25, 1); }
+        .carousel__cell { position: absolute; left:50%; top:50%; border: 2px solid rgba(255,215,0,0.5); border-radius: 12px; background:#000; box-shadow: 0 0 30px rgba(255,215,0,0.3); overflow: hidden; border-image: none; }
+        .carousel__cell img { width:100%; height:100%; object-fit:cover; display:block; filter: brightness(1.05) contrast(1.1); transition:0.4s; }
+        .carousel__cell:hover img { transform: scale(1.04); filter: brightness(1.2) drop-shadow(0 0 8px gold); }
+
+        /* cards with 11D background images */
+        .card-custom-bg { position: relative; overflow: hidden; z-index:1; background:#000; border: 1.5px solid rgba(255,215,0,0.3); border-radius: 32px; transition: all 0.5s; }
+        .card-custom-bg::before { content:''; position: absolute; inset:0; background-size: cover; background-position: center; opacity: 0.9; z-index:-2; transition: transform 0.8s ease; }
+        .card-custom-bg::after { content:''; position: absolute; inset:0; background: linear-gradient(to top, #000 10%, rgba(0,0,0,0.2) 70%, transparent); z-index:-1; }
+        .card-custom-bg:hover { transform: translateY(-10px) scale(1.02); border-color: #FFD700; box-shadow: 0 25px 60px rgba(255,215,0,0.35); }
+        .card-custom-bg:hover::before { transform: scale(1.12); }
+        .bg-stipro::before { background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600&auto=format&fit=crop'); }
+        .bg-stiskilli::before { background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600&auto=format&fit=crop'); }
+        .bg-rentist::before { background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=600&auto=format&fit=crop'); }
+
+        /* footer ultra */
+        .footer-ultra { background: radial-gradient(ellipse at 50% 0%, #2a2418 0%, #000000 80%); border-top: 1px solid rgba(255,215,0,0.4); box-shadow: 0 -20px 60px black; position:relative; }
+        .footer-glow { position: absolute; top:0; left:50%; transform:translateX(-50%); width:70%; height:2px; background: linear-gradient(90deg,transparent,#FFD700,transparent); box-shadow:0 0 40px #FFD700; }
+
+        /* modal 512x512 perfect */
+        .modal-512 { max-width:512px; aspect-ratio: 1/1; }
+
+        /* extra 11d touches */
+        .gold-border-glow { box-shadow: 0 0 15px rgba(255,215,0,0.3), inset 0 0 20px rgba(255,215,0,0.1); }
+        .rotate-3d { transition: transform 0.4s; }
+        .rotate-3d:hover { transform: perspective(800px) rotateY(4deg) rotateX(2deg); }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen" id="mainBody">
+    <div class="bg-mesh"></div>
+    <div class="bg-particles"></div>
+
+    <!-- ULTRA HEADER 11D -->
+    <header id="mainHeader" class="fixed w-full z-[100] top-0 header-main flex items-center">
+        <div class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold-400 to-transparent opacity-80"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="flex items-center justify-between">
+                <!-- Logo + 11D name (smaller) -->
+                <div class="flex-shrink-0 cursor-pointer group flex items-center gap-3">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gold-500 blur-xl opacity-40 group-hover:opacity-70 transition-all"></div>
+                        <img src="sti.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STI" class="h-10 sm:h-11 object-contain relative z-10 filter drop-shadow-[0_0_12px_gold]">
+                    </div>
+                    <span class="text-11d-ultra text-sm sm:text-base hidden sm:block animate-pulse-11d">STIWORLDOFFICIAL</span>
+                </div>
+                <!-- desktop nav -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-12">
+                        <a href="#" class="nav-link text-xs font-black text-white uppercase tracking-widest">Home</a>
+                        <a href="#apps" class="nav-link text-xs font-black text-white uppercase tracking-widest">Ecosystem</a>
+                        <a href="#contact" class="nav-link text-xs font-black text-white uppercase tracking-widest">Connect</a>
+                    </div>
+                </div>
+                <!-- mobile trigger ultra -->
+                <div class="md:hidden">
+                    <button class="text-gold-400 hover:text-white p-2 border border-gold-500/60 rounded-xl bg-black/50 backdrop-blur-xl shadow-[0_0_20px_gold] transition-all active:scale-90" onclick="toggleSidebar()">
+                        <i class="fa-solid fa-bars-staggered text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 11D SIDEBAR -->
+    <div id="sidebar-overlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
+    <div id="sidebar-menu" class="sidebar-menu">
+        <div class="sidebar-header flex flex-col gap-5 p-6">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <img src="sti.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STI" class="h-11 filter drop-shadow-[0_0_12px_gold]">
+                    <span class="text-11d-ultra text-xs">STIWORLDOFFICIAL</span>
+                </div>
+                <button onclick="toggleSidebar()" class="text-gray-400 hover:text-red-400 transition-all hover:rotate-180 duration-500"><i class="fa-solid fa-xmark text-3xl"></i></button>
+            </div>
+            <div class="h-[2px] w-full bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
+        </div>
+        <nav class="flex flex-col p-4 mt-2">
+            <a href="#" onclick="toggleSidebar()" class="sidebar-link"><i class="fa-solid fa-house-chimney"></i> <span>HOME</span></a>
+            <a href="#apps" onclick="toggleSidebar()" class="sidebar-link"><i class="fa-solid fa-cube"></i> <span>ECOSYSTEM</span></a>
+            <a href="#contact" onclick="toggleSidebar()" class="sidebar-link"><i class="fa-solid fa-bolt"></i> <span>FEATURES</span></a>
+            <a href="#contact" onclick="toggleSidebar()" class="sidebar-link"><i class="fa-solid fa-envelope"></i> <span>CONNECT</span></a>
+        </nav>
+        <div class="mt-auto p-8 bg-gradient-to-t from-black to-transparent">
+            <div class="flex justify-center gap-6 mb-6">
+                <a href="#" class="text-gray-500 hover:text-gold-400 transition"><i class="fa-brands fa-instagram text-2xl"></i></a>
+                <a href="#" class="text-gray-500 hover:text-gold-400 transition"><i class="fa-brands fa-twitter text-2xl"></i></a>
+                <a href="#" class="text-gray-500 hover:text-gold-400 transition"><i class="fa-brands fa-linkedin text-2xl"></i></a>
+            </div>
+            <p class="text-center text-[10px] text-gray-700 tracking-[0.3em] uppercase">11D Ultra Gold v6.9</p>
+        </div>
+    </div>
+
+    <!-- MAIN -->
+    <main class="flex-grow pt-[75px] relative overflow-hidden flex flex-col">
+        <!-- video background darker but stylish -->
+        <div class="absolute top-0 left-0 w-full h-[700px] overflow-hidden z-[-1]">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-20 contrast-125 saturate-0">
+                <source src="https://cdn.pixabay.com/video/2020/04/18/36468-409477942_large.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-b from-[#050505]/70 via-[#050505]/90 to-black"></div>
+        </div>
+
+        <!-- 3D CAROUSEL 15 faces 11D -->
+        <div class="w-full relative z-10 mt-6">
+            <div class="scene" id="sceneContainer">
+                <div class="carousel" id="carousel"></div>
+            </div>
+        </div>
+        <!-- carousel controls 11D -->
+        <div class="flex justify-center gap-8 mt-8 mb-8 relative z-10">
+            <button id="prevBtn" class="w-14 h-14 rounded-full border-2 border-gold-500/70 text-gold-400 hover:bg-gold-500 hover:text-black hover:shadow-[0_0_35px_gold] transition-all flex items-center justify-center bg-black/50 backdrop-blur-xl active:scale-90"><i class="fa-solid fa-arrow-left text-xl"></i></button>
+            <button id="nextBtn" class="w-14 h-14 rounded-full border-2 border-gold-500/70 text-gold-400 hover:bg-gold-500 hover:text-black hover:shadow-[0_0_35px_gold] transition-all flex items-center justify-center bg-black/50 backdrop-blur-xl active:scale-90"><i class="fa-solid fa-arrow-right text-xl"></i></button>
+        </div>
+
+        <!-- ECOSYSTEM CARDS -->
+        <div id="apps" class="max-w-7xl mx-auto px-4 mt-4 pb-24 w-full">
+            <div class="flex items-center justify-center mb-12">
+                <div class="h-[2px] w-20 bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
+                <h3 class="mx-6 text-2xl sm:text-4xl font-black text-white tracking-[0.3em] text-center font-display drop-shadow-[0_0_15px_gold]">ECOSYSTEM</h3>
+                <div class="h-[2px] w-20 bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-6">
+                <!-- STIPRO -->
+                <div class="card-custom-bg bg-stipro p-8 sm:p-6 flex flex-col group aspect-square md:aspect-auto md:h-[400px] rotate-3d gold-border-glow">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-gold-400 to-amber-600 flex items-center justify-center text-black text-3xl shadow-[0_0_30px_gold]"><i class="fa-solid fa-heart-pulse"></i></div>
+                        <span class="bg-black/80 backdrop-blur-md px-4 py-2 rounded-full text-[10px] border border-gold-500 text-gold-300 font-black uppercase tracking-widest">Fitness AI</span>
+                    </div>
+                    <div class="mt-auto relative z-10">
+                        <h4 class="text-4xl sm:text-3xl font-black text-white mb-3 font-display drop-shadow-lg tracking-wider">STIPRO</h4>
+                        <p class="text-gray-100 text-sm sm:text-xs mb-8 leading-relaxed font-semibold drop-shadow line-clamp-2 sm:line-clamp-3">Premium fitness tracking. Gym, Calisthenics, Yoga & Desi Mehnat.</p>
+                        <button onclick="openPopup('stipro')" class="w-full py-4 bg-white/10 backdrop-blur-xl border-2 border-white/20 text-white hover:bg-gold-500 hover:text-black hover:border-gold-500 hover:shadow-[0_0_40px_gold] transition-all font-black rounded-xl uppercase tracking-widest text-xs">Access Now</button>
+                    </div>
+                </div>
+                <!-- STISKILLI -->
+                <div class="card-custom-bg bg-stiskilli p-8 sm:p-6 flex flex-col group aspect-square md:aspect-auto md:h-[400px] rotate-3d gold-border-glow">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-gold-400 to-amber-600 flex items-center justify-center text-black text-3xl shadow-[0_0_30px_gold]"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <span class="bg-black/80 backdrop-blur-md px-4 py-2 rounded-full text-[10px] border border-gold-500 text-gold-300 font-black uppercase tracking-widest">Ed-Tech</span>
+                    </div>
+                    <div class="mt-auto">
+                        <h4 class="text-4xl sm:text-3xl font-black text-white mb-3 font-display drop-shadow-lg">STISKILLI</h4>
+                        <p class="text-gray-100 text-sm sm:text-xs mb-8 font-semibold line-clamp-2">Master AI tools & crack exams. Future learning.</p>
+                        <button onclick="openPopup('stiskilli')" class="w-full py-4 bg-white/10 backdrop-blur-xl border-2 border-white/20 text-white hover:bg-gold-500 hover:text-black hover:border-gold-500 hover:shadow-[0_0_40px_gold] transition-all font-black rounded-xl uppercase tracking-widest text-xs">Start Learning</button>
+                    </div>
+                </div>
+                <!-- RENTIST -->
+                <div class="card-custom-bg bg-rentist p-8 sm:p-6 flex flex-col group aspect-square md:aspect-auto md:h-[400px] rotate-3d gold-border-glow">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-gold-400 to-amber-600 flex items-center justify-center text-black text-3xl shadow-[0_0_30px_gold]"><i class="fa-solid fa-building"></i></div>
+                        <span class="bg-black/80 backdrop-blur-md px-4 py-2 rounded-full text-[10px] border border-gold-500 text-gold-300 font-black uppercase">Real Estate</span>
+                    </div>
+                    <div class="mt-auto">
+                        <h4 class="text-4xl sm:text-3xl font-black text-white mb-3 font-display drop-shadow-lg">RENTIST</h4>
+                        <p class="text-gray-100 text-sm sm:text-xs mb-8 font-semibold line-clamp-2">Global rental marketplace. Flats, PGs, Shops.</p>
+                        <button onclick="openPopup('rentist')" class="w-full py-4 bg-white/10 backdrop-blur-xl border-2 border-white/20 text-white hover:bg-gold-500 hover:text-black hover:border-gold-500 hover:shadow-[0_0_40px_gold] transition-all font-black rounded-xl uppercase tracking-widest text-xs">Find Space</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER ULTRA 11D -->
+    <footer id="contact" class="footer-ultra py-16 px-4 relative z-10">
+        <div class="footer-glow animate-pulse"></div>
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-10">
+                <div class="text-center md:text-left flex flex-col md:flex-row items-center gap-6">
+                    <img src="sti.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STI" class="h-20 w-20 object-contain filter drop-shadow-[0_0_25px_gold] animate-float">
+                    <div>
+                        <h3 class="text-2xl font-black text-11d-ultra mb-1 leading-none">STIWORLDOFFICIAL</h3>
+                        <p class="text-gray-500 text-[10px] uppercase tracking-[0.3em] font-black">Ultra Gold 11D Ecosystem</p>
+                    </div>
+                </div>
+                <div class="flex gap-6">
+                    <a href="#" class="w-12 h-12 rounded-full border-2 border-gray-700/80 bg-white/5 flex items-center justify-center text-gray-300 hover:text-white hover:border-gold-500 hover:bg-gold-500 hover:shadow-[0_0_30px_gold] transition-all duration-300 transform hover:-translate-y-2"><i class="fa-brands fa-instagram text-xl"></i></a>
+                    <a href="#" class="w-12 h-12 rounded-full border-2 border-gray-700/80 bg-white/5 flex items-center justify-center text-gray-300 hover:text-white hover:border-gold-500 hover:bg-gold-500 hover:shadow-[0_0_30px_gold] transition-all duration-300 transform hover:-translate-y-2"><i class="fa-brands fa-twitter text-xl"></i></a>
+                    <a href="#" class="w-12 h-12 rounded-full border-2 border-gray-700/80 bg-white/5 flex items-center justify-center text-gray-300 hover:text-white hover:border-gold-500 hover:bg-gold-500 hover:shadow-[0_0_30px_gold] transition-all duration-300 transform hover:-translate-y-2"><i class="fa-brands fa-linkedin-in text-xl"></i></a>
+                </div>
+            </div>
+            <div class="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-600 font-black uppercase tracking-widest">
+                <p>© 2026 STI World Official. 11D rights reserved.</p>
+                <div class="flex gap-8 mt-6 md:mt-0">
+                    <a href="#" class="hover:text-gold-500 transition underline decoration-gold-500 underline-offset-4">Privacy</a>
+                    <a href="#" class="hover:text-gold-500 transition underline decoration-gold-500 underline-offset-4">Terms</a>
+                    <a href="#" class="hover:text-gold-500 transition underline decoration-gold-500 underline-offset-4">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL 512x512 -->
+    <div id="appModal" class="fixed inset-0 z-[150] hidden flex items-center justify-center p-4 bg-black/95 backdrop-blur-3xl transition-opacity duration-300 opacity-0">
+        <div class="bg-[#0f0f0f] w-full modal-512 rounded-3xl border-2 border-gold-500/30 p-8 transform transition-all duration-300 translate-y-10 relative overflow-hidden shadow-[0_0_90px_gold] flex flex-col justify-center gold-border-glow">
+            <div class="absolute -top-20 -right-20 w-60 h-60 bg-gold-500/20 rounded-full blur-[100px]"></div>
+            <div class="absolute -bottom-20 -left-20 w-60 h-60 bg-amber-500/20 rounded-full blur-[100px]"></div>
+            <button onclick="closePopup()" class="absolute top-5 right-5 text-gray-500 hover:text-red-400 transition-all hover:rotate-180 duration-500 z-50"><i class="fa-solid fa-xmark text-3xl"></i></button>
+            <div class="text-center relative z-10">
+                <div id="modalIcon" class="inline-block p-5 rounded-3xl bg-gradient-to-br from-gray-900 to-black border-2 border-gold-500/50 mb-5 text-gold-400 text-5xl shadow-[0_0_50px_gold]"></div>
+                <h3 id="modalTitle" class="text-4xl font-display font-black text-white mb-3 tracking-wide">APP</h3>
+                <p id="modalDesc" class="text-gray-300 text-sm mb-7 px-4 leading-relaxed">...</p>
+                <div class="space-y-4" id="platformButtons"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // header / sidebar top
+            const header = document.getElementById('mainHeader');
+            const sidebar = document.getElementById('sidebar-menu');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    header.classList.add('header-scrolled');
+                    sidebar.style.top = '65px';
+                    sidebar.style.height = 'calc(100vh - 65px)';
+                } else {
+                    header.classList.remove('header-scrolled');
+                    sidebar.style.top = '75px';
+                    sidebar.style.height = 'calc(100vh - 75px)';
+                }
+            });
+
+            window.toggleSidebar = function() { document.getElementById('mainBody').classList.toggle('sidebar-open'); };
+
+            // 3D carousel 15 images
+            const carousel = document.getElementById('carousel');
+            const scene = document.getElementById('sceneContainer');
+            const cellCount = 15;
+            let selectedIndex = 0, cellWidth, cellHeight, radius;
+            const images = [
+                'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=600&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=600&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=600&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=600&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=600&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=600&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=600&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1460317442991-0ec209397118?q=80&w=600&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=600&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=600&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600&auto=format&fit=crop'
+            ];
+            function createCarousel() {
+                carousel.innerHTML = '';
+                for (let i = 0; i < cellCount; i++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'carousel__cell';
+                    const img = document.createElement('img');
+                    img.src = images[i];
+                    cell.appendChild(img);
+                    carousel.appendChild(cell);
+                }
+                updateDimensions();
+            }
+            function updateDimensions() {
+                if (window.innerWidth < 768) cellWidth = window.innerWidth * 0.75;
+                else cellWidth = 520;
+                cellHeight = cellWidth * 0.56;
+                radius = Math.round((cellWidth/2) / Math.tan(Math.PI/cellCount));
+                scene.style.height = cellHeight + 'px';
+                const cells = document.querySelectorAll('.carousel__cell');
+                const theta = 360 / cellCount;
+                cells.forEach((cell, i) => {
+                    cell.style.width = cellWidth + 'px';
+                    cell.style.height = cellHeight + 'px';
+                    cell.style.marginLeft = -(cellWidth/2) + 'px';
+                    cell.style.marginTop = -(cellHeight/2) + 'px';
+                    cell.style.transform = `rotateY(${theta * i}deg) translateZ(${radius}px)`;
+                });
+                rotateCarousel();
+            }
+            function rotateCarousel() {
+                const angle = (360 / cellCount) * selectedIndex * -1;
+                carousel.style.transform = `translateZ(${-radius}px) rotateY(${angle}deg)`;
+            }
+            createCarousel();
+            window.addEventListener('resize', updateDimensions);
+            document.getElementById('prevBtn').addEventListener('click', ()=>{ selectedIndex--; rotateCarousel(); });
+            document.getElementById('nextBtn').addEventListener('click', ()=>{ selectedIndex++; rotateCarousel(); });
+
+            let autoRun = setInterval(()=>{ selectedIndex++; rotateCarousel(); }, 3500);
+            scene.addEventListener('mouseenter', ()=>clearInterval(autoRun));
+            scene.addEventListener('touchstart', ()=>clearInterval(autoRun));
+            scene.addEventListener('mouseleave', ()=> autoRun = setInterval(()=>{ selectedIndex++; rotateCarousel(); }, 3500));
+
+            // app data
+            const appsData = {
+                'stipro': { name:'STIPRO', desc:'Your all-in-one fitness coach. Gym, Calisthenics, Yoga & Desi Mehnat.', icon:'<i class="fa-solid fa-heart-pulse"></i>', platforms:[ { name:'Play Store', icon:'fa-google-play', url:'#', color:'hover:bg-green-900/70' }, { name:'App Store', icon:'fa-apple', url:'#', color:'hover:bg-blue-900/70' } ] },
+                'stiskilli': { name:'STISKILLI', desc:'Master AI tools & crack govt exams. Future learning platform.', icon:'<i class="fa-solid fa-graduation-cap"></i>', platforms:[ { name:'Web Portal', icon:'fa-globe', url:'#', color:'hover:bg-purple-900/70' }, { name:'Android', icon:'fa-android', url:'#', color:'hover:bg-green-900/70' } ] },
+                'rentist': { name:'RENTIST', desc:'Global Rental Solutions. Flats, PGs, Shops & Hostels.', icon:'<i class="fa-solid fa-map-location-dot"></i>', platforms:[ { name:'Search', icon:'fa-magnifying-glass', url:'#', color:'hover:bg-red-900/70' }, { name:'List', icon:'fa-plus', url:'#', color:'hover:bg-gray-800' } ] }
+            };
+            window.openPopup = (id) => {
+                const modal = document.getElementById('appModal'), inner = modal.firstElementChild;
+                const d = appsData[id];
+                document.getElementById('modalTitle').innerText = d.name;
+                document.getElementById('modalDesc').innerText = d.desc;
+                document.getElementById('modalIcon').innerHTML = d.icon;
+                let btns = '';
+                d.platforms.forEach(p => btns += `<a href="${p.url}" class="flex items-center justify-between px-6 py-3 bg-white/10 border border-white/20 rounded-xl text-white transition-all duration-300 group ${p.color} hover:border-gold-500 hover:shadow-[0_0_25px_gold]"><div class="flex items-center gap-3"><i class="fa-brands ${p.icon} text-xl text-gray-300 group-hover:text-white"></i><span class="font-black text-sm">${p.name}</span></div><i class="fa-solid fa-arrow-right opacity-0 group-hover:opacity-100 transition"></i></a>`);
+                document.getElementById('platformButtons').innerHTML = btns;
+                modal.classList.remove('hidden');
+                setTimeout(()=>{ modal.classList.remove('opacity-0'); inner.classList.remove('translate-y-10'); },10);
+            };
+            window.closePopup = () => {
+                const modal = document.getElementById('appModal'), inner = modal.firstElementChild;
+                modal.classList.add('opacity-0');
+                inner.classList.add('translate-y-10');
+                setTimeout(()=>modal.classList.add('hidden'),300);
+            };
+            document.getElementById('appModal').addEventListener('click', function(e) { if (e.target === this) closePopup(); });
+        })();
+    </script>
+</body>
+</html>

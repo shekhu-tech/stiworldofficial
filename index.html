@@ -3,9 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>STI World · 11D Ultra Gold</title>
-    <meta name="description" content="STI World Official – STIPRO · STISKILLI · RENTIST. Ultra Gold 11D ecosystem.">
-    <!-- Tailwind + custom config -->
+    
+    <title>STI World Official - STIPRO, STISKILLI & RENTIST | Ultimate 11D Ecosystem</title>
+    
+    <meta name="description" content="Welcome to STI World. Download STIPRO for Gym, Calisthenics, Kegel, Yoga & Desi Mehnat. Use STISKILLI for All Govt/Private Job Prep & AI Tools. Use RENTIST to find Flats, PGs, Hostels, Shops, Plots & Houses.">
+    
+    <meta name="keywords" content="STI World, STIPRO, STISKILLI, RENTIST, Fitness App, Gym Workout, Calisthenics, Kegel Exercises, Yoga App, Desi Mehnat, Govt Job Preparation India, AI Tools Learning, Private Jobs, Rental App, Real Estate, Rent Flats, PG for Rent, Hostels, Shops, Plots for Rent, Houses, 11D Ultra Gold">
+    
+    <meta name="author" content="STI World Official">
+    <meta name="theme-color" content="#FFD700">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://stiworldofficial.com/">
+    <meta property="og:title" content="STI World - STIPRO, STISKILLI & RENTIST Apps">
+    <meta property="og:description" content="The 11D Ultra Gold Ecosystem. Fitness (Gym/Kegel/Yoga), Education (Govt Jobs/AI), and Rentals (Flats/PGs/Shops).">
+    <meta property="og:image" content="sti.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "STI World Ecosystem",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "Android, Windows",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "15420"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      },
+      "description": "STI World provides three core applications: STIPRO (Fitness), STISKILLI (Education), and RENTIST (Real Estate)."
+    }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -82,19 +115,29 @@
         .carousel__cell img { width:100%; height:100%; object-fit:cover; display:block; filter: brightness(1.05) contrast(1.1); transition:0.4s; }
         .carousel__cell:hover img { transform: scale(1.04); filter: brightness(1.2) drop-shadow(0 0 8px gold); }
 
-        /* cards with background images */
+        /* cards with background images - UPDATED FOR EASY CHANGE */
         .card-custom-bg { position: relative; overflow: hidden; z-index:1; background:#000; border: 1.5px solid rgba(255,215,0,0.3); border-radius: 28px; transition: all 0.5s; }
-        .card-custom-bg::before { content:''; position: absolute; inset:0; background-size: cover; background-position: center; opacity: 0.85; z-index:-2; transition: transform 0.8s ease; }
+        .card-custom-bg::before { 
+            content:''; 
+            position: absolute; 
+            inset:0; 
+            background-size: cover; 
+            background-position: center; 
+            opacity: 0.85; 
+            z-index:-2; 
+            transition: transform 0.8s ease;
+            /* This tells CSS to use the variable defined in the HTML inline style */
+            background-image: var(--card-bg-img); 
+        }
         .card-custom-bg::after { content:''; position: absolute; inset:0; background: linear-gradient(to top, #000 15%, rgba(0,0,0,0.25) 70%, transparent); z-index:-1; }
         .card-custom-bg:hover { transform: translateY(-8px) scale(1.01); border-color: #FFD700; box-shadow: 0 20px 40px rgba(255,215,0,0.3); }
-        .bg-stipro::before { background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600&auto=format&fit=crop'); }
-        .bg-stiskilli::before { background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600&auto=format&fit=crop'); }
-        .bg-rentist::before { background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=600&auto=format&fit=crop'); }
+
+        /* REMOVED OLD HARDCODED CSS URLs .bg-stipro::before, etc. */
 
         .footer-ultra { background: radial-gradient(ellipse at 50% 0%, #2a2418 0%, #000000 80%); border-top: 1px solid rgba(255,215,0,0.4); box-shadow: 0 -20px 60px black; position:relative; }
         .footer-glow { position: absolute; top:0; left:50%; transform:translateX(-50%); width:70%; height:2px; background: linear-gradient(90deg,transparent,#FFD700,transparent); box-shadow:0 0 40px #FFD700; }
 
-        /* MODAL perfect for iPhone 12 mini (512x512 but scaled down on small) */
+        /* MODAL */
         .modal-512 { width: 95%; max-width: 440px; aspect-ratio: 1/1; }
 
         /* iPhone 12 mini specific fine-tuning */
@@ -108,7 +151,6 @@
         .rotate-3d { transition: transform 0.4s; }
         .rotate-3d:hover { transform: perspective(800px) rotateY(4deg) rotateX(2deg); }
         
-        /* force brand name to show on mobile too */
         .brand-name-mobile { display: inline-block; }
         @media (max-width: 640px) {
             .brand-name-mobile { display: inline-block !important; }
@@ -119,21 +161,17 @@
     <div class="bg-mesh"></div>
     <div class="bg-particles"></div>
 
-    <!-- HEADER 11D - with name always visible on mobile -->
     <header id="mainHeader" class="fixed w-full z-[100] top-0 header-main flex items-center">
         <div class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold-400 to-transparent opacity-80"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="flex items-center justify-between">
-                <!-- Logo + 11D name (always visible now) -->
                 <div class="flex-shrink-0 cursor-pointer group flex items-center gap-2 sm:gap-3">
                     <div class="relative">
                         <div class="absolute inset-0 bg-gold-500 blur-xl opacity-40 group-hover:opacity-70 transition-all"></div>
                         <img src="sti.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STI" class="h-9 sm:h-11 object-contain relative z-10 filter drop-shadow-[0_0_12px_gold]">
                     </div>
-                    <!-- brand name: hidden on smallest? No - we override with brand-name-mobile -->
                     <span class="text-11d-ultra text-xs sm:text-base brand-name-mobile animate-pulse-11d">STIWORLDOFFICIAL</span>
                 </div>
-                <!-- desktop nav -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-12">
                         <a href="#" class="nav-link text-xs font-black text-white uppercase tracking-widest">Home</a>
@@ -141,7 +179,6 @@
                         <a href="#contact" class="nav-link text-xs font-black text-white uppercase tracking-widest">Connect</a>
                     </div>
                 </div>
-                <!-- mobile trigger -->
                 <div class="md:hidden">
                     <button class="text-gold-400 hover:text-white p-2 border border-gold-500/60 rounded-xl bg-black/50 backdrop-blur-xl shadow-[0_0_20px_gold] transition-all active:scale-90" onclick="toggleSidebar()">
                         <i class="fa-solid fa-bars-staggered text-xl"></i>
@@ -151,7 +188,6 @@
         </div>
     </header>
 
-    <!-- SIDEBAR -->
     <div id="sidebar-overlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
     <div id="sidebar-menu" class="sidebar-menu">
         <div class="sidebar-header flex flex-col gap-4 p-5">
@@ -173,16 +209,14 @@
         <div class="mt-auto p-6 bg-gradient-to-t from-black to-transparent">
             <div class="flex justify-center gap-5 mb-5">
                 <a href="#" class="text-gray-500 hover:text-gold-400 transition"><i class="fa-brands fa-instagram text-xl"></i></a>
-                <a href="#" class="text-gray-500 hover:text-gold-400 transition"><i class="fa-brands fa-twitter text-xl"></i></a>
-                <a href="#" class="text-gray-500 hover:text-gold-400 transition"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="text-gray-500 hover:text-gold-400 transition"><i class="fa-brands fa-facebook-f text-xl"></i></a>
+                <a href="#" class="text-gray-500 hover:text-gold-400 transition"><i class="fa-brands fa-youtube text-xl"></i></a>
             </div>
             <p class="text-center text-[8px] text-gray-700 tracking-[0.3em] uppercase">11D Ultra Gold v6.9</p>
         </div>
     </div>
 
-    <!-- MAIN -->
     <main class="flex-grow pt-[70px] relative overflow-hidden flex flex-col">
-        <!-- video background -->
         <div class="absolute top-0 left-0 w-full h-[700px] overflow-hidden z-[-1]">
             <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-20 contrast-125 saturate-0">
                 <source src="https://cdn.pixabay.com/video/2020/04/18/36468-409477942_large.mp4" type="video/mp4">
@@ -190,19 +224,16 @@
             <div class="absolute inset-0 bg-gradient-to-b from-[#050505]/70 via-[#050505]/90 to-black"></div>
         </div>
 
-        <!-- 3D CAROUSEL -->
         <div class="w-full relative z-10 mt-4">
             <div class="scene" id="sceneContainer">
                 <div class="carousel" id="carousel"></div>
             </div>
         </div>
-        <!-- controls -->
         <div class="flex justify-center gap-6 mt-6 mb-6 relative z-10">
             <button id="prevBtn" class="w-12 h-12 rounded-full border-2 border-gold-500/70 text-gold-400 hover:bg-gold-500 hover:text-black hover:shadow-[0_0_35px_gold] transition-all flex items-center justify-center bg-black/50 backdrop-blur-xl active:scale-90"><i class="fa-solid fa-arrow-left text-lg"></i></button>
             <button id="nextBtn" class="w-12 h-12 rounded-full border-2 border-gold-500/70 text-gold-400 hover:bg-gold-500 hover:text-black hover:shadow-[0_0_35px_gold] transition-all flex items-center justify-center bg-black/50 backdrop-blur-xl active:scale-90"><i class="fa-solid fa-arrow-right text-lg"></i></button>
         </div>
 
-        <!-- ECOSYSTEM CARDS -->
         <div id="apps" class="max-w-7xl mx-auto px-4 mt-2 pb-20 w-full">
             <div class="flex items-center justify-center mb-8">
                 <div class="h-[2px] w-16 bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
@@ -211,39 +242,38 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-6">
-                <!-- STIPRO -->
-                <div class="card-custom-bg bg-stipro p-6 flex flex-col group aspect-square md:aspect-auto md:h-[380px] rotate-3d gold-border-glow">
+                <div style="--card-bg-img: url('stipro.png');" class="card-custom-bg p-6 flex flex-col group aspect-square md:aspect-auto md:h-[380px] rotate-3d gold-border-glow">
                     <div class="flex justify-between items-start mb-3">
                         <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-400 to-amber-600 flex items-center justify-center text-black text-2xl shadow-[0_0_25px_gold]"><i class="fa-solid fa-heart-pulse"></i></div>
                         <span class="bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-full text-[8px] border border-gold-500 text-gold-300 font-black uppercase tracking-widest">Fitness AI</span>
                     </div>
                     <div class="mt-auto relative z-10">
                         <h4 class="text-3xl sm:text-2xl font-black text-white mb-2 font-display drop-shadow-lg tracking-wider">STIPRO</h4>
-                        <p class="text-gray-100 text-xs sm:text-xs mb-5 leading-relaxed font-semibold drop-shadow line-clamp-2">Premium fitness tracking. Gym, Calisthenics, Yoga & Desi Mehnat.</p>
+                        <p class="text-gray-100 text-xs sm:text-xs mb-5 leading-relaxed font-semibold drop-shadow line-clamp-2">Gym, Calisthenics, Yoga, Kegel & Desi Mehnat.</p>
                         <button onclick="openPopup('stipro')" class="w-full py-3 bg-white/10 backdrop-blur-xl border-2 border-white/20 text-white hover:bg-gold-500 hover:text-black hover:border-gold-500 hover:shadow-[0_0_40px_gold] transition-all font-black rounded-xl uppercase tracking-widest text-[10px]">Access Now</button>
                     </div>
                 </div>
-                <!-- STISKILLI -->
-                <div class="card-custom-bg bg-stiskilli p-6 flex flex-col group aspect-square md:aspect-auto md:h-[380px] rotate-3d gold-border-glow">
+                
+                <div style="--card-bg-img: url('stiskilli.png');" class="card-custom-bg p-6 flex flex-col group aspect-square md:aspect-auto md:h-[380px] rotate-3d gold-border-glow">
                     <div class="flex justify-between items-start mb-3">
                         <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-400 to-amber-600 flex items-center justify-center text-black text-2xl shadow-[0_0_25px_gold]"><i class="fa-solid fa-graduation-cap"></i></div>
                         <span class="bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-full text-[8px] border border-gold-500 text-gold-300 font-black uppercase">Ed-Tech</span>
                     </div>
                     <div class="mt-auto">
                         <h4 class="text-3xl sm:text-2xl font-black text-white mb-2 font-display drop-shadow-lg">STISKILLI</h4>
-                        <p class="text-gray-100 text-xs mb-5 font-semibold line-clamp-2">Master AI tools & crack exams. Future learning.</p>
+                        <p class="text-gray-100 text-xs mb-5 font-semibold line-clamp-2">All Govt Jobs, Private Jobs & AI Tools Learning.</p>
                         <button onclick="openPopup('stiskilli')" class="w-full py-3 bg-white/10 backdrop-blur-xl border-2 border-white/20 text-white hover:bg-gold-500 hover:text-black hover:border-gold-500 hover:shadow-[0_0_40px_gold] transition-all font-black rounded-xl uppercase tracking-widest text-[10px]">Start Learning</button>
                     </div>
                 </div>
-                <!-- RENTIST -->
-                <div class="card-custom-bg bg-rentist p-6 flex flex-col group aspect-square md:aspect-auto md:h-[380px] rotate-3d gold-border-glow">
+                
+                <div style="--card-bg-img: url('rentist.png');" class="card-custom-bg p-6 flex flex-col group aspect-square md:aspect-auto md:h-[380px] rotate-3d gold-border-glow">
                     <div class="flex justify-between items-start mb-3">
                         <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-400 to-amber-600 flex items-center justify-center text-black text-2xl shadow-[0_0_25px_gold]"><i class="fa-solid fa-building"></i></div>
                         <span class="bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-full text-[8px] border border-gold-500 text-gold-300 font-black uppercase">Real Estate</span>
                     </div>
                     <div class="mt-auto">
                         <h4 class="text-3xl sm:text-2xl font-black text-white mb-2 font-display drop-shadow-lg">RENTIST</h4>
-                        <p class="text-gray-100 text-xs mb-5 font-semibold line-clamp-2">Global rental marketplace. Flats, PGs, Shops.</p>
+                        <p class="text-gray-100 text-xs mb-5 font-semibold line-clamp-2">Flats, PGs, Shops, Plots, Hostels & Houses.</p>
                         <button onclick="openPopup('rentist')" class="w-full py-3 bg-white/10 backdrop-blur-xl border-2 border-white/20 text-white hover:bg-gold-500 hover:text-black hover:border-gold-500 hover:shadow-[0_0_40px_gold] transition-all font-black rounded-xl uppercase tracking-widest text-[10px]">Find Space</button>
                     </div>
                 </div>
@@ -251,7 +281,6 @@
         </div>
     </main>
 
-    <!-- FOOTER -->
     <footer id="contact" class="footer-ultra py-12 px-4 relative z-10">
         <div class="footer-glow animate-pulse"></div>
         <div class="max-w-7xl mx-auto">
@@ -265,8 +294,8 @@
                 </div>
                 <div class="flex gap-5">
                     <a href="#" class="w-10 h-10 rounded-full border-2 border-gray-700/80 bg-white/5 flex items-center justify-center text-gray-300 hover:text-white hover:border-gold-500 hover:bg-gold-500 hover:shadow-[0_0_30px_gold] transition-all duration-300 transform hover:-translate-y-1"><i class="fa-brands fa-instagram text-lg"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full border-2 border-gray-700/80 bg-white/5 flex items-center justify-center text-gray-300 hover:text-white hover:border-gold-500 hover:bg-gold-500 hover:shadow-[0_0_30px_gold] transition-all duration-300 transform hover:-translate-y-1"><i class="fa-brands fa-twitter text-lg"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full border-2 border-gray-700/80 bg-white/5 flex items-center justify-center text-gray-300 hover:text-white hover:border-gold-500 hover:bg-gold-500 hover:shadow-[0_0_30px_gold] transition-all duration-300 transform hover:-translate-y-1"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full border-2 border-gray-700/80 bg-white/5 flex items-center justify-center text-gray-300 hover:text-white hover:border-gold-500 hover:bg-gold-500 hover:shadow-[0_0_30px_gold] transition-all duration-300 transform hover:-translate-y-1"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full border-2 border-gray-700/80 bg-white/5 flex items-center justify-center text-gray-300 hover:text-white hover:border-gold-500 hover:bg-gold-500 hover:shadow-[0_0_30px_gold] transition-all duration-300 transform hover:-translate-y-1"><i class="fa-brands fa-youtube text-lg"></i></a>
                 </div>
             </div>
             <div class="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[8px] text-gray-600 font-black uppercase tracking-widest">
@@ -280,7 +309,6 @@
         </div>
     </footer>
 
-    <!-- MODAL (with updated button labels: for Android / for Windows) -->
     <div id="appModal" class="fixed inset-0 z-[150] hidden flex items-center justify-center p-3 bg-black/95 backdrop-blur-3xl transition-opacity duration-300 opacity-0">
         <div class="bg-[#0f0f0f] modal-512 rounded-3xl border-2 border-gold-500/30 p-5 transform transition-all duration-300 translate-y-10 relative overflow-hidden shadow-[0_0_90px_gold] flex flex-col justify-center gold-border-glow">
             <div class="absolute -top-20 -right-20 w-60 h-60 bg-gold-500/20 rounded-full blur-[100px]"></div>
@@ -368,11 +396,11 @@
             scene.addEventListener('touchstart', ()=>clearInterval(autoRun));
             scene.addEventListener('mouseleave', ()=> autoRun = setInterval(()=>{ selectedIndex++; rotateCarousel(); }, 3500));
 
-            // App data with updated labels: first button "for Android", second "for Windows"
+            // App data detailed descriptions for popup
             const appsData = {
                 'stipro': {
                     name:'STIPRO',
-                    desc:'Your all-in-one fitness coach. Gym, Calisthenics, Yoga & Desi Mehnat.',
+                    desc:'Complete Fitness Solution: Gym workouts, Calisthenics, Kegel exercises, Yoga sessions & traditional Desi Mehnat training.',
                     icon:'<i class="fa-solid fa-heart-pulse"></i>',
                     platforms:[
                         { name:'for Android', icon:'fa-android', url:'#', color:'hover:bg-green-900/70' },
@@ -381,7 +409,7 @@
                 },
                 'stiskilli': {
                     name:'STISKILLI',
-                    desc:'Master AI tools & crack govt exams. Future learning.',
+                    desc:'The ultimate Ed-Tech platform. Preparation for all India Govt Jobs, Private Job placement assistance, and comprehensive AI Tools training.',
                     icon:'<i class="fa-solid fa-graduation-cap"></i>',
                     platforms:[
                         { name:'for Android', icon:'fa-android', url:'#', color:'hover:bg-green-900/70' },
@@ -390,7 +418,7 @@
                 },
                 'rentist': {
                     name:'RENTIST',
-                    desc:'Global Rental Solutions. Flats, PGs, Shops & Hostels.',
+                    desc:'India\'s premium rental marketplace. Search for Rooms, Flats, Hostels, PGs, Shops, Plots, and Houses with ease.',
                     icon:'<i class="fa-solid fa-map-location-dot"></i>',
                     platforms:[
                         { name:'for Android', icon:'fa-android', url:'#', color:'hover:bg-green-900/70' },

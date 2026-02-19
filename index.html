@@ -107,11 +107,16 @@
         /* 3D CAROUSEL */
         .scene { perspective: 1600px; width:100%; display:flex; justify-content:center; align-items:center; margin:0; padding:0; position:relative; }
         .carousel { width:100%; height:100%; position:absolute; transform-style: preserve-3d; transition: transform 1s cubic-bezier(0.15, 0.9, 0.25, 1); }
+        
+        /* UPDATED: Changed object-fit to contain and ensured background is black to handle aspect ratios gracefully */
         .carousel__cell { position: absolute; left:50%; top:50%; border: 2px solid rgba(255,215,0,0.5); border-radius: 12px; background:#000; box-shadow: 0 0 30px rgba(255,215,0,0.3); overflow: hidden; }
-        .carousel__cell img { width:100%; height:100%; object-fit:cover; display:block; filter: brightness(1.05) contrast(1.1); transition:0.4s; }
+        
+        /* UPDATED: object-fit: contain ensures the full 1920x1080 image is visible without cropping */
+        .carousel__cell img { width:100%; height:100%; object-fit:contain; display:block; filter: brightness(1.05) contrast(1.1); transition:0.4s; }
+        
         .carousel__cell:hover img { transform: scale(1.04); filter: brightness(1.2) drop-shadow(0 0 8px gold); }
 
-        /* cards with background images - UPDATED FOR EASY CHANGE */
+        /* cards with background images */
         .card-custom-bg { position: relative; overflow: hidden; z-index:1; background:#000; border: 1.5px solid rgba(255,215,0,0.3); border-radius: 28px; transition: all 0.5s; }
         .card-custom-bg::before { 
             content:''; 
@@ -122,13 +127,10 @@
             opacity: 0.85; 
             z-index:-2; 
             transition: transform 0.8s ease;
-            /* This tells CSS to use the variable defined in the HTML inline style */
             background-image: var(--card-bg-img); 
         }
         .card-custom-bg::after { content:''; position: absolute; inset:0; background: linear-gradient(to top, #000 15%, rgba(0,0,0,0.25) 70%, transparent); z-index:-1; }
         .card-custom-bg:hover { transform: translateY(-8px) scale(1.01); border-color: #FFD700; box-shadow: 0 20px 40px rgba(255,215,0,0.3); }
-
-        /* REMOVED OLD HARDCODED CSS URLs .bg-stipro::before, etc. */
 
         .footer-ultra { background: radial-gradient(ellipse at 50% 0%, #2a2418 0%, #000000 80%); border-top: 1px solid rgba(255,215,0,0.4); box-shadow: 0 -20px 60px black; position:relative; }
         .footer-glow { position: absolute; top:0; left:50%; transform:translateX(-50%); width:70%; height:2px; background: linear-gradient(90deg,transparent,#FFD700,transparent); box-shadow:0 0 40px #FFD700; }
@@ -368,9 +370,17 @@
                 updateDimensions();
             }
             function updateDimensions() {
-                if (window.innerWidth < 768) cellWidth = window.innerWidth * 0.7;
-                else cellWidth = 520;
-                cellHeight = cellWidth * 0.56;
+                // UPDATED: Adjusted widths and calculation for true 16:9 aspect ratio
+                if (window.innerWidth < 768) {
+                    cellWidth = window.innerWidth * 0.9; // More width on mobile to see image better
+                } else {
+                    cellWidth = 550; // Desktop default
+                }
+                
+                // CRITICAL FIX: Set height based on 16:9 ratio (1080/1920 = 0.5625)
+                // This matches 1920x1080 videos/images perfectly
+                cellHeight = cellWidth * (9 / 16); 
+                
                 radius = Math.round((cellWidth/2) / Math.tan(Math.PI/cellCount));
                 scene.style.height = cellHeight + 'px';
                 const cells = document.querySelectorAll('.carousel__cell');

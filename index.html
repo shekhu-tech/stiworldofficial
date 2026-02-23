@@ -136,7 +136,7 @@
         .sidebar-open .menu-toggle span:nth-child(3) { transform: translateY(-10.5px) rotate(-45deg); width: 100%; }
 
         /* ========================================================================
-           NEW 11D CENTERED SIDEBAR WITH DELAYED OUTER BORDER
+           NEW 11D CENTERED SIDEBAR (MODAL) AND SECTION ANIMATIONS
            ======================================================================== */
         .sidebar-overlay { 
             position: fixed; inset: 0; 
@@ -147,7 +147,7 @@
         }
         .sidebar-open .sidebar-overlay { opacity: 1; visibility: visible; }
 
-        /* Base Container */
+        /* Outer Container Centered */
         .sidebar-menu-centered {
             position: fixed; top: 50%; left: 50%;
             transform: translate(-50%, -50%) scale(0.9);
@@ -157,41 +157,20 @@
             transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
             padding: 16px;
             border-radius: 12px;
-            background: #050505; /* Clean black base before border appears */
+            
+            /* OUTER SHINING 11D BORDER */
+            border: 3px solid transparent;
+            background-image: linear-gradient(#050505, #050505), linear-gradient(90deg, #FFD700, #FFFFFF, #D4AF37, #FFD700, #FFD700);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            background-size: 300% auto;
+            animation: shine11dBorder 4s linear infinite;
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.3), inset 0 0 25px rgba(255, 215, 0, 0.15);
         }
         
         .sidebar-open .sidebar-menu-centered {
             transform: translate(-50%, -50%) scale(1);
             opacity: 1; visibility: visible;
-        }
-
-        /* --- DELAYED 11D OUTER BORDER OVERLAY --- */
-        .sidebar-menu-centered::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            z-index: 10;
-            pointer-events: none; /* Allows clicking items inside */
-            border-radius: 12px;
-            
-            /* Transparent inner, 11D Border outer */
-            border: 3px solid transparent;
-            background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), linear-gradient(90deg, #FFD700, #FFFFFF, #D4AF37, #FFD700, #FFD700);
-            background-origin: border-box;
-            background-clip: padding-box, border-box;
-            background-size: 300% auto;
-            animation: shine11dBorder 4s linear infinite;
-            box-shadow: 0 0 40px rgba(255, 215, 0, 0.4), inset 0 0 25px rgba(255, 215, 0, 0.2);
-            
-            /* Hidden initially, disappears instantly on close */
-            opacity: 0;
-            transition: opacity 0.3s ease 0s;
-        }
-
-        /* Appear ONLY AFTER all inner sections finish animating (3.0s delay) */
-        .sidebar-open .sidebar-menu-centered::after {
-            opacity: 1;
-            transition: opacity 0.8s ease 3.0s; 
         }
 
         /* Individual Box Sections */
@@ -201,7 +180,6 @@
             text-decoration: none; color: #fff; font-weight: 900;
             letter-spacing: 2px; font-size: 1.1rem;
             border-radius: 8px; cursor: pointer;
-            position: relative; z-index: 20;
             
             /* INNER SHINING 11D BORDER FOR EVERY SECTION */
             border: 2px solid transparent;
@@ -212,23 +190,25 @@
             animation: shine11dBorder 3s linear infinite;
             box-shadow: 0 0 15px rgba(255, 215, 0, 0.2), inset 0 0 10px rgba(255, 215, 0, 0.1);
             
-            /* Animation Setup: Pure Dissolve */
+            /* Animation Setup */
             opacity: 0;
-            transition: opacity 0.6s ease-in-out, box-shadow 0.3s ease, background-image 0.3s ease;
+            transform: translateY(-20px) scale(0.95);
+            /* Important: Removes delay on close so it hides smoothly */
+            transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.3s ease, background-image 0.3s ease;
         }
 
         /* STAGGERED ANIMATIONS: Exactly 0.5s gaps upon opening */
         .sidebar-open .menu-item-box {
             opacity: 1;
+            transform: translateY(0) scale(1);
         }
         
-        /* 6 Items taking 2.5s total to start animating */
-        .sidebar-open .menu-item-box:nth-child(1) { transition-delay: 0.0s; }
-        .sidebar-open .menu-item-box:nth-child(2) { transition-delay: 0.5s; }
-        .sidebar-open .menu-item-box:nth-child(3) { transition-delay: 1.0s; }
-        .sidebar-open .menu-item-box:nth-child(4) { transition-delay: 1.5s; }
-        .sidebar-open .menu-item-box:nth-child(5) { transition-delay: 2.0s; }
-        .sidebar-open .menu-item-box:nth-child(6) { transition-delay: 2.5s; } 
+        .sidebar-open .menu-item-box:nth-child(1) { transition-delay: 0.0s; } /* Instantly starts with modal */
+        .sidebar-open .menu-item-box:nth-child(2) { transition-delay: 0.5s; } /* Half sec after 1st */
+        .sidebar-open .menu-item-box:nth-child(3) { transition-delay: 1.0s; } /* Half sec after 2nd */
+        .sidebar-open .menu-item-box:nth-child(4) { transition-delay: 1.5s; } /* Half sec after 3rd */
+        .sidebar-open .menu-item-box:nth-child(5) { transition-delay: 2.0s; } /* Half sec after 4th */
+        .sidebar-open .menu-item-box:nth-child(6) { transition-delay: 2.5s; } /* Half sec after 5th */
 
         /* Link Hover Enhancements */
         a.menu-item-box:hover {

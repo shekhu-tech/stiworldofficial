@@ -136,106 +136,136 @@
         .sidebar-open .menu-toggle span:nth-child(3) { transform: translateY(-10.5px) rotate(-45deg); width: 100%; }
 
         /* ========================================================================
-           NEW 11D CENTERED SIDEBAR (MODAL) AND SECTION ANIMATIONS
+           UPDATED 11D ULTRA PROMAX SIDEBAR (FEB 2026) - VERTICALLY/HORIZONTALLY CENTERED, COMPACT HEIGHT
            ======================================================================== */
         .sidebar-overlay { 
             position: fixed; inset: 0; 
-            background: rgba(0,0,0,0.95); 
-            backdrop-filter: blur(15px); 
+            background: rgba(0,0,0,0.96); 
+            backdrop-filter: blur(20px); 
             z-index: 90; opacity: 0; visibility: hidden; 
             transition: all 0.5s ease; 
         }
         .sidebar-open .sidebar-overlay { opacity: 1; visibility: visible; }
 
-        /* Outer Container Centered */
+        /* Outer Container Centered - 11D Ultra Promax */
         .sidebar-menu-centered {
-            position: fixed; top: 50%; left: 50%;
+            position: fixed; 
+            top: 50%; 
+            left: 50%;
             transform: translate(-50%, -50%) scale(0.9);
-            width: 90%; max-width: 420px; max-height: 95vh;
-            z-index: 100; opacity: 0; visibility: hidden;
-            display: flex; flex-direction: column; gap: 12px;
+            width: 90%; 
+            max-width: 440px; 
+            max-height: 90vh; /* allows compact height */
+            z-index: 100; 
+            opacity: 0; 
+            visibility: hidden;
+            display: flex; 
+            flex-direction: column; 
+            gap: 10px; /* reduced gap */
             transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-            padding: 16px;
-            border-radius: 12px;
+            padding: 12px; /* reduced padding */
             
-            /* OUTER SHINING 11D BORDER */
-            border: 3px solid transparent;
-            background-image: linear-gradient(#050505, #050505), linear-gradient(90deg, #FFD700, #FFFFFF, #D4AF37, #FFD700, #FFD700);
+            /* OUTER SHINING 11D BORDER - PROMAX INTENSITY */
+            border: 2px solid transparent; /* slightly thinner for sleekness */
+            background-image: linear-gradient(#0b0b0b, #0b0b0b), linear-gradient(115deg, #FFD700, #FFFFFF, #FFD700, #FFFFFF, #D4AF37);
             background-origin: border-box;
             background-clip: padding-box, border-box;
             background-size: 300% auto;
-            animation: shine11dBorder 4s linear infinite;
-            box-shadow: 0 0 40px rgba(255, 215, 0, 0.3), inset 0 0 25px rgba(255, 215, 0, 0.15);
+            animation: shine11dBorder 3.5s linear infinite;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.4), inset 0 0 30px rgba(255, 215, 0, 0.2);
+            border-radius: 18px; /* modern smoothness */
         }
         
         .sidebar-open .sidebar-menu-centered {
             transform: translate(-50%, -50%) scale(1);
-            opacity: 1; visibility: visible;
+            opacity: 1; 
+            visibility: visible;
         }
 
-        /* Individual Box Sections */
+        /* Individual Box Sections - REDUCED HEIGHT & SLIM */
         .menu-item-box {
-            display: flex; align-items: center; 
-            padding: 18px 20px;
-            text-decoration: none; color: #fff; font-weight: 900;
-            letter-spacing: 2px; font-size: 1.1rem;
-            border-radius: 8px; cursor: pointer;
+            display: flex; 
+            align-items: center; 
+            padding: 12px 18px; /* reduced from 18px 20px */
+            text-decoration: none; 
+            color: #fff; 
+            font-weight: 900;
+            letter-spacing: 2px; 
+            font-size: 0.95rem; /* slightly smaller */
+            border-radius: 10px; /* smoother */
             
-            /* INNER SHINING 11D BORDER FOR EVERY SECTION */
-            border: 2px solid transparent;
-            background-image: linear-gradient(#0c0a06, #0c0a06), linear-gradient(90deg, #FFD700, #FFFFFF, #D4AF37, #FFD700);
+            /* INNER SHINING 11D BORDER - more vibrant */
+            border: 1.8px solid transparent;
+            background-image: linear-gradient(#0f0e0a, #0f0e0a), linear-gradient(105deg, #FFD700, #FFFFFF, #D4AF37, #FFD700);
             background-origin: border-box;
             background-clip: padding-box, border-box;
-            background-size: 200% auto;
+            background-size: 220% auto;
             animation: shine11dBorder 3s linear infinite;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2), inset 0 0 10px rgba(255, 215, 0, 0.1);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.25), inset 0 0 8px rgba(255, 215, 0, 0.15);
             
             /* Animation Setup */
             opacity: 0;
-            transform: translateY(-20px) scale(0.95);
-            /* Important: Removes delay on close so it hides smoothly */
+            transform: translateY(-18px) scale(0.96);
             transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.3s ease, background-image 0.3s ease;
         }
 
-        /* STAGGERED ANIMATIONS: Exactly 0.5s gaps upon opening */
+        /* STAGGERED ANIMATIONS - exactly 0.5s gaps */
         .sidebar-open .menu-item-box {
             opacity: 1;
             transform: translateY(0) scale(1);
         }
         
-        .sidebar-open .menu-item-box:nth-child(1) { transition-delay: 0.0s; } /* Instantly starts with modal */
-        .sidebar-open .menu-item-box:nth-child(2) { transition-delay: 0.5s; } /* Half sec after 1st */
-        .sidebar-open .menu-item-box:nth-child(3) { transition-delay: 1.0s; } /* Half sec after 2nd */
-        .sidebar-open .menu-item-box:nth-child(4) { transition-delay: 1.5s; } /* Half sec after 3rd */
-        .sidebar-open .menu-item-box:nth-child(5) { transition-delay: 2.0s; } /* Half sec after 4th */
-        .sidebar-open .menu-item-box:nth-child(6) { transition-delay: 2.5s; } /* Half sec after 5th */
+        .sidebar-open .menu-item-box:nth-child(1) { transition-delay: 0.0s; } 
+        .sidebar-open .menu-item-box:nth-child(2) { transition-delay: 0.5s; } 
+        .sidebar-open .menu-item-box:nth-child(3) { transition-delay: 1.0s; } 
+        .sidebar-open .menu-item-box:nth-child(4) { transition-delay: 1.5s; } 
+        .sidebar-open .menu-item-box:nth-child(5) { transition-delay: 2.0s; } 
+        .sidebar-open .menu-item-box:nth-child(6) { transition-delay: 2.5s; } 
 
         /* Link Hover Enhancements */
         a.menu-item-box:hover {
-            background-image: linear-gradient(#1a170e, #1a170e), linear-gradient(90deg, #FFFFFF, #FFD700, #FFFFFF);
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.6), inset 0 0 15px rgba(255, 215, 0, 0.3);
+            background-image: linear-gradient(#1f1c12, #1f1c12), linear-gradient(90deg, #FFFFFF, #FFD700, #FFFFFF);
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.7), inset 0 0 20px rgba(255, 215, 0, 0.4);
             color: #FFD700;
+            transform: scale(1.02) translateY(-2px);
         }
 
         .menu-item-box i.menu-icon {
-            width: 45px; text-align: left; font-size: 1.4rem;
-            color: #FFD700; filter: drop-shadow(0 0 8px gold);
+            width: 40px; /* reduced */
+            text-align: left; 
+            font-size: 1.3rem; /* slightly smaller */
+            color: #FFD700; 
+            filter: drop-shadow(0 0 8px gold);
         }
         
         .menu-item-box span.menu-text {
             font-family: 'Syncopate', sans-serif;
-            font-size: 1rem;
+            font-size: 0.85rem; /* more compact */
+            letter-spacing: 1.5px;
         }
 
-        /* Header Specific */
+        /* Header Specific - compact with logo instead of icon */
         .menu-item-box.menu-header {
-            justify-content: space-between; padding: 14px 20px; cursor: default;
+            justify-content: space-between; 
+            padding: 10px 16px; /* reduced height */
+            cursor: default;
+        }
+        /* Logo image styling inside header */
+        .menu-header-logo {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 10px gold);
         }
 
-        /* Footer Specific */
+        /* Footer Specific - more compact */
         .menu-item-box.menu-footer {
-            flex-direction: column; justify-content: center; align-items: center;
-            gap: 15px; padding: 20px; cursor: default;
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center;
+            gap: 8px; 
+            padding: 14px; /* reduced */
+            cursor: default;
         }
 
         @keyframes shine11dBorder {
@@ -276,6 +306,7 @@
         @media (max-width: 380px) {
             .card-custom-bg p { font-size: 0.7rem; line-clamp: 2; }
             .card-custom-bg h4 { font-size: 1.6rem; }
+            .menu-item-box span.menu-text { font-size: 0.75rem; }
         }
         .gold-border-glow { box-shadow: 0 0 15px rgba(255,215,0,0.3), inset 0 0 20px rgba(255,215,0,0.1); }
         .brand-name-mobile { display: inline-block; }
@@ -298,7 +329,8 @@
                         <div class="absolute inset-0 bg-gold-500 blur-xl opacity-40 group-hover:opacity-70 transition-all"></div>
                         <img src="sti.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STI" class="h-10 sm:h-12 object-contain relative z-10 filter drop-shadow-[0_0_12px_gold]">
                     </div>
-                    <span class="text-11d-ultra text-xs sm:text-lg brand-name-mobile animate-pulse-11d">STIWORLDOFFICIAL</span>
+                    <!-- Header Text Replaced with PNG Image -->
+                    <img src="stin.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STIWORLDOFFICIAL" class="h-6 sm:h-8 object-contain filter drop-shadow-[0_0_12px_gold] animate-pulse-11d">
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-12">
@@ -320,15 +352,19 @@
 
     <div id="sidebar-overlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
     
+    <!-- UPDATED SIDEBAR CONTENT - LOGO REPLACED ICON IN FIRST SECTION AND TEXT REPLACED WITH PNG -->
     <div id="sidebar-menu" class="sidebar-menu-centered">
         
+        <!-- FIRST SECTION: STIWORLD OFFICIAL with LOGO instead of gear icon AND TEXT REPLACED WITH PNG -->
         <div class="menu-item-box menu-header">
-            <div class="flex items-center gap-3">
-                <i class="fa-solid fa-gear text-gold-400 text-2xl filter drop-shadow-[0_0_8px_gold] animate-spin-slow"></i>
-                <span class="text-11d-ultra text-sm tracking-widest">STIWORLDOFFICIAL</span>
+            <div class="flex items-center gap-2">
+                <!-- Logo image -->
+                <img src="sti.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'; this.classList.add('fallback-icon')" alt="STI" class="menu-header-logo w-8 h-8 object-contain filter drop-shadow-[0_0_10px_gold]">
+                <!-- Text replaced with PNG image -->
+                <img src="stin.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STIWORLDOFFICIAL" class="h-5 object-contain filter drop-shadow-[0_0_8px_gold]">
             </div>
             <button onclick="toggleSidebar()" class="text-gray-400 hover:text-red-500 transition-all hover:rotate-90 duration-300">
-                <i class="fa-solid fa-xmark text-2xl filter drop-shadow-[0_0_5px_currentColor]"></i>
+                <i class="fa-solid fa-xmark text-xl filter drop-shadow-[0_0_5px_currentColor]"></i>
             </button>
         </div>
         
@@ -353,12 +389,12 @@
         </a>
         
         <div class="menu-item-box menu-footer">
-            <div class="flex justify-center gap-6">
-                <a href="#" class="text-gray-500 hover:text-gold-400 transition transform hover:scale-110"><i class="fa-brands fa-instagram text-2xl"></i></a>
-                <a href="#" class="text-gray-500 hover:text-gold-400 transition transform hover:scale-110"><i class="fa-brands fa-facebook-f text-2xl"></i></a>
-                <a href="#" class="text-gray-500 hover:text-gold-400 transition transform hover:scale-110"><i class="fa-brands fa-youtube text-2xl"></i></a>
+            <div class="flex justify-center gap-5">
+                <a href="#" class="text-gray-500 hover:text-gold-400 transition transform hover:scale-110"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="#" class="text-gray-500 hover:text-gold-400 transition transform hover:scale-110"><i class="fa-brands fa-facebook-f text-xl"></i></a>
+                <a href="#" class="text-gray-500 hover:text-gold-400 transition transform hover:scale-110"><i class="fa-brands fa-youtube text-xl"></i></a>
             </div>
-            <p class="text-center text-[9px] text-gray-500 tracking-[0.4em] uppercase font-black font-display mt-2 drop-shadow-[0_0_5px_rgba(255,215,0,0.2)]">11D Ultra Gold v6.9</p>
+            <p class="text-center text-[8px] text-gray-500 tracking-[0.4em] uppercase font-black font-display mt-1 drop-shadow-[0_0_5px_rgba(255,215,0,0.2)]">11D Ultra Gold v6.9</p>
         </div>
 
     </div>
@@ -499,9 +535,9 @@
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
                 <div class="text-center md:text-left flex flex-col md:flex-row items-center gap-4">
-                    <img src="stione.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STI" class="h-16 w-16 object-contain filter drop-shadow-[0_0_25px_gold] animate-float">
+                    <img src="stione.png" onerror="this.src='sti.png'" alt="STI" class="h-16 w-16 object-contain filter drop-shadow-[0_0_25px_gold] animate-float">
                     <div>
-                        <h3 class="text-xl font-black text-11d-ultra mb-1">STIWORLDOFFICIAL</h3>
+                        <img src="stin.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STIWORLDOFFICIAL" class="h-5 object-contain filter drop-shadow-[0_0_8px_gold]">
                         <p class="text-gray-500 text-[8px] uppercase tracking-[0.3em] font-black">Your True Guide</p>
                     </div>
                 </div>

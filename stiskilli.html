@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Updated SEO Title -->
+    <title>STISKilli - AI Education & Career Guidance App</title>
+    <!-- Updated SEO Description -->
+    <meta name="description" content="Download STISKilli, the ultimate educational content and career guidance app. Explore AI-based career opportunities, tech skills, and shape your professional future.">
+    <!-- Updated SEO Keywords -->
+    <meta name="keywords" content="STISKilli, SkillAura, AI App, Education App, Career Guidance, AI Career, Tech Skills, STI World Official, Future Jobs"> 
+    <meta name="author" content="STI World Official">
+    <meta name="theme-color" content="#FFD700">
+
+    <!-- Updated OG Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://stiworldofficial.com/">
+    <meta property="og:title" content="STISKilli - AI Education & Career Guidance App">
+    <meta property="og:description" content="Master AI skills and explore career opportunities with STISKilli. Your ultimate educational companion by STI World.">
+    <meta property="og:image" content="sti.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: { 300: '#FFE55C', 400: '#FFD700', 500: '#FFC107', 600: '#D4AF37', 700: '#B8860B' },
+                        obsidian: '#0a0a0a',
+                    },
+                    fontFamily: { display: ['Syncopate', 'sans-serif'], body: ['Exo 2', 'sans-serif'] },
+                    animation: {
+                        'spin-slow': 'spin 8s linear infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'shimmer': 'shimmer 3s linear infinite',
+                        'glow-pulse': 'glowPulse 3s infinite alternate',
+                        'gold-shine': 'shine 3s linear infinite',
+                        'border-dance': 'borderDance 4s linear infinite',
+                        'pulse-11d': 'pulse11d 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
+                        shimmer: { '0%': { backgroundPosition: '-1000px 0' }, '100%': { backgroundPosition: '1000px 0' } },
+                        glowPulse: { '0%': { boxShadow: '0 0 10px rgba(255, 215, 0, 0.2)' }, '100%': { boxShadow: '0 0 35px rgba(255, 215, 0, 0.7)' } },
+                        shine: { '0%': { backgroundPosition: '200% center' }, '100%': { backgroundPosition: '-200% center' } },
+                        borderDance: { '0%,100%': { borderColor: '#FFD700' }, '25%': { borderColor: '#FFFFFF' }, '50%': { borderColor: '#D4AF37' }, '75%': { borderColor: '#FFF5B0' } },
+                        pulse11d: { '0%,100%': { opacity: 1, filter: 'drop-shadow(0 0 5px gold)' }, '50%': { opacity: 0.9, filter: 'drop-shadow(0 0 20px #FFD700)' } }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Updated FontAwesome to latest 6.5.1 version to ensure X icon loads correctly -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700;900&family=Exo+2:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --neon-gold: #FFD700; --deep-gold: #D4AF37; --dark-bg: #050505; }
+        body { font-family: 'Exo 2', sans-serif; background: #050505; color: #f0f0f0; overflow-x: hidden; }
+        h1,h2,h3,.brand-font { font-family: 'Syncopate', sans-serif; }
+
+        .bg-mesh { position: fixed; inset:0; z-index:-2; background: radial-gradient(circle at 40% 50%, #1e1a10 0%, #000 100%); }
+        .bg-particles { position: fixed; inset:0; z-index:-1; background-image: radial-gradient(var(--deep-gold) 1.2px, transparent 1px); background-size: 45px 45px; opacity: 0.1; }
+
+        /* 11D shiny text — white + gold */
+        .text-11d-ultra {
+            background: linear-gradient(90deg, #FFFFFF 0%, #FFD700 15%, #FFFFFF 30%, #FFD700 45%, #FFFFFF 60%, #FFD700 75%, #FFFFFF 90%);
+            background-size: 250% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            animation: shine 3.5s linear infinite;
+            text-shadow: 0 0 15px rgba(255,255,255,0.4), 0 0 30px rgba(255,215,0,0.3);
+        }
+
+        /* --- APPLE iOS STYLE PREMIUM HEADER --- */
+        .header-main { 
+            background: rgba(15, 15, 15, 0.45); 
+            backdrop-filter: blur(35px) saturate(200%); 
+            -webkit-backdrop-filter: blur(35px) saturate(200%);
+            border-bottom: 0.5px solid rgba(255, 255, 255, 0.08); 
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); 
+            height: 85px; 
+        }
+        .header-scrolled { 
+            background: rgba(5, 5, 5, 0.7); 
+            backdrop-filter: blur(45px) saturate(200%); 
+            -webkit-backdrop-filter: blur(45px) saturate(200%);
+            border-bottom: 0.5px solid rgba(255, 215, 0, 0.25); 
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 215, 0, 0.1); 
+            height: 75px; 
+        }
+        
+        .nav-link { position: relative; letter-spacing: 2px; }
+        .nav-link::before { content: ''; position: absolute; inset: -6px -12px; background: #FFD700; opacity: 0; transform: skewX(-20deg); transition: 0.3s; z-index:-1; }
+        .nav-link:hover::before { opacity: 0.15; }
+        .nav-link:hover { color: #FFD700; text-shadow: 0 0 12px gold; }
+
+        /* --- ULTRA BOLD & SHINING 3-LINE TOGGLE MENU --- */
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 38px;
+            height: 24px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 101;
+            transition: all 0.3s ease;
+        }
+        .menu-toggle span {
+            display: block;
+            height: 3.5px;
+            background: linear-gradient(90deg, #FFD700 0%, #FFFFFF 50%, #FFD700 100%);
+            background-size: 200% auto;
+            border-radius: 6px;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.9), 0 0 25px rgba(255, 215, 0, 0.5), inset 0 0 2px rgba(255,255,255,0.8);
+            animation: toggleShine 1.5s linear infinite;
+        }
+        
+        @keyframes toggleShine {
+            to { background-position: -200% center; }
+        }
+
+        .menu-toggle span:nth-child(1) { width: 100%; }
+        .menu-toggle span:nth-child(2) { width: 65%; margin-left: auto; }
+        .menu-toggle span:nth-child(3) { width: 100%; }
+
+        .menu-toggle:hover span:nth-child(1) { width: 65%; }
+        .menu-toggle:hover span:nth-child(2) { width: 100%; background: linear-gradient(90deg, #FFFFFF, #FFD700, #FFFFFF); box-shadow: 0 0 20px rgba(255,255,255,1), 0 0 35px #FFD700; }
+        .menu-toggle:hover span:nth-child(3) { width: 65%; }
+        .menu-toggle:hover span { box-shadow: 0 0 15px rgba(255, 215, 0, 1), 0 0 30px rgba(255, 215, 0, 0.8); }
+
+        .sidebar-open .menu-toggle span:nth-child(1) { transform: translateY(10.5px) rotate(45deg); width: 100%; }
+        .sidebar-open .menu-toggle span:nth-child(2) { opacity: 0; transform: translateX(20px) scale(0); }
+        .sidebar-open .menu-toggle span:nth-child(3) { transform: translateY(-10.5px) rotate(-45deg); width: 100%; }
+
+        /* ========================================================================
+           UPDATED 11D ULTRA PROMAX SIDEBAR (FEB 2026) - VERTICALLY/HORIZONTALLY CENTERED, COMPACT HEIGHT
+           ======================================================================== */
+        .sidebar-overlay { 
+            position: fixed; inset: 0; 
+            background: rgba(0,0,0,0.96); 
+            backdrop-filter: blur(20px); 
+            z-index: 90; opacity: 0; visibility: hidden; 
+            transition: all 0.5s ease; 
+        }
+        .sidebar-open .sidebar-overlay { opacity: 1; visibility: visible; }
+
+        /* Outer Container Centered - 11D Ultra Promax */
+        .sidebar-menu-centered {
+            position: fixed; 
+            top: 50%; 
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            width: 90%; 
+            max-width: 440px; 
+            max-height: 90vh; /* allows compact height */
+            z-index: 100; 
+            opacity: 0; 
+            visibility: hidden;
+            display: flex; 
+            flex-direction: column; 
+            gap: 10px; /* reduced gap */
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            padding: 12px; /* reduced padding */
+            
+            /* OUTER SHINING 11D BORDER - PROMAX INTENSITY */
+            border: 2px solid transparent; /* slightly thinner for sleekness */
+            background-image: linear-gradient(#0b0b0b, #0b0b0b), linear-gradient(115deg, #FFD700, #FFFFFF, #FFD700, #FFFFFF, #D4AF37);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            background-size: 300% auto;
+            animation: shine11dBorder 3.5s linear infinite;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.4), inset 0 0 30px rgba(255, 215, 0, 0.2);
+            border-radius: 18px; /* modern smoothness */
+        }
+        
+        .sidebar-open .sidebar-menu-centered {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1; 
+            visibility: visible;
+        }
+
+        /* Individual Box Sections - REDUCED HEIGHT & SLIM */
+        .menu-item-box {
+            display: flex; 
+            align-items: center; 
+            padding: 12px 18px; /* reduced from 18px 20px */
+            text-decoration: none; 
+            color: #fff; 
+            font-weight: 900;
+            letter-spacing: 2px; 
+            font-size: 0.95rem; /* slightly smaller */
+            border-radius: 10px; /* smoother */
+            
+            /* INNER SHINING 11D BORDER - more vibrant */
+            border: 1.8px solid transparent;
+            background-image: linear-gradient(#0f0e0a, #0f0e0a), linear-gradient(105deg, #FFD700, #FFFFFF, #D4AF37, #FFD700);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            background-size: 220% auto;
+            animation: shine11dBorder 3s linear infinite;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.25), inset 0 0 8px rgba(255, 215, 0, 0.15);
+            
+            /* Animation Setup */
+            opacity: 0;
+            transform: translateY(-18px) scale(0.96);
+            transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.3s ease, background-image 0.3s ease;
+        }
+
+        /* STAGGERED ANIMATIONS - exactly 0.5s gaps */
+        .sidebar-open .menu-item-box {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        
+        .sidebar-open .menu-item-box:nth-child(1) { transition-delay: 0.0s; } 
+        .sidebar-open .menu-item-box:nth-child(2) { transition-delay: 0.5s; } 
+        .sidebar-open .menu-item-box:nth-child(3) { transition-delay: 1.0s; } 
+        .sidebar-open .menu-item-box:nth-child(4) { transition-delay: 1.5s; } 
+        .sidebar-open .menu-item-box:nth-child(5) { transition-delay: 2.0s; } 
+        .sidebar-open .menu-item-box:nth-child(6) { transition-delay: 2.5s; } 
+
+        /* Link Hover Enhancements */
+        a.menu-item-box:hover {
+            background-image: linear-gradient(#1f1c12, #1f1c12), linear-gradient(90deg, #FFFFFF, #FFD700, #FFFFFF);
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.7), inset 0 0 20px rgba(255, 215, 0, 0.4);
+            color: #FFD700;
+            transform: scale(1.02) translateY(-2px);
+        }
+
+        .menu-item-box i.menu-icon {
+            width: 40px; /* reduced */
+            text-align: left; 
+            font-size: 1.3rem; /* slightly smaller */
+            color: #FFD700; 
+            filter: drop-shadow(0 0 8px gold);
+        }
+        
+        .menu-item-box span.menu-text {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 0.85rem; /* more compact */
+            letter-spacing: 1.5px;
+        }
+
+        /* Header Specific - compact with logo instead of icon */
+        .menu-item-box.menu-header {
+            justify-content: space-between; 
+            padding: 10px 16px; /* reduced height */
+            cursor: default;
+        }
+        /* Logo image styling inside header */
+        .menu-header-logo {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 10px gold);
+        }
+
+        /* Footer Specific - more compact */
+        .menu-item-box.menu-footer {
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center;
+            gap: 8px; 
+            padding: 14px; /* reduced */
+            cursor: default;
+        }
+
+        @keyframes shine11dBorder {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        /* ======================================================================== */
+
+
+        /* 3D CAROUSEL */
+        .scene { perspective: 1600px; width:100%; display:flex; justify-content:center; align-items:center; margin:0; padding:0; position:relative; }
+        .carousel { width:100%; height:100%; position:absolute; transform-style: preserve-3d; transition: transform 1s cubic-bezier(0.15, 0.9, 0.25, 1); }
+        .carousel__cell { position: absolute; left:50%; top:50%; border: 2px solid rgba(255,215,0,0.5); border-radius: 12px; background:#000; box-shadow: 0 0 30px rgba(255,215,0,0.3); overflow: hidden; }
+        .carousel__cell img { width:100%; height:100%; object-fit:contain; display:block; filter: brightness(1.05) contrast(1.1); transition:0.4s; }
+        .carousel__cell:hover img { transform: scale(1.04); filter: brightness(1.2) drop-shadow(0 0 8px gold); }
+
+        .footer-ultra { background: radial-gradient(ellipse at 50% 0%, #2a2418 0%, #000000 80%); border-top: 1px solid rgba(255,215,0,0.4); box-shadow: 0 -20px 60px black; position:relative; }
+        .footer-glow { position: absolute; top:0; left:50%; transform:translateX(-50%); width:70%; height:2px; background: linear-gradient(90deg,transparent,#FFD700,transparent); box-shadow:0 0 40px #FFD700; }
+
+        @media (max-width: 380px) {
+            .menu-item-box span.menu-text { font-size: 0.75rem; }
+        }
+        .gold-border-glow { box-shadow: 0 0 15px rgba(255,215,0,0.3), inset 0 0 20px rgba(255,215,0,0.1); }
+        .brand-name-mobile { display: inline-block; }
+        
+        .btn-android:hover i { color: #000; }
+        .btn-windows:hover i { color: #000; }
+        .btn-ios:hover i { color: #000; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen" id="mainBody">
+    <div class="bg-mesh"></div>
+    <div class="bg-particles"></div>
+
+    <header id="mainHeader" class="fixed w-full z-[80] top-0 header-main flex items-center">
+        <div class="absolute bottom-0 left-0 w-full h-[0.5px] bg-gradient-to-r from-transparent via-gold-400 to-transparent opacity-50"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="flex items-center justify-between">
+                <div class="flex-shrink-0 cursor-pointer group flex items-center gap-2 sm:gap-3">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gold-500 blur-xl opacity-40 group-hover:opacity-70 transition-all"></div>
+                        <img src="sti.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STI" class="h-10 sm:h-12 object-contain relative z-10 filter drop-shadow-[0_0_12px_gold]">
+                    </div>
+                    <!-- Header Text Replaced with PNG Image -->
+                    <img src="stin.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STIWORLDOFFICIAL" class="h-6 sm:h-8 object-contain filter drop-shadow-[0_0_12px_gold] animate-pulse-11d">
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-12">
+                        <a href="#" class="nav-link text-xs font-black text-white uppercase tracking-widest">Home</a>
+                        <a href="#apps" class="nav-link text-xs font-black text-white uppercase tracking-widest">STISKilli</a> <!-- Updated link name -->
+                        <a href="#contact" class="nav-link text-xs font-black text-white uppercase tracking-widest">Connect</a>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="sidebar-overlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
+    
+    <!-- UPDATED SIDEBAR CONTENT -->
+    <div id="sidebar-menu" class="sidebar-menu-centered">
+        
+        <!-- FIRST SECTION -->
+        <div class="menu-item-box menu-header">
+            <div class="flex items-center gap-2">
+                <!-- Logo image -->
+                <img src="sti.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'; this.classList.add('fallback-icon')" alt="STI" class="menu-header-logo w-8 h-8 object-contain filter drop-shadow-[0_0_10px_gold]">
+                <!-- Text replaced with PNG image -->
+                <img src="stin.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STIWORLDOFFICIAL" class="h-5 object-contain filter drop-shadow-[0_0_8px_gold]">
+            </div>
+            <button onclick="toggleSidebar()" class="text-gray-400 hover:text-red-500 transition-all hover:rotate-90 duration-300">
+                <i class="fa-solid fa-xmark text-xl filter drop-shadow-[0_0_5px_currentColor]"></i>
+            </button>
+        </div>
+        
+        <a href="#" onclick="toggleSidebar()" class="menu-item-box">
+            <i class="fa-solid fa-house menu-icon"></i> 
+            <span class="menu-text">HOME</span>
+        </a>
+        
+        <a href="#apps" onclick="toggleSidebar()" class="menu-item-box">
+            <i class="fa-solid fa-graduation-cap menu-icon"></i> <!-- Updated icon for Education/AI -->
+            <span class="menu-text">STISKilli APP</span> <!-- Updated link name -->
+        </a>
+        
+        <a href="#contact" onclick="toggleSidebar()" class="menu-item-box">
+            <i class="fa-solid fa-bolt menu-icon"></i> 
+            <span class="menu-text">FEATURES</span>
+        </a>
+        
+        <a href="#contact" onclick="toggleSidebar()" class="menu-item-box">
+            <i class="fa-solid fa-envelope menu-icon"></i> 
+            <span class="menu-text">CONNECT</span>
+        </a>
+        
+        <div class="menu-item-box menu-footer">
+            <div class="flex justify-center gap-5">
+                <a href="https://www.instagram.com/stiworldofficial?igsh=MXJhaGJtcXJmM2Fydg==" class="text-gray-500 hover:text-gold-400 transition transform hover:scale-110"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="https://www.facebook.com/share/17wbEfuxwL/?mibextid=wwXIfr" class="text-gray-500 hover:text-gold-400 transition transform hover:scale-110"><i class="fa-brands fa-facebook-f text-xl"></i></a>
+                <a href="https://youtube.com/@stiworldofficial?si=S0xxwoN56tIV-6Yv" class="text-gray-500 hover:text-gold-400 transition transform hover:scale-110"><i class="fa-brands fa-youtube text-xl"></i></a>
+                <a href="https://x.com/stiworldoff3" class="text-gray-500 hover:text-gold-400 transition transform hover:scale-110"><i class="fa-brands fa-x-twitter text-xl"></i></a>
+            </div>
+            <img src="stin.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STIWORLDOFFICIAL" class="h-6 sm:h-8 object-contain filter drop-shadow-[0_0_12px_gold] animate-pulse-11d">
+        </div>
+
+    </div>
+
+    <main class="flex-grow pt-[85px] relative overflow-hidden flex flex-col">
+        <div class="absolute top-0 left-0 w-full h-[700px] overflow-hidden z-[-1]">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-20 contrast-125 saturate-0">
+                <source src="https://cdn.pixabay.com/video/2020/04/18/36468-409477942_large.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-b from-[#050505]/70 via-[#050505]/90 to-black"></div>
+        </div>
+
+        <div class="w-full relative z-10 mt-4">
+            <div class="scene" id="sceneContainer">
+                <div class="carousel" id="carousel"></div>
+            </div>
+        </div>
+        <div class="flex justify-center gap-6 mt-6 mb-6 relative z-10">
+            <button id="prevBtn" class="w-12 h-12 rounded-full border-2 border-gold-500/70 text-gold-400 hover:bg-gold-500 hover:text-black hover:shadow-[0_0_35px_gold] transition-all flex items-center justify-center bg-black/50 backdrop-blur-xl active:scale-90"><i class="fa-solid fa-arrow-left text-lg"></i></button>
+            <button id="nextBtn" class="w-12 h-12 rounded-full border-2 border-gold-500/70 text-gold-400 hover:bg-gold-500 hover:text-black hover:shadow-[0_0_35px_gold] transition-all flex items-center justify-center bg-black/50 backdrop-blur-xl active:scale-90"><i class="fa-solid fa-arrow-right text-lg"></i></button>
+        </div>
+
+        <!-- NEW STISKilli SECTION (Replaces Fitness App) -->
+        <div id="apps" class="max-w-4xl mx-auto px-4 mt-8 pb-24 w-full flex flex-col items-center text-center relative z-10">
+            
+            <div class="flex items-center justify-center mb-6">
+                <div class="h-[2px] w-12 sm:w-20 bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
+                <h3 class="mx-4 text-3xl sm:text-5xl font-black text-white tracking-[0.2em] font-display drop-shadow-[0_0_15px_gold]">STISKilli</h3>
+                <div class="h-[2px] w-12 sm:w-20 bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
+            </div>
+
+            <h4 class="text-gold-400 text-lg sm:text-2xl font-bold mb-6 uppercase tracking-[0.15em] drop-shadow-[0_0_8px_gold]">
+                Your Ultimate AI & Career Guide
+            </h4>
+
+            <div class="bg-black/40 backdrop-blur-lg border border-gold-500/30 rounded-3xl p-6 sm:p-10 mb-10 shadow-[0_0_30px_rgba(255,215,0,0.1)] gold-border-glow">
+                <p class="text-gray-300 text-sm sm:text-base leading-relaxed max-w-3xl font-medium">
+                    Transform your career and mind with <strong class="text-white drop-shadow-[0_0_5px_gold]">STISKilli</strong>. Whether  Prepration for <strong class="text-gold-300"> All Government Jobs In India</strong>, 
+                  you are exploring the world of <strong class="text-gold-300">Artificial Intelligence</strong>,
+                  seeking expert <strong class="text-gold-300">Career Guidance</strong>, mastering modern <strong class="text-gold-300">Tech Skills</strong>, 
+                  finding the right path with <strong class="text-gold-300">Educational Content</strong>, or looking for <strong class="text-gold-300">AI-based Opportunities</strong>, 
+                  STISKilli provides complete guidance. Aapki professional journey ab aur bhi aasan, effective aur guided banegi. Get expert roadmaps, detailed career guides, and a complete educational ecosystem right in your pocket!
+                </p>
+            </div>
+
+            <!-- 3 Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 w-full justify-center max-w-3xl">
+                <!-- For Android -->
+                <a href="https://play.google.com/store/apps/details?id=com.ai.skillaura" target="_blank" class="btn-android w-full sm:w-1/3 flex items-center justify-center gap-3 py-4 bg-white/10 backdrop-blur-md border border-white/20 hover:border-green-500 hover:bg-green-500 text-white hover:text-black hover:shadow-[0_0_25px_rgba(34,197,94,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[11px]">
+                    <i class="fa-brands fa-android text-xl text-green-400 transition-colors"></i> For Android
+                </a>
+                
+                <!-- For Windows -->
+                <a href="#" class="btn-windows w-full sm:w-1/3 flex items-center justify-center gap-3 py-4 bg-white/5 backdrop-blur-md border border-white/10 hover:border-blue-500 hover:bg-blue-500 text-gray-300 hover:text-black hover:shadow-[0_0_25px_rgba(59,130,246,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[11px] relative overflow-hidden">
+                    <i class="fa-brands fa-windows text-xl text-blue-400 transition-colors"></i> For Windows
+                    <span class="absolute bottom-1 right-2 text-[8px] opacity-70">Coming soon..</span>
+                </a>
+                
+                <!-- For Apple -->
+                <a href="#" class="btn-ios w-full sm:w-1/3 flex items-center justify-center gap-3 py-4 bg-white/5 backdrop-blur-md border border-white/10 hover:border-white hover:bg-white text-gray-300 hover:text-black hover:shadow-[0_0_25px_rgba(255,255,255,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[11px] relative overflow-hidden">
+                   <i class="fa-brands fa-apple text-xl text-white transition-colors"></i> For Apple
+                   <span class="absolute bottom-1 right-2 text-[8px] opacity-70">Coming soon..</span>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer id="contact" class="footer-ultra py-12 px-4 relative z-10">
+        <div class="footer-glow animate-pulse"></div>
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-center md:text-left flex flex-col md:flex-row items-center gap-4">
+                    <img src="stione.png" onerror="this.src='sti.png'" alt="STI" class="h-16 w-16 object-contain filter drop-shadow-[0_0_25px_gold] animate-float">
+                    <div>
+                        <img src="stin.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STIWORLDOFFICIAL" class="h-5 object-contain filter drop-shadow-[0_0_8px_gold]">
+                        <p class="text-gray-500 text-[8px] uppercase tracking-[0.3em] font-black">Your True Guide</p>
+                    </div>
+                </div>
+                <div class="flex gap-5">
+                    <a href="https://www.instagram.com/stiworldofficial?igsh=MXJhaGJtcXJmM2Fydg==" class="w-10 h-10 rounded-full border-2 border-gray-700/80 bg-white/5 flex items-center justify-center text-gray-300 hover:text-white hover:border-gold-500 hover:bg-gold-500 hover:shadow-[0_0_30px_gold] transition-all duration-300 transform hover:-translate-y-1"><i class="fa-brands fa-instagram text-lg"></i></a>
+                    <a href="https://www.facebook.com/share/17wbEfuxwL/?mibextid=wwXIfr" class="w-10 h-10 rounded-full border-2 border-gray-700/80 bg-white/5 flex items-center justify-center text-gray-300 hover:text-white hover:border-gold-500 hover:bg-gold-500 hover:shadow-[0_0_30px_gold] transition-all duration-300 transform hover:-translate-y-1"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+                    <a href="https://youtube.com/@stiworldofficial?si=S0xxwoN56tIV-6Yv" class="w-10 h-10 rounded-full border-2 border-gray-700/80 bg-white/5 flex items-center justify-center text-gray-300 hover:text-white hover:border-gold-500 hover:bg-gold-500 hover:shadow-[0_0_30px_gold] transition-all duration-300 transform hover:-translate-y-1"><i class="fa-brands fa-youtube text-lg"></i></a>
+                    <a href="https://x.com/stiworldoff3" class="w-10 h-10 rounded-full border-2 border-gray-700/80 bg-white/5 flex items-center justify-center text-gray-300 hover:text-white hover:border-gold-500 hover:bg-gold-500 hover:shadow-[0_0_30px_gold] transition-all duration-300 transform hover:-translate-y-1"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+                </div>
+            </div>
+            <div class="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[8px] text-gray-600 font-black uppercase tracking-widest">
+                <p>© 2026 STI World Official. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-gold-500 transition underline decoration-gold-500 underline-offset-4">Privacy</a>
+                    <a href="#" class="hover:text-gold-500 transition underline decoration-gold-500 underline-offset-4">Terms</a>
+                    <a href="#" class="hover:text-gold-500 transition underline decoration-gold-500 underline-offset-4">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const header = document.getElementById('mainHeader');
+            
+            // Header scroll animation
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+            });
+
+            // Sidebar toggler
+            window.toggleSidebar = function() { document.getElementById('mainBody').classList.toggle('sidebar-open'); };
+
+            // 3D Carousel logic (Slider Images strictly same)
+            const carousel = document.getElementById('carousel');
+            const scene = document.getElementById('sceneContainer');
+            const cellCount = 5; // Updated to display only 5 images
+            let selectedIndex = 0, cellWidth, cellHeight, radius;
+            const images = [
+                'one.png', 'two.png', 'three.png', 'four.png', 'five.png'
+            ];
+            
+            function createCarousel() {
+                carousel.innerHTML = '';
+                for (let i=0; i<cellCount; i++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'carousel__cell';
+                    const img = document.createElement('img'); 
+                    img.src = images[i];
+                    cell.appendChild(img); 
+                    carousel.appendChild(cell);
+                }
+                updateDimensions();
+            }
+            
+            function updateDimensions() {
+                if (window.innerWidth < 768) {
+                    cellWidth = window.innerWidth; 
+                } else {
+                    cellWidth = Math.min(window.innerWidth * 0.8, 800); 
+                }
+                
+                cellHeight = cellWidth * (9 / 16); 
+                radius = Math.round((cellWidth/2) / Math.tan(Math.PI/cellCount));
+                scene.style.height = cellHeight + 'px';
+                
+                const cells = document.querySelectorAll('.carousel__cell');
+                const theta = 360/cellCount;
+                cells.forEach((cell, i) => {
+                    cell.style.width = cellWidth+'px'; 
+                    cell.style.height = cellHeight+'px';
+                    cell.style.marginLeft = -(cellWidth/2)+'px'; 
+                    cell.style.marginTop = -(cellHeight/2)+'px';
+                    cell.style.transform = `rotateY(${theta*i}deg) translateZ(${radius}px)`;
+                });
+                rotateCarousel();
+            }
+            
+            function rotateCarousel() { 
+                carousel.style.transform = `translateZ(${-radius}px) rotateY(${(360/cellCount)*selectedIndex*-1}deg)`; 
+            }
+            
+            createCarousel();
+            window.addEventListener('resize', updateDimensions);
+            
+            document.getElementById('prevBtn').addEventListener('click', ()=>{ selectedIndex--; rotateCarousel(); });
+            document.getElementById('nextBtn').addEventListener('click', ()=>{ selectedIndex++; rotateCarousel(); });
+            
+            let autoRun = setInterval(()=>{ selectedIndex++; rotateCarousel(); }, 3500);
+            scene.addEventListener('mouseenter', ()=>clearInterval(autoRun));
+            scene.addEventListener('touchstart', ()=>clearInterval(autoRun));
+            scene.addEventListener('mouseleave', ()=> autoRun = setInterval(()=>{ selectedIndex++; rotateCarousel(); }, 3500));
+        })();
+    </script>
+</body>
+</html>

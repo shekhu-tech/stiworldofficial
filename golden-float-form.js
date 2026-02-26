@@ -2,8 +2,8 @@
   /* ===============================
      SIZE CONFIGURATION (Apne hisab se change karein)
   =============================== */
-  const BUTTON_SIZE = "40px"; // Button ki height aur width yahan se set karein
-  const ICON_SIZE = "25px";   // 🏠 Icon (font) ka size yahan se set karein
+  const BUTTON_SIZE = "35px"; // Button ki height aur width yahan se set karein
+  const ICON_SIZE = "17px";   // 🏠 Icon (font) ka size yahan se set karein
 
   /* ===============================
      STYLES – 11D ULTRA MODERN HOME

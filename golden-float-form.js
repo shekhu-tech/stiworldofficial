@@ -9,8 +9,8 @@
     right: 15px; /* Screen ke right side mein */
     top: 50%;
     transform: translateY(-50%);
-    width: 40px; 
-    height: 40px;
+    width: 45px; 
+    height: 45px;
     border-radius: 50%;
     background: linear-gradient(145deg, #1a1a1a, #000000);
     border: 1px solid rgba(255, 215, 0, 0.8);

@@ -46,7 +46,6 @@
             }
         }
     </script>
-    <!-- FontAwesome updated to 6.5.1 to support X (Twitter) icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700;900&family=Exo+2:wght@300;500;700;900&display=swap" rel="stylesheet">
     <style>
@@ -57,7 +56,6 @@
         .bg-mesh { position: fixed; inset:0; z-index:-2; background: radial-gradient(circle at 40% 50%, #1e1a10 0%, #000 100%); }
         .bg-particles { position: fixed; inset:0; z-index:-1; background-image: radial-gradient(var(--deep-gold) 1.2px, transparent 1px); background-size: 45px 45px; opacity: 0.1; }
 
-        /* 11D shiny text — white + gold */
         .text-11d-ultra {
             background: linear-gradient(90deg, #FFFFFF 0%, #FFD700 15%, #FFFFFF 30%, #FFD700 45%, #FFFFFF 60%, #FFD700 75%, #FFFFFF 90%);
             background-size: 250% auto;
@@ -70,7 +68,6 @@
             text-shadow: 0 0 15px rgba(255,255,255,0.4), 0 0 30px rgba(255,215,0,0.3);
         }
 
-        /* --- APPLE iOS STYLE PREMIUM HEADER --- */
         .header-main { 
             background: rgba(15, 15, 15, 0.45); 
             backdrop-filter: blur(35px) saturate(200%); 
@@ -94,7 +91,6 @@
         .nav-link:hover::before { opacity: 0.15; }
         .nav-link:hover { color: #FFD700; text-shadow: 0 0 12px gold; }
 
-        /* --- ULTRA BOLD & SHINING 3-LINE TOGGLE MENU --- */
         .menu-toggle {
             display: flex;
             flex-direction: column;
@@ -136,9 +132,6 @@
         .sidebar-open .menu-toggle span:nth-child(2) { opacity: 0; transform: translateX(20px) scale(0); }
         .sidebar-open .menu-toggle span:nth-child(3) { transform: translateY(-10.5px) rotate(-45deg); width: 100%; }
 
-        /* ========================================================================
-           UPDATED 11D ULTRA PROMAX SIDEBAR (FEB 2026) - VERTICALLY/HORIZONTALLY CENTERED, COMPACT HEIGHT
-           ======================================================================== */
         .sidebar-overlay { 
             position: fixed; inset: 0; 
             background: rgba(0,0,0,0.96); 
@@ -148,7 +141,6 @@
         }
         .sidebar-open .sidebar-overlay { opacity: 1; visibility: visible; }
 
-        /* Outer Container Centered - 11D Ultra Promax */
         .sidebar-menu-centered {
             position: fixed; 
             top: 50%; 
@@ -156,25 +148,24 @@
             transform: translate(-50%, -50%) scale(0.9);
             width: 90%; 
             max-width: 440px; 
-            max-height: 90vh; /* allows compact height */
+            max-height: 90vh; 
             z-index: 100; 
             opacity: 0; 
             visibility: hidden;
             display: flex; 
             flex-direction: column; 
-            gap: 10px; /* reduced gap */
+            gap: 10px; 
             transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-            padding: 12px; /* reduced padding */
+            padding: 12px; 
             
-            /* OUTER SHINING 11D BORDER - PROMAX INTENSITY */
-            border: 2px solid transparent; /* slightly thinner for sleekness */
+            border: 2px solid transparent; 
             background-image: linear-gradient(#0b0b0b, #0b0b0b), linear-gradient(115deg, #FFD700, #FFFFFF, #FFD700, #FFFFFF, #D4AF37);
             background-origin: border-box;
             background-clip: padding-box, border-box;
             background-size: 300% auto;
             animation: shine11dBorder 3.5s linear infinite;
             box-shadow: 0 0 50px rgba(255, 215, 0, 0.4), inset 0 0 30px rgba(255, 215, 0, 0.2);
-            border-radius: 18px; /* modern smoothness */
+            border-radius: 18px; 
         }
         
         .sidebar-open .sidebar-menu-centered {
@@ -183,19 +174,17 @@
             visibility: visible;
         }
 
-        /* Individual Box Sections - REDUCED HEIGHT & SLIM */
         .menu-item-box {
             display: flex; 
             align-items: center; 
-            padding: 12px 18px; /* reduced from 18px 20px */
+            padding: 12px 18px; 
             text-decoration: none; 
             color: #fff; 
             font-weight: 900;
             letter-spacing: 2px; 
-            font-size: 0.95rem; /* slightly smaller */
-            border-radius: 10px; /* smoother */
+            font-size: 0.95rem; 
+            border-radius: 10px; 
             
-            /* INNER SHINING 11D BORDER - more vibrant */
             border: 1.8px solid transparent;
             background-image: linear-gradient(#0f0e0a, #0f0e0a), linear-gradient(105deg, #FFD700, #FFFFFF, #D4AF37, #FFD700);
             background-origin: border-box;
@@ -204,18 +193,12 @@
             animation: shine11dBorder 3s linear infinite;
             box-shadow: 0 0 20px rgba(255, 215, 0, 0.25), inset 0 0 8px rgba(255, 215, 0, 0.15);
             
-            /* Animation Setup */
             opacity: 0;
             transform: translateY(-18px) scale(0.96);
             transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.3s ease, background-image 0.3s ease;
         }
 
-        /* STAGGERED ANIMATIONS - exactly 0.5s gaps */
-        .sidebar-open .menu-item-box {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-        
+        .sidebar-open .menu-item-box { opacity: 1; transform: translateY(0) scale(1); }
         .sidebar-open .menu-item-box:nth-child(1) { transition-delay: 0.0s; } 
         .sidebar-open .menu-item-box:nth-child(2) { transition-delay: 0.5s; } 
         .sidebar-open .menu-item-box:nth-child(3) { transition-delay: 1.0s; } 
@@ -223,7 +206,6 @@
         .sidebar-open .menu-item-box:nth-child(5) { transition-delay: 2.0s; } 
         .sidebar-open .menu-item-box:nth-child(6) { transition-delay: 2.5s; } 
 
-        /* Link Hover Enhancements */
         a.menu-item-box:hover {
             background-image: linear-gradient(#1f1c12, #1f1c12), linear-gradient(90deg, #FFFFFF, #FFD700, #FFFFFF);
             box-shadow: 0 0 40px rgba(255, 215, 0, 0.7), inset 0 0 20px rgba(255, 215, 0, 0.4);
@@ -231,54 +213,18 @@
             transform: scale(1.02) translateY(-2px);
         }
 
-        .menu-item-box i.menu-icon {
-            width: 40px; /* reduced */
-            text-align: left; 
-            font-size: 1.3rem; /* slightly smaller */
-            color: #FFD700; 
-            filter: drop-shadow(0 0 8px gold);
-        }
-        
-        .menu-item-box span.menu-text {
-            font-family: 'Syncopate', sans-serif;
-            font-size: 0.85rem; /* more compact */
-            letter-spacing: 1.5px;
-        }
+        .menu-item-box i.menu-icon { width: 40px; text-align: left; font-size: 1.3rem; color: #FFD700; filter: drop-shadow(0 0 8px gold); }
+        .menu-item-box span.menu-text { font-family: 'Syncopate', sans-serif; font-size: 0.85rem; letter-spacing: 1.5px; }
 
-        /* Header Specific - compact with logo instead of icon */
-        .menu-item-box.menu-header {
-            justify-content: space-between; 
-            padding: 10px 16px; /* reduced height */
-            cursor: default;
-        }
-        /* Logo image styling inside header */
-        .menu-header-logo {
-            width: 32px;
-            height: 32px;
-            object-fit: contain;
-            filter: drop-shadow(0 0 10px gold);
-        }
+        .menu-item-box.menu-header { justify-content: space-between; padding: 10px 16px; cursor: default; }
+        .menu-header-logo { width: 32px; height: 32px; object-fit: contain; filter: drop-shadow(0 0 10px gold); }
 
-        /* Footer Specific - more compact */
-        .menu-item-box.menu-footer {
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center;
-            gap: 8px; 
-            padding: 14px; /* reduced */
-            cursor: default;
-        }
+        .menu-item-box.menu-footer { flex-direction: column; justify-content: center; align-items: center; gap: 8px; padding: 14px; cursor: default; }
 
-        @keyframes shine11dBorder {
-            0% { background-position: 0% center; }
-            100% { background-position: 200% center; }
-        }
-
-        /* ======================================================================== */
-
+        @keyframes shine11dBorder { 0% { background-position: 0% center; } 100% { background-position: 200% center; } }
 
         /* 3D CAROUSEL */
-        .scene { perspective: 1600px; width:100%; display:flex; justify-content:center; align-items:center; margin:0; padding:0; position:relative; }
+        .scene { perspective: 2000px; width:100%; display:flex; justify-content:center; align-items:center; margin:0; padding:0; position:relative; }
         .carousel { width:100%; height:100%; position:absolute; transform-style: preserve-3d; transition: transform 1s cubic-bezier(0.15, 0.9, 0.25, 1); }
         .carousel__cell { position: absolute; left:50%; top:50%; border: 2px solid rgba(255,215,0,0.5); border-radius: 12px; background:#000; box-shadow: 0 0 30px rgba(255,215,0,0.3); overflow: hidden; }
         .carousel__cell img { width:100%; height:100%; object-fit:contain; display:block; filter: brightness(1.05) contrast(1.1); transition:0.4s; }
@@ -330,21 +276,18 @@
                         <div class="absolute inset-0 bg-gold-500 blur-xl opacity-40 group-hover:opacity-70 transition-all"></div>
                         <img src="sti.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STI" class="h-10 sm:h-12 object-contain relative z-10 filter drop-shadow-[0_0_12px_gold]">
                     </div>
-                    <!-- Header Text Replaced with PNG Image -->
                     <img src="stin.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STIWORLDOFFICIAL" class="h-6 sm:h-8 object-contain filter drop-shadow-[0_0_12px_gold] animate-pulse-11d">
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-12">
-                        <a href="#" class="nav-link text-xs font-black text-white uppercase tracking-widest">Home</a>
-                        <a href="#apps" class="nav-link text-xs font-black text-white uppercase tracking-widest">Ecosystem</a>
-                        <a href="#contact" class="nav-link text-xs font-black text-white uppercase tracking-widest">Connect</a>
+                       
+                        <a href="#apps" class="nav-link text-xs font-black text-white uppercase tracking-widest">Our Apps</a>
+                        
                     </div>
                 </div>
                 <div class="md:hidden flex items-center">
                     <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                        <span></span><span></span><span></span>
                     </button>
                 </div>
             </div>
@@ -353,15 +296,10 @@
 
     <div id="sidebar-overlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
     
-    <!-- UPDATED SIDEBAR CONTENT - LOGO REPLACED ICON IN FIRST SECTION AND TEXT REPLACED WITH PNG -->
     <div id="sidebar-menu" class="sidebar-menu-centered">
-        
-        <!-- FIRST SECTION: STIWORLD OFFICIAL with LOGO instead of gear icon AND TEXT REPLACED WITH PNG -->
         <div class="menu-item-box menu-header">
             <div class="flex items-center gap-2">
-                <!-- Logo image -->
                 <img src="sti.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'; this.classList.add('fallback-icon')" alt="STI" class="menu-header-logo w-8 h-8 object-contain filter drop-shadow-[0_0_10px_gold]">
-                <!-- Text replaced with PNG image -->
                 <img src="stin.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STIWORLDOFFICIAL" class="h-5 object-contain filter drop-shadow-[0_0_8px_gold]">
             </div>
             <button onclick="toggleSidebar()" class="text-gray-400 hover:text-red-500 transition-all hover:rotate-90 duration-300">
@@ -376,7 +314,7 @@
         
         <a href="#apps" onclick="toggleSidebar()" class="menu-item-box">
             <i class="fa-solid fa-cube menu-icon"></i> 
-            <span class="menu-text">ECOSYSTEM</span>
+            <span class="menu-text">OUR APPS</span>
         </a>
         
         <a href="#contact" onclick="toggleSidebar()" class="menu-item-box">
@@ -398,7 +336,6 @@
             </div>
             <img src="stin.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STIWORLDOFFICIAL" class="h-6 sm:h-8 object-contain filter drop-shadow-[0_0_12px_gold] animate-pulse-11d">
         </div>
-
     </div>
 
     <main class="flex-grow pt-[85px] relative overflow-hidden flex flex-col">
@@ -420,20 +357,21 @@
         </div>
 
         <div id="apps" class="max-w-7xl mx-auto px-4 mt-2 pb-20 w-full">
+            
+            <!-- CHANGED: Heading Update to OUR ANDROID APP -->
             <div class="flex items-center justify-center mb-10">
                 <div class="h-[2px] w-16 bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
-                <h3 class="mx-4 text-xl sm:text-3xl font-black text-white tracking-[0.3em] text-center font-display drop-shadow-[0_0_15px_gold]">ECOSYSTEM</h3>
+                <h3 class="mx-4 text-xl sm:text-3xl font-black text-white tracking-[0.3em] text-center font-display drop-shadow-[0_0_15px_gold]">OUR ANDROID APP</h3>
                 <div class="h-[2px] w-16 bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
             </div>
 
+            <!-- First 3 Cards Block -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6">
                 
                 <div style="--card-bg-img: url('stipro.png');" class="card-custom-bg px-6 pb-6 pt-0 flex flex-col group gold-border-glow">
-                    <!-- New Green Banner Header -->
                     <div class="bg-[#2ba97a] mx-auto w-fit max-w-[95%] text-white px-5 sm:px-8 py-2 rounded-b-[16px] font-black uppercase tracking-widest text-[10px] sm:text-xs z-20 border-b-[3px] border-[#1c805a] shadow-[0_4px_15px_rgba(0,0,0,0.5)] mb-8 text-center leading-tight">
                         Start-Your-fitness-Journey-Now
                     </div>
-                    
                     <div class="mt-auto relative z-10 w-full">
                         <div class="flex flex-col gap-3">
                             <a href="https://play.google.com/store/apps/details?id=com.ai.ts" target="_blank" class="btn-android w-full flex items-center justify-center gap-3 py-3 bg-transparent border border-white/80 hover:border-green-500 hover:bg-green-500 text-white hover:text-black hover:shadow-[0_0_25px_rgba(34,197,94,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[10px]">
@@ -450,11 +388,9 @@
                 </div>
                 
                 <div style="--card-bg-img: url('stiskilli.png');" class="card-custom-bg px-6 pb-6 pt-0 flex flex-col group gold-border-glow">
-                    <!-- New Green Banner Header -->
                     <div class="bg-[#2ba97a] mx-auto w-fit max-w-[95%] text-white px-5 sm:px-8 py-2 rounded-b-[16px] font-black uppercase tracking-widest text-[10px] sm:text-xs z-20 border-b-[3px] border-[#1c805a] shadow-[0_4px_15px_rgba(0,0,0,0.5)] mb-8 text-center leading-tight">
                         Start-Your-Prepration-Journey
                     </div>
-                    
                     <div class="mt-auto relative z-10 w-full">
                         <div class="flex flex-col gap-3">
                             <a href="https://play.google.com/store/apps/details?id=com.ai.skillaura" target="_blank" class="btn-android w-full flex items-center justify-center gap-3 py-3 bg-transparent border border-white/80 hover:border-green-500 hover:bg-green-500 text-white hover:text-black hover:shadow-[0_0_25px_rgba(34,197,94,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[10px]">
@@ -471,11 +407,9 @@
                 </div>
                 
                 <div style="--card-bg-img: url('rentist.png');" class="card-custom-bg px-6 pb-6 pt-0 flex flex-col group gold-border-glow">
-                    <!-- New Green Banner Header -->
                     <div class="bg-[#2ba97a] mx-auto w-fit max-w-[95%] text-white px-5 sm:px-8 py-2 rounded-b-[16px] font-black uppercase tracking-widest text-[10px] sm:text-xs z-20 border-b-[3px] border-[#1c805a] shadow-[0_4px_15px_rgba(0,0,0,0.5)] mb-8 text-center leading-tight">
                        Find-Room-flats-shop-pg-houses
                     </div>
-                    
                     <div class="mt-auto relative z-10 w-full">
                         <div class="flex flex-col gap-3">
                             <a href="https://play.google.com/store/apps/details?id=com.ai.rentistleaseyourproperty" target="_blank" class="btn-android w-full flex items-center justify-center gap-3 py-3 bg-transparent border border-white/80 hover:border-green-500 hover:bg-green-500 text-white hover:text-black hover:shadow-[0_0_25px_rgba(34,197,94,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[10px]">
@@ -491,18 +425,27 @@
                     </div>
                 </div>
 
+            </div>
+
+            <!-- CHANGED: Added NEW Heading for OUR SERVICES here -->
+            <div class="flex items-center justify-center mt-16 mb-10">
+                <div class="h-[2px] w-16 bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
+                <h3 class="mx-4 text-xl sm:text-3xl font-black text-white tracking-[0.3em] text-center font-display drop-shadow-[0_0_15px_gold]">OUR SERVICES</h3>
+                <div class="h-[2px] w-16 bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
+            </div>
+
+            <!-- Second Grid Block for Services -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6">
+                
                 <div style="--card-bg-img: url('stiyoursocialmedia.png');" class="card-custom-bg px-6 pb-6 pt-0 flex flex-col group gold-border-glow">
-                    <!-- New Green Banner Header -->
                     <div class="bg-[#2ba97a] mx-auto w-fit max-w-[95%] text-white px-5 sm:px-8 py-2 rounded-b-[16px] font-black uppercase tracking-widest text-[10px] sm:text-xs z-20 border-b-[3px] border-[#1c805a] shadow-[0_4px_15px_rgba(0,0,0,0.5)] mb-8 text-center leading-tight">
                         Manage-Your-All-Social-Media
                     </div>
-                    
                     <div class="mt-auto relative z-10 w-full">
                         <div class="flex flex-col gap-3">
                             <a href="#" class="w-full flex items-center justify-center gap-3 py-3 bg-transparent border border-white/80 hover:border-green-500 hover:bg-green-500 text-white hover:text-black hover:shadow-[0_0_25px_rgba(34,197,94,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[10px] btn-android">
                                 <i class="fa-brands fa-whatsapp text-base text-green-400 transition-colors"></i> WhatsApp
                             </a>
-                            
                             <a href="#" class="w-full flex items-center justify-center gap-3 py-3 bg-transparent border border-white/80 hover:border-red-500 hover:bg-red-500 text-gray-100 hover:text-black hover:shadow-[0_0_25px_rgba(239,68,68,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[10px] btn-ios">
                                 <i class="fa-solid fa-magnifying-glass mr-2 text-base text-red-400 transition-colors"></i>See Priceing Plans
                             </a>
@@ -511,17 +454,14 @@
                 </div>
 
                 <div style="--card-bg-img: url('stistartyourownwebsite.png');" class="card-custom-bg px-6 pb-6 pt-0 flex flex-col group gold-border-glow">
-                    <!-- New Green Banner Header -->
                     <div class="bg-[#2ba97a] mx-auto w-fit max-w-[95%] text-white px-5 sm:px-8 py-2 rounded-b-[16px] font-black uppercase tracking-widest text-[10px] sm:text-xs z-20 border-b-[3px] border-[#1c805a] shadow-[0_4px_15px_rgba(0,0,0,0.5)] mb-8 text-center leading-tight">
                         Start-Your-Own-Website-Now
                     </div>
-                    
                     <div class="mt-auto relative z-10 w-full">
                         <div class="flex flex-col gap-3">
                             <a href="#" class="w-full flex items-center justify-center gap-3 py-3 bg-transparent border border-white/80 hover:border-green-500 hover:bg-green-500 text-white hover:text-black hover:shadow-[0_0_25px_rgba(34,197,94,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[10px] btn-android">
                                 <i class="fa-brands fa-whatsapp text-base text-green-400 transition-colors"></i> WhatsApp
                             </a>
-                            
                             <a href="startyourownwebsitenow.html" class="w-full flex items-center justify-center gap-3 py-3 bg-transparent border border-white/80 hover:border-red-500 hover:bg-red-500 text-gray-100 hover:text-black hover:shadow-[0_0_25px_rgba(239,68,68,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[10px] btn-ios">
                                 <i class="fa-solid fa-magnifying-glass mr-2 text-base text-red-400 transition-colors"></i>See Priceing Plans
                             </a>
@@ -529,19 +469,15 @@
                     </div>
                 </div>
 
-                <!-- 6th Card - Naya Android App ke liye yahan add kiya gaya hai -->
                 <div style="--card-bg-img: url('stiandroid.png');" class="card-custom-bg px-6 pb-6 pt-0 flex flex-col group gold-border-glow">
-                    <!-- Naya Green Banner Header -->
                     <div class="bg-[#2ba97a] mx-auto w-fit max-w-[95%] text-white px-5 sm:px-8 py-2 rounded-b-[16px] font-black uppercase tracking-widest text-[10px] sm:text-xs z-20 border-b-[3px] border-[#1c805a] shadow-[0_4px_15px_rgba(0,0,0,0.5)] mb-8 text-center leading-tight">
                         Start-Your-Own-Android-App-Now
                     </div>
-                    
                     <div class="mt-auto relative z-10 w-full">
                         <div class="flex flex-col gap-3">
                            <a href="#" class="w-full flex items-center justify-center gap-3 py-3 bg-transparent border border-white/80 hover:border-green-500 hover:bg-green-500 text-white hover:text-black hover:shadow-[0_0_25px_rgba(34,197,94,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[10px] btn-android">
                                 <i class="fa-brands fa-whatsapp text-base text-green-400 transition-colors"></i> WhatsApp
                             </a>
-                            
                             <a href="startyourownappnow.html" class="w-full flex items-center justify-center gap-3 py-3 bg-transparent border border-white/80 hover:border-red-500 hover:bg-red-500 text-gray-100 hover:text-black hover:shadow-[0_0_25px_rgba(239,68,68,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[10px] btn-ios">
                                 <i class="fa-solid fa-magnifying-glass mr-2 text-base text-red-400 transition-colors"></i>See Priceing Plans
                             </a>    
@@ -586,7 +522,6 @@
         (function() {
             const header = document.getElementById('mainHeader');
             
-            // Header scroll animation
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 20) {
                     header.classList.add('header-scrolled');
@@ -595,19 +530,41 @@
                 }
             });
 
-            // Sidebar toggler
             window.toggleSidebar = function() { document.getElementById('mainBody').classList.toggle('sidebar-open'); };
 
-            // 3D Carousel logic
+            // ==========================================================
+            // CHANGED: 50 IMAGES DYNAMIC CAROUSEL ARRAY
+            // ==========================================================
             const carousel = document.getElementById('carousel');
             const scene = document.getElementById('sceneContainer');
-            const cellCount = 15;
-            let selectedIndex = 0, cellWidth, cellHeight, radius;
+            
+            // Yahan par 50 images tak ka data likha hua hai. 
+            // Aapko jo image delete karni hai, bas uski line hata dijiye, box khud remove ho jayega.
+            // Aur naye add karne hain toh yahan string add kar dein.
             const images = [
-                'one.png', 'two.png', 'three.png', 'four.png', 'five.png',
-                'six.png', 'seven.png', 'eight.png', 'nine.png', 'ten.png',
-                'eleven.png', 'twele.png', 'thirteen.png', 'fourteen.png', 'fifteen.png'
+                'one.png',
+                 'two.png', 
+                 'three.png', 
+                 'four.png', 
+                 'five.png',
+                'six.png', 
+                'seven.png', 
+                'eight.png', 
+                'nine.png', 
+                'ten.png',
+                'eleven.png', 
+                'twele.png',
+                 'thirteen.png', 
+                 'fourteen.png', 
+                 'fifteen.png',
+                //'16.png',
+             //'50.png'
             ];
+            
+            // Ab ye dynamically count karega jitni images array me hongi
+            const cellCount = images.length; 
+            
+            let selectedIndex = 0, cellWidth, cellHeight, radius;
             
             function createCarousel() {
                 carousel.innerHTML = '';
@@ -616,6 +573,7 @@
                     cell.className = 'carousel__cell';
                     const img = document.createElement('img'); 
                     img.src = images[i];
+                    img.onerror = function() { this.src = 'https://via.placeholder.com/800x450/111111/FFD700?text=Image+'+(i+1); }; // agar image nahi mili toh placeholder
                     cell.appendChild(img); 
                     carousel.appendChild(cell);
                 }

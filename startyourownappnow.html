@@ -313,8 +313,9 @@
             100% { background-position: 200% center; }
         }
 
-        .scene { perspective: 1600px; width:100%; display:flex; justify-content:center; align-items:center; margin:0; padding:0; position:relative; }
-        .carousel { width:100%; height:100%; position:absolute; transform-style: preserve-3d; transition: transform 1s cubic-bezier(0.15, 0.9, 0.25, 1); }
+        /* 3D CAROUSEL */
+        .scene { perspective: 2000px; width:100%; display:flex; justify-content:center; align-items:center; margin:0; padding:0; position:relative; }
+        .carousel { width:100%; height:100%; position:absolute; transform-style: preserve-3d; transition: transform 0.8s cubic-bezier(0.15, 0.9, 0.25, 1); }
         .carousel__cell { position: absolute; left:50%; top:50%; border: 2px solid rgba(255,215,0,0.5); border-radius: 12px; background:#000; box-shadow: 0 0 30px rgba(255,215,0,0.3); overflow: hidden; }
         .carousel__cell img { width:100%; height:100%; object-fit:contain; display:block; filter: brightness(1.05) contrast(1.1); transition:0.4s; }
         .carousel__cell:hover img { transform: scale(1.04); filter: brightness(1.2) drop-shadow(0 0 8px gold); }
@@ -411,41 +412,51 @@
     </div>
 
     <main class="flex-grow pt-[85px] relative overflow-hidden flex flex-col">
-        <div class="absolute top-0 left-0 w-full h-[700px] overflow-hidden z-[-1]">
+        <div class="absolute top-0 left-0 w-full h-[800px] overflow-hidden z-[-1]">
             <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-20 contrast-125 saturate-0">
                 <source src="https://cdn.pixabay.com/video/2020/04/18/36468-409477942_large.mp4" type="video/mp4">
             </video>
-            <div class="absolute inset-0 bg-gradient-to-b from-[#050505]/70 via-[#050505]/90 to-black"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-[#050505]/70 via-[#050505]/95 to-black"></div>
         </div>
 
-        <div class="w-full relative z-10 mt-4">
+        <!-- 3D SLIDER CONTAINER -->
+        <div class="w-full relative z-10 mt-8 mb-4">
             <div class="scene" id="sceneContainer">
                 <div class="carousel" id="carousel"></div>
             </div>
         </div>
-        <div class="flex justify-center gap-6 mt-6 mb-6 relative z-10">
-            <button id="prevBtn" class="w-12 h-12 rounded-full border-2 border-gold-500/70 text-gold-400 hover:bg-gold-500 hover:text-black hover:shadow-[0_0_35px_gold] transition-all flex items-center justify-center bg-black/50 backdrop-blur-xl active:scale-90"><i class="fa-solid fa-arrow-left text-lg"></i></button>
-            <button id="nextBtn" class="w-12 h-12 rounded-full border-2 border-gold-500/70 text-gold-400 hover:bg-gold-500 hover:text-black hover:shadow-[0_0_35px_gold] transition-all flex items-center justify-center bg-black/50 backdrop-blur-xl active:scale-90"><i class="fa-solid fa-arrow-right text-lg"></i></button>
+        <div class="flex justify-center gap-8 mt-4 mb-10 relative z-10">
+            <button id="prevBtn" aria-label="Previous Image" class="w-14 h-14 rounded-full border-2 border-gold-500/70 text-gold-400 hover:bg-gold-500 hover:text-black hover:shadow-[0_0_35px_gold] transition-all flex items-center justify-center bg-black/60 backdrop-blur-xl active:scale-90"><i class="fa-solid fa-arrow-left text-xl"></i></button>
+            <button id="nextBtn" aria-label="Next Image" class="w-14 h-14 rounded-full border-2 border-gold-500/70 text-gold-400 hover:bg-gold-500 hover:text-black hover:shadow-[0_0_35px_gold] transition-all flex items-center justify-center bg-black/60 backdrop-blur-xl active:scale-90"><i class="fa-solid fa-arrow-right text-xl"></i></button>
         </div>
 
-        <div id="services" class="max-w-6xl mx-auto px-4 mt-8 pb-24 w-full flex flex-col items-center text-center relative z-10">
+        <div id="services" class="max-w-6xl mx-auto px-4 mt-4 pb-24 w-full flex flex-col items-center text-center relative z-10">
             
-            <div class="flex items-center justify-center mb-6">
-                <div class="h-[2px] w-12 sm:w-20 bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
+            <div class="flex items-center justify-center mb-6 w-full">
+                <div class="h-[2px] flex-grow max-w-[100px] bg-gradient-to-r from-transparent to-gold-500"></div>
                 <!-- H1 Tag is crucial for SEO: Main Title -->
-                <h1 class="mx-4 text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-[0.1em] font-display drop-shadow-[0_0_15px_gold]">Start</h1>
-                <div class="h-[2px] w-12 sm:w-20 bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
+                <h1 class="mx-6 text-4xl sm:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-gold-400 to-white tracking-[0.1em] font-display drop-shadow-[0_0_15px_gold]">START</h1>
+                <div class="h-[2px] flex-grow max-w-[100px] bg-gradient-to-l from-transparent to-gold-500"></div>
             </div>
 
             <!-- H2 Tag for secondary heading -->
-            <h2 class="text-gold-400 text-lg sm:text-xl font-bold mb-6 uppercase tracking-[0.15em] drop-shadow-[0_0_8px_gold]">
+            <h2 class="text-gold-400 text-lg sm:text-2xl font-bold mb-10 uppercase tracking-[0.15em] drop-shadow-[0_0_8px_gold]">
                 Your App Now
             </h2>
             
-            <p class="text-gray-300 text-sm sm:text-base leading-relaxed max-w-3xl font-medium mb-12">
-                Apne business ko Google Play Store par laayein aur <strong class="text-white drop-shadow-[0_0_5px_gold]">lakhon naye customers tak pahunchein</strong>. Humare experts banate hain highly responsive, fast loading aur secure Android Applications. Chaahe aapko simple Business App chahiye ya fir ek complex E-commerce store, STI World aapko best aur premium solutions provide karta hai. <strong class="text-gold-300">Neeche diye gaye packages dekhein aur WhatsApp par direct booking karein!</strong>
-            </p>
+            <div class="bg-black/50 backdrop-blur-xl border border-gold-500/40 rounded-3xl p-8 sm:p-12 mb-16 shadow-[0_0_40px_rgba(255,215,0,0.15)] gold-border-glow relative overflow-hidden w-full max-w-4xl">
+                <!-- Decorative element -->
+                <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500/10 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full blur-3xl"></div>
 
+                <p class="text-gray-200 text-base sm:text-lg leading-relaxed font-medium relative z-10">
+                    Apne business ko Google Play Store par laayein aur <strong class="text-white drop-shadow-[0_0_5px_gold] text-xl">lakhon naye customers tak pahunchein</strong>. Humare experts banate hain highly responsive, fast loading aur secure Android Applications. Chaahe aapko simple Business App chahiye ya fir ek complex E-commerce store, STI World aapko best aur premium solutions provide karta hai. 
+                    <br><br>
+                    <strong class="text-gold-400 italic text-sm">Neeche diye gaye packages dekhein aur WhatsApp par direct booking karein!</strong>
+                </p>
+            </div>
+
+            <!-- PRICING TIERS -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
                 
                 <!-- Basic App -->
@@ -759,23 +770,53 @@
                 document.body.style.overflow = 'auto';
             };
 
-            // 3D Carousel logic
+            // =====================================================================
+            // YAHAN SE AAP APNI 50 IMAGES KO EDIT, ADD YA DELETE KAR SAKTE HAIN
+            // Jitni line aap yahan likhenge, utne hi box apne aap ban jayenge.
+            // =====================================================================
+            const sliderImages = [
+                'one.png',    // 1
+                'two.png',    // 2
+                'three.png',  // 3
+                'four.png',   // 4
+                'five.png',   // 5
+                'six.png',    // 6
+                'seven.png',  // 7
+                'eight.png',  // 8
+                'nine.png',   // 9
+                'ten.png'   // 10
+              //  '11.png', '12.png', '13.png', '14.png', '15.png', // 11-15
+              //  '16.png', '17.png', '18.png', '19.png', '20.png', // 16-20
+              //  '21.png', '22.png', '23.png', '24.png', '25.png', // 21-25
+             //   '26.png', '27.png', '28.png', '29.png', '30.png', // 26-30
+             //   '31.png', '32.png', '33.png', '34.png', '35.png', // 31-35
+             //   '36.png', '37.png', '38.png', '39.png', '40.png', // 36-40
+              //  '41.png', '42.png', '43.png', '44.png', '45.png', // 41-45
+              //  '46.png', '47.png', '48.png', '49.png', '50.png'  // 46-50
+            ];
+            // =====================================================================
+
+            // 3D Carousel Logic
             const carousel = document.getElementById('carousel');
             const scene = document.getElementById('sceneContainer');
-            const cellCount = 7; 
+            
+            // Dynamic cell count based on your array size
+            const cellCount = sliderImages.length; 
+            
             let selectedIndex = 0, cellWidth, cellHeight, radius;
-            const images = [
-                'one.png', 'two.png', 'three.png', 'four.png', 'five.png', 'six.png', 'seven.png'
-            ];
             
             function createCarousel() {
                 carousel.innerHTML = '';
-                for (let i=0; i<cellCount; i++) {
+                for (let i = 0; i < cellCount; i++) {
                     const cell = document.createElement('div');
                     cell.className = 'carousel__cell';
                     const img = document.createElement('img'); 
-                    img.src = images[i];
-                    img.alt = `Android App Design Portfolio ${i+1}`; 
+                    
+                    // Fallback image in case your actual image is missing
+                    img.src = sliderImages[i];
+                    img.onerror = function() { this.src = 'https://cdn-icons-png.flaticon.com/512/10472/10472068.png'; };
+                    img.alt = `App Design Feature ${i+1}`;
+                    
                     cell.appendChild(img); 
                     carousel.appendChild(cell);
                 }
@@ -783,42 +824,58 @@
             }
             
             function updateDimensions() {
-                if (window.innerWidth < 768) {
-                    cellWidth = window.innerWidth; 
-                } else {
-                    cellWidth = Math.min(window.innerWidth * 0.8, 800); 
-                }
+                // Responsive width
+                if (window.innerWidth < 768) { cellWidth = window.innerWidth * 0.85; } 
+                else { cellWidth = Math.min(window.innerWidth * 0.6, 600); }
                 
-                cellHeight = cellWidth * (9 / 16); 
-                radius = Math.round((cellWidth/2) / Math.tan(Math.PI/cellCount));
+                cellHeight = cellWidth * (9 / 16); // 16:9 Aspect ratio
+                
+                // Dynamic Radius Math - It adjusts automatically based on the number of images
+                // Using max to prevent radius from being too small if user deletes many images
+                radius = Math.round((cellWidth / 2) / Math.tan(Math.PI / Math.max(cellCount, 3)));
+                
                 scene.style.height = cellHeight + 'px';
                 
+                // Adjusting 3D perspective based on number of items so it doesn't look flat
+                scene.style.perspective = (radius * 2.5) + 'px'; 
+                
                 const cells = document.querySelectorAll('.carousel__cell');
-                const theta = 360/cellCount;
+                const theta = 360 / cellCount;
                 cells.forEach((cell, i) => {
-                    cell.style.width = cellWidth+'px'; 
-                    cell.style.height = cellHeight+'px';
-                    cell.style.marginLeft = -(cellWidth/2)+'px'; 
-                    cell.style.marginTop = -(cellHeight/2)+'px';
-                    cell.style.transform = `rotateY(${theta*i}deg) translateZ(${radius}px)`;
+                    cell.style.width = cellWidth + 'px'; 
+                    cell.style.height = cellHeight + 'px';
+                    cell.style.marginLeft = -(cellWidth / 2) + 'px'; 
+                    cell.style.marginTop = -(cellHeight / 2) + 'px';
+                    
+                    // Spread the cells in a 3D circle
+                    cell.style.transform = `rotateY(${theta * i}deg) translateZ(${radius}px)`;
                 });
                 rotateCarousel();
             }
             
             function rotateCarousel() { 
-                carousel.style.transform = `translateZ(${-radius}px) rotateY(${(360/cellCount)*selectedIndex*-1}deg)`; 
+                const theta = 360 / cellCount;
+                carousel.style.transform = `translateZ(${-radius}px) rotateY(${theta * selectedIndex * -1}deg)`; 
             }
             
-            createCarousel();
-            window.addEventListener('resize', updateDimensions);
-            
-            document.getElementById('prevBtn').addEventListener('click', ()=>{ selectedIndex--; rotateCarousel(); });
-            document.getElementById('nextBtn').addEventListener('click', ()=>{ selectedIndex++; rotateCarousel(); });
-            
-            let autoRun = setInterval(()=>{ selectedIndex++; rotateCarousel(); }, 3500);
-            scene.addEventListener('mouseenter', ()=>clearInterval(autoRun));
-            scene.addEventListener('touchstart', ()=>clearInterval(autoRun));
-            scene.addEventListener('mouseleave', ()=> autoRun = setInterval(()=>{ selectedIndex++; rotateCarousel(); }, 3500));
+            // Initialize
+            if(cellCount > 0) {
+                createCarousel();
+                window.addEventListener('resize', updateDimensions);
+                
+                // Controls
+                document.getElementById('prevBtn').addEventListener('click', () => { selectedIndex--; rotateCarousel(); });
+                document.getElementById('nextBtn').addEventListener('click', () => { selectedIndex++; rotateCarousel(); });
+                
+                // Auto Rotate
+                let autoRun = setInterval(() => { selectedIndex++; rotateCarousel(); }, 3000);
+                scene.addEventListener('mouseenter', () => clearInterval(autoRun));
+                scene.addEventListener('touchstart', () => clearInterval(autoRun));
+                scene.addEventListener('mouseleave', () => autoRun = setInterval(() => { selectedIndex++; rotateCarousel(); }, 3000));
+            } else {
+                scene.innerHTML = '<p class="text-gold-400">No images in slider array.</p>';
+            }
+
         })();
     </script>
 </body>

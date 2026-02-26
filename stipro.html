@@ -189,9 +189,30 @@
         /* 3D CAROUSEL */
         .scene { perspective: 2000px; width:100%; display:flex; justify-content:center; align-items:center; margin:0; padding:0; position:relative; }
         .carousel { width:100%; height:100%; position:absolute; transform-style: preserve-3d; transition: transform 0.8s cubic-bezier(0.15, 0.9, 0.25, 1); }
-        .carousel__cell { position: absolute; left:50%; top:50%; border: 2px solid rgba(255,215,0,0.5); border-radius: 12px; background:#000; box-shadow: 0 0 30px rgba(255,215,0,0.3); overflow: hidden; }
+        
+        /* Updated Carousel Cell for Fading Effect */
+        .carousel__cell { 
+            position: absolute; left:50%; top:50%; 
+            border: 2px solid rgba(255,215,0,0.5); 
+            border-radius: 12px; background:#000; 
+            box-shadow: 0 0 30px rgba(255,215,0,0.3); 
+            overflow: hidden; 
+            transition: transform 0.8s cubic-bezier(0.15, 0.9, 0.25, 1), opacity 0.5s ease;
+        }
         .carousel__cell img { width:100%; height:100%; object-fit:contain; display:block; filter: brightness(1.05) contrast(1.1); transition:0.4s; }
         .carousel__cell:hover img { transform: scale(1.04); filter: brightness(1.2) drop-shadow(0 0 8px gold); }
+        
+        /* Classes for inactive slides */
+        .carousel__cell.inactive {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        /* Completely hide next/prev images on mobile devices to prevent peeking */
+        @media (max-width: 768px) {
+            .carousel__cell.inactive {
+                opacity: 0;
+            }
+        }
 
         /* ENHANCED CONTENT GRID */
         .feature-card {
@@ -421,14 +442,6 @@
                 'eight.png',  // 8
                 'nine.png',   // 9
                 'ten.png' ,   // 10
-                // '11.png', '12.png', '13.png', '14.png', '15.png', // 11-15
-               // '16.png', '17.png', '18.png', '19.png', '20.png', // 16-20
-              //  '21.png', '22.png', '23.png', '24.png', '25.png', // 21-25
-              //  '26.png', '27.png', '28.png', '29.png', '30.png', // 26-30
-             //   '31.png', '32.png', '33.png', '34.png', '35.png', // 31-35
-             //   '36.png', '37.png', '38.png', '39.png', '40.png', // 36-40
-             //   '41.png', '42.png', '43.png', '44.png', '45.png', // 41-45
-             //   '46.png', '47.png', '48.png', '49.png', '50.png'  // 46-50
             ];
             // =====================================================================
 
@@ -460,14 +473,17 @@
             }
             
             function updateDimensions() {
-                // Responsive width
-                if (window.innerWidth < 768) { cellWidth = window.innerWidth * 0.85; } 
-                else { cellWidth = Math.min(window.innerWidth * 0.6, 600); }
-                
-                cellHeight = cellWidth * (9 / 16); // 16:9 Aspect ratio
+                // Responsive width & height
+                if (window.innerWidth < 768) { 
+                    cellWidth = window.innerWidth * 0.88; // Thoda aur wide taki side gap kam rahe
+                    cellHeight = cellWidth * 1.35; // Taller aspect ratio taki vertical app screenshots fit aa jayein aur shrink na hon
+                } 
+                else { 
+                    cellWidth = Math.min(window.innerWidth * 0.6, 600); 
+                    cellHeight = cellWidth * (9 / 16); // 16:9 Aspect ratio desktop ke liye
+                }
                 
                 // Dynamic Radius Math - It adjusts automatically based on the number of images
-                // Using max to prevent radius from being too small if user deletes many images
                 radius = Math.round((cellWidth / 2) / Math.tan(Math.PI / Math.max(cellCount, 3)));
                 
                 scene.style.height = cellHeight + 'px';
@@ -492,6 +508,18 @@
             function rotateCarousel() { 
                 const theta = 360 / cellCount;
                 carousel.style.transform = `translateZ(${-radius}px) rotateY(${theta * selectedIndex * -1}deg)`; 
+                
+                // Hide/fade adjacent cells Logic to fix next image visibility
+                const cells = document.querySelectorAll('.carousel__cell');
+                let activeIndex = ((selectedIndex % cellCount) + cellCount) % cellCount; // Get positive active index
+                
+                cells.forEach((cell, i) => {
+                    if (i === activeIndex) {
+                        cell.classList.remove('inactive'); // Active image poori dikhegi
+                    } else {
+                        cell.classList.add('inactive'); // Inactive images fade ho jayengi (ya mobile par puri tarah gayab ho jayengi)
+                    }
+                });
             }
             
             // Initialize

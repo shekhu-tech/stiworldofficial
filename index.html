@@ -79,12 +79,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700;900&family=Exo+2:wght@300;500;700;900&display=swap" rel="stylesheet">
     <style>
-        :root { --neon-gold: #FFD700; --deep-gold: #D4AF37; --dark-bg: #050505; }
-        body { font-family: 'Exo 2', sans-serif; background: #050505; color: #f0f0f0; overflow-x: hidden; }
+        :root { --neon-gold: #FFD700; --deep-gold: #D4AF37; --light-bg: #e5e5e5; }
+        /* Changed Body Color to Light Gray and Text to Dark for visibility */
+        body { font-family: 'Exo 2', sans-serif; background: #e5e5e5; color: #111; overflow-x: hidden; }
         h1,h2,h3,.brand-font { font-family: 'Syncopate', sans-serif; }
 
-        .bg-mesh { position: fixed; inset:0; z-index:-2; background: radial-gradient(circle at 40% 50%, #1e1a10 0%, #000 100%); }
-        .bg-particles { position: fixed; inset:0; z-index:-1; background-image: radial-gradient(var(--deep-gold) 1.2px, transparent 1px); background-size: 45px 45px; opacity: 0.1; }
+        /* Changed bg-mesh to match light gray theme */
+        .bg-mesh { position: fixed; inset:0; z-index:-2; background: radial-gradient(circle at 40% 50%, #ffffff 0%, #e5e5e5 100%); }
+        .bg-particles { position: fixed; inset:0; z-index:-1; background-image: radial-gradient(var(--deep-gold) 1.2px, transparent 1px); background-size: 45px 45px; opacity: 0.2; }
 
         .text-11d-ultra {
             background: linear-gradient(90deg, #FFFFFF 0%, #FFD700 15%, #FFFFFF 30%, #FFD700 45%, #FFFFFF 60%, #FFD700 75%, #FFFFFF 90%);
@@ -268,12 +270,13 @@
             inset:0; 
             background-size: cover; 
             background-position: center; 
-            opacity: 0.6; 
+            opacity: 1; /* Made the image completely clear */
             z-index:-2; 
             transition: transform 0.8s ease;
             background-image: var(--card-bg-img); 
         }
-        .card-custom-bg::after { content:''; position: absolute; inset:0; background: linear-gradient(to top, #000 25%, rgba(0,0,0,0.5) 60%, transparent); z-index:-1; }
+        /* Adjusted the gradient so the top of the image stays fully visible, but bottom buttons stay readable */
+        .card-custom-bg::after { content:''; position: absolute; inset:0; background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 30%, transparent 60%); z-index:-1; }
         .card-custom-bg:hover { transform: translateY(-8px); border-color: #FFD700; box-shadow: 0 20px 40px rgba(255,215,0,0.3); }
         .card-custom-bg:hover::before { transform: scale(1.05); }
 
@@ -373,7 +376,8 @@
             <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-20 contrast-125 saturate-0">
                 <source src="https://cdn.pixabay.com/video/2020/04/18/36468-409477942_large.mp4" type="video/mp4">
             </video>
-            <div class="absolute inset-0 bg-gradient-to-b from-[#050505]/70 via-[#050505]/90 to-black"></div>
+            <!-- Changed gradient to fade into light gray instead of black -->
+            <div class="absolute inset-0 bg-gradient-to-b from-[#e5e5e5]/70 via-[#e5e5e5]/90 to-[#e5e5e5]"></div>
         </div>
 
         <div class="w-full relative z-10 mt-4">
@@ -388,10 +392,10 @@
 
         <div id="apps" class="max-w-7xl mx-auto px-4 mt-2 pb-20 w-full">
             
-            <!-- CHANGED: Heading Update for OUR ANDROID APP - Made single line for smaller phones -->
             <div class="flex items-center justify-center mb-10 w-full px-2">
                 <div class="h-[2px] flex-grow max-w-[30px] sm:max-w-[64px] bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
-                <h3 class="mx-2 sm:mx-4 text-[13px] sm:text-3xl font-black text-white tracking-widest sm:tracking-[0.3em] text-center font-display drop-shadow-[0_0_15px_gold] whitespace-nowrap shrink-0">OUR ANDROID APP</h3>
+                <!-- Changed text color to black for light theme visibility -->
+                <h3 class="mx-2 sm:mx-4 text-[13px] sm:text-3xl font-black text-black tracking-widest sm:tracking-[0.3em] text-center font-display drop-shadow-[0_0_15px_gold] whitespace-nowrap shrink-0">OUR ANDROID APP</h3>
                 <div class="h-[2px] flex-grow max-w-[30px] sm:max-w-[64px] bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
             </div>
 
@@ -399,7 +403,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6">
                 
                 <div style="--card-bg-img: url('stipro.png');" class="card-custom-bg px-6 pb-6 pt-0 flex flex-col group gold-border-glow">
-                    <div class="bg-[#2ba97a] mx-auto w-fit max-w-[95%] text-white px-5 sm:px-8 py-2 rounded-b-[16px] font-black uppercase tracking-widest text-[10px] sm:text-xs z-20 border-b-[3px] border-[#1c805a] shadow-[0_4px_15px_rgba(0,0,0,0.5)] mb-8 text-center leading-tight">
+                    <!-- Classical White-Gold Heading -->
+                    <div class="bg-gradient-to-b from-[#fdfbfb] to-[#ebedee] mx-auto w-fit max-w-[95%] text-[#111] px-6 sm:px-8 py-2.5 rounded-b-[20px] font-black uppercase tracking-widest text-[10px] sm:text-xs z-20 border-b-[4px] border-gold-500 shadow-[0_8px_20px_rgba(0,0,0,0.5)] mb-8 text-center leading-tight">
                         Start-Your-fitness-Journey-Now
                     </div>
                     <div class="mt-auto relative z-10 w-full">
@@ -418,7 +423,8 @@
                 </div>
                 
                 <div style="--card-bg-img: url('stiskilli.png');" class="card-custom-bg px-6 pb-6 pt-0 flex flex-col group gold-border-glow">
-                    <div class="bg-[#2ba97a] mx-auto w-fit max-w-[95%] text-white px-5 sm:px-8 py-2 rounded-b-[16px] font-black uppercase tracking-widest text-[10px] sm:text-xs z-20 border-b-[3px] border-[#1c805a] shadow-[0_4px_15px_rgba(0,0,0,0.5)] mb-8 text-center leading-tight">
+                    <!-- Classical White-Gold Heading -->
+                    <div class="bg-gradient-to-b from-[#fdfbfb] to-[#ebedee] mx-auto w-fit max-w-[95%] text-[#111] px-6 sm:px-8 py-2.5 rounded-b-[20px] font-black uppercase tracking-widest text-[10px] sm:text-xs z-20 border-b-[4px] border-gold-500 shadow-[0_8px_20px_rgba(0,0,0,0.5)] mb-8 text-center leading-tight">
                         Start-Your-Prepration-Journey
                     </div>
                     <div class="mt-auto relative z-10 w-full">
@@ -437,7 +443,8 @@
                 </div>
                 
                 <div style="--card-bg-img: url('rentist.png');" class="card-custom-bg px-6 pb-6 pt-0 flex flex-col group gold-border-glow">
-                    <div class="bg-[#2ba97a] mx-auto w-fit max-w-[95%] text-white px-5 sm:px-8 py-2 rounded-b-[16px] font-black uppercase tracking-widest text-[10px] sm:text-xs z-20 border-b-[3px] border-[#1c805a] shadow-[0_4px_15px_rgba(0,0,0,0.5)] mb-8 text-center leading-tight">
+                    <!-- Classical White-Gold Heading -->
+                    <div class="bg-gradient-to-b from-[#fdfbfb] to-[#ebedee] mx-auto w-fit max-w-[95%] text-[#111] px-6 sm:px-8 py-2.5 rounded-b-[20px] font-black uppercase tracking-widest text-[10px] sm:text-xs z-20 border-b-[4px] border-gold-500 shadow-[0_8px_20px_rgba(0,0,0,0.5)] mb-8 text-center leading-tight">
                        Find-Room-flats-shop-pg-houses
                     </div>
                     <div class="mt-auto relative z-10 w-full">
@@ -457,10 +464,10 @@
 
             </div>
 
-            <!-- CHANGED: Heading Update for OUR SERVICES - Made single line for smaller phones -->
             <div class="flex items-center justify-center mt-16 mb-10 w-full px-2">
                 <div class="h-[2px] flex-grow max-w-[30px] sm:max-w-[64px] bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
-                <h3 class="mx-2 sm:mx-4 text-[13px] sm:text-3xl font-black text-white tracking-widest sm:tracking-[0.3em] text-center font-display drop-shadow-[0_0_15px_gold] whitespace-nowrap shrink-0">OUR SERVICES</h3>
+                <!-- Changed text color to black for light theme visibility -->
+                <h3 class="mx-2 sm:mx-4 text-[13px] sm:text-3xl font-black text-black tracking-widest sm:tracking-[0.3em] text-center font-display drop-shadow-[0_0_15px_gold] whitespace-nowrap shrink-0">OUR SERVICES</h3>
                 <div class="h-[2px] flex-grow max-w-[30px] sm:max-w-[64px] bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
             </div>
 
@@ -468,7 +475,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6">
                 
                 <div style="--card-bg-img: url('stiyoursocialmedia.png');" class="card-custom-bg px-6 pb-6 pt-0 flex flex-col group gold-border-glow">
-                    <div class="bg-[#2ba97a] mx-auto w-fit max-w-[95%] text-white px-5 sm:px-8 py-2 rounded-b-[16px] font-black uppercase tracking-widest text-[10px] sm:text-xs z-20 border-b-[3px] border-[#1c805a] shadow-[0_4px_15px_rgba(0,0,0,0.5)] mb-8 text-center leading-tight">
+                    <!-- Classical White-Gold Heading -->
+                    <div class="bg-gradient-to-b from-[#fdfbfb] to-[#ebedee] mx-auto w-fit max-w-[95%] text-[#111] px-6 sm:px-8 py-2.5 rounded-b-[20px] font-black uppercase tracking-widest text-[10px] sm:text-xs z-20 border-b-[4px] border-gold-500 shadow-[0_8px_20px_rgba(0,0,0,0.5)] mb-8 text-center leading-tight">
                         Manage-Your-All-Social-Media
                     </div>
                     <div class="mt-auto relative z-10 w-full">
@@ -484,7 +492,8 @@
                 </div>
 
                 <div style="--card-bg-img: url('stistartyourownwebsite.png');" class="card-custom-bg px-6 pb-6 pt-0 flex flex-col group gold-border-glow">
-                    <div class="bg-[#2ba97a] mx-auto w-fit max-w-[95%] text-white px-5 sm:px-8 py-2 rounded-b-[16px] font-black uppercase tracking-widest text-[10px] sm:text-xs z-20 border-b-[3px] border-[#1c805a] shadow-[0_4px_15px_rgba(0,0,0,0.5)] mb-8 text-center leading-tight">
+                    <!-- Classical White-Gold Heading -->
+                    <div class="bg-gradient-to-b from-[#fdfbfb] to-[#ebedee] mx-auto w-fit max-w-[95%] text-[#111] px-6 sm:px-8 py-2.5 rounded-b-[20px] font-black uppercase tracking-widest text-[10px] sm:text-xs z-20 border-b-[4px] border-gold-500 shadow-[0_8px_20px_rgba(0,0,0,0.5)] mb-8 text-center leading-tight">
                         Start-Your-Own-Website-Now
                     </div>
                     <div class="mt-auto relative z-10 w-full">
@@ -500,7 +509,8 @@
                 </div>
 
                 <div style="--card-bg-img: url('stiandroid.png');" class="card-custom-bg px-6 pb-6 pt-0 flex flex-col group gold-border-glow">
-                    <div class="bg-[#2ba97a] mx-auto w-fit max-w-[95%] text-white px-5 sm:px-8 py-2 rounded-b-[16px] font-black uppercase tracking-widest text-[10px] sm:text-xs z-20 border-b-[3px] border-[#1c805a] shadow-[0_4px_15px_rgba(0,0,0,0.5)] mb-8 text-center leading-tight">
+                    <!-- Classical White-Gold Heading -->
+                    <div class="bg-gradient-to-b from-[#fdfbfb] to-[#ebedee] mx-auto w-fit max-w-[95%] text-[#111] px-6 sm:px-8 py-2.5 rounded-b-[20px] font-black uppercase tracking-widest text-[10px] sm:text-xs z-20 border-b-[4px] border-gold-500 shadow-[0_8px_20px_rgba(0,0,0,0.5)] mb-8 text-center leading-tight">
                         Start-Your-Own-Android-App-Now
                     </div>
                     <div class="mt-auto relative z-10 w-full">

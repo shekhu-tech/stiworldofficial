@@ -56,6 +56,10 @@
             overflow-x: hidden;
         }
 
+        /* Language Toggle System */
+        :root[lang="en"] .lang-hi { display: none !important; }
+        :root[lang="hi"] .lang-en { display: none !important; }
+
         /* 11D Premium Effects */
         .bg-stars {
             position: fixed;
@@ -155,17 +159,27 @@
     </style>
 </head>
 <body class="font-sans relative pb-10 w-full overflow-x-hidden">
+    
+    <!-- Language Toggle Button -->
+    <div class="fixed top-4 right-4 md:top-6 md:right-8 z-[110]">
+        <button onclick="toggleLang()" class="bg-black/80 border border-gold rounded-full px-3 py-1 flex items-center gap-2 backdrop-blur-md shadow-[0_0_10px_rgba(255,199,0,0.3)] hover:shadow-glow-gold transition-all">
+            <span id="lang-en-btn" class="text-gold font-bold text-sm">EN</span>
+            <span class="text-white/50 text-xs">|</span>
+            <span id="lang-hi-btn" class="text-white/50 font-bold text-sm hover:text-white transition-colors">HI</span>
+        </button>
+    </div>
+
     <div class="bg-grid-pattern"></div>
     <div class="bg-stars"></div>
 
-    <!-- Floating WhatsApp Button (Vertically Centered with Continuous Animation) -->
+    <!-- Floating WhatsApp Button -->
     <div class="fixed top-1/2 -translate-y-1/2 right-3 md:right-8 z-[100]">
-        <a href="#" target="_blank" class="animate-whatsapp-pulse relative flex items-center justify-center bg-[#25D366] text-white w-12 h-12 md:w-16 md:h-16 rounded-full text-3xl md:text-[40px] hover:bg-[#1ebd5a] transition-colors duration-300">
+        <a href="https://wa.me/918395913829" target="_blank" class="animate-whatsapp-pulse relative flex items-center justify-center bg-[#25D366] text-white w-12 h-12 md:w-16 h-16 rounded-full text-3xl md:text-[40px] hover:bg-[#1ebd5a] transition-colors duration-300">
             <i class="fa-brands fa-whatsapp drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"></i>
         </a>
     </div>
 
-    <!-- Floating Graphic Elements (Mimicking background assets) -->
+    <!-- Floating Graphic Elements -->
     <div class="absolute top-20 left-2 md:left-20 text-white opacity-90 floating-element" style="animation-delay: 0s;">
         <i class="fa-solid fa-bullhorn text-4xl sm:text-6xl md:text-8xl transform -rotate-[20deg] drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]"></i>
         <div class="absolute top-0 right-[-10px] md:right-[-20px] text-gold"><i class="fa-solid fa-bolt text-xl md:text-3xl"></i></div>
@@ -179,10 +193,8 @@
         
         <!-- Header / Logo -->
         <div class="flex justify-center mb-8 md:mb-12 relative z-10">
-            <div class="relative group">
-                <!-- Classical outer glow -->
+            <div class="relative group mt-6 md:mt-0">
                 <div class="absolute inset-0 bg-gradient-to-r from-gold-600 via-yellow-200 to-gold-600 rounded-full blur-md opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
-                <!-- Classical double border and gradient pill -->
                 <div class="relative border-[2px] md:border-[3px] border-double border-gold-500 rounded-full px-5 sm:px-8 md:px-14 py-2 sm:py-3 md:py-4 bg-gradient-to-b from-[#1a1a1a] to-[#000000] backdrop-blur-md shadow-glow-gold flex items-center justify-center gap-2 sm:gap-3 md:gap-4">
                     <img src="sti.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STI Icon" class="h-6 sm:h-10 md:h-14 object-contain filter drop-shadow-[0_0_8px_gold] md:drop-shadow-[0_0_12px_gold]">
                     <img src="stin.png" onerror="this.style.display='none'" alt="STI World Official" class="h-4 sm:h-6 md:h-8 object-contain filter drop-shadow-[0_0_5px_rgba(255,255,255,0.6)] md:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">
@@ -193,83 +205,104 @@
         <!-- Hero Text Section -->
         <div class="text-center relative z-10 flex flex-col items-center space-y-2 md:space-y-3 mb-16 md:mb-24 mt-10 md:mt-16">
             <h2 class="text-[17px] sm:text-2xl md:text-5xl font-black text-white uppercase tracking-wide drop-shadow-md px-2">
-                WE DON'T WORK ACCORDING TO
+                <span class="lang-en">WE DON'T WORK ACCORDING TO</span>
+                <span class="lang-hi">हम अपने   </span>
             </h2>
             
             <div class="bg-gold text-black font-black text-2xl sm:text-3xl md:text-6xl px-4 sm:px-8 py-1.5 sm:py-2 rounded-md sm:rounded-lg transform -skew-x-6 inline-block shadow-lg mt-1 md:mt-2 mb-1 md:mb-2">
-                OUR RATES,
+                <span class="lang-en">OUR RATES,</span>
+                <span class="lang-hi">रेट्स के हिसाब से नहीं,</span>
             </div>
             
             <h2 class="text-[17px] sm:text-2xl md:text-5xl font-black text-white uppercase tracking-wide drop-shadow-md px-2">
-                WE WORK ACCORDING TO
+                <span class="lang-en">WE WORK ACCORDING TO</span>
+                <span class="lang-hi">आपके बजट के हिसाब </span>
             </h2>
             
-            <div class="font-script text-[42px] sm:text-6xl md:text-8xl text-gold mt-4 md:mt-6 transform -rotate-2 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] md:drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
-                Your Budget.
+            <div class="font-script text-[38px] sm:text-6xl md:text-8xl text-gold mt-4 md:mt-6 transform -rotate-2 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] md:drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
+                <span class="lang-en">Your Budget.</span>
+                <span class="lang-hi">से काम करते हैं।</span>
             </div>
 
             <!-- Our Work CTA Button -->
             <div class="mt-8 md:mt-12 mb-2">
                 <button onclick="openPortfolioModal()" class="inline-flex items-center justify-center gap-2 md:gap-3 bg-gradient-to-r from-gold-600 via-yellow-400 to-gold-600 text-black font-black uppercase tracking-widest px-6 py-2.5 sm:px-8 sm:py-3 rounded-full shadow-[0_0_15px_rgba(255,215,0,0.5)] md:shadow-[0_0_25px_rgba(255,215,0,0.5)] hover:shadow-[0_0_35px_rgba(255,215,0,0.8)] transition-all transform hover:scale-105 border border-white/50 md:border-2 text-[11px] sm:text-sm md:text-base animate-pulse">
-                    <i class="fa-solid fa-briefcase text-sm md:text-lg"></i> See Our Work
+                    <i class="fa-solid fa-briefcase text-sm md:text-lg"></i> 
+                    <span class="lang-en">See Our Work</span>
+                    <span class="lang-hi">हमारा काम देखें</span>
                 </button>
             </div>
         </div>
 
-        <!-- Services Section -->
+        <!-- Services Section (Clickable with Modal) -->
         <div class="relative w-full max-w-5xl mx-auto bg-gradient-to-b from-[#f4f7fb] to-[#e1e8f0] rounded-[24px] md:rounded-[40px] text-black p-4 sm:p-6 md:p-12 shadow-glow-white mt-8 md:mt-10">
             
             <!-- Absolute Header Badge -->
             <div class="absolute -top-4 md:-top-6 left-1/2 transform -translate-x-1/2 bg-white px-6 sm:px-10 py-1.5 sm:py-2 rounded-full border-b-[3px] md:border-b-4 border-gray-300 shadow-lg flex items-center justify-center whitespace-nowrap">
-                <span class="text-base sm:text-2xl md:text-3xl font-black uppercase tracking-wider text-black">OUR SERVICES</span>
+                <span class="text-base sm:text-2xl md:text-3xl font-black uppercase tracking-wider text-black">
+                    <span class="lang-en">OUR SERVICES</span>
+                    <span class="lang-hi">हमारी सेवाएँ</span>
+                </span>
             </div>
 
             <!-- Services Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 md:gap-x-6 gap-y-3 md:gap-y-4 mt-6 md:mt-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 md:gap-x-6 gap-y-3 md:gap-y-4 mt-6 md:mt-8 cursor-pointer">
                 
                 <!-- Service 1 -->
-                <div class="flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
+                <div onclick="openServiceDetailsModal(1)" class="flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
                     <div class="bg-gradient-to-br from-[#FFE866] to-[#FFB700] w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-lg sm:rounded-xl font-black text-xl sm:text-2xl md:text-3xl shrink-0 shadow-hard-gold-sm md:shadow-hard-gold text-black border border-[#DAA520]">1</div>
                     <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0 mx-1 sm:mx-2 text-[#00E5FF]">
                         <i class="fa-solid fa-display text-2xl md:text-3xl drop-shadow-md"></i>
                         <i class="fa-solid fa-mobile-screen absolute transform translate-x-3 translate-y-2 md:translate-x-4 md:translate-y-3 text-base md:text-xl text-[#0066FF] drop-shadow-md"></i>
                     </div>
-                    <div class="font-bold text-[12px] sm:text-[14px] md:text-[17px] leading-tight">Website +<br>Android App</div>
+                    <div class="font-bold text-[12px] sm:text-[14px] md:text-[17px] leading-tight">
+                        <span class="lang-en">Website +<br>Android App</span>
+                        <span class="lang-hi">वेबसाइट +<br>एंड्रॉइड ऐप</span>
+                    </div>
                 </div>
 
                 <!-- Service 6 -->
-                <div class="flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
+                <div onclick="openServiceDetailsModal(6)" class="flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
                     <div class="bg-gradient-to-br from-[#FFE866] to-[#FFB700] w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-lg sm:rounded-xl font-black text-xl sm:text-2xl md:text-3xl shrink-0 shadow-hard-gold-sm md:shadow-hard-gold text-black border border-[#DAA520]">6</div>
                     <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0 mx-1 sm:mx-2 text-gray-700">
                         <i class="fa-solid fa-robot text-[28px] md:text-4xl drop-shadow-md"></i>
                         <i class="fa-solid fa-lightbulb absolute transform translate-x-4 -translate-y-2 md:translate-x-5 md:-translate-y-3 text-sm md:text-xl text-gold drop-shadow-[0_0_5px_gold]"></i>
                     </div>
-                    <div class="font-bold text-[12px] sm:text-[14px] md:text-[17px] leading-tight">We Teach You<br>All AI Tools</div>
+                    <div class="font-bold text-[12px] sm:text-[14px] md:text-[17px] leading-tight">
+                        <span class="lang-en">We Teach You<br>All AI Tools</span>
+                        <span class="lang-hi">हम आपको सभी<br>AI टूल्स सिखाएंगे</span>
+                    </div>
                 </div>
 
                 <!-- Service 2 -->
-                <div class="flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
+                <div onclick="openServiceDetailsModal(2)" class="flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
                     <div class="bg-gradient-to-br from-[#FFE866] to-[#FFB700] w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-lg sm:rounded-xl font-black text-xl sm:text-2xl md:text-3xl shrink-0 shadow-hard-gold-sm md:shadow-hard-gold text-black border border-[#DAA520]">2</div>
                     <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0 mx-1 sm:mx-2 gap-[2px] sm:gap-1 text-lg sm:text-xl md:text-2xl">
                         <i class="fa-brands fa-square-facebook text-[#1877F2]"></i>
                         <i class="fa-brands fa-square-instagram text-[#E4405F]"></i>
                         <i class="fa-brands fa-youtube text-[#FF0000]"></i>
                     </div>
-                    <div class="font-bold text-[12px] sm:text-[14px] md:text-[17px] leading-tight">3 Months Social Media<br>Account Management</div>
+                    <div class="font-bold text-[12px] sm:text-[14px] md:text-[17px] leading-tight">
+                        <span class="lang-en">3 Months Social Media<br>Account Management</span>
+                        <span class="lang-hi">3 महीने का सोशल मीडिया<br>अकाउंट मैनेजमेंट</span>
+                    </div>
                 </div>
 
                 <!-- Service 7 -->
-                <div class="flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
+                <div onclick="openServiceDetailsModal(7)" class="flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
                     <div class="bg-gradient-to-br from-[#FFE866] to-[#FFB700] w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-lg sm:rounded-xl font-black text-xl sm:text-2xl md:text-3xl shrink-0 shadow-hard-gold-sm md:shadow-hard-gold text-black border border-[#DAA520]">7</div>
                     <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0 mx-1 sm:mx-2 text-[#FF9900]">
                         <i class="fa-solid fa-truck-fast text-[28px] md:text-4xl drop-shadow-md"></i>
                         <i class="fa-solid fa-location-dot absolute transform -translate-y-3 translate-x-1.5 md:-translate-y-4 md:translate-x-2 text-sm md:text-base text-red-500"></i>
                     </div>
-                    <div class="font-bold text-[12px] sm:text-[14px] md:text-[17px] leading-tight">Delivery Company<br>Setup & Guidance</div>
+                    <div class="font-bold text-[12px] sm:text-[14px] md:text-[17px] leading-tight">
+                        <span class="lang-en">Delivery Company<br>Setup & Guidance</span>
+                        <span class="lang-hi">डिलीवरी कंपनी<br>सेटअप और मार्गदर्शन</span>
+                    </div>
                 </div>
 
                 <!-- Service 3 -->
-                <div class="flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
+                <div onclick="openServiceDetailsModal(3)" class="flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
                     <div class="bg-gradient-to-br from-[#FFE866] to-[#FFB700] w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-lg sm:rounded-xl font-black text-xl sm:text-2xl md:text-3xl shrink-0 shadow-hard-gold-sm md:shadow-hard-gold text-black border border-[#DAA520]">3</div>
                     <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0 mx-1 sm:mx-2 text-purple-600">
                         <div class="relative flex items-center justify-center bg-black rounded-md md:rounded-lg w-9 h-9 md:w-12 md:h-12 p-1.5 md:p-2 shadow-inner border border-purple-500">
@@ -277,47 +310,75 @@
                            <i class="fa-solid fa-microchip absolute -top-1 -right-1 text-[9px] md:text-xs text-blue-400"></i>
                         </div>
                     </div>
-                    <div class="font-bold text-[11px] sm:text-[13px] md:text-[15px] leading-tight pr-1 md:pr-2">All Types of Branding,<br>AI Video & Image Generation<br>for Social Media</div>
+                    <div class="font-bold text-[11px] sm:text-[13px] md:text-[15px] leading-tight pr-1 md:pr-2">
+                        <span class="lang-en">All Types of Branding,<br>AI Video & Image Generation<br>for Social Media</span>
+                        <span class="lang-hi">सभी प्रकार की ब्रांडिंग,<br>सोशल मीडिया के लिए AI वीडियो<br>और इमेज जनरेशन</span>
+                    </div>
                 </div>
 
                 <!-- Service 8 -->
-                <div class="flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
+                <div onclick="openServiceDetailsModal(8)" class="flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
                     <div class="bg-gradient-to-br from-[#FFE866] to-[#FFB700] w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-lg sm:rounded-xl font-black text-xl sm:text-2xl md:text-3xl shrink-0 shadow-hard-gold-sm md:shadow-hard-gold text-black border border-[#DAA520]">8</div>
                     <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0 mx-1 sm:mx-2 text-black">
-                        <i class="fa-solid fa-circle-registered text-3xl sm:text-4xl md:text-5xl text-gold drop-shadow-md"></i>
+                        <i class="fa-solid fa-trademark text-3xl sm:text-4xl md:text-5xl text-gold drop-shadow-md"></i>
                     </div>
-                    <div class="font-bold text-[12px] sm:text-[14px] md:text-[17px] leading-tight">Trademark<br>Registration</div>
+                    <div class="font-bold text-[12px] sm:text-[14px] md:text-[17px] leading-tight">
+                        <span class="lang-en">Trademark<br>Registration</span>
+                        <span class="lang-hi">ट्रेडमार्क<br>रजिस्ट्रेशन</span>
+                    </div>
                 </div>
 
                 <!-- Service 4 -->
-                <div class="flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
+                <div onclick="openServiceDetailsModal(4)" class="flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
                     <div class="bg-gradient-to-br from-[#FFE866] to-[#FFB700] w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-lg sm:rounded-xl font-black text-xl sm:text-2xl md:text-3xl shrink-0 shadow-hard-gold-sm md:shadow-hard-gold text-black border border-[#DAA520]">4</div>
                     <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0 mx-1 sm:mx-2 text-[#0055FF]">
                         <i class="fa-regular fa-credit-card text-[28px] md:text-4xl drop-shadow-md"></i>
                         <i class="fa-solid fa-shield-halved absolute transform translate-x-3 translate-y-2.5 md:translate-x-4 md:translate-y-3 text-lg md:text-2xl text-blue-800 drop-shadow-md"></i>
                     </div>
-                    <div class="font-bold text-[11px] sm:text-[13px] md:text-[15px] leading-tight pr-1 md:pr-2">Payment Gateway<br>Complete Setup<br><span class="font-semibold text-[9px] md:text-xs text-gray-600">(Atleast 3 to 5 Gateways)</span></div>
+                    <div class="font-bold text-[11px] sm:text-[13px] md:text-[15px] leading-tight pr-1 md:pr-2">
+                        <span class="lang-en">Payment Gateway<br>Complete Setup<br><span class="font-semibold text-[9px] md:text-xs text-gray-600">(Atleast 3 to 5 Gateways)</span></span>
+                        <span class="lang-hi">पेमेंट गेटवे<br>कम्पलीट सेटअप<br><span class="font-semibold text-[9px] md:text-xs text-gray-600">(कम से कम 3 से 5 गेटवे)</span></span>
+                    </div>
                 </div>
 
                 <!-- Service 9 -->
-                <div class="md:col-span-2 md:mx-auto md:w-[80%] flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
+                <div onclick="openServiceDetailsModal(9)" class="flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
                     <div class="bg-gradient-to-br from-[#FFE866] to-[#FFB700] w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-lg sm:rounded-xl font-black text-xl sm:text-2xl md:text-3xl shrink-0 shadow-hard-gold-sm md:shadow-hard-gold text-black border border-[#DAA520]">9</div>
-                    <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0 mx-1 sm:mx-2 text-gray-600">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0 mx-1 sm:mx-2 text-gray-600 relative">
                         <i class="fa-solid fa-clipboard-list text-[28px] md:text-4xl drop-shadow-md"></i>
                         <i class="fa-solid fa-circle-check absolute transform translate-x-3 translate-y-2 md:translate-x-4 md:translate-y-3 text-sm md:text-xl text-green-500 bg-white rounded-full"></i>
                         <span class="absolute text-[8px] md:text-[10px] font-black text-black transform -translate-y-0.5 md:-translate-y-1">GST</span>
                     </div>
-                    <div class="font-bold text-[12px] sm:text-[14px] md:text-[17px] leading-tight">GST Registration</div>
+                    <div class="font-bold text-[12px] sm:text-[14px] md:text-[17px] leading-tight">
+                        <span class="lang-en">GST Registration</span>
+                        <span class="lang-hi">GST रजिस्ट्रेशन</span>
+                    </div>
                 </div>
 
                 <!-- Service 5 -->
-                <div class="md:col-span-2 md:mx-auto md:w-[80%] flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
+                <div onclick="openServiceDetailsModal(5)" class="flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
                     <div class="bg-gradient-to-br from-[#FFE866] to-[#FFB700] w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-lg sm:rounded-xl font-black text-xl sm:text-2xl md:text-3xl shrink-0 shadow-hard-gold-sm md:shadow-hard-gold text-black border border-[#DAA520]">5</div>
                     <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0 mx-1 sm:mx-2 text-red-600 relative">
                         <i class="fa-solid fa-bullseye text-[28px] md:text-4xl drop-shadow-md"></i>
                         <i class="fa-solid fa-arrow-trend-up absolute transform translate-x-3 -translate-y-3 md:translate-x-4 md:-translate-y-4 text-sm md:text-xl text-gold drop-shadow-md"></i>
                     </div>
-                    <div class="font-bold text-[12px] sm:text-[14px] md:text-[17px] leading-tight pr-1 md:pr-2">Social Media Ad Campaign<br>Run for Sales Generation</div>
+                    <div class="font-bold text-[12px] sm:text-[14px] md:text-[17px] leading-tight pr-1 md:pr-2">
+                        <span class="lang-en">Social Media Ad Campaign<br>Run for Sales Generation</span>
+                        <span class="lang-hi">सेल्स जनरेशन के लिए<br>सोशल मीडिया ऐड कैंपेन रन</span>
+                    </div>
+                </div>
+
+                <!-- Service 10 -->
+                <div onclick="openServiceDetailsModal(10)" class="flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
+                    <div class="bg-gradient-to-br from-[#FFE866] to-[#FFB700] w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-lg sm:rounded-xl font-black text-xl sm:text-2xl md:text-3xl shrink-0 shadow-hard-gold-sm md:shadow-hard-gold text-black border border-[#DAA520]">10</div>
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0 mx-1 sm:mx-2 text-blue-900 relative">
+                        <i class="fa-solid fa-compass-drafting text-[28px] md:text-4xl drop-shadow-md"></i>
+                        <i class="fa-solid fa-pen-nib absolute transform translate-x-3 translate-y-2 md:translate-x-4 md:translate-y-3 text-sm md:text-xl text-gold drop-shadow-md"></i>
+                    </div>
+                    <div class="font-bold text-[12px] sm:text-[14px] md:text-[17px] leading-tight pr-1 md:pr-2">
+                        <span class="lang-en">Complete R & D<br>and Logo Design</span>
+                        <span class="lang-hi">कम्पलीट R & D<br>और लोगो डिज़ाइन</span>
+                    </div>
                 </div>
 
             </div>
@@ -334,7 +395,9 @@
                     <div class="w-7 h-7 sm:w-10 sm:h-10 md:w-14 md:h-14 rounded-full border border-gold md:border-2 flex items-center justify-center text-gold bg-black mb-1 sm:mb-2 shadow-[0_0_5px_rgba(255,199,0,0.5)] md:shadow-[0_0_10px_rgba(255,199,0,0.5)]">
                         <i class="fa-solid fa-crosshairs text-[10px] sm:text-sm md:text-xl"></i>
                     </div>
-                    <span class="text-[6px] sm:text-[8px] md:text-[11px] font-bold text-white tracking-wider md:tracking-widest uppercase">STRATEGY</span>
+                    <span class="text-[6px] sm:text-[8px] md:text-[11px] font-bold text-white tracking-wider md:tracking-widest uppercase">
+                        <span class="lang-en">STRATEGY</span><span class="lang-hi">रणनीति</span>
+                    </span>
                 </div>
                 
                 <div class="hidden sm:block w-[1px] h-6 sm:h-10 bg-gold/50 mx-1 sm:mx-2"></div>
@@ -343,7 +406,9 @@
                     <div class="w-7 h-7 sm:w-10 sm:h-10 md:w-14 md:h-14 rounded-full border border-gold md:border-2 flex items-center justify-center text-gold bg-black mb-1 sm:mb-2 shadow-[0_0_5px_rgba(255,199,0,0.5)] md:shadow-[0_0_10px_rgba(255,199,0,0.5)]">
                         <i class="fa-regular fa-lightbulb text-[10px] sm:text-sm md:text-xl"></i>
                     </div>
-                    <span class="text-[6px] sm:text-[8px] md:text-[11px] font-bold text-white tracking-wider md:tracking-widest uppercase">CREATION</span>
+                    <span class="text-[6px] sm:text-[8px] md:text-[11px] font-bold text-white tracking-wider md:tracking-widest uppercase">
+                        <span class="lang-en">CREATION</span><span class="lang-hi">निर्माण</span>
+                    </span>
                 </div>
                 
                 <div class="hidden sm:block w-[1px] h-6 sm:h-10 bg-gold/50 mx-1 sm:mx-2"></div>
@@ -352,7 +417,9 @@
                     <div class="w-7 h-7 sm:w-10 sm:h-10 md:w-14 md:h-14 rounded-full border border-gold md:border-2 flex items-center justify-center text-gold bg-black mb-1 sm:mb-2 shadow-[0_0_5px_rgba(255,199,0,0.5)] md:shadow-[0_0_10px_rgba(255,199,0,0.5)]">
                         <i class="fa-solid fa-bullhorn text-[10px] sm:text-sm md:text-xl"></i>
                     </div>
-                    <span class="text-[6px] sm:text-[8px] md:text-[11px] font-bold text-white tracking-wider md:tracking-widest uppercase">GROWTH</span>
+                    <span class="text-[6px] sm:text-[8px] md:text-[11px] font-bold text-white tracking-wider md:tracking-widest uppercase">
+                        <span class="lang-en">GROWTH</span><span class="lang-hi">विकास</span>
+                    </span>
                 </div>
                 
                 <div class="hidden sm:block w-[1px] h-6 sm:h-10 bg-gold/50 mx-1 sm:mx-2"></div>
@@ -361,7 +428,9 @@
                     <div class="w-7 h-7 sm:w-10 sm:h-10 md:w-14 md:h-14 rounded-full border border-gold md:border-2 flex items-center justify-center text-gold bg-black mb-1 sm:mb-2 shadow-[0_0_5px_rgba(255,199,0,0.5)] md:shadow-[0_0_10px_rgba(255,199,0,0.5)]">
                         <i class="fa-solid fa-chart-line text-[10px] sm:text-sm md:text-xl"></i>
                     </div>
-                    <span class="text-[6px] sm:text-[8px] md:text-[11px] font-bold text-white tracking-wider md:tracking-widest uppercase">SALES</span>
+                    <span class="text-[6px] sm:text-[8px] md:text-[11px] font-bold text-white tracking-wider md:tracking-widest uppercase">
+                        <span class="lang-en">SALES</span><span class="lang-hi">बिक्री</span>
+                    </span>
                 </div>
                 
                 <div class="hidden sm:block w-[1px] h-6 sm:h-10 bg-gold/50 mx-1 sm:mx-2"></div>
@@ -370,7 +439,9 @@
                     <div class="w-7 h-7 sm:w-10 sm:h-10 md:w-14 md:h-14 rounded-full border border-gold md:border-2 flex items-center justify-center text-gold bg-black mb-1 sm:mb-2 shadow-[0_0_5px_rgba(255,199,0,0.5)] md:shadow-[0_0_10px_rgba(255,199,0,0.5)]">
                         <i class="fa-solid fa-handshake text-[10px] sm:text-sm md:text-xl"></i>
                     </div>
-                    <span class="text-[6px] sm:text-[8px] md:text-[11px] font-bold text-white tracking-wider md:tracking-widest uppercase">SUCCESS</span>
+                    <span class="text-[6px] sm:text-[8px] md:text-[11px] font-bold text-white tracking-wider md:tracking-widest uppercase">
+                        <span class="lang-en">SUCCESS</span><span class="lang-hi">सफलता</span>
+                    </span>
                 </div>
             </div>
             
@@ -379,7 +450,7 @@
             <div class="w-[85%] md:w-full max-w-xl mx-auto h-[1px] md:h-[2px] mt-1 bg-gradient-to-r from-transparent via-white/80 md:via-white to-transparent"></div>
         </div>
 
-        <!-- Special 10th Step Section (11D Premium Vibe) -->
+        <!-- SPECIAL 10TH STEP SECTION (MASTERCLASS TRAINING - 11D PREMIUM VIBE) -->
         <div class="max-w-5xl mx-auto mt-4 mb-14 md:mb-20 relative z-10 px-1 sm:px-4 group">
             <div class="absolute inset-0 bg-gradient-to-r from-gold-600 via-yellow-200 to-gold-600 rounded-[24px] md:rounded-[30px] blur-md md:blur-xl opacity-30 md:opacity-40 group-hover:opacity-60 md:group-hover:opacity-70 transition-opacity duration-500"></div>
             <div class="relative bg-[#0a0a0a] border-2 border-gold-500 p-[2px] md:p-1 rounded-[24px] md:rounded-[30px] shadow-[0_0_20px_rgba(255,199,0,0.3)] md:shadow-glow-gold-lg overflow-hidden glow-11d">
@@ -399,10 +470,19 @@
                     <!-- Content -->
                     <div class="text-center sm:text-left flex-1">
                         <div class="inline-block px-3 py-0.5 md:px-4 md:py-1 rounded-full bg-gold/20 border border-gold/50 text-gold text-[10px] md:text-xs font-bold uppercase tracking-wider md:tracking-widest mb-2 md:mb-3 shadow-[0_0_10px_rgba(255,215,0,0.3)]">
-                            <i class="fa-solid fa-crown mr-1 md:mr-2"></i>Masterclass Training
+                            <i class="fa-solid fa-crown mr-1 md:mr-2"></i>
+                            <span class="lang-en">Masterclass Training</span>
+                            <span class="lang-hi">मास्टरक्लास ट्रेनिंग</span>
                         </div>
                         <p class="text-white text-[13px] sm:text-base md:text-xl font-bold leading-snug md:leading-relaxed tracking-wide text-stroke">
-                            1 to 2 Months Proper Training of All These Tools so you can <span class="text-gold font-black drop-shadow-[0_0_3px_rgba(255,215,0,0.5)] md:drop-shadow-[0_0_5px_rgba(255,215,0,0.5)]">Run Your Complete Business in 1 - 2 Months on Your Own</span> Without Depending on Us.
+                            <span class="lang-en">1 to 2 Months Proper Training of All These Tools so you can</span>
+                            <span class="lang-hi">इन सभी टूल्स की 1 से 2 महीने की प्रॉपर ट्रेनिंग ताकि आप</span> 
+                            <span class="text-gold font-black drop-shadow-[0_0_3px_rgba(255,215,0,0.5)] md:drop-shadow-[0_0_5px_rgba(255,215,0,0.5)]">
+                                <span class="lang-en">Run Your Complete Business in 1 - 2 Months on Your Own</span>
+                                <span class="lang-hi">1 से 2 महीने में अपना पूरा बिज़नेस खुद चला सकें</span>
+                            </span> 
+                            <span class="lang-en">Without Depending on Us.</span>
+                            <span class="lang-hi">हमारे ऊपर निर्भर रहे बिना।</span>
                         </p>
                     </div>
 
@@ -413,7 +493,12 @@
         <!-- Footer Text Area -->
         <div class="text-center relative z-10 mb-6 md:mb-8 px-2">
             <h2 class="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-black text-white uppercase tracking-wider drop-shadow-md leading-tight">
-                WE BUILD <span class="text-gold">YOUR BUSINESS.</span><br class="md:hidden"> YOU GROW <span class="text-gold">YOUR DREAMS.</span>
+                <span class="lang-en">
+                    WE BUILD <span class="text-gold">YOUR BUSINESS.</span><br class="md:hidden"> YOU GROW <span class="text-gold">YOUR DREAMS.</span>
+                </span>
+                <span class="lang-hi">
+                    हम आपका <span class="text-gold">बिज़नेस</span> बनाते हैं।<br class="md:hidden"> आप अपने <span class="text-gold">सपने</span> पूरे करते हैं।
+                </span>
             </h2>
         </div>
 
@@ -444,9 +529,16 @@
                     
                     <div class="text-center mt-2 md:mt-4">
                         <h3 class="text-gold font-bold text-lg sm:text-2xl md:text-3xl leading-snug tracking-wide">
-                            <span class="text-white">Your</span> Budget<br>
-                            <span class="text-white">Your</span> Business<br>
-                            <span class="text-white">Our</span> Support
+                            <span class="lang-en">
+                                <span class="text-white">Your</span> Budget<br>
+                                <span class="text-white">Your</span> Business<br>
+                                <span class="text-white">Our</span> Support
+                            </span>
+                            <span class="lang-hi">
+                                <span class="text-white">आपका</span> बजट<br>
+                                <span class="text-white">आपका</span> बिज़नेस<br>
+                                <span class="text-white">हमारा</span> सपोर्ट
+                            </span>
                         </h3>
                     </div>
                     
@@ -469,36 +561,74 @@
                 <div class="relative bg-gradient-to-b from-[#1a1a1a] to-[#000000] border-2 border-gold-500 font-black uppercase tracking-wider px-4 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-full shadow-[0_0_10px_rgba(255,199,0,0.4)] md:shadow-glow-gold text-[9px] sm:text-xs md:text-lg flex items-center justify-center gap-1.5 sm:gap-2 md:gap-3 backdrop-blur-md w-full">
                     <img src="sti.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STI Icon" class="h-4 sm:h-5 md:h-8 object-contain filter drop-shadow-[0_0_5px_gold] md:drop-shadow-[0_0_8px_gold]">
                     <img src="stin.png" onerror="this.style.display='none'" alt="STI World Official" class="h-2.5 sm:h-3 md:h-5 object-contain filter drop-shadow-[0_0_3px_rgba(255,255,255,0.6)] md:drop-shadow-[0_0_5px_rgba(255,255,255,0.6)]">
-                    <span class="text-white ml-0.5 md:ml-2 tracking-wider md:tracking-widest whitespace-nowrap">– Your Growth Partner</span>
+                    <span class="text-white ml-0.5 md:ml-2 tracking-wider md:tracking-widest whitespace-nowrap">
+                        <span class="lang-en">– Your Growth Partner</span>
+                        <span class="lang-hi">– आपका ग्रोथ पार्टनर</span>
+                    </span>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <!-- Portfolio Popup Modal -->
-    <div id="portfolioModal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4">
+    <!-- 800px Auto-width Service Details Modal -->
+    <div id="serviceDetailsModal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4">
         <!-- Backdrop -->
-        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closePortfolioModal()"></div>
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-md" onclick="closeServiceDetailsModal()"></div>
         
-        <!-- Modal Content Container -->
-        <div class="relative bg-gradient-to-b from-[#111] to-[#000] border-2 border-gold-500 rounded-3xl shadow-glow-gold-lg w-full md:w-auto md:min-w-[500px] max-w-lg h-[80vh] max-h-[800px] flex flex-col overflow-hidden animate-scale-in">
+        <!-- Modal Content Container (Max width 800px) -->
+        <div class="relative bg-gradient-to-b from-[#111] to-[#000] border-2 border-gold-500 rounded-3xl shadow-glow-gold-lg w-full max-w-[800px] flex flex-col overflow-hidden animate-scale-in">
             
             <!-- Modal Header -->
+            <div class="p-5 md:p-8 border-b border-white/10 flex justify-between items-center relative z-10 bg-black/50">
+                <div class="flex items-center gap-4">
+                    <div id="sd-icon" class="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gold/10 flex items-center justify-center text-gold text-2xl md:text-3xl border border-gold/30 shadow-inner shrink-0">
+                        <!-- Icon inject hoga -->
+                    </div>
+                    <h3 class="text-gold font-display font-black text-xl sm:text-xl md:text-2xl uppercase tracking-wider leading-tight">
+                        <span id="sd-title-mobile" class="sm:hidden"></span>
+                        <span id="sd-title-desktop" class="hidden sm:inline"></span>
+                    </h3>
+                </div>
+                <button onclick="closeServiceDetailsModal()" class="text-gray-400 hover:text-white transition-colors bg-white/5 hover:bg-white/10 w-10 h-10 flex items-center justify-center rounded-full shrink-0 ml-2">
+                    <i class="fa-solid fa-xmark text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Modal Body (Description) -->
+            <div class="p-6 md:p-10 relative z-10 flex flex-col items-center text-center">
+                <i class="fa-solid fa-quote-left text-4xl text-white/10 absolute top-4 left-6 md:top-6 md:left-10"></i>
+                <p id="sd-desc" class="text-white text-base sm:text-lg md:text-xl font-medium leading-relaxed tracking-wide z-10 my-4 text-stroke">
+                    <!-- Description inject hogi -->
+                </p>
+                <i class="fa-solid fa-quote-right text-4xl text-white/10 absolute bottom-4 right-6 md:bottom-6 md:right-10"></i>
+                
+                <!-- CTA inside modal -->
+                <a href="https://wa.me/918395913829" target="_blank" class="mt-8 md:mt-10 inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebd5a] text-white font-bold uppercase px-8 py-3 rounded-full shadow-[0_0_15px_rgba(37,211,102,0.4)] transition-all transform hover:scale-105 border border-white/20">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> <span class="lang-en">Chat Now</span><span class="lang-hi">अभी चैट करें</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Popup Modal -->
+    <div id="portfolioModal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closePortfolioModal()"></div>
+        <div class="relative bg-gradient-to-b from-[#111] to-[#000] border-2 border-gold-500 rounded-3xl shadow-glow-gold-lg w-full md:w-auto md:min-w-[500px] max-w-lg h-[80vh] max-h-[800px] flex flex-col overflow-hidden animate-scale-in">
             <div class="p-4 md:p-6 border-b border-white/10 flex justify-between items-center relative z-10 bg-black/50">
                 <div class="flex items-center gap-3">
                     <i class="fa-solid fa-briefcase text-gold text-2xl"></i>
-                    <h3 class="text-gold font-display font-black text-lg md:text-xl uppercase tracking-wider">Our Portfolio</h3>
+                    <h3 class="text-gold font-display font-black text-lg md:text-xl uppercase tracking-wider">
+                        <span class="lang-en">Our Portfolio</span>
+                        <span class="lang-hi">हमारा पोर्टफोलियो</span>
+                    </h3>
                 </div>
                 <button onclick="closePortfolioModal()" class="text-gray-400 hover:text-white transition-colors bg-white/5 hover:bg-white/10 w-8 h-8 flex items-center justify-center rounded-full">
                     <i class="fa-solid fa-xmark text-xl"></i>
                 </button>
             </div>
-            
-            <!-- Modal Body (Scrollable List) -->
             <div class="p-4 md:p-6 overflow-y-auto flex-1 flex flex-col gap-4 custom-scrollbar relative z-10">
-                
-                <!-- Project Link 1 -->
+                <!-- Example Portfolio Links -->
                 <a href="https://example.com" target="_blank" class="flex items-center gap-4 bg-gradient-to-r from-[#1a1a1a] to-black border border-white/10 p-4 rounded-xl hover:border-gold-500 hover:shadow-[0_0_15px_rgba(255,215,0,0.2)] transition-all group">
                     <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-colors shadow-inner">
                         <i class="fa-solid fa-globe text-lg md:text-xl"></i>
@@ -511,84 +641,177 @@
                         <i class="fa-solid fa-arrow-up-right-from-square text-gray-400 group-hover:text-gold text-sm"></i>
                     </div>
                 </a>
-
-                <!-- Project Link 2 -->
-                <a href="https://example.com" target="_blank" class="flex items-center gap-4 bg-gradient-to-r from-[#1a1a1a] to-black border border-white/10 p-4 rounded-xl hover:border-gold-500 hover:shadow-[0_0_15px_rgba(255,215,0,0.2)] transition-all group">
-                    <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-colors shadow-inner">
-                        <i class="fa-solid fa-shop text-lg md:text-xl"></i>
-                    </div>
-                    <div class="flex-1">
-                        <h4 class="text-white font-bold text-sm md:text-base group-hover:text-gold transition-colors">Real Estate Platform</h4>
-                        <p class="text-gray-400 text-[10px] md:text-xs">Listing & Property Management</p>
-                    </div>
-                    <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
-                        <i class="fa-solid fa-arrow-up-right-from-square text-gray-400 group-hover:text-gold text-sm"></i>
-                    </div>
-                </a>
-
-                <!-- Project Link 3 -->
-                <a href="https://example.com" target="_blank" class="flex items-center gap-4 bg-gradient-to-r from-[#1a1a1a] to-black border border-white/10 p-4 rounded-xl hover:border-gold-500 hover:shadow-[0_0_15px_rgba(255,215,0,0.2)] transition-all group">
-                    <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-colors shadow-inner">
-                        <i class="fa-solid fa-graduation-cap text-lg md:text-xl"></i>
-                    </div>
-                    <div class="flex-1">
-                        <h4 class="text-white font-bold text-sm md:text-base group-hover:text-gold transition-colors">Educational Portal</h4>
-                        <p class="text-gray-400 text-[10px] md:text-xs">Online Courses & Tests</p>
-                    </div>
-                    <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
-                        <i class="fa-solid fa-arrow-up-right-from-square text-gray-400 group-hover:text-gold text-sm"></i>
-                    </div>
-                </a>
-
-                <!-- Project Link 4 -->
-                <a href="https://example.com" target="_blank" class="flex items-center gap-4 bg-gradient-to-r from-[#1a1a1a] to-black border border-white/10 p-4 rounded-xl hover:border-gold-500 hover:shadow-[0_0_15px_rgba(255,215,0,0.2)] transition-all group">
-                    <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-colors shadow-inner">
-                        <i class="fa-solid fa-utensils text-lg md:text-xl"></i>
-                    </div>
-                    <div class="flex-1">
-                        <h4 class="text-white font-bold text-sm md:text-base group-hover:text-gold transition-colors">Restaurant App Web</h4>
-                        <p class="text-gray-400 text-[10px] md:text-xs">Food Delivery & Menu</p>
-                    </div>
-                    <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
-                        <i class="fa-solid fa-arrow-up-right-from-square text-gray-400 group-hover:text-gold text-sm"></i>
-                    </div>
-                </a>
-                
-                <!-- Project Link 5 -->
-                <a href="https://example.com" target="_blank" class="flex items-center gap-4 bg-gradient-to-r from-[#1a1a1a] to-black border border-white/10 p-4 rounded-xl hover:border-gold-500 hover:shadow-[0_0_15px_rgba(255,215,0,0.2)] transition-all group">
-                    <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-colors shadow-inner">
-                        <i class="fa-solid fa-user-tie text-lg md:text-xl"></i>
-                    </div>
-                    <div class="flex-1">
-                        <h4 class="text-white font-bold text-sm md:text-base group-hover:text-gold transition-colors">Corporate Portfolio</h4>
-                        <p class="text-gray-400 text-[10px] md:text-xs">Business Landing Page</p>
-                    </div>
-                    <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
-                        <i class="fa-solid fa-arrow-up-right-from-square text-gray-400 group-hover:text-gold text-sm"></i>
-                    </div>
-                </a>
-
             </div>
-            
-            <!-- Bottom Fade effect -->
-            <div class="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-black to-transparent pointer-events-none z-20"></div>
         </div>
     </div>
 
     <script>
-        // Modal Control Functions
+        // Language Toggle System
+        let currentLang = 'en';
+
+        function toggleLang() {
+            currentLang = currentLang === 'en' ? 'hi' : 'en';
+            document.documentElement.lang = currentLang;
+            
+            // Update button styles
+            if (currentLang === 'en') {
+                document.getElementById('lang-en-btn').className = "text-gold font-bold text-sm";
+                document.getElementById('lang-hi-btn').className = "text-white/50 font-bold text-sm hover:text-white transition-colors cursor-pointer";
+            } else {
+                document.getElementById('lang-en-btn').className = "text-white/50 font-bold text-sm hover:text-white transition-colors cursor-pointer";
+                document.getElementById('lang-hi-btn').className = "text-gold font-bold text-sm";
+            }
+
+            // Refresh modal if it's currently open to update its language instantly
+            const modal = document.getElementById('serviceDetailsModal');
+            if (!modal.classList.contains('hidden') && currentOpenStep !== null) {
+                openServiceDetailsModal(currentOpenStep);
+            }
+        }
+
+        // Initialize language
+        document.documentElement.lang = currentLang;
+
+        // Portfolio Modal Functions
         function openPortfolioModal() {
             const modal = document.getElementById('portfolioModal');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
-            document.body.style.overflow = 'hidden'; // Stop background scroll
+            document.body.style.overflow = 'hidden'; 
         }
 
         function closePortfolioModal() {
             const modal = document.getElementById('portfolioModal');
             modal.classList.add('hidden');
             modal.classList.remove('flex');
-            document.body.style.overflow = ''; // Restore scroll
+            document.body.style.overflow = ''; 
+        }
+
+        // Service Details Data (English and Hindi)
+        const servicesData = {
+            1: {
+                title_en: "Website + Android App",
+                title_hi: "वेबसाइट + एंड्रॉइड ऐप",
+                short_en: "Website",
+                short_hi: "वेबसाइट",
+                icon: '<i class="fa-solid fa-display"></i>',
+                desc_en: "To bring your business into the digital world, we will design a premium, fast, and responsive Website and Android App so customers can easily reach you.",
+                desc_hi: "आपके बिज़नेस को डिजिटल दुनिया में लाने के लिए हम एक प्रीमियम, फ़ास्ट और रिस्पॉन्सिव वेबसाइट और एंड्राइड ऐप डिज़ाइन करके देंगे, जिससे कस्टमर आसानी से आप तक पहुँच सकें।"
+            },
+            2: {
+                title_en: "3 Months Social Media Account Management",
+                title_hi: "3 महीने सोशल मीडिया अकाउंट मैनेजमेंट",
+                short_en: "Management",
+                short_hi: "मैनेजमेंट",
+                icon: '<i class="fa-brands fa-facebook"></i>',
+                desc_en: "Complete management of your Facebook, Instagram, and YouTube accounts for 3 months, including regular posting and engaging growth strategies.",
+                desc_hi: "3 महीने तक आपके फेसबुक, इंस्टाग्राम और यूट्यूब अकाउंट्स का कम्पलीट मैनेजमेंट, रेगुलर पोस्टिंग और एंगेजिंग ग्रोथ स्ट्रेटेजी हम हैंडल करेंगे।"
+            },
+            3: {
+                title_en: "All Types of Branding, AI Video & Image",
+                title_hi: "ब्रांडिंग, AI वीडियो व इमेज जनरेशन",
+                short_en: "Branding",
+                short_hi: "ब्रांडिंग",
+                icon: '<i class="fa-solid fa-microchip"></i>',
+                desc_en: "Using the latest AI tools, we will generate viral videos and eye-catching images for your brand that will stand out on social media.",
+                desc_hi: "लेटेस्ट AI टूल्स का यूज़ करके हम आपके ब्रांड के लिए वायरल वीडियोज़ और आई-कैचिंग इमेजेज़ जनरेट करेंगे जो सोशल मीडिया पर सबसे अलग दिखेंगी।"
+            },
+            4: {
+                title_en: "Payment Gateway Complete Setup",
+                title_hi: "पेमेंट गेटवे कम्पलीट सेटअप",
+                short_en: "Payment",
+                short_hi: "पेमेंट",
+                icon: '<i class="fa-regular fa-credit-card"></i>',
+                desc_en: "To make online payments easy for your customers, we will provide a complete setup of 3 to 5 secure Payment Gateways.",
+                desc_hi: "आपके कस्टमर्स के लिए ऑनलाइन पेमेंट को आसान बनाने के लिए हम 3 से 5 सिक्योर पेमेंट गेटवेज़ का कम्पलीट सेटअप करके देंगे।"
+            },
+            5: {
+                title_en: "Social Media Ad Campaign",
+                title_hi: "सोशल मीडिया ऐड कैंपेन",
+                short_en: "Campaign",
+                short_hi: "कैंपेन",
+                icon: '<i class="fa-solid fa-bullseye"></i>',
+                desc_en: "To increase sales and leads, we will run highly targeted ad campaigns on your social media platforms, directly increasing profit.",
+                desc_hi: "सेल्स और लीड्स बढ़ाने के लिए हम आपके सोशल मीडिया प्लेटफॉर्म्स पर हाईली टार्गेटेड ऐड कैंपेन रन करेंगे, जिससे डायरेक्ट प्रॉफिट बढ़ेगा।"
+            },
+            6: {
+                title_en: "We Teach You All AI Tools",
+                title_hi: "हम आपको सभी AI टूल्स सिखाते हैं",
+                short_en: "Training",
+                short_hi: "ट्रेनिंग",
+                icon: '<i class="fa-solid fa-robot"></i>',
+                desc_en: "We will teach you how to use all the latest AI tools in detail, so you can manage your business on your own without depending on anyone.",
+                desc_hi: "हम आपको सभी लेटेस्ट AI टूल्स यूज़ करना डिटेल में सिखाएंगे, ताकि आगे चलकर आप अपना बिज़नेस बिना किसी पर डिपेंड हुए खुद मैनेज कर सकें।"
+            },
+            7: {
+                title_en: "Delivery Company Setup & Guidance",
+                title_hi: "डिलीवरी कंपनी सेटअप और मार्गदर्शन",
+                short_en: "Delivery",
+                short_hi: "डिलीवरी",
+                icon: '<i class="fa-solid fa-truck-fast"></i>',
+                desc_en: "If you sell physical products, we will create your account with top delivery companies and provide complete shipping guidance.",
+                desc_hi: "अगर आप फिजिकल प्रोडक्ट्स सेल करते हैं, तो हम टॉप डिलीवरी कंपनीज़ के साथ आपका अकाउंट बनवाएंगे और पूरी शिपिंग गाइडेंस देंगे।"
+            },
+            8: {
+                title_en: "Trademark Registration",
+                title_hi: "ट्रेडमार्क रजिस्ट्रेशन",
+                short_en: "Trademark",
+                short_hi: "ट्रेडमार्क",
+                icon: '<i class="fa-solid fa-trademark"></i>',
+                desc_en: "To protect your brand name and logo from being copied, we will handle the complete Trademark (TM) Registration process legally.",
+                desc_hi: "आपके ब्रांड नेम और लोगो को कॉपी होने से बचाने के लिए हम कम्पलीट ट्रेडमार्क (TM) रजिस्ट्रेशन प्रोसेस लीगल तरीके से हैंडल करेंगे।"
+            },
+            9: {
+                title_en: "GST Registration",
+                title_hi: "GST रजिस्ट्रेशन",
+                short_en: "GST",
+                short_hi: "GST",
+                icon: '<i class="fa-solid fa-clipboard-list"></i>',
+                desc_en: "To make your business 100% legal and compliant, we will complete the GST Registration process for you without any tension.",
+                desc_hi: "अपने बिज़नेस को 100% लीगल और कंप्लायंट बनाने के लिए हम GST रजिस्ट्रेशन की पूरी प्रोसेस बिना किसी टेंशन के कम्पलीट करके देंगे।"
+            },
+            10: {
+                title_en: "Complete R & D and Logo Design",
+                title_hi: "कम्पलीट R & D और लोगो डिज़ाइन",
+                short_en: "Design",
+                short_hi: "डिज़ाइन",
+                icon: '<i class="fa-solid fa-compass-drafting"></i>',
+                desc_en: "To give your brand a unique identity, we will do deep Research & Development (R&D) and design a premium, unique Logo.",
+                desc_hi: "आपके ब्रांड को एक अनोखी पहचान देने के लिए हम डीप रिसर्च एंड डेवलपमेंट (R&D) करेंगे और एक प्रीमियम, यूनिक लोगो डिज़ाइन करके देंगे।"
+            }
+        };
+
+        // Service Details Modal Functions
+        let currentOpenStep = null;
+
+        function openServiceDetailsModal(stepId) {
+            currentOpenStep = stepId;
+            const modal = document.getElementById('serviceDetailsModal');
+            const data = servicesData[stepId];
+            
+            if(data) {
+                // Determine full and short titles based on language
+                const fullTitle = currentLang === 'en' ? data.title_en : data.title_hi;
+                const shortTitle = currentLang === 'en' ? data.short_en : data.short_hi;
+                
+                document.getElementById('sd-title-mobile').innerText = shortTitle;
+                document.getElementById('sd-title-desktop').innerText = fullTitle;
+                
+                document.getElementById('sd-icon').innerHTML = data.icon;
+                document.getElementById('sd-desc').innerText = currentLang === 'en' ? data.desc_en : data.desc_hi;
+                
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden'; 
+            }
+        }
+
+        function closeServiceDetailsModal() {
+            currentOpenStep = null;
+            const modal = document.getElementById('serviceDetailsModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = ''; 
         }
     </script>
 </body>

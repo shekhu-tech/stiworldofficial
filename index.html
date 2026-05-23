@@ -134,7 +134,7 @@
         }
         
         .custom-scrollbar::-webkit-scrollbar {
-            width: 5px;
+            width: 6px;
         }
         .custom-scrollbar::-webkit-scrollbar-track {
             background: rgba(255,255,255,0.05); 
@@ -206,17 +206,17 @@
         <div class="text-center relative z-10 flex flex-col items-center space-y-2 md:space-y-3 mb-16 md:mb-24 mt-10 md:mt-16">
             <h2 class="text-[17px] sm:text-2xl md:text-5xl font-black text-white uppercase tracking-wide drop-shadow-md px-2">
                 <span class="lang-en">WE DON'T WORK ACCORDING TO</span>
-                <span class="lang-hi">हम अपने   </span>
+                <span class="lang-hi">हम अपने ,</span>
             </h2>
             
             <div class="bg-gold text-black font-black text-2xl sm:text-3xl md:text-6xl px-4 sm:px-8 py-1.5 sm:py-2 rounded-md sm:rounded-lg transform -skew-x-6 inline-block shadow-lg mt-1 md:mt-2 mb-1 md:mb-2">
                 <span class="lang-en">OUR RATES,</span>
-                <span class="lang-hi">रेट्स के हिसाब से नहीं,</span>
+                <span class="lang-hi">रेट्स के हिसाब से नहीं</span>
             </div>
             
             <h2 class="text-[17px] sm:text-2xl md:text-5xl font-black text-white uppercase tracking-wide drop-shadow-md px-2">
                 <span class="lang-en">WE WORK ACCORDING TO</span>
-                <span class="lang-hi">आपके बजट के हिसाब </span>
+                <span class="lang-hi">हम आपके बजट के हिसाब </span>
             </h2>
             
             <div class="font-script text-[38px] sm:text-6xl md:text-8xl text-gold mt-4 md:mt-6 transform -rotate-2 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] md:drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
@@ -458,12 +458,14 @@
                 <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+')] opacity-20 z-0"></div>
                 <div class="bg-gradient-to-br from-[#111] to-[#000] rounded-[20px] md:rounded-[26px] p-4 sm:p-6 md:p-8 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 md:gap-10 relative z-10">
                     
-                    <!-- Number 10 Badge -->
+                    <!-- Awesome Premium Graduate/Crown Badge Icon -->
                     <div class="relative shrink-0">
                         <div class="absolute inset-0 bg-gold blur-md md:blur-lg opacity-50 md:opacity-60 rounded-full animate-pulse"></div>
-                        <div class="bg-gradient-to-br from-[#FFE866] to-[#FFB700] w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 flex items-center justify-center rounded-xl md:rounded-2xl font-black text-3xl sm:text-4xl md:text-6xl shadow-hard-gold-sm md:shadow-hard-gold text-black border md:border-2 border-[#fff] relative z-10 transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
-                            10
-                            <i class="fa-solid fa-graduation-cap absolute -top-3 -right-3 md:-top-5 md:-right-5 text-2xl sm:text-3xl md:text-5xl text-white drop-shadow-[0_0_5px_rgba(255,255,255,0.8)] md:drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] rotate-12"></i>
+                        <div class="bg-gradient-to-br from-[#FFE866] to-[#FFB700] w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 flex items-center justify-center rounded-xl md:rounded-2xl shadow-hard-gold-sm md:shadow-hard-gold text-black border md:border-2 border-[#fff] relative z-10 transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <!-- Premium Graduation Cap as the Central Icon -->
+                            <i class="fa-solid fa-graduation-cap text-3xl sm:text-4xl md:text-5xl text-black drop-shadow-[0_1px_3px_rgba(0,0,0,0.3)]"></i>
+                            <!-- Awesome Glowing Crown Badge placed on top right -->
+                            <i class="fa-solid fa-crown absolute -top-3 -right-3 md:-top-5 md:-right-5 text-2xl sm:text-3xl md:text-4xl text-white drop-shadow-[0_0_8px_rgba(255,199,0,1)] rotate-12"></i>
                         </div>
                     </div>
 
@@ -613,34 +615,191 @@
 
     <!-- Portfolio Popup Modal -->
     <div id="portfolioModal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4">
-        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closePortfolioModal()"></div>
-        <div class="relative bg-gradient-to-b from-[#111] to-[#000] border-2 border-gold-500 rounded-3xl shadow-glow-gold-lg w-full md:w-auto md:min-w-[500px] max-w-lg h-[80vh] max-h-[800px] flex flex-col overflow-hidden animate-scale-in">
-            <div class="p-4 md:p-6 border-b border-white/10 flex justify-between items-center relative z-10 bg-black/50">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-md" onclick="closePortfolioModal()"></div>
+        
+        <!-- Modal Container (Slightly wider for professional card list layout) -->
+        <div class="relative bg-gradient-to-b from-[#111] to-[#000] border-2 border-gold-500 rounded-3xl shadow-glow-gold-lg w-full max-w-2xl h-[85vh] max-h-[850px] flex flex-col overflow-hidden animate-scale-in">
+            
+            <!-- Modal Header -->
+            <div class="p-5 md:p-6 border-b border-white/10 flex justify-between items-center relative z-10 bg-black/50">
                 <div class="flex items-center gap-3">
-                    <i class="fa-solid fa-briefcase text-gold text-2xl"></i>
-                    <h3 class="text-gold font-display font-black text-lg md:text-xl uppercase tracking-wider">
+                    <i class="fa-solid fa-briefcase text-gold text-2xl md:text-3xl"></i>
+                    <h3 class="text-gold font-display font-black text-lg md:text-2xl uppercase tracking-wider">
                         <span class="lang-en">Our Portfolio</span>
                         <span class="lang-hi">हमारा पोर्टफोलियो</span>
                     </h3>
                 </div>
-                <button onclick="closePortfolioModal()" class="text-gray-400 hover:text-white transition-colors bg-white/5 hover:bg-white/10 w-8 h-8 flex items-center justify-center rounded-full">
-                    <i class="fa-solid fa-xmark text-xl"></i>
+                <button onclick="closePortfolioModal()" class="text-gray-400 hover:text-white transition-colors bg-white/5 hover:bg-white/10 w-10 h-10 flex items-center justify-center rounded-full">
+                    <i class="fa-solid fa-xmark text-2xl"></i>
                 </button>
             </div>
-            <div class="p-4 md:p-6 overflow-y-auto flex-1 flex flex-col gap-4 custom-scrollbar relative z-10">
-                <!-- Example Portfolio Links -->
-                <a href="https://example.com" target="_blank" class="flex items-center gap-4 bg-gradient-to-r from-[#1a1a1a] to-black border border-white/10 p-4 rounded-xl hover:border-gold-500 hover:shadow-[0_0_15px_rgba(255,215,0,0.2)] transition-all group">
-                    <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-colors shadow-inner">
-                        <i class="fa-solid fa-globe text-lg md:text-xl"></i>
+            
+            <!-- Modal Content (Scrollable Custom Container with Categories) -->
+            <div class="p-4 md:p-6 overflow-y-auto flex-1 flex flex-col gap-6 custom-scrollbar relative z-10">
+                
+                <!-- CATEGORY 1: WEBSITES -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4 border-b border-gold/20 pb-2">
+                        <i class="fa-solid fa-globe text-gold"></i>
+                        <h4 class="text-gold font-bold uppercase tracking-widest text-xs md:text-sm">
+                            <span class="lang-en">Live Websites</span>
+                            <span class="lang-hi">लाइव वेबसाइट्स</span>
+                        </h4>
                     </div>
-                    <div class="flex-1">
-                        <h4 class="text-white font-bold text-sm md:text-base group-hover:text-gold transition-colors">Fitness & Gym Website</h4>
-                        <p class="text-gray-400 text-[10px] md:text-xs">E-commerce / Booking System</p>
+                    
+                    <div class="flex flex-col gap-3">
+                        <!-- Website 1: Blessingsss -->
+                        <a href="https://blesingsss.in" target="_blank" class="flex items-center gap-3 md:gap-4 bg-gradient-to-r from-[#1a1a1a] to-black border border-white/10 p-3 md:p-4 rounded-xl hover:border-gold-500 hover:shadow-[0_0_15px_rgba(255,215,0,0.2)] transition-all group">
+                            <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-xl bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-colors shadow-inner border border-gold/20">
+                                <i class="fa-solid fa-bag-shopping text-lg md:text-xl"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h5 class="text-white font-bold text-sm md:text-base group-hover:text-gold transition-colors truncate">Blessingsss</h5>
+                                <p class="text-gray-400 text-[10px] md:text-xs">
+                                    <span class="lang-en">Mehndi &amp; Portal</span>
+                                    <span class="lang-hi">Mehndi &amp; Portal</span>
+                                </p>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-gold/20 transition-colors shrink-0">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-gray-400 group-hover:text-gold text-xs md:text-sm"></i>
+                            </div>
+                        </a>
+
+                        <!-- Website 2: Sukh Healthcare -->
+                        <a href="https://sukhhealthcare.com" target="_blank" class="flex items-center gap-3 md:gap-4 bg-gradient-to-r from-[#1a1a1a] to-black border border-white/10 p-3 md:p-4 rounded-xl hover:border-gold-500 hover:shadow-[0_0_15px_rgba(255,215,0,0.2)] transition-all group">
+                            <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-xl bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-colors shadow-inner border border-gold/20">
+                                <i class="fa-solid fa-heart-pulse text-lg md:text-xl"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h5 class="text-white font-bold text-sm md:text-base group-hover:text-gold transition-colors truncate">Sukh Healthcare</h5>
+                                <p class="text-gray-400 text-[10px] md:text-xs">
+                                    <span class="lang-en">Medical Equipment &amp; Health Services</span>
+                                    <span class="lang-hi">चिकित्सा उपकरण और स्वास्थ्य सेवाएं</span>
+                                </p>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-gold/20 transition-colors shrink-0">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-gray-400 group-hover:text-gold text-xs md:text-sm"></i>
+                            </div>
+                        </a>
+
+                        <!-- Website 3: Sonipat Home Service -->
+                        <a href="https://sonipathomeservice.com" target="_blank" class="flex items-center gap-3 md:gap-4 bg-gradient-to-r from-[#1a1a1a] to-black border border-white/10 p-3 md:p-4 rounded-xl hover:border-gold-500 hover:shadow-[0_0_15px_rgba(255,215,0,0.2)] transition-all group">
+                            <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-xl bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-colors shadow-inner border border-gold/20">
+                                <i class="fa-solid fa-screwdriver-wrench text-lg md:text-xl"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h5 class="text-white font-bold text-sm md:text-base group-hover:text-gold transition-colors truncate">Sonipat Home Service</h5>
+                                <p class="text-gray-400 text-[10px] md:text-xs">
+                                    <span class="lang-en">Local Home Services &amp; Provider Directory</span>
+                                    <span class="lang-hi">लोकल होम सर्विसेज और प्रोवाइडर डायरेक्टरी</span>
+                                </p>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-gold/20 transition-colors shrink-0">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-gray-400 group-hover:text-gold text-xs md:text-sm"></i>
+                            </div>
+                        </a>
+
+                        <!-- Website 4: Shaurya Homeshield -->
+                        <a href="https://shauryahomeshield.com" target="_blank" class="flex items-center gap-3 md:gap-4 bg-gradient-to-r from-[#1a1a1a] to-black border border-white/10 p-3 md:p-4 rounded-xl hover:border-gold-500 hover:shadow-[0_0_15px_rgba(255,215,0,0.2)] transition-all group">
+                            <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-xl bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-colors shadow-inner border border-gold/20">
+                                <i class="fa-solid fa-house-shield text-lg md:text-xl"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h5 class="text-white font-bold text-sm md:text-base group-hover:text-gold transition-colors truncate">Shaurya Homeshield</h5>
+                                <p class="text-gray-400 text-[10px] md:text-xs">
+                                    <span class="lang-en">Homeservice &amp;Safety Solutions</span>
+                                    <span class="lang-hi">Homeservice &amp;Safety Solutions</span>
+                                </p>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-gold/20 transition-colors shrink-0">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-gray-400 group-hover:text-gold text-xs md:text-sm"></i>
+                            </div>
+                        </a>
                     </div>
-                    <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
-                        <i class="fa-solid fa-arrow-up-right-from-square text-gray-400 group-hover:text-gold text-sm"></i>
+                </div>
+
+                <!-- CATEGORY 2: ANDROID APPS -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4 border-b border-gold/20 pb-2">
+                        <i class="fa-brands fa-google-play text-gold"></i>
+                        <h4 class="text-gold font-bold uppercase tracking-widest text-xs md:text-sm">
+                            <span class="lang-en">Android Apps</span>
+                            <span class="lang-hi">एंड्रॉइड ऐप्स </span>
+                        </h4>
                     </div>
-                </a>
+                    
+                    <div class="flex flex-col gap-3">
+                        <!-- App 1: STI Skilli -->
+                        <a href="https://play.google.com/store/apps/details?id=com.ai.skillaura" target="_blank" class="flex items-center gap-3 md:gap-4 bg-gradient-to-r from-[#1a1a1a] to-black border border-white/10 p-3 md:p-4 rounded-xl hover:border-gold-500 hover:shadow-[0_0_15px_rgba(255,215,0,0.2)] transition-all group">
+                            <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-xl bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-colors shadow-inner border border-gold/20">
+                                <i class="fa-solid fa-graduation-cap text-lg md:text-xl"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h5 class="text-white font-bold text-sm md:text-base group-hover:text-gold transition-colors truncate">STISkilli</h5>
+                                <p class="text-gray-400 text-[10px] md:text-xs">
+                                    <span class="lang-en">Government Jop&amp; Prep</span>
+                                    <span class="lang-hi">Government Jop&amp; Prep</span>
+                                </p>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-gold/20 transition-colors shrink-0">
+                                <i class="fa-brands fa-google-play text-gray-400 group-hover:text-gold text-xs md:text-sm"></i>
+                            </div>
+                        </a>
+
+                        <!-- App 2: Sukh -->
+                        <a href="https://play.google.com/store/apps/details?id=com.ai.rentistleaseyourproperty&amp;pcampaignid=web_share" target="_blank" class="flex items-center gap-3 md:gap-4 bg-gradient-to-r from-[#1a1a1a] to-black border border-white/10 p-3 md:p-4 rounded-xl hover:border-gold-500 hover:shadow-[0_0_15px_rgba(255,215,0,0.2)] transition-all group">
+                            <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-xl bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-colors shadow-inner border border-gold/20">
+                                <i class="fa-solid fa-building text-lg md:text-xl"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h5 class="text-white font-bold text-sm md:text-base group-hover:text-gold transition-colors truncate">Sukh</h5>
+                                <p class="text-gray-400 text-[10px] md:text-xs">
+                                    <span class="lang-en">Health &amp; Problums App</span>
+                                    <span class="lang-hi">Health &amp; Problums App</span>
+                                </p>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-gold/20 transition-colors shrink-0">
+                                <i class="fa-brands fa-google-play text-gray-400 group-hover:text-gold text-xs md:text-sm"></i>
+                            </div>
+                        </a>
+
+                        <!-- App 3: Sonipat Home Service App -->
+                        <a href="https://play.google.com/store/apps/details?id=com.crapd.sonipathomeservice&amp;pcampaignid=web_share" target="_blank" class="flex items-center gap-3 md:gap-4 bg-gradient-to-r from-[#1a1a1a] to-black border border-white/10 p-3 md:p-4 rounded-xl hover:border-gold-500 hover:shadow-[0_0_15px_rgba(255,215,0,0.2)] transition-all group">
+                            <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-xl bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-colors shadow-inner border border-gold/20">
+                                <i class="fa-solid fa-mobile-screen-button text-lg md:text-xl"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h5 class="text-white font-bold text-sm md:text-base group-hover:text-gold transition-colors truncate">Sonipat Home Service App</h5>
+                                <p class="text-gray-400 text-[10px] md:text-xs">
+                                    <span class="lang-en">On-Demand Home Services Booking Application</span>
+                                    <span class="lang-hi">ऑन-डिमांड होम सर्विसेज बुकिंग एप्लिकेशन</span>
+                                </p>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-gold/20 transition-colors shrink-0">
+                                <i class="fa-brands fa-google-play text-gray-400 group-hover:text-gold text-xs md:text-sm"></i>
+                            </div>
+                        </a>
+
+                        <!-- App 4: STI Pro -->
+                        <a href="https://play.google.com/store/apps/details?id=com.ai.ts&amp;pcampaignid=web_share" target="_blank" class="flex items-center gap-3 md:gap-4 bg-gradient-to-r from-[#1a1a1a] to-black border border-white/10 p-3 md:p-4 rounded-xl hover:border-gold-500 hover:shadow-[0_0_15px_rgba(255,215,0,0.2)] transition-all group">
+                            <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-xl bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-colors shadow-inner border border-gold/20">
+                                <i class="fa-solid fa-star text-lg md:text-xl"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h5 class="text-white font-bold text-sm md:text-base group-hover:text-gold transition-colors truncate">STIPro</h5>
+                                <p class="text-gray-400 text-[10px] md:text-xs">
+                                    <span class="lang-en">Animated Series For  &amp;Childrens</span>
+                                    <span class="lang-hi">Animated Series For  &amp;Childrens</span>
+                                </p>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-gold/20 transition-colors shrink-0">
+                                <i class="fa-brands fa-google-play text-gray-400 group-hover:text-gold text-xs md:text-sm"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -696,7 +855,7 @@
                 short_hi: "वेबसाइट",
                 icon: '<i class="fa-solid fa-display"></i>',
                 desc_en: "To bring your business into the digital world, we will design a premium, fast, and responsive Website and Android App so customers can easily reach you.",
-                desc_hi: "आपके बिज़नेस को डिजिटल दुनिया में लाने के लिए हम एक प्रीमियम, फ़ास्ट और रिस्पॉन्सिव वेबसाइट और एंड्राइड ऐप डिज़ाइन करके देंगे, जिससे कस्टमर आसानी से आप तक पहुँच सकें।"
+                desc_hi: "आपके बिज़नेस को डिजिटल दुनिया में लाने के लिए hum ek premium, fast aur responsive Website aur Android App design karke denge, jisse customer asani se aap tak pahunch sakein."
             },
             2: {
                 title_en: "3 Months Social Media Account Management",
@@ -705,7 +864,7 @@
                 short_hi: "मैनेजमेंट",
                 icon: '<i class="fa-brands fa-facebook"></i>',
                 desc_en: "Complete management of your Facebook, Instagram, and YouTube accounts for 3 months, including regular posting and engaging growth strategies.",
-                desc_hi: "3 महीने तक आपके फेसबुक, इंस्टाग्राम और यूट्यूब अकाउंट्स का कम्पलीट मैनेजमेंट, रेगुलर पोस्टिंग और एंगेजिंग ग्रोथ स्ट्रेटेजी हम हैंडल करेंगे।"
+                desc_hi: "3 mahine tak aapke Facebook, Instagram aur YouTube accounts ka complete management, regular posting aur engaging growth strategy hum handle karenge."
             },
             3: {
                 title_en: "All Types of Branding, AI Video & Image",
@@ -714,7 +873,7 @@
                 short_hi: "ब्रांडिंग",
                 icon: '<i class="fa-solid fa-microchip"></i>',
                 desc_en: "Using the latest AI tools, we will generate viral videos and eye-catching images for your brand that will stand out on social media.",
-                desc_hi: "लेटेस्ट AI टूल्स का यूज़ करके हम आपके ब्रांड के लिए वायरल वीडियोज़ और आई-कैचिंग इमेजेज़ जनरेट करेंगे जो सोशल मीडिया पर सबसे अलग दिखेंगी।"
+                desc_hi: "Latest AI tools ka use karke hum aapke brand ke liye viral videos aur eye-catching images generate karenge jo social media par sabse alag dikhegi."
             },
             4: {
                 title_en: "Payment Gateway Complete Setup",
@@ -723,7 +882,7 @@
                 short_hi: "पेमेंट",
                 icon: '<i class="fa-regular fa-credit-card"></i>',
                 desc_en: "To make online payments easy for your customers, we will provide a complete setup of 3 to 5 secure Payment Gateways.",
-                desc_hi: "आपके कस्टमर्स के लिए ऑनलाइन पेमेंट को आसान बनाने के लिए हम 3 से 5 सिक्योर पेमेंट गेटवेज़ का कम्पलीट सेटअप करके देंगे।"
+                desc_hi: "Aapke customers ke liye online payment ko aasaan banane ke liye hum 3 se 5 secure Payment Gateways ka complete setup karke denge."
             },
             5: {
                 title_en: "Social Media Ad Campaign",
@@ -732,7 +891,7 @@
                 short_hi: "कैंपेन",
                 icon: '<i class="fa-solid fa-bullseye"></i>',
                 desc_en: "To increase sales and leads, we will run highly targeted ad campaigns on your social media platforms, directly increasing profit.",
-                desc_hi: "सेल्स और लीड्स बढ़ाने के लिए हम आपके सोशल मीडिया प्लेटफॉर्म्स पर हाईली टार्गेटेड ऐड कैंपेन रन करेंगे, जिससे डायरेक्ट प्रॉफिट बढ़ेगा।"
+                desc_hi: "Sales aur leads badhane ke liye hum aapke social media platforms par highly targeted ad campaigns run karenge, jisse direct profit increase hoga."
             },
             6: {
                 title_en: "We Teach You All AI Tools",
@@ -741,7 +900,7 @@
                 short_hi: "ट्रेनिंग",
                 icon: '<i class="fa-solid fa-robot"></i>',
                 desc_en: "We will teach you how to use all the latest AI tools in detail, so you can manage your business on your own without depending on anyone.",
-                desc_hi: "हम आपको सभी लेटेस्ट AI टूल्स यूज़ करना डिटेल में सिखाएंगे, ताकि आगे चलकर आप अपना बिज़नेस बिना किसी पर डिपेंड हुए खुद मैनेज कर सकें।"
+                desc_hi: "Hum aapko sabhi latest AI tools use karna detail mein sikhayenge, taaki aage chalkar aap apna business bina kisi par depend huye khud manage kar sakein."
             },
             7: {
                 title_en: "Delivery Company Setup & Guidance",
@@ -750,7 +909,7 @@
                 short_hi: "डिलीवरी",
                 icon: '<i class="fa-solid fa-truck-fast"></i>',
                 desc_en: "If you sell physical products, we will create your account with top delivery companies and provide complete shipping guidance.",
-                desc_hi: "अगर आप फिजिकल प्रोडक्ट्स सेल करते हैं, तो हम टॉप डिलीवरी कंपनीज़ के साथ आपका अकाउंट बनवाएंगे और पूरी शिपिंग गाइडेंस देंगे।"
+                desc_hi: "Agar aap physical products sell karte hain, toh hum top delivery companies ke saath aapka account banvayenge aur poori shipping guidance denge."
             },
             8: {
                 title_en: "Trademark Registration",
@@ -759,7 +918,7 @@
                 short_hi: "ट्रेडमार्क",
                 icon: '<i class="fa-solid fa-trademark"></i>',
                 desc_en: "To protect your brand name and logo from being copied, we will handle the complete Trademark (TM) Registration process legally.",
-                desc_hi: "आपके ब्रांड नेम और लोगो को कॉपी होने से बचाने के लिए हम कम्पलीट ट्रेडमार्क (TM) रजिस्ट्रेशन प्रोसेस लीगल तरीके से हैंडल करेंगे।"
+                desc_hi: "Aapke brand name aur logo ko copy hone se bachane ke liye hum complete Trademark (TM) Registration process legal tarike se handle karenge."
             },
             9: {
                 title_en: "GST Registration",
@@ -768,7 +927,7 @@
                 short_hi: "GST",
                 icon: '<i class="fa-solid fa-clipboard-list"></i>',
                 desc_en: "To make your business 100% legal and compliant, we will complete the GST Registration process for you without any tension.",
-                desc_hi: "अपने बिज़नेस को 100% लीगल और कंप्लायंट बनाने के लिए हम GST रजिस्ट्रेशन की पूरी प्रोसेस बिना किसी टेंशन के कम्पलीट करके देंगे।"
+                desc_hi: "Apne business ko 100% legal aur compliant banane ke liye hum GST Registration ki poori process bina kisi tension ke complete karke denge."
             },
             10: {
                 title_en: "Complete R & D and Logo Design",
@@ -777,7 +936,7 @@
                 short_hi: "डिज़ाइन",
                 icon: '<i class="fa-solid fa-compass-drafting"></i>',
                 desc_en: "To give your brand a unique identity, we will do deep Research & Development (R&D) and design a premium, unique Logo.",
-                desc_hi: "आपके ब्रांड को एक अनोखी पहचान देने के लिए हम डीप रिसर्च एंड डेवलपमेंट (R&D) करेंगे और एक प्रीमियम, यूनिक लोगो डिज़ाइन करके देंगे।"
+                desc_hi: "Aapke brand ko ek anokhi pehchan dene ke liye hum deep Research & Development (R&D) karenge aur ek premium, unique Logo design karke denge."
             }
         };
 

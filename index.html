@@ -3,664 +3,593 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>STI World Official - STIPRO, STISKILLI & RENTIST </title>
-    <!-- Primary Meta Tags -->
-    <meta name="description" content="Welcome to STI World. Download STIPRO for Gym, Calisthenics, Kegel, Yoga & Desi Mehnat. Use STISKILLI for All Govt/Private Job Prep & AI Tools. Use RENTIST to find Flats, PGs, Hostels, Shops, Plots & Houses.">
-    <meta name="keywords" content="STI World, STIPRO, STISKILLI, RENTIST, Fitness App, Gym Workout, Calisthenics, Kegel Exercises, Yoga App, Desi Mehnat, Govt Job Preparation India, AI Tools Learning, Private Jobs, Rental App, Real Estate, Rent Flats, PG for Rent, Hostels, Shops, Plots for Rent, Houses, 11D Ultra Gold"> 
-    <meta name="author" content="STI World Official">
-    <meta name="theme-color" content="#FFD700">
-    <!-- Enhanced SEO Tags -->
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <link rel="canonical" href="https://stiworldofficial.com/">
-    <meta name="language" content="English">
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://stiworldofficial.com/">
-    <meta property="og:title" content="STI World - STIPRO, STISKILLI & RENTIST Apps">
-    <meta property="og:description" content="The 11D Ultra Gold Ecosystem. Fitness (Gym/Kegel/Yoga), Education (Govt Jobs/AI), and Rentals (Flats/PGs/Shops).">
-    <meta property="og:image" content="https://stiworldofficial.com/sti.png">
-    <meta property="og:site_name" content="STI World Official">
-    <meta property="og:locale" content="en_IN">
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@stiworldoff3">
-    <meta name="twitter:title" content="STI World - STIPRO, STISKILLI & RENTIST Apps">
-    <meta name="twitter:description" content="Get Your Own Website Now , Fitness (Gym/Kegel/Yoga), Education (Govt Jobs/AI), and Rentals (Flats/PGs/Shops).">
-    <meta name="twitter:image" content="https://stiworldofficial.com/stin.png">
-    <!-- Schema.org Markup for Organization -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "STI World Official",
-      "url": "https://stiworldofficial.com/",
-      "logo": "https://stiworldofficial.com/sti.png",
-      "description": "The 11D Ultra Gold Ecosystem providing Fitness (STIPRO), Education (STISKILLI), and Rental (RENTIST) services.",
-      "sameAs": [
-        "https://www.facebook.com/share/17wbEfuxwL/?mibextid=wwXIfr",
-        "https://www.instagram.com/stiworldofficial",
-        "https://x.com/stiworldoff3",
-        "https://youtube.com/@stiworldofficial"
-      ]
-    }
-    </script>
-
+    <title>STI World Official - Your Growth Partner</title>
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Montserrat:wght@400;600;700;900&family=Syncopate:wght@700;900&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        gold: { 300: '#FFE55C', 400: '#FFD700', 500: '#FFC107', 600: '#D4AF37', 700: '#B8860B' },
-                        obsidian: '#0a0a0a',
+                        gold: {
+                            DEFAULT: '#FFC700',
+                            400: '#FFD700',
+                            500: '#FFC700',
+                            600: '#D4AF37',
+                        },
+                        dark: '#050a15',
                     },
-                    fontFamily: { display: ['Syncopate', 'sans-serif'], body: ['Exo 2', 'sans-serif'] },
-                    animation: {
-                        'spin-slow': 'spin 8s linear infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'shimmer': 'shimmer 3s linear infinite',
-                        'glow-pulse': 'glowPulse 3s infinite alternate',
-                        'gold-shine': 'shine 3s linear infinite',
-                        'border-dance': 'borderDance 4s linear infinite',
-                        'pulse-11d': 'pulse11d 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        display: ['Syncopate', 'sans-serif'],
+                        script: ['Kalam', 'cursive'],
                     },
-                    keyframes: {
-                        float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
-                        shimmer: { '0%': { backgroundPosition: '-1000px 0' }, '100%': { backgroundPosition: '1000px 0' } },
-                        glowPulse: { '0%': { boxShadow: '0 0 10px rgba(255, 215, 0, 0.2)' }, '100%': { boxShadow: '0 0 35px rgba(255, 215, 0, 0.7)' } },
-                        shine: { '0%': { backgroundPosition: '200% center' }, '100%': { backgroundPosition: '-200% center' } },
-                        borderDance: { '0%,100%': { borderColor: '#FFD700' }, '25%': { borderColor: '#FFFFFF' }, '50%': { borderColor: '#D4AF37' }, '75%': { borderColor: '#FFF5B0' } },
-                        pulse11d: { '0%,100%': { opacity: 1, filter: 'drop-shadow(0 0 5px gold)' }, '50%': { opacity: 0.9, filter: 'drop-shadow(0 0 20px #FFD700)' } }
+                    boxShadow: {
+                        'glow-gold': '0 0 20px rgba(255, 199, 0, 0.6)',
+                        'glow-gold-lg': '0 0 40px rgba(255, 199, 0, 0.4)',
+                        'glow-white': '0 0 25px rgba(255, 255, 255, 0.3)',
+                        'hard-gold': '4px 4px 0px #B8860B',
+                        'hard-gold-sm': '2px 2px 0px #B8860B',
                     }
                 }
             }
         }
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700;900&family=Exo+2:wght@300;500;700;900&display=swap" rel="stylesheet">
     <style>
-        :root { --neon-gold: #FFD700; --deep-gold: #D4AF37; --light-bg: #e5e5e5; }
-        /* Changed Body Color to Light Gray and Text to Dark for visibility */
-        body { font-family: 'Exo 2', sans-serif; background: #e5e5e5; color: #111; overflow-x: hidden; }
-        h1,h2,h3,.brand-font { font-family: 'Syncopate', sans-serif; }
-
-        /* Changed bg-mesh to match light gray theme */
-        .bg-mesh { position: fixed; inset:0; z-index:-2; background: radial-gradient(circle at 40% 50%, #ffffff 0%, #e5e5e5 100%); }
-        .bg-particles { position: fixed; inset:0; z-index:-1; background-image: radial-gradient(var(--deep-gold) 1.2px, transparent 1px); background-size: 45px 45px; opacity: 0.2; }
-
-        .text-11d-ultra {
-            background: linear-gradient(90deg, #FFFFFF 0%, #FFD700 15%, #FFFFFF 30%, #FFD700 45%, #FFFFFF 60%, #FFD700 75%, #FFFFFF 90%);
-            background-size: 250% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            animation: shine 3.5s linear infinite;
-            text-shadow: 0 0 15px rgba(255,255,255,0.4), 0 0 30px rgba(255,215,0,0.3);
+        body {
+            background-color: #020617;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0, 80, 255, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(255, 199, 0, 0.15) 0%, transparent 40%),
+                linear-gradient(to bottom, #02040a, #050a15, #000000);
+            color: white;
+            overflow-x: hidden;
         }
 
-        .header-main { 
-            background: rgba(15, 15, 15, 0.45); 
-            backdrop-filter: blur(35px) saturate(200%); 
-            -webkit-backdrop-filter: blur(35px) saturate(200%);
-            border-bottom: 0.5px solid rgba(255, 255, 255, 0.08); 
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); 
-            height: 85px; 
-        }
-        .header-scrolled { 
-            background: rgba(5, 5, 5, 0.7); 
-            backdrop-filter: blur(45px) saturate(200%); 
-            -webkit-backdrop-filter: blur(45px) saturate(200%);
-            border-bottom: 0.5px solid rgba(255, 215, 0, 0.25); 
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 215, 0, 0.1); 
-            height: 75px; 
-        }
-        
-        .nav-link { position: relative; letter-spacing: 2px; }
-        .nav-link::before { content: ''; position: absolute; inset: -6px -12px; background: #FFD700; opacity: 0; transform: skewX(-20deg); transition: 0.3s; z-index:-1; }
-        .nav-link:hover::before { opacity: 0.15; }
-        .nav-link:hover { color: #FFD700; text-shadow: 0 0 12px gold; }
-
-        .menu-toggle {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 38px;
-            height: 24px;
+        /* 11D Premium Effects */
+        .bg-stars {
+            position: fixed;
+            inset: 0;
             background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            z-index: 101;
-            transition: all 0.3s ease;
-        }
-        .menu-toggle span {
-            display: block;
-            height: 3.5px;
-            background: linear-gradient(90deg, #FFD700 0%, #FFFFFF 50%, #FFD700 100%);
-            background-size: 200% auto;
-            border-radius: 6px;
-            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            box-shadow: 0 0 12px rgba(255, 215, 0, 0.9), 0 0 25px rgba(255, 215, 0, 0.5), inset 0 0 2px rgba(255,255,255,0.8);
-            animation: toggleShine 1.5s linear infinite;
-        }
-        
-        @keyframes toggleShine {
-            to { background-position: -200% center; }
+            background-image: 
+                radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40px 70px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 90px 40px, #FFD700, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 160px 120px, #ffffff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            opacity: 0.4;
+            z-index: -2;
+            animation: twinkle 4s infinite linear alternate;
         }
 
-        .menu-toggle span:nth-child(1) { width: 100%; }
-        .menu-toggle span:nth-child(2) { width: 65%; margin-left: auto; }
-        .menu-toggle span:nth-child(3) { width: 100%; }
-
-        .menu-toggle:hover span:nth-child(1) { width: 65%; }
-        .menu-toggle:hover span:nth-child(2) { width: 100%; background: linear-gradient(90deg, #FFFFFF, #FFD700, #FFFFFF); box-shadow: 0 0 20px rgba(255,255,255,1), 0 0 35px #FFD700; }
-        .menu-toggle:hover span:nth-child(3) { width: 65%; }
-        .menu-toggle:hover span { box-shadow: 0 0 15px rgba(255, 215, 0, 1), 0 0 30px rgba(255, 215, 0, 0.8); }
-
-        .sidebar-open .menu-toggle span:nth-child(1) { transform: translateY(10.5px) rotate(45deg); width: 100%; }
-        .sidebar-open .menu-toggle span:nth-child(2) { opacity: 0; transform: translateX(20px) scale(0); }
-        .sidebar-open .menu-toggle span:nth-child(3) { transform: translateY(-10.5px) rotate(-45deg); width: 100%; }
-
-        .sidebar-overlay { 
-            position: fixed; inset: 0; 
-            background: rgba(0,0,0,0.96); 
-            backdrop-filter: blur(20px); 
-            z-index: 90; opacity: 0; visibility: hidden; 
-            transition: all 0.5s ease; 
-        }
-        .sidebar-open .sidebar-overlay { opacity: 1; visibility: visible; }
-
-        .sidebar-menu-centered {
-            position: fixed; 
-            top: 50%; 
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.9);
-            width: 90%; 
-            max-width: 440px; 
-            max-height: 90vh; 
-            z-index: 100; 
-            opacity: 0; 
-            visibility: hidden;
-            display: flex; 
-            flex-direction: column; 
-            gap: 10px; 
-            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-            padding: 12px; 
-            
-            border: 2px solid transparent; 
-            background-image: linear-gradient(#0b0b0b, #0b0b0b), linear-gradient(115deg, #FFD700, #FFFFFF, #FFD700, #FFFFFF, #D4AF37);
-            background-origin: border-box;
-            background-clip: padding-box, border-box;
-            background-size: 300% auto;
-            animation: shine11dBorder 3.5s linear infinite;
-            box-shadow: 0 0 50px rgba(255, 215, 0, 0.4), inset 0 0 30px rgba(255, 215, 0, 0.2);
-            border-radius: 18px; 
+        @keyframes twinkle {
+            0% { opacity: 0.2; }
+            100% { opacity: 0.6; }
         }
         
-        .sidebar-open .sidebar-menu-centered {
-            transform: translate(-50%, -50%) scale(1);
-            opacity: 1; 
-            visibility: visible;
+        .glow-11d {
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4), inset 0 0 10px rgba(255, 215, 0, 0.2);
+            border: 1px solid rgba(255, 215, 0, 0.5);
         }
-
-        .menu-item-box {
-            display: flex; 
-            align-items: center; 
-            padding: 12px 18px; 
-            text-decoration: none; 
-            color: #fff; 
-            font-weight: 900;
-            letter-spacing: 2px; 
-            font-size: 0.95rem; 
-            border-radius: 10px; 
-            
-            border: 1.8px solid transparent;
-            background-image: linear-gradient(#0f0e0a, #0f0e0a), linear-gradient(105deg, #FFD700, #FFFFFF, #D4AF37, #FFD700);
-            background-origin: border-box;
-            background-clip: padding-box, border-box;
-            background-size: 220% auto;
-            animation: shine11dBorder 3s linear infinite;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.25), inset 0 0 8px rgba(255, 215, 0, 0.15);
-            
-            opacity: 0;
-            transform: translateY(-18px) scale(0.96);
-            transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.3s ease, background-image 0.3s ease;
-        }
-
-        .sidebar-open .menu-item-box { opacity: 1; transform: translateY(0) scale(1); }
-        .sidebar-open .menu-item-box:nth-child(1) { transition-delay: 0.0s; } 
-        .sidebar-open .menu-item-box:nth-child(2) { transition-delay: 0.5s; } 
-        .sidebar-open .menu-item-box:nth-child(3) { transition-delay: 1.0s; } 
-        .sidebar-open .menu-item-box:nth-child(4) { transition-delay: 1.5s; } 
-        .sidebar-open .menu-item-box:nth-child(5) { transition-delay: 2.0s; } 
-        .sidebar-open .menu-item-box:nth-child(6) { transition-delay: 2.5s; } 
-
-        a.menu-item-box:hover {
-            background-image: linear-gradient(#1f1c12, #1f1c12), linear-gradient(90deg, #FFFFFF, #FFD700, #FFFFFF);
-            box-shadow: 0 0 40px rgba(255, 215, 0, 0.7), inset 0 0 20px rgba(255, 215, 0, 0.4);
-            color: #FFD700;
-            transform: scale(1.02) translateY(-2px);
-        }
-
-        .menu-item-box i.menu-icon { width: 40px; text-align: left; font-size: 1.3rem; color: #FFD700; filter: drop-shadow(0 0 8px gold); }
-        .menu-item-box span.menu-text { font-family: 'Syncopate', sans-serif; font-size: 0.85rem; letter-spacing: 1.5px; }
-
-        .menu-item-box.menu-header { justify-content: space-between; padding: 10px 16px; cursor: default; }
-        .menu-header-logo { width: 32px; height: 32px; object-fit: contain; filter: drop-shadow(0 0 10px gold); }
-
-        .menu-item-box.menu-footer { flex-direction: column; justify-content: center; align-items: center; gap: 8px; padding: 14px; cursor: default; }
-
-        @keyframes shine11dBorder { 0% { background-position: 0% center; } 100% { background-position: 200% center; } }
-
-        /* 3D CAROUSEL */
-        .scene { perspective: 2000px; width:100%; display:flex; justify-content:center; align-items:center; margin:0; padding:0; position:relative; }
-        .carousel { width:100%; height:100%; position:absolute; transform-style: preserve-3d; transition: transform 1s cubic-bezier(0.15, 0.9, 0.25, 1); }
-        .carousel__cell { position: absolute; left:50%; top:50%; border: 2px solid rgba(255,215,0,0.5); border-radius: 12px; background:#000; box-shadow: 0 0 30px rgba(255,215,0,0.3); overflow: hidden; }
-        .carousel__cell img { width:100%; height:100%; object-fit:contain; display:block; filter: brightness(1.05) contrast(1.1); transition:0.4s; }
-        .carousel__cell:hover img { transform: scale(1.04); filter: brightness(1.2) drop-shadow(0 0 8px gold); }
-
-        /* CARDS WITH BACKGROUND */
-        .card-custom-bg { position: relative; overflow: hidden; z-index:1; background:#000; border: 1.5px solid rgba(255,215,0,0.3); border-radius: 28px; transition: all 0.5s; height: auto; }
-        .card-custom-bg::before { 
-            content:''; 
-            position: absolute; 
-            inset:0; 
-            background-size: cover; 
-            background-position: center; 
-            opacity: 1; /* Made the image completely clear */
-            z-index:-2; 
-            transition: transform 0.8s ease;
-            background-image: var(--card-bg-img); 
-        }
-        /* Adjusted the gradient so the top of the image stays fully visible, but bottom buttons stay readable */
-        .card-custom-bg::after { content:''; position: absolute; inset:0; background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 30%, transparent 60%); z-index:-1; }
-        .card-custom-bg:hover { transform: translateY(-8px); border-color: #FFD700; box-shadow: 0 20px 40px rgba(255,215,0,0.3); }
-        .card-custom-bg:hover::before { transform: scale(1.05); }
-
-        .footer-ultra { background: radial-gradient(ellipse at 50% 0%, #2a2418 0%, #000000 80%); border-top: 1px solid rgba(255,215,0,0.4); box-shadow: 0 -20px 60px black; position:relative; }
-        .footer-glow { position: absolute; top:0; left:50%; transform:translateX(-50%); width:70%; height:2px; background: linear-gradient(90deg,transparent,#FFD700,transparent); box-shadow:0 0 40px #FFD700; }
-
-        @media (max-width: 380px) {
-            .card-custom-bg p { font-size: 0.7rem; line-clamp: 2; }
-            .card-custom-bg h4 { font-size: 1.6rem; }
-            .menu-item-box span.menu-text { font-size: 0.75rem; }
-        }
-        .gold-border-glow { box-shadow: 0 0 15px rgba(255,215,0,0.3), inset 0 0 20px rgba(255,215,0,0.1); }
-        .brand-name-mobile { display: inline-block; }
         
-        .btn-android:hover i { color: #000; }
-        .btn-windows:hover i { color: #000; }
-        .btn-ios:hover i { color: #000; }
+        @media (min-width: 768px) {
+            .glow-11d {
+                box-shadow: 0 0 30px rgba(255, 215, 0, 0.4), inset 0 0 15px rgba(255, 215, 0, 0.2);
+            }
+        }
+
+        .bg-grid-pattern {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(255,255,255,0.2);
+        }
+        
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @media (min-width: 768px) {
+            @keyframes float {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-15px); }
+            }
+        }
+
+        /* Modal Animations & Custom Scrollbar */
+        @keyframes scaleIn {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .animate-scale-in {
+            animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 5px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.05); 
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #FFD700; 
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37; 
+        }
+
+        /* Continuous WhatsApp Hover/Pulse Animation */
+        @keyframes whatsapp-pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 15px rgba(37,211,102,0.6); }
+            50% { transform: scale(1.15); box-shadow: 0 0 35px rgba(37,211,102,0.9); }
+        }
+        .animate-whatsapp-pulse {
+            animation: whatsapp-pulse 2s infinite ease-in-out;
+        }
     </style>
 </head>
-<body class="flex flex-col min-h-screen" id="mainBody">
-    <div class="bg-mesh"></div>
-    <div class="bg-particles"></div>
+<body class="font-sans relative pb-10 w-full overflow-x-hidden">
+    <div class="bg-grid-pattern"></div>
+    <div class="bg-stars"></div>
 
-    <header id="mainHeader" class="fixed w-full z-[80] top-0 header-main flex items-center">
-        <div class="absolute bottom-0 left-0 w-full h-[0.5px] bg-gradient-to-r from-transparent via-gold-400 to-transparent opacity-50"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="flex items-center justify-between">
-                <div class="flex-shrink-0 cursor-pointer group flex items-center gap-2 sm:gap-3">
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-gold-500 blur-xl opacity-40 group-hover:opacity-70 transition-all"></div>
-                        <img src="sti.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STI" class="h-10 sm:h-12 object-contain relative z-10 filter drop-shadow-[0_0_12px_gold]">
-                    </div>
-                    <img src="stin.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STIWORLDOFFICIAL" class="h-6 sm:h-8 object-contain filter drop-shadow-[0_0_12px_gold] animate-pulse-11d">
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-12">
-                       
-                        <a href="#apps" class="nav-link text-xs font-black text-white uppercase tracking-widest">Our Apps</a>
-                        
-                    </div>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu">
-                        <span></span><span></span><span></span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
+    <!-- Floating WhatsApp Button (Vertically Centered with Continuous Animation) -->
+    <div class="fixed top-1/2 -translate-y-1/2 right-3 md:right-8 z-[100]">
+        <a href="#" target="_blank" class="animate-whatsapp-pulse relative flex items-center justify-center bg-[#25D366] text-white w-12 h-12 md:w-16 md:h-16 rounded-full text-3xl md:text-[40px] hover:bg-[#1ebd5a] transition-colors duration-300">
+            <i class="fa-brands fa-whatsapp drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"></i>
+        </a>
+    </div>
 
-    <div id="sidebar-overlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
+    <!-- Floating Graphic Elements (Mimicking background assets) -->
+    <div class="absolute top-20 left-2 md:left-20 text-white opacity-90 floating-element" style="animation-delay: 0s;">
+        <i class="fa-solid fa-bullhorn text-4xl sm:text-6xl md:text-8xl transform -rotate-[20deg] drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]"></i>
+        <div class="absolute top-0 right-[-10px] md:right-[-20px] text-gold"><i class="fa-solid fa-bolt text-xl md:text-3xl"></i></div>
+    </div>
     
-    <div id="sidebar-menu" class="sidebar-menu-centered">
-        <div class="menu-item-box menu-header">
-            <div class="flex items-center gap-2">
-                <img src="sti.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'; this.classList.add('fallback-icon')" alt="STI" class="menu-header-logo w-8 h-8 object-contain filter drop-shadow-[0_0_10px_gold]">
-                <img src="stin.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STIWORLDOFFICIAL" class="h-5 object-contain filter drop-shadow-[0_0_8px_gold]">
+    <div class="absolute top-24 right-2 md:right-24 text-white opacity-90 floating-element" style="animation-delay: 1s;">
+        <i class="fa-solid fa-rocket text-5xl sm:text-7xl md:text-9xl transform rotate-[45deg] drop-shadow-[0_0_20px_rgba(255,199,0,0.8)] md:drop-shadow-[0_0_30px_rgba(255,199,0,0.8)] text-orange-500"></i>
+    </div>
+
+    <div class="max-w-[1200px] mx-auto px-3 sm:px-4 pt-6 md:pt-10">
+        
+        <!-- Header / Logo -->
+        <div class="flex justify-center mb-8 md:mb-12 relative z-10">
+            <div class="relative group">
+                <!-- Classical outer glow -->
+                <div class="absolute inset-0 bg-gradient-to-r from-gold-600 via-yellow-200 to-gold-600 rounded-full blur-md opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
+                <!-- Classical double border and gradient pill -->
+                <div class="relative border-[2px] md:border-[3px] border-double border-gold-500 rounded-full px-5 sm:px-8 md:px-14 py-2 sm:py-3 md:py-4 bg-gradient-to-b from-[#1a1a1a] to-[#000000] backdrop-blur-md shadow-glow-gold flex items-center justify-center gap-2 sm:gap-3 md:gap-4">
+                    <img src="sti.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STI Icon" class="h-6 sm:h-10 md:h-14 object-contain filter drop-shadow-[0_0_8px_gold] md:drop-shadow-[0_0_12px_gold]">
+                    <img src="stin.png" onerror="this.style.display='none'" alt="STI World Official" class="h-4 sm:h-6 md:h-8 object-contain filter drop-shadow-[0_0_5px_rgba(255,255,255,0.6)] md:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">
+                </div>
             </div>
-            <button onclick="toggleSidebar()" class="text-gray-400 hover:text-red-500 transition-all hover:rotate-90 duration-300">
-                <i class="fa-solid fa-xmark text-xl filter drop-shadow-[0_0_5px_currentColor]"></i>
-            </button>
         </div>
-        
-        <a href="index.html" onclick="toggleSidebar()" class="menu-item-box">
-            <i class="fa-solid fa-house menu-icon"></i> 
-            <span class="menu-text">HOME</span>
-        </a>
-        
-        <a href="#apps" onclick="toggleSidebar()" class="menu-item-box">
-            <i class="fa-solid fa-cube menu-icon"></i> 
-            <span class="menu-text">OUR APPS</span>
-        </a>
-        
-        <a href="#contact" onclick="toggleSidebar()" class="menu-item-box">
-            <i class="fa-solid fa-bolt menu-icon"></i> 
-            <span class="menu-text">FEATURES</span>
-        </a>
-        
-        <a href="#contact" onclick="toggleSidebar()" class="menu-item-box">
-            <i class="fa-solid fa-envelope menu-icon"></i> 
-            <span class="menu-text">CONNECT</span>
-        </a>
-        
-        <div class="menu-item-box menu-footer">
-            <div class="flex justify-center gap-5">
-                <a href="https://www.instagram.com/stiworldofficial?igsh=MXJhaGJtcXJmM2Fydg==" class="text-gray-500 hover:text-gold-400 transition transform hover:scale-110"><i class="fa-brands fa-instagram text-xl"></i></a>
-                <a href="https://www.facebook.com/share/17wbEfuxwL/?mibextid=wwXIfr" class="text-gray-500 hover:text-gold-400 transition transform hover:scale-110"><i class="fa-brands fa-facebook-f text-xl"></i></a>
-                <a href="https://youtube.com/@stiworldofficial?si=S0xxwoN56tIV-6Yv" class="text-gray-500 hover:text-gold-400 transition transform hover:scale-110"><i class="fa-brands fa-youtube text-xl"></i></a>
-                <a href="https://x.com/stiworldoff3" class="text-gray-500 hover:text-gold-400 transition transform hover:scale-110"><i class="fa-brands fa-x-twitter text-xl"></i></a>
+
+        <!-- Hero Text Section -->
+        <div class="text-center relative z-10 flex flex-col items-center space-y-2 md:space-y-3 mb-16 md:mb-24 mt-10 md:mt-16">
+            <h2 class="text-[17px] sm:text-2xl md:text-5xl font-black text-white uppercase tracking-wide drop-shadow-md px-2">
+                WE DON'T WORK ACCORDING TO
+            </h2>
+            
+            <div class="bg-gold text-black font-black text-2xl sm:text-3xl md:text-6xl px-4 sm:px-8 py-1.5 sm:py-2 rounded-md sm:rounded-lg transform -skew-x-6 inline-block shadow-lg mt-1 md:mt-2 mb-1 md:mb-2">
+                OUR RATES,
             </div>
-            <img src="stin.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STIWORLDOFFICIAL" class="h-6 sm:h-8 object-contain filter drop-shadow-[0_0_12px_gold] animate-pulse-11d">
+            
+            <h2 class="text-[17px] sm:text-2xl md:text-5xl font-black text-white uppercase tracking-wide drop-shadow-md px-2">
+                WE WORK ACCORDING TO
+            </h2>
+            
+            <div class="font-script text-[42px] sm:text-6xl md:text-8xl text-gold mt-4 md:mt-6 transform -rotate-2 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] md:drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
+                Your Budget.
+            </div>
+
+            <!-- Our Work CTA Button -->
+            <div class="mt-8 md:mt-12 mb-2">
+                <button onclick="openPortfolioModal()" class="inline-flex items-center justify-center gap-2 md:gap-3 bg-gradient-to-r from-gold-600 via-yellow-400 to-gold-600 text-black font-black uppercase tracking-widest px-6 py-2.5 sm:px-8 sm:py-3 rounded-full shadow-[0_0_15px_rgba(255,215,0,0.5)] md:shadow-[0_0_25px_rgba(255,215,0,0.5)] hover:shadow-[0_0_35px_rgba(255,215,0,0.8)] transition-all transform hover:scale-105 border border-white/50 md:border-2 text-[11px] sm:text-sm md:text-base animate-pulse">
+                    <i class="fa-solid fa-briefcase text-sm md:text-lg"></i> See Our Work
+                </button>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <div class="relative w-full max-w-5xl mx-auto bg-gradient-to-b from-[#f4f7fb] to-[#e1e8f0] rounded-[24px] md:rounded-[40px] text-black p-4 sm:p-6 md:p-12 shadow-glow-white mt-8 md:mt-10">
+            
+            <!-- Absolute Header Badge -->
+            <div class="absolute -top-4 md:-top-6 left-1/2 transform -translate-x-1/2 bg-white px-6 sm:px-10 py-1.5 sm:py-2 rounded-full border-b-[3px] md:border-b-4 border-gray-300 shadow-lg flex items-center justify-center whitespace-nowrap">
+                <span class="text-base sm:text-2xl md:text-3xl font-black uppercase tracking-wider text-black">OUR SERVICES</span>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 md:gap-x-6 gap-y-3 md:gap-y-4 mt-6 md:mt-8">
+                
+                <!-- Service 1 -->
+                <div class="flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
+                    <div class="bg-gradient-to-br from-[#FFE866] to-[#FFB700] w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-lg sm:rounded-xl font-black text-xl sm:text-2xl md:text-3xl shrink-0 shadow-hard-gold-sm md:shadow-hard-gold text-black border border-[#DAA520]">1</div>
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0 mx-1 sm:mx-2 text-[#00E5FF]">
+                        <i class="fa-solid fa-display text-2xl md:text-3xl drop-shadow-md"></i>
+                        <i class="fa-solid fa-mobile-screen absolute transform translate-x-3 translate-y-2 md:translate-x-4 md:translate-y-3 text-base md:text-xl text-[#0066FF] drop-shadow-md"></i>
+                    </div>
+                    <div class="font-bold text-[12px] sm:text-[14px] md:text-[17px] leading-tight">Website +<br>Android App</div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
+                    <div class="bg-gradient-to-br from-[#FFE866] to-[#FFB700] w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-lg sm:rounded-xl font-black text-xl sm:text-2xl md:text-3xl shrink-0 shadow-hard-gold-sm md:shadow-hard-gold text-black border border-[#DAA520]">6</div>
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0 mx-1 sm:mx-2 text-gray-700">
+                        <i class="fa-solid fa-robot text-[28px] md:text-4xl drop-shadow-md"></i>
+                        <i class="fa-solid fa-lightbulb absolute transform translate-x-4 -translate-y-2 md:translate-x-5 md:-translate-y-3 text-sm md:text-xl text-gold drop-shadow-[0_0_5px_gold]"></i>
+                    </div>
+                    <div class="font-bold text-[12px] sm:text-[14px] md:text-[17px] leading-tight">We Teach You<br>All AI Tools</div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
+                    <div class="bg-gradient-to-br from-[#FFE866] to-[#FFB700] w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-lg sm:rounded-xl font-black text-xl sm:text-2xl md:text-3xl shrink-0 shadow-hard-gold-sm md:shadow-hard-gold text-black border border-[#DAA520]">2</div>
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0 mx-1 sm:mx-2 gap-[2px] sm:gap-1 text-lg sm:text-xl md:text-2xl">
+                        <i class="fa-brands fa-square-facebook text-[#1877F2]"></i>
+                        <i class="fa-brands fa-square-instagram text-[#E4405F]"></i>
+                        <i class="fa-brands fa-youtube text-[#FF0000]"></i>
+                    </div>
+                    <div class="font-bold text-[12px] sm:text-[14px] md:text-[17px] leading-tight">3 Months Social Media<br>Account Management</div>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
+                    <div class="bg-gradient-to-br from-[#FFE866] to-[#FFB700] w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-lg sm:rounded-xl font-black text-xl sm:text-2xl md:text-3xl shrink-0 shadow-hard-gold-sm md:shadow-hard-gold text-black border border-[#DAA520]">7</div>
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0 mx-1 sm:mx-2 text-[#FF9900]">
+                        <i class="fa-solid fa-truck-fast text-[28px] md:text-4xl drop-shadow-md"></i>
+                        <i class="fa-solid fa-location-dot absolute transform -translate-y-3 translate-x-1.5 md:-translate-y-4 md:translate-x-2 text-sm md:text-base text-red-500"></i>
+                    </div>
+                    <div class="font-bold text-[12px] sm:text-[14px] md:text-[17px] leading-tight">Delivery Company<br>Setup & Guidance</div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
+                    <div class="bg-gradient-to-br from-[#FFE866] to-[#FFB700] w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-lg sm:rounded-xl font-black text-xl sm:text-2xl md:text-3xl shrink-0 shadow-hard-gold-sm md:shadow-hard-gold text-black border border-[#DAA520]">3</div>
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0 mx-1 sm:mx-2 text-purple-600">
+                        <div class="relative flex items-center justify-center bg-black rounded-md md:rounded-lg w-9 h-9 md:w-12 md:h-12 p-1.5 md:p-2 shadow-inner border border-purple-500">
+                           <span class="font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 text-sm md:text-xl">AI</span>
+                           <i class="fa-solid fa-microchip absolute -top-1 -right-1 text-[9px] md:text-xs text-blue-400"></i>
+                        </div>
+                    </div>
+                    <div class="font-bold text-[11px] sm:text-[13px] md:text-[15px] leading-tight pr-1 md:pr-2">All Types of Branding,<br>AI Video & Image Generation<br>for Social Media</div>
+                </div>
+
+                <!-- Service 8 -->
+                <div class="flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
+                    <div class="bg-gradient-to-br from-[#FFE866] to-[#FFB700] w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-lg sm:rounded-xl font-black text-xl sm:text-2xl md:text-3xl shrink-0 shadow-hard-gold-sm md:shadow-hard-gold text-black border border-[#DAA520]">8</div>
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0 mx-1 sm:mx-2 text-black">
+                        <i class="fa-solid fa-circle-registered text-3xl sm:text-4xl md:text-5xl text-gold drop-shadow-md"></i>
+                    </div>
+                    <div class="font-bold text-[12px] sm:text-[14px] md:text-[17px] leading-tight">Trademark<br>Registration</div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
+                    <div class="bg-gradient-to-br from-[#FFE866] to-[#FFB700] w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-lg sm:rounded-xl font-black text-xl sm:text-2xl md:text-3xl shrink-0 shadow-hard-gold-sm md:shadow-hard-gold text-black border border-[#DAA520]">4</div>
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0 mx-1 sm:mx-2 text-[#0055FF]">
+                        <i class="fa-regular fa-credit-card text-[28px] md:text-4xl drop-shadow-md"></i>
+                        <i class="fa-solid fa-shield-halved absolute transform translate-x-3 translate-y-2.5 md:translate-x-4 md:translate-y-3 text-lg md:text-2xl text-blue-800 drop-shadow-md"></i>
+                    </div>
+                    <div class="font-bold text-[11px] sm:text-[13px] md:text-[15px] leading-tight pr-1 md:pr-2">Payment Gateway<br>Complete Setup<br><span class="font-semibold text-[9px] md:text-xs text-gray-600">(Atleast 3 to 5 Gateways)</span></div>
+                </div>
+
+                <!-- Service 9 -->
+                <div class="md:col-span-2 md:mx-auto md:w-[80%] flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
+                    <div class="bg-gradient-to-br from-[#FFE866] to-[#FFB700] w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-lg sm:rounded-xl font-black text-xl sm:text-2xl md:text-3xl shrink-0 shadow-hard-gold-sm md:shadow-hard-gold text-black border border-[#DAA520]">9</div>
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0 mx-1 sm:mx-2 text-gray-600">
+                        <i class="fa-solid fa-clipboard-list text-[28px] md:text-4xl drop-shadow-md"></i>
+                        <i class="fa-solid fa-circle-check absolute transform translate-x-3 translate-y-2 md:translate-x-4 md:translate-y-3 text-sm md:text-xl text-green-500 bg-white rounded-full"></i>
+                        <span class="absolute text-[8px] md:text-[10px] font-black text-black transform -translate-y-0.5 md:-translate-y-1">GST</span>
+                    </div>
+                    <div class="font-bold text-[12px] sm:text-[14px] md:text-[17px] leading-tight">GST Registration</div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="md:col-span-2 md:mx-auto md:w-[80%] flex items-center bg-white p-2.5 sm:p-3 rounded-[14px] md:rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
+                    <div class="bg-gradient-to-br from-[#FFE866] to-[#FFB700] w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-lg sm:rounded-xl font-black text-xl sm:text-2xl md:text-3xl shrink-0 shadow-hard-gold-sm md:shadow-hard-gold text-black border border-[#DAA520]">5</div>
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0 mx-1 sm:mx-2 text-red-600 relative">
+                        <i class="fa-solid fa-bullseye text-[28px] md:text-4xl drop-shadow-md"></i>
+                        <i class="fa-solid fa-arrow-trend-up absolute transform translate-x-3 -translate-y-3 md:translate-x-4 md:-translate-y-4 text-sm md:text-xl text-gold drop-shadow-md"></i>
+                    </div>
+                    <div class="font-bold text-[12px] sm:text-[14px] md:text-[17px] leading-tight pr-1 md:pr-2">Social Media Ad Campaign<br>Run for Sales Generation</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Horizontal Process Bar -->
+        <div class="max-w-4xl mx-auto mt-8 md:mt-12 mb-10 md:mb-16 relative z-10">
+            <div class="border border-gold rounded-full px-2 sm:px-4 md:px-8 py-3 md:py-4 bg-black/60 shadow-[0_0_10px_rgba(255,199,0,0.4)] md:shadow-glow-gold flex flex-row justify-between items-center relative overflow-hidden backdrop-blur-sm">
+                <!-- Lines connecting items -->
+                <div class="absolute inset-0 top-1/2 w-full h-[1px] bg-gold/30 -z-10"></div>
+                
+                <!-- Process Items -->
+                <div class="flex flex-col items-center flex-1">
+                    <div class="w-7 h-7 sm:w-10 sm:h-10 md:w-14 md:h-14 rounded-full border border-gold md:border-2 flex items-center justify-center text-gold bg-black mb-1 sm:mb-2 shadow-[0_0_5px_rgba(255,199,0,0.5)] md:shadow-[0_0_10px_rgba(255,199,0,0.5)]">
+                        <i class="fa-solid fa-crosshairs text-[10px] sm:text-sm md:text-xl"></i>
+                    </div>
+                    <span class="text-[6px] sm:text-[8px] md:text-[11px] font-bold text-white tracking-wider md:tracking-widest uppercase">STRATEGY</span>
+                </div>
+                
+                <div class="hidden sm:block w-[1px] h-6 sm:h-10 bg-gold/50 mx-1 sm:mx-2"></div>
+                
+                <div class="flex flex-col items-center flex-1">
+                    <div class="w-7 h-7 sm:w-10 sm:h-10 md:w-14 md:h-14 rounded-full border border-gold md:border-2 flex items-center justify-center text-gold bg-black mb-1 sm:mb-2 shadow-[0_0_5px_rgba(255,199,0,0.5)] md:shadow-[0_0_10px_rgba(255,199,0,0.5)]">
+                        <i class="fa-regular fa-lightbulb text-[10px] sm:text-sm md:text-xl"></i>
+                    </div>
+                    <span class="text-[6px] sm:text-[8px] md:text-[11px] font-bold text-white tracking-wider md:tracking-widest uppercase">CREATION</span>
+                </div>
+                
+                <div class="hidden sm:block w-[1px] h-6 sm:h-10 bg-gold/50 mx-1 sm:mx-2"></div>
+
+                <div class="flex flex-col items-center flex-1">
+                    <div class="w-7 h-7 sm:w-10 sm:h-10 md:w-14 md:h-14 rounded-full border border-gold md:border-2 flex items-center justify-center text-gold bg-black mb-1 sm:mb-2 shadow-[0_0_5px_rgba(255,199,0,0.5)] md:shadow-[0_0_10px_rgba(255,199,0,0.5)]">
+                        <i class="fa-solid fa-bullhorn text-[10px] sm:text-sm md:text-xl"></i>
+                    </div>
+                    <span class="text-[6px] sm:text-[8px] md:text-[11px] font-bold text-white tracking-wider md:tracking-widest uppercase">GROWTH</span>
+                </div>
+                
+                <div class="hidden sm:block w-[1px] h-6 sm:h-10 bg-gold/50 mx-1 sm:mx-2"></div>
+
+                <div class="flex flex-col items-center flex-1">
+                    <div class="w-7 h-7 sm:w-10 sm:h-10 md:w-14 md:h-14 rounded-full border border-gold md:border-2 flex items-center justify-center text-gold bg-black mb-1 sm:mb-2 shadow-[0_0_5px_rgba(255,199,0,0.5)] md:shadow-[0_0_10px_rgba(255,199,0,0.5)]">
+                        <i class="fa-solid fa-chart-line text-[10px] sm:text-sm md:text-xl"></i>
+                    </div>
+                    <span class="text-[6px] sm:text-[8px] md:text-[11px] font-bold text-white tracking-wider md:tracking-widest uppercase">SALES</span>
+                </div>
+                
+                <div class="hidden sm:block w-[1px] h-6 sm:h-10 bg-gold/50 mx-1 sm:mx-2"></div>
+
+                <div class="flex flex-col items-center flex-1">
+                    <div class="w-7 h-7 sm:w-10 sm:h-10 md:w-14 md:h-14 rounded-full border border-gold md:border-2 flex items-center justify-center text-gold bg-black mb-1 sm:mb-2 shadow-[0_0_5px_rgba(255,199,0,0.5)] md:shadow-[0_0_10px_rgba(255,199,0,0.5)]">
+                        <i class="fa-solid fa-handshake text-[10px] sm:text-sm md:text-xl"></i>
+                    </div>
+                    <span class="text-[6px] sm:text-[8px] md:text-[11px] font-bold text-white tracking-wider md:tracking-widest uppercase">SUCCESS</span>
+                </div>
+            </div>
+            
+            <!-- Horizontal brush stroke effect under process -->
+            <div class="w-[90%] md:w-full max-w-2xl mx-auto h-1.5 md:h-2 mt-4 md:mt-6 rounded-[100%] bg-gradient-to-r from-transparent via-white/40 md:via-white/50 to-transparent blur-sm"></div>
+            <div class="w-[85%] md:w-full max-w-xl mx-auto h-[1px] md:h-[2px] mt-1 bg-gradient-to-r from-transparent via-white/80 md:via-white to-transparent"></div>
+        </div>
+
+        <!-- Special 10th Step Section (11D Premium Vibe) -->
+        <div class="max-w-5xl mx-auto mt-4 mb-14 md:mb-20 relative z-10 px-1 sm:px-4 group">
+            <div class="absolute inset-0 bg-gradient-to-r from-gold-600 via-yellow-200 to-gold-600 rounded-[24px] md:rounded-[30px] blur-md md:blur-xl opacity-30 md:opacity-40 group-hover:opacity-60 md:group-hover:opacity-70 transition-opacity duration-500"></div>
+            <div class="relative bg-[#0a0a0a] border-2 border-gold-500 p-[2px] md:p-1 rounded-[24px] md:rounded-[30px] shadow-[0_0_20px_rgba(255,199,0,0.3)] md:shadow-glow-gold-lg overflow-hidden glow-11d">
+                <!-- Background overlay for texture -->
+                <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+')] opacity-20 z-0"></div>
+                <div class="bg-gradient-to-br from-[#111] to-[#000] rounded-[20px] md:rounded-[26px] p-4 sm:p-6 md:p-8 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 md:gap-10 relative z-10">
+                    
+                    <!-- Number 10 Badge -->
+                    <div class="relative shrink-0">
+                        <div class="absolute inset-0 bg-gold blur-md md:blur-lg opacity-50 md:opacity-60 rounded-full animate-pulse"></div>
+                        <div class="bg-gradient-to-br from-[#FFE866] to-[#FFB700] w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 flex items-center justify-center rounded-xl md:rounded-2xl font-black text-3xl sm:text-4xl md:text-6xl shadow-hard-gold-sm md:shadow-hard-gold text-black border md:border-2 border-[#fff] relative z-10 transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            10
+                            <i class="fa-solid fa-graduation-cap absolute -top-3 -right-3 md:-top-5 md:-right-5 text-2xl sm:text-3xl md:text-5xl text-white drop-shadow-[0_0_5px_rgba(255,255,255,0.8)] md:drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] rotate-12"></i>
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="text-center sm:text-left flex-1">
+                        <div class="inline-block px-3 py-0.5 md:px-4 md:py-1 rounded-full bg-gold/20 border border-gold/50 text-gold text-[10px] md:text-xs font-bold uppercase tracking-wider md:tracking-widest mb-2 md:mb-3 shadow-[0_0_10px_rgba(255,215,0,0.3)]">
+                            <i class="fa-solid fa-crown mr-1 md:mr-2"></i>Masterclass Training
+                        </div>
+                        <p class="text-white text-[13px] sm:text-base md:text-xl font-bold leading-snug md:leading-relaxed tracking-wide text-stroke">
+                            1 to 2 Months Proper Training of All These Tools so you can <span class="text-gold font-black drop-shadow-[0_0_3px_rgba(255,215,0,0.5)] md:drop-shadow-[0_0_5px_rgba(255,215,0,0.5)]">Run Your Complete Business in 1 - 2 Months on Your Own</span> Without Depending on Us.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Text Area -->
+        <div class="text-center relative z-10 mb-6 md:mb-8 px-2">
+            <h2 class="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-black text-white uppercase tracking-wider drop-shadow-md leading-tight">
+                WE BUILD <span class="text-gold">YOUR BUSINESS.</span><br class="md:hidden"> YOU GROW <span class="text-gold">YOUR DREAMS.</span>
+            </h2>
+        </div>
+
+        <!-- Bottom Graphics & Circular Quote -->
+        <div class="relative w-full flex flex-col md:flex-row justify-center md:justify-between items-center px-2 md:px-12 mt-10 md:mt-16 mb-16 md:mb-20">
+            
+            <!-- Floating Left elements -->
+            <div class="hidden md:flex flex-col items-center space-y-4 floating-element z-10">
+                <div class="relative flex flex-col items-start gap-4">
+                    <div class="w-10 h-10 bg-[#1877F2] rounded-full flex items-center justify-center text-white shadow-glow-white"><i class="fa-brands fa-facebook-f text-xl"></i></div>
+                    <div class="w-10 h-10 bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] rounded-full flex items-center justify-center text-white shadow-glow-white ml-8"><i class="fa-brands fa-instagram text-xl"></i></div>
+                    <div class="bg-black/80 border border-white/20 rounded-lg px-4 py-2 flex items-center justify-center mt-4 ml-12 shadow-lg backdrop-blur-md gap-2">
+                        <img src="sti.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STI" class="h-5 object-contain filter drop-shadow-[0_0_5px_gold]">
+                        <img src="stin.png" onerror="this.style.display='none'" alt="STI World" class="h-3 object-contain">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Central Glowing Circle -->
+            <div class="relative z-20 flex justify-center w-full md:w-auto my-6 md:my-0">
+                <!-- Outer Rings -->
+                <div class="absolute inset-0 rounded-full border border-white/20 md:border-white/30 scale-[1.25] md:scale-[1.3] animate-[spin_10s_linear_infinite]"></div>
+                <div class="absolute inset-0 rounded-full border border-gold/30 md:border-gold/40 scale-[1.1] md:scale-[1.15] animate-[spin_15s_linear_reverse_infinite]"></div>
+                
+                <!-- Main Circle -->
+                <div class="w-52 h-52 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full border-2 border-white shadow-[0_0_20px_rgba(255,255,255,0.2),inset_0_0_20px_rgba(255,255,255,0.1)] md:shadow-[0_0_40px_rgba(255,255,255,0.2),inset_0_0_40px_rgba(255,255,255,0.1)] flex flex-col items-center justify-center relative bg-black/40 backdrop-blur-md mx-auto">
+                    <div class="absolute top-2 md:top-4 font-serif text-3xl sm:text-5xl md:text-7xl text-gold opacity-80 leading-none">"</div>
+                    
+                    <div class="text-center mt-2 md:mt-4">
+                        <h3 class="text-gold font-bold text-lg sm:text-2xl md:text-3xl leading-snug tracking-wide">
+                            <span class="text-white">Your</span> Budget<br>
+                            <span class="text-white">Your</span> Business<br>
+                            <span class="text-white">Our</span> Support
+                        </h3>
+                    </div>
+                    
+                    <div class="absolute bottom-[-5px] md:bottom-[-10px] font-serif text-3xl sm:text-5xl md:text-7xl text-gold opacity-80 leading-none rotate-180">"</div>
+                </div>
+            </div>
+
+            <!-- Right Graphic (Handshake) -->
+            <div class="hidden md:flex items-center justify-center relative z-10 floating-element" style="animation-delay: 2s;">
+                <div class="absolute inset-0 bg-gold/20 blur-3xl rounded-full"></div>
+                <i class="fa-solid fa-handshake-angle text-8xl text-orange-200 drop-shadow-[0_0_30px_rgba(255,199,0,0.6)]"></i>
+            </div>
+            
+        </div>
+
+        <!-- Footer Pill -->
+        <div class="flex justify-center relative z-20 pb-4">
+            <div class="relative group max-w-[95%]">
+                <div class="absolute inset-0 bg-gold-500 rounded-full blur-md opacity-30 md:opacity-40 group-hover:opacity-50 md:group-hover:opacity-60 transition-opacity duration-500"></div>
+                <div class="relative bg-gradient-to-b from-[#1a1a1a] to-[#000000] border-2 border-gold-500 font-black uppercase tracking-wider px-4 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-full shadow-[0_0_10px_rgba(255,199,0,0.4)] md:shadow-glow-gold text-[9px] sm:text-xs md:text-lg flex items-center justify-center gap-1.5 sm:gap-2 md:gap-3 backdrop-blur-md w-full">
+                    <img src="sti.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STI Icon" class="h-4 sm:h-5 md:h-8 object-contain filter drop-shadow-[0_0_5px_gold] md:drop-shadow-[0_0_8px_gold]">
+                    <img src="stin.png" onerror="this.style.display='none'" alt="STI World Official" class="h-2.5 sm:h-3 md:h-5 object-contain filter drop-shadow-[0_0_3px_rgba(255,255,255,0.6)] md:drop-shadow-[0_0_5px_rgba(255,255,255,0.6)]">
+                    <span class="text-white ml-0.5 md:ml-2 tracking-wider md:tracking-widest whitespace-nowrap">– Your Growth Partner</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Portfolio Popup Modal -->
+    <div id="portfolioModal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closePortfolioModal()"></div>
+        
+        <!-- Modal Content Container -->
+        <div class="relative bg-gradient-to-b from-[#111] to-[#000] border-2 border-gold-500 rounded-3xl shadow-glow-gold-lg w-full md:w-auto md:min-w-[500px] max-w-lg h-[80vh] max-h-[800px] flex flex-col overflow-hidden animate-scale-in">
+            
+            <!-- Modal Header -->
+            <div class="p-4 md:p-6 border-b border-white/10 flex justify-between items-center relative z-10 bg-black/50">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-briefcase text-gold text-2xl"></i>
+                    <h3 class="text-gold font-display font-black text-lg md:text-xl uppercase tracking-wider">Our Portfolio</h3>
+                </div>
+                <button onclick="closePortfolioModal()" class="text-gray-400 hover:text-white transition-colors bg-white/5 hover:bg-white/10 w-8 h-8 flex items-center justify-center rounded-full">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Modal Body (Scrollable List) -->
+            <div class="p-4 md:p-6 overflow-y-auto flex-1 flex flex-col gap-4 custom-scrollbar relative z-10">
+                
+                <!-- Project Link 1 -->
+                <a href="https://example.com" target="_blank" class="flex items-center gap-4 bg-gradient-to-r from-[#1a1a1a] to-black border border-white/10 p-4 rounded-xl hover:border-gold-500 hover:shadow-[0_0_15px_rgba(255,215,0,0.2)] transition-all group">
+                    <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-colors shadow-inner">
+                        <i class="fa-solid fa-globe text-lg md:text-xl"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="text-white font-bold text-sm md:text-base group-hover:text-gold transition-colors">Fitness & Gym Website</h4>
+                        <p class="text-gray-400 text-[10px] md:text-xs">E-commerce / Booking System</p>
+                    </div>
+                    <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
+                        <i class="fa-solid fa-arrow-up-right-from-square text-gray-400 group-hover:text-gold text-sm"></i>
+                    </div>
+                </a>
+
+                <!-- Project Link 2 -->
+                <a href="https://example.com" target="_blank" class="flex items-center gap-4 bg-gradient-to-r from-[#1a1a1a] to-black border border-white/10 p-4 rounded-xl hover:border-gold-500 hover:shadow-[0_0_15px_rgba(255,215,0,0.2)] transition-all group">
+                    <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-colors shadow-inner">
+                        <i class="fa-solid fa-shop text-lg md:text-xl"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="text-white font-bold text-sm md:text-base group-hover:text-gold transition-colors">Real Estate Platform</h4>
+                        <p class="text-gray-400 text-[10px] md:text-xs">Listing & Property Management</p>
+                    </div>
+                    <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
+                        <i class="fa-solid fa-arrow-up-right-from-square text-gray-400 group-hover:text-gold text-sm"></i>
+                    </div>
+                </a>
+
+                <!-- Project Link 3 -->
+                <a href="https://example.com" target="_blank" class="flex items-center gap-4 bg-gradient-to-r from-[#1a1a1a] to-black border border-white/10 p-4 rounded-xl hover:border-gold-500 hover:shadow-[0_0_15px_rgba(255,215,0,0.2)] transition-all group">
+                    <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-colors shadow-inner">
+                        <i class="fa-solid fa-graduation-cap text-lg md:text-xl"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="text-white font-bold text-sm md:text-base group-hover:text-gold transition-colors">Educational Portal</h4>
+                        <p class="text-gray-400 text-[10px] md:text-xs">Online Courses & Tests</p>
+                    </div>
+                    <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
+                        <i class="fa-solid fa-arrow-up-right-from-square text-gray-400 group-hover:text-gold text-sm"></i>
+                    </div>
+                </a>
+
+                <!-- Project Link 4 -->
+                <a href="https://example.com" target="_blank" class="flex items-center gap-4 bg-gradient-to-r from-[#1a1a1a] to-black border border-white/10 p-4 rounded-xl hover:border-gold-500 hover:shadow-[0_0_15px_rgba(255,215,0,0.2)] transition-all group">
+                    <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-colors shadow-inner">
+                        <i class="fa-solid fa-utensils text-lg md:text-xl"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="text-white font-bold text-sm md:text-base group-hover:text-gold transition-colors">Restaurant App Web</h4>
+                        <p class="text-gray-400 text-[10px] md:text-xs">Food Delivery & Menu</p>
+                    </div>
+                    <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
+                        <i class="fa-solid fa-arrow-up-right-from-square text-gray-400 group-hover:text-gold text-sm"></i>
+                    </div>
+                </a>
+                
+                <!-- Project Link 5 -->
+                <a href="https://example.com" target="_blank" class="flex items-center gap-4 bg-gradient-to-r from-[#1a1a1a] to-black border border-white/10 p-4 rounded-xl hover:border-gold-500 hover:shadow-[0_0_15px_rgba(255,215,0,0.2)] transition-all group">
+                    <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-colors shadow-inner">
+                        <i class="fa-solid fa-user-tie text-lg md:text-xl"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="text-white font-bold text-sm md:text-base group-hover:text-gold transition-colors">Corporate Portfolio</h4>
+                        <p class="text-gray-400 text-[10px] md:text-xs">Business Landing Page</p>
+                    </div>
+                    <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
+                        <i class="fa-solid fa-arrow-up-right-from-square text-gray-400 group-hover:text-gold text-sm"></i>
+                    </div>
+                </a>
+
+            </div>
+            
+            <!-- Bottom Fade effect -->
+            <div class="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-black to-transparent pointer-events-none z-20"></div>
         </div>
     </div>
 
-    <main class="flex-grow pt-[85px] relative overflow-hidden flex flex-col">
-        <div class="absolute top-0 left-0 w-full h-[700px] overflow-hidden z-[-1]">
-            <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-20 contrast-125 saturate-0">
-                <source src="https://cdn.pixabay.com/video/2020/04/18/36468-409477942_large.mp4" type="video/mp4">
-            </video>
-            <!-- Changed gradient to fade into light gray instead of black -->
-            <div class="absolute inset-0 bg-gradient-to-b from-[#e5e5e5]/70 via-[#e5e5e5]/90 to-[#e5e5e5]"></div>
-        </div>
-
-        <div class="w-full relative z-10 mt-4">
-            <div class="scene" id="sceneContainer">
-                <div class="carousel" id="carousel"></div>
-            </div>
-        </div>
-        <div class="flex justify-center gap-6 mt-6 mb-6 relative z-10">
-            <button id="prevBtn" class="w-12 h-12 rounded-full border-2 border-gold-500/70 text-gold-400 hover:bg-gold-500 hover:text-black hover:shadow-[0_0_35px_gold] transition-all flex items-center justify-center bg-black/50 backdrop-blur-xl active:scale-90"><i class="fa-solid fa-arrow-left text-lg"></i></button>
-            <button id="nextBtn" class="w-12 h-12 rounded-full border-2 border-gold-500/70 text-gold-400 hover:bg-gold-500 hover:text-black hover:shadow-[0_0_35px_gold] transition-all flex items-center justify-center bg-black/50 backdrop-blur-xl active:scale-90"><i class="fa-solid fa-arrow-right text-lg"></i></button>
-        </div>
-
-        <div id="apps" class="max-w-7xl mx-auto px-4 mt-2 pb-20 w-full">
-            
-            <div class="flex items-center justify-center mb-10 w-full px-2">
-                <div class="h-[2px] flex-grow max-w-[30px] sm:max-w-[64px] bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
-                <!-- Changed text color to black for light theme visibility -->
-                <h3 class="mx-2 sm:mx-4 text-[13px] sm:text-3xl font-black text-black tracking-widest sm:tracking-[0.3em] text-center font-display drop-shadow-[0_0_15px_gold] whitespace-nowrap shrink-0">OUR ANDROID APP</h3>
-                <div class="h-[2px] flex-grow max-w-[30px] sm:max-w-[64px] bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
-            </div>
-
-            <!-- First 3 Cards Block -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6">
-                
-                <div style="--card-bg-img: url('stipro.png');" class="card-custom-bg px-6 pb-6 pt-0 flex flex-col group gold-border-glow">
-                    <!-- Classical White-Gold Heading -->
-                    <div class="bg-gradient-to-b from-[#fdfbfb] to-[#ebedee] mx-auto w-fit max-w-[95%] text-[#111] px-6 sm:px-8 py-2.5 rounded-b-[20px] font-black uppercase tracking-widest text-[10px] sm:text-xs z-20 border-b-[4px] border-gold-500 shadow-[0_8px_20px_rgba(0,0,0,0.5)] mb-8 text-center leading-tight">
-                        Start-Your-fitness-Journey-Now
-                    </div>
-                    <div class="mt-auto relative z-10 w-full">
-                        <div class="flex flex-col gap-3">
-                            <a href="https://play.google.com/store/apps/details?id=com.ai.ts" target="_blank" class="btn-android w-full flex items-center justify-center gap-3 py-3 bg-transparent border border-white/80 hover:border-green-500 hover:bg-green-500 text-white hover:text-black hover:shadow-[0_0_25px_rgba(34,197,94,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[10px]">
-                                <i class="fa-brands fa-android text-base text-green-400 transition-colors"></i> For Android
-                            </a>
-                            <a href="#" class="btn-windows w-full flex items-center justify-center gap-3 py-3 bg-transparent border border-white/80 hover:border-blue-500 hover:bg-blue-500 text-gray-100 hover:text-black hover:shadow-[0_0_25px_rgba(59,130,246,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[10px]">
-                                <i class="fa-brands fa-windows text-base text-blue-400 transition-colors"></i> For Windows Coming-soon...
-                            </a>
-                            <a href="stipro.html" class="btn-ios w-full flex items-center justify-center gap-3 py-3 bg-transparent border border-white/80 hover:border-white hover:bg-white text-gray-100 hover:text-black hover:shadow-[0_0_25px_rgba(255,255,255,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[10px]">
-                               <i class="fa-solid fa-magnifying-glass mr-2 text-base text-red-400 transition-colors"></i>See More About Stipro app
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div style="--card-bg-img: url('stiskilli.png');" class="card-custom-bg px-6 pb-6 pt-0 flex flex-col group gold-border-glow">
-                    <!-- Classical White-Gold Heading -->
-                    <div class="bg-gradient-to-b from-[#fdfbfb] to-[#ebedee] mx-auto w-fit max-w-[95%] text-[#111] px-6 sm:px-8 py-2.5 rounded-b-[20px] font-black uppercase tracking-widest text-[10px] sm:text-xs z-20 border-b-[4px] border-gold-500 shadow-[0_8px_20px_rgba(0,0,0,0.5)] mb-8 text-center leading-tight">
-                        Start-Your-Prepration-Journey
-                    </div>
-                    <div class="mt-auto relative z-10 w-full">
-                        <div class="flex flex-col gap-3">
-                            <a href="https://play.google.com/store/apps/details?id=com.ai.skillaura" target="_blank" class="btn-android w-full flex items-center justify-center gap-3 py-3 bg-transparent border border-white/80 hover:border-green-500 hover:bg-green-500 text-white hover:text-black hover:shadow-[0_0_25px_rgba(34,197,94,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[10px]">
-                                <i class="fa-brands fa-android text-base text-green-400 transition-colors"></i> Download For Android
-                            </a>
-                            <a href="https://apps.microsoft.com/detail/9NVGH3811M52?hl=en&gl=GB&ocid=pdpshare" class="btn-windows w-full flex items-center justify-center gap-3 py-3 bg-transparent border border-white/80 hover:border-blue-500 hover:bg-blue-500 text-gray-100 hover:text-black hover:shadow-[0_0_25px_rgba(59,130,246,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[10px]">
-                                <i class="fa-brands fa-windows text-base text-blue-400 transition-colors"></i> DownloadFor Windows/PC
-                            </a>
-                            <a href="stiskilli.html" class="btn-ios w-full flex items-center justify-center gap-3 py-3 bg-transparent border border-white/80 hover:border-white hover:bg-white text-gray-100 hover:text-black hover:shadow-[0_0_25px_rgba(255,255,255,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[10px]">
-                                <i class="fa-solid fa-magnifying-glass mr-2 text-base text-red-400 transition-colors"></i>See More About Stiskilli
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div style="--card-bg-img: url('rentist.png');" class="card-custom-bg px-6 pb-6 pt-0 flex flex-col group gold-border-glow">
-                    <!-- Classical White-Gold Heading -->
-                    <div class="bg-gradient-to-b from-[#fdfbfb] to-[#ebedee] mx-auto w-fit max-w-[95%] text-[#111] px-6 sm:px-8 py-2.5 rounded-b-[20px] font-black uppercase tracking-widest text-[10px] sm:text-xs z-20 border-b-[4px] border-gold-500 shadow-[0_8px_20px_rgba(0,0,0,0.5)] mb-8 text-center leading-tight">
-                       Find-Room-flats-shop-pg-houses
-                    </div>
-                    <div class="mt-auto relative z-10 w-full">
-                        <div class="flex flex-col gap-3">
-                            <a href="https://play.google.com/store/apps/details?id=com.ai.rentistleaseyourproperty" target="_blank" class="btn-android w-full flex items-center justify-center gap-3 py-3 bg-transparent border border-white/80 hover:border-green-500 hover:bg-green-500 text-white hover:text-black hover:shadow-[0_0_25px_rgba(34,197,94,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[10px]">
-                                <i class="fa-brands fa-android text-base text-green-400 transition-colors"></i> For Android
-                            </a>
-                            <a href="#" class="btn-windows w-full flex items-center justify-center gap-3 py-3 bg-transparent border border-white/80 hover:border-blue-500 hover:bg-blue-500 text-gray-100 hover:text-black hover:shadow-[0_0_25px_rgba(59,130,246,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[10px]">
-                                <i class="fa-brands fa-windows text-base text-blue-400 transition-colors"></i> For Windows Coming-soon...
-                            </a>
-                            <a href="propertyrentalservices.html" class="btn-ios w-full flex items-center justify-center gap-3 py-3 bg-transparent border border-white/80 hover:border-white hover:bg-white text-gray-100 hover:text-black hover:shadow-[0_0_25px_rgba(255,255,255,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[10px]">
-                                <i class="fa-solid fa-magnifying-glass mr-2 text-base text-red-400 transition-colors"></i>See More About Rentist
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="flex items-center justify-center mt-16 mb-10 w-full px-2">
-                <div class="h-[2px] flex-grow max-w-[30px] sm:max-w-[64px] bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
-                <!-- Changed text color to black for light theme visibility -->
-                <h3 class="mx-2 sm:mx-4 text-[13px] sm:text-3xl font-black text-black tracking-widest sm:tracking-[0.3em] text-center font-display drop-shadow-[0_0_15px_gold] whitespace-nowrap shrink-0">OUR SERVICES</h3>
-                <div class="h-[2px] flex-grow max-w-[30px] sm:max-w-[64px] bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
-            </div>
-
-            <!-- Second Grid Block for Services -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6">
-                
-                <div style="--card-bg-img: url('stiyoursocialmedia.png');" class="card-custom-bg px-6 pb-6 pt-0 flex flex-col group gold-border-glow">
-                    <!-- Classical White-Gold Heading -->
-                    <div class="bg-gradient-to-b from-[#fdfbfb] to-[#ebedee] mx-auto w-fit max-w-[95%] text-[#111] px-6 sm:px-8 py-2.5 rounded-b-[20px] font-black uppercase tracking-widest text-[10px] sm:text-xs z-20 border-b-[4px] border-gold-500 shadow-[0_8px_20px_rgba(0,0,0,0.5)] mb-8 text-center leading-tight">
-                        Manage-Your-All-Social-Media
-                    </div>
-                    <div class="mt-auto relative z-10 w-full">
-                        <div class="flex flex-col gap-3">
-                            <a href="#" class="w-full flex items-center justify-center gap-3 py-3 bg-transparent border border-white/80 hover:border-green-500 hover:bg-green-500 text-white hover:text-black hover:shadow-[0_0_25px_rgba(34,197,94,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[10px] btn-android">
-                                <i class="fa-brands fa-whatsapp text-base text-green-400 transition-colors"></i> WhatsApp
-                            </a>
-                            <a href="manageyoursocialmediaplatforms.html" class="w-full flex items-center justify-center gap-3 py-3 bg-transparent border border-white/80 hover:border-red-500 hover:bg-red-500 text-gray-100 hover:text-black hover:shadow-[0_0_25px_rgba(239,68,68,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[10px] btn-ios">
-                                <i class="fa-solid fa-magnifying-glass mr-2 text-base text-red-400 transition-colors"></i>See Priceing Plans
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="--card-bg-img: url('stistartyourownwebsite.png');" class="card-custom-bg px-6 pb-6 pt-0 flex flex-col group gold-border-glow">
-                    <!-- Classical White-Gold Heading -->
-                    <div class="bg-gradient-to-b from-[#fdfbfb] to-[#ebedee] mx-auto w-fit max-w-[95%] text-[#111] px-6 sm:px-8 py-2.5 rounded-b-[20px] font-black uppercase tracking-widest text-[10px] sm:text-xs z-20 border-b-[4px] border-gold-500 shadow-[0_8px_20px_rgba(0,0,0,0.5)] mb-8 text-center leading-tight">
-                        Start-Your-Own-Website-Now
-                    </div>
-                    <div class="mt-auto relative z-10 w-full">
-                        <div class="flex flex-col gap-3">
-                            <a href="#" class="w-full flex items-center justify-center gap-3 py-3 bg-transparent border border-white/80 hover:border-green-500 hover:bg-green-500 text-white hover:text-black hover:shadow-[0_0_25px_rgba(34,197,94,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[10px] btn-android">
-                                <i class="fa-brands fa-whatsapp text-base text-green-400 transition-colors"></i> WhatsApp
-                            </a>
-                            <a href="startyourownwebsitenow.html" class="w-full flex items-center justify-center gap-3 py-3 bg-transparent border border-white/80 hover:border-red-500 hover:bg-red-500 text-gray-100 hover:text-black hover:shadow-[0_0_25px_rgba(239,68,68,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[10px] btn-ios">
-                                <i class="fa-solid fa-magnifying-glass mr-2 text-base text-red-400 transition-colors"></i>See Priceing Plans
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="--card-bg-img: url('stiandroid.png');" class="card-custom-bg px-6 pb-6 pt-0 flex flex-col group gold-border-glow">
-                    <!-- Classical White-Gold Heading -->
-                    <div class="bg-gradient-to-b from-[#fdfbfb] to-[#ebedee] mx-auto w-fit max-w-[95%] text-[#111] px-6 sm:px-8 py-2.5 rounded-b-[20px] font-black uppercase tracking-widest text-[10px] sm:text-xs z-20 border-b-[4px] border-gold-500 shadow-[0_8px_20px_rgba(0,0,0,0.5)] mb-8 text-center leading-tight">
-                        Start-Your-Own-Android-App-Now
-                    </div>
-                    <div class="mt-auto relative z-10 w-full">
-                        <div class="flex flex-col gap-3">
-                           <a href="#" class="w-full flex items-center justify-center gap-3 py-3 bg-transparent border border-white/80 hover:border-green-500 hover:bg-green-500 text-white hover:text-black hover:shadow-[0_0_25px_rgba(34,197,94,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[10px] btn-android">
-                                <i class="fa-brands fa-whatsapp text-base text-green-400 transition-colors"></i> WhatsApp
-                            </a>
-                            <a href="startyourownappnow.html" class="w-full flex items-center justify-center gap-3 py-3 bg-transparent border border-white/80 hover:border-red-500 hover:bg-red-500 text-gray-100 hover:text-black hover:shadow-[0_0_25px_rgba(239,68,68,0.6)] transition-all font-black rounded-xl uppercase tracking-widest text-[10px] btn-ios">
-                                <i class="fa-solid fa-magnifying-glass mr-2 text-base text-red-400 transition-colors"></i>See Priceing Plans
-                            </a>    
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </main>
-
-    <footer id="contact" class="footer-ultra py-12 px-4 relative z-10">
-        <div class="footer-glow animate-pulse"></div>
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-                <div class="text-center md:text-left flex flex-col md:flex-row items-center gap-4">
-                    <img src="stione.png" onerror="this.src='sti.png'" alt="STI" class="h-16 w-16 object-contain filter drop-shadow-[0_0_25px_gold] animate-float">
-                    <div>
-                        <img src="stin.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10472/10472068.png'" alt="STIWORLDOFFICIAL" class="h-5 object-contain filter drop-shadow-[0_0_8px_gold]">
-                        <p class="text-gray-500 text-[8px] uppercase tracking-[0.3em] font-black">Your True Guide</p>
-                    </div>
-                </div>
-                <div class="flex gap-5">
-                    <a href="https://www.instagram.com/stiworldofficial?igsh=MXJhaGJtcXJmM2Fydg==" class="w-10 h-10 rounded-full border-2 border-gray-700/80 bg-white/5 flex items-center justify-center text-gray-300 hover:text-white hover:border-gold-500 hover:bg-gold-500 hover:shadow-[0_0_30px_gold] transition-all duration-300 transform hover:-translate-y-1"><i class="fa-brands fa-instagram text-lg"></i></a>
-                    <a href="https://www.facebook.com/share/17wbEfuxwL/?mibextid=wwXIfr" class="w-10 h-10 rounded-full border-2 border-gray-700/80 bg-white/5 flex items-center justify-center text-gray-300 hover:text-white hover:border-gold-500 hover:bg-gold-500 hover:shadow-[0_0_30px_gold] transition-all duration-300 transform hover:-translate-y-1"><i class="fa-brands fa-facebook-f text-lg"></i></a>
-                    <a href="https://youtube.com/@stiworldofficial?si=S0xxwoN56tIV-6Yv" class="w-10 h-10 rounded-full border-2 border-gray-700/80 bg-white/5 flex items-center justify-center text-gray-300 hover:text-white hover:border-gold-500 hover:bg-gold-500 hover:shadow-[0_0_30px_gold] transition-all duration-300 transform hover:-translate-y-1"><i class="fa-brands fa-youtube text-lg"></i></a>
-                    <a href="https://x.com/stiworldoff3" class="w-10 h-10 rounded-full border-2 border-gray-700/80 bg-white/5 flex items-center justify-center text-gray-300 hover:text-white hover:border-gold-500 hover:bg-gold-500 hover:shadow-[0_0_30px_gold] transition-all duration-300 transform hover:-translate-y-1"><i class="fa-brands fa-x-twitter text-lg"></i></a>
-                </div>
-            </div>
-            <div class="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[8px] text-gray-600 font-black uppercase tracking-widest">
-                <p>© 2026 STI World Official. All rights reserved.</p>
-                <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-gold-500 transition underline decoration-gold-500 underline-offset-4">Privacy</a>
-                    <a href="#" class="hover:text-gold-500 transition underline decoration-gold-500 underline-offset-4">Terms</a>
-                    <a href="#" class="hover:text-gold-500 transition underline decoration-gold-500 underline-offset-4">Support</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
     <script>
-        (function() {
-            const header = document.getElementById('mainHeader');
-            
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 20) {
-                    header.classList.add('header-scrolled');
-                } else {
-                    header.classList.remove('header-scrolled');
-                }
-            });
+        // Modal Control Functions
+        function openPortfolioModal() {
+            const modal = document.getElementById('portfolioModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden'; // Stop background scroll
+        }
 
-            window.toggleSidebar = function() { document.getElementById('mainBody').classList.toggle('sidebar-open'); };
-
-            // ==========================================================
-            // CHANGED: 50 IMAGES DYNAMIC CAROUSEL ARRAY
-            // ==========================================================
-            const carousel = document.getElementById('carousel');
-            const scene = document.getElementById('sceneContainer');
-            
-            // Yahan par 50 images tak ka data likha hua hai. 
-            // Aapko jo image delete karni hai, bas uski line hata dijiye, box khud remove ho jayega.
-            // Aur naye add karne hain toh yahan string add kar dein.
-            const images = [
-                'one.png',
-                 'two.png', 
-                 'three.png', 
-                 'four.png', 
-                 'five.png',
-                'six.png', 
-                'seven.png', 
-                'eight.png', 
-                'nine.png', 
-                'ten.png',
-                'eleven.png', 
-                'twele.png',
-                 'thirteen.png', 
-                 'fourteen.png', 
-                 'fifteen.png',
-                 'upsc.png', 'ssc.png', 'rrb.png', 'ibps.png', 'sbi.png',
-                'rbi.png', 'nabard.png', 'sidbi.png', 'sebi.png', 'exim.png',
-                'lic.png','gic.png','ecgc.png','ina.png','inn.png','iaf.png',
-                //'16.png',
-             //'50.png'
-            ];
-            
-            // Ab ye dynamically count karega jitni images array me hongi
-            const cellCount = images.length; 
-            
-            let selectedIndex = 0, cellWidth, cellHeight, radius;
-            
-            function createCarousel() {
-                carousel.innerHTML = '';
-                for (let i=0; i<cellCount; i++) {
-                    const cell = document.createElement('div');
-                    cell.className = 'carousel__cell';
-                    const img = document.createElement('img'); 
-                    img.src = images[i];
-                    img.onerror = function() { this.src = 'https://via.placeholder.com/800x450/111111/FFD700?text=Image+'+(i+1); }; // agar image nahi mili toh placeholder
-                    cell.appendChild(img); 
-                    carousel.appendChild(cell);
-                }
-                updateDimensions();
-            }
-            
-            function updateDimensions() {
-                if (window.innerWidth < 768) {
-                    cellWidth = window.innerWidth; 
-                } else {
-                    cellWidth = Math.min(window.innerWidth * 0.8, 800); 
-                }
-                
-                cellHeight = cellWidth * (9 / 16); 
-                radius = Math.round((cellWidth/2) / Math.tan(Math.PI/cellCount));
-                scene.style.height = cellHeight + 'px';
-                
-                const cells = document.querySelectorAll('.carousel__cell');
-                const theta = 360/cellCount;
-                cells.forEach((cell, i) => {
-                    cell.style.width = cellWidth+'px'; 
-                    cell.style.height = cellHeight+'px';
-                    cell.style.marginLeft = -(cellWidth/2)+'px'; 
-                    cell.style.marginTop = -(cellHeight/2)+'px';
-                    cell.style.transform = `rotateY(${theta*i}deg) translateZ(${radius}px)`;
-                });
-                rotateCarousel();
-            }
-            
-            function rotateCarousel() { 
-                carousel.style.transform = `translateZ(${-radius}px) rotateY(${(360/cellCount)*selectedIndex*-1}deg)`; 
-            }
-            
-            createCarousel();
-            window.addEventListener('resize', updateDimensions);
-            
-            document.getElementById('prevBtn').addEventListener('click', ()=>{ selectedIndex--; rotateCarousel(); });
-            document.getElementById('nextBtn').addEventListener('click', ()=>{ selectedIndex++; rotateCarousel(); });
-            
-            let autoRun = setInterval(()=>{ selectedIndex++; rotateCarousel(); }, 3500);
-            scene.addEventListener('mouseenter', ()=>clearInterval(autoRun));
-            scene.addEventListener('touchstart', ()=>clearInterval(autoRun));
-            scene.addEventListener('mouseleave', ()=> autoRun = setInterval(()=>{ selectedIndex++; rotateCarousel(); }, 3500));
-        })();
+        function closePortfolioModal() {
+            const modal = document.getElementById('portfolioModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = ''; // Restore scroll
+        }
     </script>
 </body>
 </html>

@@ -6,32 +6,39 @@
     <title>AI Video Creation Services</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Premium Classic Fonts: Cinzel, Playfair Display, and Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@500;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'sans-serif'],
+                        sans: ['Montserrat', 'sans-serif'],
                         cinzel: ['Cinzel', 'serif'],
+                        playfair: ['Playfair Display', 'serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
                     },
                     colors: {
                         glass: 'rgba(5, 5, 5, 0.8)',
                         glassBorder: 'rgba(255, 215, 0, 0.15)',
                         darkBg: '#050505',
                         accentBlue: '#2997ff',
-                        stiskilliGold: '#FFD700', 
+                        stiskilliGold: '#FFD700',
+                        whatsapp: '#25D366',
+                        whatsappDark: '#128C7E',
                     },
                     boxShadow: {
-                        'ios-card': '0 8px 32px rgba(0, 0, 0, 0.4)',
                         'glow': '0 0 40px rgba(255, 215, 0, 0.2)',
+                        'wa-glow': '0 0 30px rgba(37, 211, 102, 0.5)',
                     },
                     animation: {
                         'fade-in': 'fadeIn 0.4s ease-out forwards',
                         'slide-up': 'slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
                         'pop-in': 'popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-slow': 'bounce 3s infinite',
                     },
                     keyframes: {
                         fadeIn: {
@@ -65,7 +72,7 @@
             overflow-x: hidden;
             scroll-behavior: smooth;
             padding-top: 6rem;
-            padding-bottom: 6rem;
+            padding-bottom: 8rem; /* Extra padding for floating footer */
         }
 
         .glass-panel {
@@ -76,7 +83,7 @@
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,215,0,0.05);
         }
 
-        /* Unified category card for both Main & Subcategories */
+        /* Light White Premium Glass Background */
         .category-card {
             transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
             cursor: pointer;
@@ -84,24 +91,26 @@
             border-radius: 16px;
             display: flex;
             align-items: stretch;
-            background: rgba(15, 15, 15, 0.8);
-            border: 1px solid rgba(255, 215, 0, 0.1);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 240, 240, 0.9) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
             text-align: left;
             width: 100%;
         }
 
         .category-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 215, 0, 0.15);
-            border-color: rgba(255, 215, 0, 0.4);
-            background: rgba(20, 20, 20, 0.9);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.4);
+            border-color: rgba(255, 215, 0, 0.8);
         }
         
         .card-image-container {
             width: 35%;
             position: relative;
             overflow: hidden;
-            border-right: 1px solid rgba(255, 215, 0, 0.1);
+            border-right: 2px solid rgba(255, 215, 0, 0.3);
             flex-shrink: 0;
         }
 
@@ -116,16 +125,9 @@
             transform: scale(1.1);
         }
         
-        .card-image-container::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(to right, rgba(0,0,0,0.2), rgba(0,0,0,0.8));
-        }
-
         .card-content-area {
             width: 65%;
-            padding: 0.75rem;
+            padding: 0.75rem 1rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -147,15 +149,6 @@
             background: rgba(255,215,0,0.4);
         }
 
-        #modal-container.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-        
-        #modal-container {
-            transition: opacity 0.3s ease;
-        }
-        
         .glass-header {
             margin: 1rem auto 0 auto; 
             border-radius: 50px; 
@@ -180,43 +173,21 @@
         }
 
         @keyframes goldGlowPulse {
-            0% {
-                box-shadow: 0 0 10px rgba(255, 215, 0, 0.4), inset 0 0 5px rgba(255, 215, 0, 0.2);
-            }
-            100% {
-                box-shadow: 0 0 25px rgba(255, 215, 0, 0.8), inset 0 0 15px rgba(255, 215, 0, 0.5);
-            }
+            0% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.4), inset 0 0 5px rgba(255, 215, 0, 0.2); }
+            100% { box-shadow: 0 0 25px rgba(255, 215, 0, 0.8), inset 0 0 15px rgba(255, 215, 0, 0.5); }
         }
 
         .header-logo {
-            height: 48px;
-            width: 48px;
-            object-fit: contain;
-            border-radius: 12px;
-            flex-shrink: 0;
+            height: 48px; width: 48px; object-fit: contain; border-radius: 12px; flex-shrink: 0;
         }
-
         .header-title-img {
-            height: 32px; 
-            max-width: 50%;
-            object-fit: contain;
-            flex-grow: 1;
-            margin: 0 1rem;
+            height: 32px; max-width: 50%; object-fit: contain; flex-grow: 1; margin: 0 1rem;
         }
 
         @media (max-width: 640px) {
-            .glass-header {
-                height: 60px;
-                padding: 0.25rem 1rem;
-                border-width: 2px;
-            }
-            .header-logo {
-                height: 40px;
-                width: 40px;
-            }
-            .header-title-img {
-                height: 24px;
-            }
+            .glass-header { height: 60px; padding: 0.25rem 1rem; border-width: 2px; }
+            .header-logo { height: 40px; width: 40px; }
+            .header-title-img { height: 24px; }
         }
     </style>
 </head>
@@ -230,107 +201,66 @@
 
     <main class="flex-grow pt-4 px-4 sm:px-4 lg:px-4 max-w-7xl mx-auto w-full z-10">
         <!-- Main Category Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-20" id="category-grid">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-12" id="category-grid">
             <!-- Cards will be injected here by JS -->
         </div>
     </main>
 
     <footer class="mt-auto relative z-20">
-        <!-- Floating Action Bar for Mobile -->
-        <div class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-11/12 max-w-md glass-panel rounded-full px-6 py-3 flex justify-between items-center z-40 border border-stiskilliGold/30 shadow-[0_20px_40px_rgba(0,0,0,0.8)]">
-             <a href="#" class="flex flex-col items-center text-stiskilliGold">
-                 <i class="fa-solid fa-house text-lg mb-1"></i>
-                 <span class="text-[10px]">Home</span>
-             </a>
-             <a href="#" class="flex flex-col items-center text-gray-500 hover:text-stiskilliGold transition-colors">
-                 <i class="fa-solid fa-clapperboard text-lg mb-1"></i>
-                 <span class="text-[10px]">Work</span>
-             </a>
-             <a href="#" class="flex flex-col items-center text-gray-500 hover:text-stiskilliGold transition-colors">
-                 <i class="fa-solid fa-tag text-lg mb-1"></i>
-                 <span class="text-[10px]">Pricing</span>
-             </a>
-             <a href="#" class="flex flex-col items-center text-gray-500 hover:text-stiskilliGold transition-colors">
-                 <i class="fa-regular fa-user text-lg mb-1"></i>
-                 <span class="text-[10px]">Contact</span>
+        <!-- Floating Action Bar for Mobile - EXCLUSIVE WHATSAPP -->
+        <div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md glass-panel rounded-full p-1.5 z-40 border border-whatsapp/60 shadow-wa-glow bg-gradient-to-r from-black via-[#0a2e16] to-black">
+             <a href="https://wa.me/918395913829" target="_blank" class="flex justify-center items-center gap-3 w-full py-3.5 bg-whatsapp/10 hover:bg-whatsapp/20 rounded-full text-white transition-all group overflow-hidden relative">
+                 <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                 <i class="fa-brands fa-whatsapp text-3xl text-whatsapp drop-shadow-[0_0_8px_rgba(37,211,102,0.8)] animate-pulse-slow"></i>
+                 <div class="flex flex-col items-start leading-none">
+                     <span class="text-xs font-montserrat font-bold text-whatsapp uppercase tracking-wider mb-0.5"></span>
+                     <span class="text-[15px] font-montserrat font-black tracking-widest">Get-Free-Sample</span>
+                 </div>
+                 <i class="fa-solid fa-arrow-right text-whatsapp/70 ml-2 group-hover:translate-x-2 transition-transform"></i>
              </a>
         </div>
 
-        <div class="glass-panel border-t border-stiskilliGold/20 pt-16 pb-24 md:pb-12 px-6">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-                <div class="col-span-1 md:col-span-2">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-[14px] bg-gradient-to-br from-yellow-600 to-black flex items-center justify-center border border-yellow-500/50 shadow-[0_0_15px_rgba(255,215,0,0.2)]">
-                            <span class="text-stiskilliGold font-bold text-xs">STI</span>
-                        </div>
-                        <h2 class="text-2xl font-bold tracking-tight text-white font-cinzel">STISKILLI Studio</h2>
-                    </div>
-                    <p class="text-gray-400 text-sm leading-relaxed max-w-md mb-8">
-                        Elevating storytelling through advanced artificial intelligence. We create stunning visual content spanning multiple genres with professional voiceovers and ultra HD quality.
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-stiskilliGold/20 flex items-center justify-center text-gray-400 hover:text-stiskilliGold hover:border-stiskilliGold/50 hover:bg-stiskilliGold/10 transition-all hover:-translate-y-1">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-stiskilliGold/20 flex items-center justify-center text-gray-400 hover:text-stiskilliGold hover:border-stiskilliGold/50 hover:bg-stiskilliGold/10 transition-all hover:-translate-y-1">
-                            <i class="fa-brands fa-youtube"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-stiskilliGold/20 flex items-center justify-center text-gray-400 hover:text-stiskilliGold hover:border-stiskilliGold/50 hover:bg-stiskilliGold/10 transition-all hover:-translate-y-1">
-                            <i class="fa-brands fa-twitter"></i>
-                        </a>
-                    </div>
+        <!-- Desktop Minimal WhatsApp Footer -->
+        <div class="glass-panel border-t border-stiskilliGold/20 pt-12 pb-32 md:pb-12 px-6 text-center mt-12">
+            <div class="max-w-4xl mx-auto flex flex-col items-center">
+                <div class="w-16 h-16 rounded-[20px] bg-gradient-to-br from-whatsapp to-whatsappDark flex items-center justify-center border border-white/20 shadow-[0_0_25px_rgba(37,211,102,0.4)] mb-6">
+                    <i class="fa-brands fa-whatsapp text-4xl text-white"></i>
                 </div>
-                
-                <div>
-                    <h3 class="text-white font-semibold mb-6 tracking-wide text-sm uppercase">Quick Links</h3>
-                    <ul class="space-y-4">
-                        <li><a href="#" class="text-gray-400 hover:text-stiskilliGold transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-angle-right text-[10px]"></i> Portfolio</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-stiskilliGold transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-angle-right text-[10px]"></i> Pricing Plans</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-stiskilliGold transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-angle-right text-[10px]"></i> How It Works</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-stiskilliGold transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-angle-right text-[10px]"></i> FAQ</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-white font-semibold mb-6 tracking-wide text-sm uppercase">Legal</h3>
-                    <ul class="space-y-4">
-                        <li><a href="#" class="text-gray-400 hover:text-stiskilliGold transition-colors text-sm">Terms of Service</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-stiskilliGold transition-colors text-sm">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-stiskilliGold transition-colors text-sm">Refund Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-stiskilliGold/10 text-center flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-gray-500 text-xs">
-                    &copy; 2026 STISKILLI Studio. All rights reserved.
+                <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white font-playfair mb-4 drop-shadow-lg">आपके आइडिया को दें एक नई पहचान!</h2>
+                <p class="text-gray-300 mb-8 max-w-xl mx-auto font-montserrat text-sm sm:text-base leading-relaxed">
+                    हर तरह की, हर टाइप की AI VIDEO. Connect with us instantly on WhatsApp to discuss your project and get a quote.
                 </p>
-                <div class="flex items-center gap-2 text-xs text-gray-500">
-                    <span>Designed with</span>
-                    <i class="fa-solid fa-heart text-stiskilliGold text-[10px]"></i>
-                    <span>in India</span>
+                
+                <a href="https://wa.me/918395913829" target="_blank" class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-whatsapp to-[#1ebd5a] hover:from-[#1ebd5a] hover:to-whatsapp text-white px-10 py-4 rounded-full font-black text-lg transition-all transform hover:scale-105 hover:-translate-y-1 shadow-wa-glow font-montserrat tracking-wide">
+                    HIRE US ON WHATSAPP
+                </a>
+                
+                <div class="mt-12 pt-6 border-t border-white/10 w-full flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-montserrat font-semibold text-gray-500">
+                    <p>&copy; 2026 STISKILLI Studio. All rights reserved.</p>
+                    <div class="flex items-center gap-2">
+                        <span>Designed with</span>
+                        <i class="fa-solid fa-heart text-stiskilliGold"></i>
+                        <span>in India</span>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Centralized Popup Modal -->
+    <!-- Centralized Popup Modal for Categories -->
     <div id="modal-container" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
-        <!-- Backdrop -->
         <div id="modal-backdrop" class="absolute inset-0 bg-black/80 backdrop-blur-md transition-opacity"></div>
         
-        <!-- Modal Content -->
         <div id="modal-content" class="relative bg-[#0a0a0a] rounded-[24px] w-full max-w-4xl max-h-[85vh] flex flex-col shadow-[0_0_40px_rgba(255,215,0,0.15)] border border-stiskilliGold/40 transform scale-95 opacity-0 transition-all duration-300">
             
-            <!-- Modal Header -->
             <div class="flex justify-between items-center p-5 border-b border-stiskilliGold/20 shrink-0">
                 <div class="flex items-center gap-3">
                     <div id="modal-icon" class="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-500/20 to-black flex items-center justify-center text-stiskilliGold border border-stiskilliGold/30 shadow-inner">
                         <!-- Icon injected by JS -->
                     </div>
                     <div>
-                        <h3 id="modal-title" class="text-xl font-bold text-white tracking-tight">Category Name</h3>
-                        <p class="text-stiskilliGold/70 text-[10px] sm:text-xs mt-0.5">Select a specific style</p>
+                        <h3 id="modal-title" class="text-xl font-black text-white tracking-tight font-playfair">Category Name</h3>
+                        <p class="text-stiskilliGold/70 text-[10px] sm:text-xs mt-0.5 font-montserrat font-semibold uppercase tracking-wider">Select a specific style to view</p>
                     </div>
                 </div>
                 <button id="close-modal" class="w-8 h-8 rounded-full bg-white/5 hover:bg-stiskilliGold/20 flex items-center justify-center text-gray-300 hover:text-stiskilliGold transition-colors border border-stiskilliGold/20">
@@ -338,171 +268,325 @@
                 </button>
             </div>
 
-            <!-- Modal Body (Subcategories) -->
             <div class="p-4 sm:p-5 overflow-y-auto custom-scrollbar flex-grow bg-black/50">
                 <div id="subcategory-list" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <!-- Subcategories injected by JS -->
                 </div>
             </div>
             
-            <!-- Modal Footer -->
             <div class="p-4 border-t border-stiskilliGold/20 flex justify-end bg-yellow-500/5 rounded-b-[24px] shrink-0">
-                <button class="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black hover:from-yellow-300 hover:to-yellow-500 px-6 py-2.5 rounded-full text-sm font-bold shadow-[0_0_15px_rgba(255,215,0,0.3)] hover:shadow-[0_0_25px_rgba(255,215,0,0.5)] transition-all hover:scale-105 active:scale-95 border border-yellow-300/50 w-full sm:w-auto">
-                    Continue with Selection
+                <button onclick="document.getElementById('close-modal').click()" class="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black hover:from-yellow-300 hover:to-yellow-500 px-6 py-2.5 rounded-full text-sm font-black shadow-[0_0_15px_rgba(255,215,0,0.3)] hover:shadow-[0_0_25px_rgba(255,215,0,0.5)] transition-all hover:scale-105 active:scale-95 border border-yellow-300/50 w-full sm:w-auto font-montserrat uppercase tracking-wide">
+                    Go Back
                 </button>
             </div>
         </div>
     </div>
 
+    <!-- Youtube Shorts Centralized Popup -->
+    <div id="video-modal-container" class="fixed inset-0 z-[60] flex items-center justify-center p-4 pt-[80px] pb-[90px] hidden">
+        <!-- Deep dark blur background -->
+        <div id="video-modal-backdrop" class="fixed inset-0 bg-black/95 backdrop-blur-xl transition-opacity"></div>
+        
+        <!-- Video Content Box (9:16 Aspect Ratio) -->
+        <div id="video-modal-content" class="relative w-full max-w-[360px] sm:max-w-[400px] h-full max-h-[80vh] aspect-[9/16] bg-black rounded-[24px] shadow-[0_0_60px_rgba(255,215,0,0.25)] border border-stiskilliGold/40 transform scale-95 opacity-0 transition-all duration-300 flex flex-col overflow-hidden mx-auto my-auto z-10">
+            
+            <!-- Floating Header inside Video -->
+            <div class="absolute top-0 left-0 right-0 p-4 bg-gradient-to-b from-black/90 via-black/50 to-transparent z-20 flex justify-between items-start pointer-events-none">
+                <h3 id="video-modal-title" class="text-white font-playfair font-black text-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] pr-12 leading-tight">Video Title</h3>
+            </div>
+            
+            <!-- Close Button -->
+            <button id="close-video-modal" class="absolute top-4 right-4 z-30 w-9 h-9 rounded-full bg-black/60 hover:bg-stiskilliGold flex items-center justify-center text-white hover:text-black transition-all border border-white/20 backdrop-blur-md hover:scale-110">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <!-- YouTube Iframe Container -->
+            <div class="w-full h-full flex-grow relative bg-[#0a0a0a]">
+                 <!-- Loading Spinner visible while iframe loads -->
+                 <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-0">
+                     <i class="fa-solid fa-circle-notch fa-spin text-stiskilliGold text-4xl mb-3"></i>
+                     <span class="text-white/50 font-montserrat text-xs font-bold tracking-widest uppercase">Loading Magic</span>
+                 </div>
+                 
+                 <!-- Iframe with autoplay and rel=0 -->
+                 <iframe id="youtube-iframe" class="absolute inset-0 w-full h-full z-10 rounded-[24px]" src="" title="YouTube Shorts player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            
+            <!-- Bottom Call to Action inside Video -->
+            <div class="absolute bottom-6 left-0 right-0 flex justify-center z-20 pointer-events-auto">
+                <a href="https://wa.me/918395913829" target="_blank" class="bg-whatsapp/90 backdrop-blur-sm text-white px-6 py-2.5 rounded-full font-montserrat font-black text-sm tracking-wide flex items-center gap-2 hover:bg-whatsapp transition-colors shadow-wa-glow border border-white/20">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> GET THIS VIDEO
+                </a>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Updated categories with 3 distinct text parts for all subcategories (Hindi Name, English Name, Price)
+        // Updated categories with 75 distinct items and placeholder YouTube Shorts video IDs.
+        // Replace the 'videoId' string with actual YouTube Short IDs (e.g. '7M_d2Xj-58A')
+        const defaultVideoId = 'dQw4w9WgXcQ'; // Fallback video ID (Rickroll) to demonstrate working player
+
         const categories = [
             {
                 id: 'horror',
                 name: 'हॉरर / डरावनी',
-                englishName: 'Horror / Scary',
+                englishName: '15-second-to-5-minute ',
                 icon: 'fa-ghost',
-                priceRange: '₹499 - ₹1999',
-                image: 'https://images.unsplash.com/photo-1605806616949-1e87b487cb2a?q=80&w=800&auto=format&fit=crop',
+                priceRange: '₹200 - ₹2000',
+                image: 'oneone.png',
                 subcategories: [
-                    { name: 'जंप स्केयर्स', englishName: 'Jump Scares', price: '₹599', img: 'https://images.unsplash.com/photo-1505635552518-3448ff116af3?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'साइकोलॉजिकल थ्रिलर', englishName: 'Psychological Thriller', price: '₹999', img: 'https://images.unsplash.com/photo-1509281373149-e957c6296406?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'भूतों की कहानियां', englishName: 'Ghost Stories', price: '₹799', img: 'https://images.unsplash.com/photo-1627914041796-0155cb47eb79?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'खंडहर और भूतिया जगह', englishName: 'Abandoned Places', price: '₹899', img: 'https://images.unsplash.com/photo-1517594422361-5e18ae175f78?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'क्रीपीपास्ता नरेशन', englishName: 'Creepypasta Narration', price: '₹499', img: 'https://images.unsplash.com/photo-1582298538104-fe2e74cb30e1?q=80&w=400&auto=format&fit=crop' }
+                    { name: 'जंप स्केयर्स', englishName: 'Jump Scares', price: '₹599', img: 'https://images.unsplash.com/photo-1505635552518-3448ff116af3?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'साइकोलॉजिकल थ्रिलर', englishName: 'Psychological Thriller', price: '₹999', img: 'https://images.unsplash.com/photo-1509281373149-e957c6296406?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'भूतों की कहानियां', englishName: 'Ghost Stories', price: '₹799', img: 'https://images.unsplash.com/photo-1627914041796-0155cb47eb79?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'खंडहर और भूतिया जगह', englishName: 'Abandoned Places', price: '₹899', img: 'https://images.unsplash.com/photo-1517594422361-5e18ae175f78?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'क्रीपीपास्ता नरेशन', englishName: 'Creepypasta Narration', price: '₹499', img: 'https://images.unsplash.com/photo-1582298538104-fe2e74cb30e1?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
                 ]
             },
             {
                 id: 'historical',
                 name: 'ऐतिहासिक / पौराणिक',
-                englishName: 'Historical / Myth',
+                englishName: '15-second-to-5-minute',
                 icon: 'fa-landmark',
-                priceRange: '₹999 - ₹2999',
-                image: 'https://images.unsplash.com/photo-1599839619722-39751411ea63?q=80&w=800&auto=format&fit=crop',
+                priceRange: '₹300 - ₹3000',
+                image: 'twotwo.png',
                 subcategories: [
-                    { name: 'प्राचीन युद्ध', englishName: 'Ancient Battles', price: '₹1499', img: 'https://images.unsplash.com/photo-1622322384735-86f78e4785bc?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'देवी और देवता', englishName: 'Gods & Deities', price: '₹999', img: 'https://images.unsplash.com/photo-1604584687590-0938f36cbe46?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'ऐतिहासिक महापुरुष', englishName: 'Historical Figures', price: '₹1299', img: 'https://images.unsplash.com/photo-1590159495768-450b38fc6f42?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'महाकाव्य और गाथाएं', englishName: 'Epic Tales', price: '₹1999', img: 'https://images.unsplash.com/photo-1533038590840-1cbea97d15a5?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'लुप्त सभ्यताएं', englishName: 'Lost Civilizations', price: '₹1799', img: 'https://images.unsplash.com/photo-1563212035-7b567115865e?q=80&w=400&auto=format&fit=crop' }
+                    { name: 'प्राचीन युद्ध', englishName: 'Ancient Battles', price: '₹1499', img: 'https://images.unsplash.com/photo-1622322384735-86f78e4785bc?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'देवी और देवता', englishName: 'Gods & Deities', price: '₹999', img: 'https://images.unsplash.com/photo-1604584687590-0938f36cbe46?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'ऐतिहासिक महापुरुष', englishName: 'Historical Figures', price: '₹1299', img: 'https://images.unsplash.com/photo-1590159495768-450b38fc6f42?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'महाकाव्य और गाथाएं', englishName: 'Epic Tales', price: '₹1999', img: 'https://images.unsplash.com/photo-1533038590840-1cbea97d15a5?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'लुप्त सभ्यताएं', englishName: 'Lost Civilizations', price: '₹1799', img: 'https://images.unsplash.com/photo-1563212035-7b567115865e?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
                 ]
             },
             {
                 id: 'motivational',
                 name: 'मोटिवेशनल',
-                englishName: 'Motivational',
+                englishName: '15-second-to-5-minute',
                 icon: 'fa-person-arrow-up-from-line',
-                priceRange: '₹399 - ₹1499',
-                image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop',
+                priceRange: '₹200 - ₹2000',
+                image: 'threethree.png',
                 subcategories: [
-                    { name: 'जिम और फिटनेस', englishName: 'Gym / Fitness', price: '₹699', img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'पढ़ाई और छात्र', englishName: 'Study / Student', price: '₹499', img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'लाइफ कोचिंग', englishName: 'Life Coaching', price: '₹999', img: 'https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'सफलता की कहानियां', englishName: 'Success Stories', price: '₹899', img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'मॉर्निंग अफर्मेशंस', englishName: 'Morning Affirmations', price: '₹399', img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=400&auto=format&fit=crop' }
+                    { name: 'जिम और फिटनेस', englishName: 'Gym / Fitness', price: '₹699', img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'पढ़ाई और छात्र', englishName: 'Study / Student', price: '₹499', img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'लाइफ कोचिंग', englishName: 'Life Coaching', price: '₹999', img: 'https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'सफलता की कहानियां', englishName: 'Success Stories', price: '₹899', img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'मॉर्निंग अफर्मेशंस', englishName: 'Morning Affirmations', price: '₹399', img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
                 ]
             },
             {
                 id: 'product',
                 name: 'प्रोडक्ट प्रमोशन',
-                englishName: 'Product Promotion',
+                englishName: '15-second-to-5-minute',
                 icon: 'fa-box-open',
-                priceRange: '₹799 - ₹3499',
-                image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=800&auto=format&fit=crop',
+                priceRange: '₹300 - ₹3000',
+                image: 'fourfour.png',
                 subcategories: [
-                    { name: 'टेक गैजेट्स', englishName: 'Tech Gadgets', price: '₹1499', img: 'https://images.unsplash.com/photo-1498049794561-7780e7231661?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'कॉस्मेटिक्स', englishName: 'Cosmetics', price: '₹1299', img: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'फैशन और परिधान', englishName: 'Fashion & Apparel', price: '₹1999', img: 'https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'खान-पान', englishName: 'Food & Beverage', price: '₹999', img: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'अनबॉक्सिंग वीडियो', englishName: 'Unboxing Videos', price: '₹799', img: 'https://images.unsplash.com/photo-1601055903647-8f1af6d2315e?q=80&w=400&auto=format&fit=crop' }
+                    { name: 'टेक गैजेट्स', englishName: 'Tech Gadgets', price: '₹1499', img: 'https://images.unsplash.com/photo-1498049794561-7780e7231661?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'कॉस्मेटिक्स', englishName: 'Cosmetics', price: '₹1299', img: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'फैशन और परिधान', englishName: 'Fashion & Apparel', price: '₹1999', img: 'https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'खान-पान', englishName: 'Food & Beverage', price: '₹999', img: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'अनबॉक्सिंग वीडियो', englishName: 'Unboxing Videos', price: '₹799', img: 'https://images.unsplash.com/photo-1601055903647-8f1af6d2315e?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
                 ]
             },
             {
                 id: 'corporate',
                 name: 'बिजनेस / कॉर्पोरेट',
-                englishName: 'Business / Corporate',
+                englishName: '15-second-to-5-minute',
                 icon: 'fa-briefcase',
-                priceRange: '₹1499 - ₹4999',
-                image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop',
+                priceRange: '300 - ₹3000',
+                image: 'fivefive.png',
                 subcategories: [
-                    { name: 'कंपनी प्रोफाइल', englishName: 'Company Profiles', price: '₹2999', img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'रियल एस्टेट', englishName: 'Real Estate Walkthroughs', price: '₹3499', img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'ऐप प्रोमो', englishName: 'App Promos', price: '₹1999', img: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'स्टार्टअप पिच', englishName: 'Startup Pitch', price: '₹2499', img: 'https://images.unsplash.com/photo-1556761175-5973dc0f32b7?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'इंटरनल ट्रेनिंग', englishName: 'Internal Training', price: '₹1499', img: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=400&auto=format&fit=crop' }
+                    { name: 'कंपनी प्रोफाइल', englishName: 'Company Profiles', price: '₹2999', img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'रियल एस्टेट', englishName: 'Real Estate Walkthroughs', price: '₹3499', img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'ऐप प्रोमो', englishName: 'App Promos', price: '₹1999', img: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'स्टार्टअप पिच', englishName: 'Startup Pitch', price: '₹2499', img: 'https://images.unsplash.com/photo-1556761175-5973dc0f32b7?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'इंटरनल ट्रेनिंग', englishName: 'Internal Training', price: '₹1499', img: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
                 ]
             },
             {
                 id: 'animation',
                 name: 'एनिमेशन / 3D',
-                englishName: 'Animation / 3D',
+                englishName: '15-second-to-5-minute',
                 icon: 'fa-cube',
-                priceRange: '₹1999 - ₹9999',
-                image: 'https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=800&auto=format&fit=crop',
+                priceRange: '₹300 - ₹3000',
+                image: 'sixsix.png',
                 subcategories: [
-                    { name: 'पिक्सर स्टाइल', englishName: 'Pixar Style', price: '₹4999', img: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'एनीमे / मंगा', englishName: 'Anime / Manga', price: '₹3999', img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'लो पॉली 3D', englishName: 'Low Poly 3D', price: '₹2999', img: 'https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=400&auto=format&fit=crop' },
-                    { name: '2D एक्सप्लेनर', englishName: '2D Explainer', price: '₹1999', img: 'https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'एब्सट्रैक्ट मोशन', englishName: 'Abstract Motion', price: '₹3499', img: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=400&auto=format&fit=crop' }
+                    { name: 'पिक्सर स्टाइल', englishName: 'Pixar Style', price: '₹4999', img: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'एनीमे / मंगा', englishName: 'Anime / Manga', price: '₹3999', img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'लो पॉली 3D', englishName: 'Low Poly 3D', price: '₹2999', img: 'https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: '2D एक्सप्लेनर', englishName: '2D Explainer', price: '₹1999', img: 'https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'एब्सट्रैक्ट मोशन', englishName: 'Abstract Motion', price: '₹3499', img: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
                 ]
             },
             {
                 id: 'devotional',
                 name: 'भक्ति / धार्मिक',
-                englishName: 'Devotional',
+                englishName: '15-second-to-5-minute',
                 icon: 'fa-om',
-                priceRange: '₹299 - ₹1299',
-                image: 'https://images.unsplash.com/photo-1582672060674-bc2bd808a8b5?q=80&w=800&auto=format&fit=crop',
+                priceRange: '₹300 - ₹3000',
+                image: 'sevenseven.png',
                 subcategories: [
-                    { name: 'भजन और कीर्तन', englishName: 'Bhajans & Kirtans', price: '₹899', img: 'https://images.unsplash.com/photo-1579017308347-86be168a33fa?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'मंदिर दर्शन', englishName: 'Temple Tours', price: '₹1299', img: 'https://images.unsplash.com/photo-1514222046422-49fa5eb80b33?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'पर्व शुभकामनाएं', englishName: 'Festival Greetings', price: '₹399', img: 'https://images.unsplash.com/photo-1533558701576-23c65e0272fb?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'आध्यात्मिक सुविचार', englishName: 'Spiritual Quotes', price: '₹299', img: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'दैनिक दर्शन', englishName: 'Daily Darshan', price: '₹499', img: 'https://images.unsplash.com/photo-1605367375253-333e69bb0d81?q=80&w=400&auto=format&fit=crop' }
+                    { name: 'भजन और कीर्तन', englishName: 'Bhajans & Kirtans', price: '₹899', img: 'https://images.unsplash.com/photo-1579017308347-86be168a33fa?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'मंदिर दर्शन', englishName: 'Temple Tours', price: '₹1299', img: 'https://images.unsplash.com/photo-1514222046422-49fa5eb80b33?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'पर्व शुभकामनाएं', englishName: 'Festival Greetings', price: '₹399', img: 'https://images.unsplash.com/photo-1533558701576-23c65e0272fb?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'आध्यात्मिक सुविचार', englishName: 'Spiritual Quotes', price: '₹299', img: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'दैनिक दर्शन', englishName: 'Daily Darshan', price: '₹499', img: 'https://images.unsplash.com/photo-1605367375253-333e69bb0d81?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
                 ]
             },
             {
                 id: 'shortfilm',
                 name: 'शॉर्ट फिल्म',
-                englishName: 'Short Film',
+                englishName: '15-second-to-5-minute',
                 icon: 'fa-film',
-                priceRange: '₹2999 - ₹14999',
-                image: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=800&auto=format&fit=crop',
+                priceRange: '₹300 - ₹3000',
+                image: 'eighteight.png',
                 subcategories: [
-                    { name: 'साइंस फिक्शन', englishName: 'Sci-Fi Shorts', price: '₹8999', img: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'ड्रामा / इमोशनल', englishName: 'Drama / Emotional', price: '₹4999', img: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'एक्शन सीन्स', englishName: 'Action Sequences', price: '₹9999', img: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'मूक फिल्में', englishName: 'Silent Films', price: '₹2999', img: 'https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=400&auto=format&fit=crop' },
-                    { name: 'डॉक्यूमेंट्री स्टाइल', englishName: 'Documentary Style', price: '₹5999', img: 'https://images.unsplash.com/photo-1559100578-8318b760a005?q=80&w=400&auto=format&fit=crop' }
+                    { name: 'साइंस फिक्शन', englishName: 'Sci-Fi Shorts', price: '₹8999', img: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'ड्रामा / इमोशनल', englishName: 'Drama / Emotional', price: '₹4999', img: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'एक्शन सीन्स', englishName: 'Action Sequences', price: '₹9999', img: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'मूक फिल्में', englishName: 'Silent Films', price: '₹2999', img: 'https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'डॉक्यूमेंट्री स्टाइल', englishName: 'Documentary Style', price: '₹5999', img: 'https://images.unsplash.com/photo-1559100578-8318b760a005?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
+                ]
+            },
+            {
+                id: 'youtube',
+                name: 'यूट्यूब कंटेंट',
+                englishName: '15-second-to-5-minute',
+                icon: 'fa-youtube',
+                priceRange: '₹300 - ₹3000',
+                image: 'ninenine.png',
+                subcategories: [
+                    { name: 'व्लॉग्स', englishName: 'Vlogs', price: '₹899', img: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'ट्यूटोरियल', englishName: 'Tutorials', price: '₹699', img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'गेमिंग', englishName: 'Gaming', price: '₹999', img: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'टॉप 10 लिस्ट', englishName: 'Top 10s', price: '₹499', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'रोस्ट / रिएक्शन', englishName: 'Roast / Reaction', price: '₹799', img: 'https://images.unsplash.com/photo-1516280440502-8610eb675c96?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
+                ]
+            },
+            {
+                id: 'reels',
+                name: 'सोशल मीडिया रील्स',
+                englishName: '15-second-to-5-minute',
+                icon: 'fa-mobile-screen-button',
+                priceRange: '₹300 - ₹3000',
+                image: 'tenten.png',
+                subcategories: [
+                    { name: 'ट्रेंडिंग ऑडियो', englishName: 'Trending Audio', price: '₹399', img: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'लिप सिंक', englishName: 'Lip Sync', price: '₹299', img: 'https://images.unsplash.com/photo-1520110120835-c96534a4c984?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'मिनी व्लॉग', englishName: 'Mini Vlog', price: '₹499', img: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'ट्रांज़िशन', englishName: 'Transitions', price: '₹599', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'फैक्ट्स / ज्ञान', englishName: 'Facts / Knowledge', price: '₹449', img: 'https://images.unsplash.com/photo-1503694978374-8a2fa686963a?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
+                ]
+            },
+            {
+                id: 'news',
+                name: 'न्यूज / रिपोर्टिंग',
+                englishName: '15-second-to-5-minute',
+                icon: 'fa-tv',
+                priceRange: '₹300 - ₹3000',
+                image: 'eleveneleven.png',
+                subcategories: [
+                    { name: 'ब्रेकिंग न्यूज', englishName: 'Breaking News', price: '₹1499', img: 'https://images.unsplash.com/photo-1585829365295-ab7cd400c167?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'मौसम की जानकारी', englishName: 'Weather Forecast', price: '₹999', img: 'https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'खेल जगत', englishName: 'Sports Updates', price: '₹1299', img: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'शेयर बाजार', englishName: 'Stock Market', price: '₹1999', img: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'लोकल अपडेट', englishName: 'Local Updates', price: '₹899', img: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
+                ]
+            },
+            {
+                id: 'educational',
+                name: 'एजुकेशनल',
+                englishName: '15-second-to-5-minute',
+                icon: 'fa-graduation-cap',
+                priceRange: '₹300 - ₹3000',
+                image: 'tweletwele.png',
+                subcategories: [
+                    { name: 'विज्ञान प्रयोग', englishName: 'Science Explainers', price: '₹1499', img: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'इतिहास', englishName: 'History Lessons', price: '₹1299', img: 'https://images.unsplash.com/photo-1599839619722-39751411ea63?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'गणित / मैथ्स', englishName: 'Math Tutorials', price: '₹999', img: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'भाषा ज्ञान', englishName: 'Language Learning', price: '₹899', img: 'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'किड्स लर्निंग', englishName: 'Kids Learning', price: '₹799', img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
+                ]
+            },
+            {
+                id: 'romance',
+                name: 'लव स्टोरी / रोमांस',
+                englishName: '15-second-to-5-minute',
+                icon: 'fa-heart',
+                priceRange: '₹300 - ₹3000',
+                image: 'thirteenthirteen.png',
+                subcategories: [
+                    { name: 'प्री-वेडिंग', englishName: 'Pre-Wedding', price: '₹3499', img: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'एनिवर्सरी', englishName: 'Anniversary', price: '₹1499', img: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'लव कोट्स', englishName: 'Love Quotes', price: '₹899', img: 'https://images.unsplash.com/photo-1518599904199-0ca897819ddb?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'प्रपोजल', englishName: 'Proposal Videos', price: '₹1999', img: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'रोमांटिक शायरी', englishName: 'Romantic Shayari', price: '₹999', img: 'https://images.unsplash.com/photo-1516726817505-f5ed825624d8?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
+                ]
+            },
+            {
+                id: 'comedy',
+                name: 'कॉमेडी / फनी',
+                englishName: '15-second-to-5-minute',
+                icon: 'fa-face-laugh-squint',
+                priceRange: '₹300 - ₹3000',
+                image: 'fourteenfourteen.png',
+                subcategories: [
+                    { name: 'स्टैंडअप', englishName: 'Standup Clips', price: '₹899', img: 'https://images.unsplash.com/photo-1585699324551-f6c309eedeca?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'प्रैंक', englishName: 'Prank Videos', price: '₹999', img: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'मीम्स', englishName: 'Meme Videos', price: '₹499', img: 'https://images.unsplash.com/photo-1531256456869-ce942c665c70?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'फनी स्केच', englishName: 'Funny Sketch', price: '₹1299', img: 'https://images.unsplash.com/photo-1605370211142-8356134b22fb?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'डबिंग', englishName: 'Dubbing / Voiceover', price: '₹799', img: 'https://images.unsplash.com/photo-1516280440502-8610eb675c96?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
+                ]
+            },
+            {
+                id: 'advertisement',
+                name: 'विज्ञापन / प्रमोशन',
+                englishName: '15-second-to-5-minute',
+                icon: 'fa-bullhorn',
+                priceRange: '₹300 - ₹3000',
+                image: 'fifteenfifteen.png',
+                subcategories: [
+                    { name: 'सेल ऑफर', englishName: 'Sale Offer', price: '₹1499', img: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'ब्रांड टीज़र', englishName: 'Brand Teaser', price: '₹2499', img: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'इवेंट प्रोमो', englishName: 'Event Promo', price: '₹1999', img: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'प्रोडक्ट लॉन्च', englishName: 'Product Launch', price: '₹3499', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'बी2बी कमर्शियल', englishName: 'B2B Commercial', price: '₹4999', img: 'https://images.unsplash.com/photo-1556761175-5973dc0f32b7?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
                 ]
             }
         ];
 
         document.addEventListener('DOMContentLoaded', () => {
             const grid = document.getElementById('category-grid');
+            
+            // Category Modal elements
             const modalContainer = document.getElementById('modal-container');
             const modalBackdrop = document.getElementById('modal-backdrop');
             const modalContent = document.getElementById('modal-content');
             const closeModalBtn = document.getElementById('close-modal');
-            
             const modalTitle = document.getElementById('modal-title');
             const modalIcon = document.getElementById('modal-icon');
+
+            // Video Modal elements
+            const videoModalContainer = document.getElementById('video-modal-container');
+            const videoModalBackdrop = document.getElementById('video-modal-backdrop');
+            const videoModalContent = document.getElementById('video-modal-content');
+            const closeVideoModalBtn = document.getElementById('close-video-modal');
+            const youtubeIframe = document.getElementById('youtube-iframe');
+            const videoModalTitle = document.getElementById('video-modal-title');
 
             // Render main category cards
             categories.forEach((cat, index) => {
                 const delay = index * 50; 
                 
                 const cardHTML = `
-                    <button class="category-card animate-pop-in h-28 sm:h-32" style="animation-delay: ${delay}ms;" onclick="openModal('${cat.id}')">
+                    <button class="category-card animate-pop-in h-28 sm:h-32 group" style="animation-delay: ${delay}ms;" onclick="openModal('${cat.id}')">
                         <div class="card-image-container">
                             <img src="${cat.image}" alt="${cat.name}">
                         </div>
                         <div class="card-content-area">
-                            <h3 class="text-white font-bold text-sm sm:text-base leading-tight drop-shadow-md truncate">${cat.name}</h3>
-                            <div class="text-stiskilliGold text-xs font-semibold mb-1 truncate">${cat.priceRange}</div>
-                            <p class="text-gray-400 text-[10px] sm:text-xs truncate font-medium flex items-center gap-1.5">
-                                <i class="fa-solid ${cat.icon} opacity-70"></i> ${cat.englishName}
+                            <h3 class="text-gray-900 font-playfair font-black text-base sm:text-lg leading-tight truncate group-hover:text-black">${cat.name}</h3>
+                            <div class="text-amber-600 font-montserrat text-sm font-extrabold mb-1 truncate">${cat.priceRange}</div>
+                            <p class="text-gray-600 font-montserrat text-[10px] sm:text-xs truncate font-bold flex items-center gap-1.5">
+                                <i class="fa-solid ${cat.icon} text-amber-500 opacity-80"></i> ${cat.englishName}
                             </p>
                         </div>
                     </button>
@@ -510,7 +594,7 @@
                 grid.insertAdjacentHTML('beforeend', cardHTML);
             });
 
-            // Open Modal Function
+            // Handle Opening Category Modal
             window.openModal = (categoryId) => {
                 const category = categories.find(c => c.id === categoryId);
                 if (!category) return;
@@ -518,23 +602,27 @@
                 modalTitle.textContent = category.name;
                 modalIcon.innerHTML = `<i class="fa-solid ${category.icon} text-lg drop-shadow-md"></i>`;
                 
-                // Render subcategories matching main card exact layout structure (3 headings)
+                // Render subcategories linking to the Video Modal
                 const subcategoriesHTML = category.subcategories.map((sub, index) => {
                     const delay = index * 30; // Staggered animation
                     return `
-                    <button class="category-card animate-pop-in h-24 sm:h-28 group relative" style="animation-delay: ${delay}ms;">
-                        <div class="card-image-container">
+                    <button class="category-card animate-pop-in h-24 sm:h-28 group relative overflow-hidden" style="animation-delay: ${delay}ms;" onclick="openVideoModal('${sub.videoId}', '${sub.name}')">
+                        <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 z-10 transition-opacity pointer-events-none"></div>
+                        <div class="card-image-container relative">
                             <img src="${sub.img}" alt="${sub.name}">
+                            <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/10 transition-colors">
+                                <i class="fa-brands fa-youtube text-white text-2xl drop-shadow-lg opacity-70 group-hover:opacity-100 group-hover:scale-110 group-hover:text-red-500 transition-all"></i>
+                            </div>
                         </div>
-                        <div class="card-content-area">
-                            <h4 class="text-white font-bold text-sm leading-tight drop-shadow-md truncate pr-6">${sub.name}</h4>
-                            <div class="text-stiskilliGold text-xs font-semibold mb-1 truncate">${sub.price}</div>
-                            <p class="text-gray-400 text-[10px] sm:text-xs truncate font-medium flex items-center gap-1.5">
-                                <i class="fa-solid ${category.icon} opacity-70"></i> ${sub.englishName}
+                        <div class="card-content-area z-0">
+                            <h4 class="text-gray-900 font-playfair font-black text-sm sm:text-base leading-tight truncate pr-6 group-hover:text-black">${sub.name}</h4>
+                            <div class="text-amber-600 font-montserrat text-xs font-extrabold mb-1 truncate">${sub.price}</div>
+                            <p class="text-gray-600 font-montserrat text-[10px] sm:text-xs truncate font-bold flex items-center gap-1.5">
+                                <i class="fa-solid ${category.icon} text-amber-500 opacity-80"></i> ${sub.englishName}
                             </p>
                             <!-- Hover Action Chevron -->
-                            <div class="absolute right-2 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-yellow-500/20 transition-colors border border-transparent group-hover:border-stiskilliGold/30">
-                                <i class="fa-solid fa-chevron-right text-gray-500 group-hover:text-stiskilliGold text-[10px]"></i>
+                            <div class="absolute right-2 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-black/5 flex items-center justify-center group-hover:bg-amber-100 transition-colors border border-transparent group-hover:border-amber-400 shadow-sm">
+                                <i class="fa-solid fa-play text-gray-400 group-hover:text-red-500 text-[10px] ml-0.5"></i>
                             </div>
                         </div>
                     </button>
@@ -549,7 +637,7 @@
                 modalContent.classList.add('scale-100', 'opacity-100');
             };
 
-            // Close Modal Function
+            // Handle Closing Category Modal
             const closeModal = () => {
                 modalContent.classList.remove('scale-100', 'opacity-100');
                 modalContent.classList.add('scale-95', 'opacity-0');
@@ -559,12 +647,44 @@
                 }, 300); 
             };
 
+            // Video Modal Logic
+            window.openVideoModal = (videoId, title) => {
+                videoModalTitle.textContent = title;
+                // Dynamically set YouTube Short embed source. autoplay=1 starts it instantly.
+                youtubeIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+                
+                videoModalContainer.classList.remove('hidden');
+                void videoModalContainer.offsetWidth; // Trigger layout
+                
+                videoModalContent.classList.remove('scale-95', 'opacity-0');
+                videoModalContent.classList.add('scale-100', 'opacity-100');
+            };
+
+            const closeVideoModal = () => {
+                videoModalContent.classList.remove('scale-100', 'opacity-100');
+                videoModalContent.classList.add('scale-95', 'opacity-0');
+                
+                setTimeout(() => {
+                    videoModalContainer.classList.add('hidden');
+                    youtubeIframe.src = ''; // Stops the video from playing in background
+                }, 300);
+            };
+
+            // Event Listeners for Modals
             closeModalBtn.addEventListener('click', closeModal);
             modalBackdrop.addEventListener('click', closeModal);
             
+            closeVideoModalBtn.addEventListener('click', closeVideoModal);
+            videoModalBackdrop.addEventListener('click', closeVideoModal);
+            
+            // Handle Escape Key for stacked modals
             document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && !modalContainer.classList.contains('hidden')) {
-                    closeModal();
+                if (e.key === 'Escape') {
+                    if (!videoModalContainer.classList.contains('hidden')) {
+                        closeVideoModal(); // Close top-most video first
+                    } else if (!modalContainer.classList.contains('hidden')) {
+                        closeModal(); // Close category modal if video is already closed
+                    }
                 }
             });
         });

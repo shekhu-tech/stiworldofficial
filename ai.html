@@ -265,18 +265,17 @@
     <!-- HEADER - EXACT SAME AS ai.html -->
     <header class="glass-header golden-border-anim">
         <img class="header-logo" src="sti.png" alt="Logo" onerror="this.src='https://placehold.co/48x48/FFD700/000000?text=S'">
-        <img class="header-title-img" src="skillora.png" alt="SKILLI" onerror="this.style.display='none'">
+        <img class="header-title-img" src="stin.png" alt="SKILLI" onerror="this.style.display='none'">
         <img class="header-logo" src="sti.png" alt="Logo" onerror="this.src='https://placehold.co/48x48/FFD700/000000?text=Y'">
     </header>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 z-10 relative">
         <!-- Hero -->
         <div class="flex flex-col items-center text-center mb-8 mt-1">
-           
             <h1 class="text-3xl sm:text-5xl font-black font-playfair mt-4 leading-[1.1] text-white drop-shadow-[0_0_30px_rgba(255,215,0,0.08)]">
                 <span class="bg-gradient-to-r from-white via-[#FFD700] to-white bg-clip-text text-transparent">Create · Evolve</span>
             </h1>
-            <p class="text-xs sm:text-sm text-white/60 max-w-xl mt-3 font-montserrat font-medium tracking-wide">Hyper‑realistic AI videos · 15s to 60 min ·</p>
+            <p class="text-xs sm:text-sm text-white/60 max-w-xl mt-3 font-montserrat font-medium tracking-wide">Hyper‑realistic AI videos · 15 Sec. To 60 Min</p>
         </div>
 
         <!-- CATEGORY GRID -->
@@ -353,11 +352,12 @@
             const defaultVideoId = 'dQw4w9WgXcQ';
 
             // COMPLETE ENGLISH WEBSITE — all categories & subcategories in English only
+            // IMAGES: using the exact image URLs you had in your original data
             const categories = [{
                 id: 'horror',
                 name: 'Horror / Thriller',
                 icon: 'fa-ghost',
-                image: 'https://images.unsplash.com/photo-1605806616949-1e87b487cb2a?q=80&w=400&auto=format&fit=crop',
+                image: 'oneone.png',
                 subcategories: [
                     { name: 'Jump Scares', price: '₹599', img: 'https://images.unsplash.com/photo-1505635552518-3448ff116af3?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
                     { name: 'Psychological Thriller', price: '₹999', img: 'https://images.unsplash.com/photo-1509281373149-e957c6296406?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
@@ -369,7 +369,7 @@
                 id: 'historical',
                 name: 'Historical / Myth',
                 icon: 'fa-landmark',
-                image: 'https://images.unsplash.com/photo-1599839619722-39751411ea63?q=80&w=400&auto=format&fit=crop',
+                image: 'twotwo.png',
                 subcategories: [
                     { name: 'Ancient Battles', price: '₹1499', img: 'https://images.unsplash.com/photo-1622322384735-86f78e4785bc?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
                     { name: 'Gods & Deities', price: '₹999', img: 'https://images.unsplash.com/photo-1604584687590-0938f36cbe46?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
@@ -381,7 +381,7 @@
                 id: 'motivational',
                 name: 'Motivational / Fitness',
                 icon: 'fa-person-arrow-up-from-line',
-                image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=400&auto=format&fit=crop',
+                image: 'threethree.png',
                 subcategories: [
                     { name: 'Gym / Fitness', price: '₹699', img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
                     { name: 'Study / Student', price: '₹499', img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
@@ -393,7 +393,7 @@
                 id: 'product',
                 name: 'Product Promotion',
                 icon: 'fa-box-open',
-                image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=400&auto=format&fit=crop',
+                image: 'fourfour.png',
                 subcategories: [
                     { name: 'Tech Gadgets', price: '₹1499', img: 'https://images.unsplash.com/photo-1498049794561-7780e7231661?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
                     { name: 'Cosmetics', price: '₹1299', img: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
@@ -405,7 +405,7 @@
                 id: 'corporate',
                 name: 'Corporate / Business',
                 icon: 'fa-briefcase',
-                image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=400&auto=format&fit=crop',
+                image: 'fivefive.png',
                 subcategories: [
                     { name: 'Company Profiles', price: '₹2999', img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
                     { name: 'Real Estate', price: '₹3499', img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
@@ -417,7 +417,7 @@
                 id: 'animation',
                 name: 'Animation / 3D',
                 icon: 'fa-cube',
-                image: 'https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=400&auto=format&fit=crop',
+                image: 'sixsix.png',
                 subcategories: [
                     { name: 'Pixar Style', price: '₹4999', img: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
                     { name: 'Anime / Manga', price: '₹3999', img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
@@ -429,7 +429,7 @@
                 id: 'devotional',
                 name: 'Devotional / Spiritual',
                 icon: 'fa-om',
-                image: 'https://images.unsplash.com/photo-1582672060674-bc2bd808a8b5?q=80&w=400&auto=format&fit=crop',
+                image: 'sevenseven.png',
                 subcategories: [
                     { name: 'Bhajans & Kirtans', price: '₹899', img: 'https://images.unsplash.com/photo-1579017308347-86be168a33fa?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
                     { name: 'Temple Tours', price: '₹1299', img: 'https://images.unsplash.com/photo-1514222046422-49fa5eb80b33?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
@@ -441,7 +441,7 @@
                 id: 'shortfilm',
                 name: 'Short Films',
                 icon: 'fa-film',
-                image: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=400&auto=format&fit=crop',
+                image: 'eighteight.png',
                 subcategories: [
                     { name: 'Sci-Fi Shorts', price: '₹8999', img: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
                     { name: 'Drama / Emotional', price: '₹4999', img: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },

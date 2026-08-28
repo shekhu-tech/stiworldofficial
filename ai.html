@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>STIWORLD OFFICIAL — AI Video Creation 2050</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>STIWORLD — AI Video Creation 2050</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <!-- Premium Fonts: Cinzel, Playfair, Montserrat -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Montserrat:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Montserrat:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -16,7 +17,8 @@
         }
         body {
             background: #0a0a0a;
-            background-image: radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.04) 0%, transparent 40%),
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.05) 0%, transparent 40%),
                 radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 50%);
             font-family: 'Montserrat', sans-serif;
             color: #fff;
@@ -26,217 +28,276 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* ----- GOLDEN GLASS & BORDERS ----- */
-        .glass-gold {
-            background: rgba(10, 10, 10, 0.75);
-            backdrop-filter: blur(32px) saturate(200%);
-            -webkit-backdrop-filter: blur(32px) saturate(200%);
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 215, 0, 0.06);
+        /* ----- DARK GOLDEN SHINING CARDS (Category & Sub) ----- */
+        .category-card, .sub-card {
+            background: linear-gradient(145deg, rgba(30, 25, 10, 0.85), rgba(15, 12, 5, 0.95));
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 215, 0, 0.25);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 16px;
+            display: flex;
+            align-items: stretch;
+            text-align: left;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,215,0,0.05);
+            height: 128px;
+            min-height: 110px;
         }
-        .glass-card {
-            background: rgba(15, 15, 15, 0.7);
-            backdrop-filter: blur(16px) saturate(180%);
-            -webkit-backdrop-filter: blur(16px) saturate(180%);
-            border: 1px solid rgba(255, 215, 0, 0.1);
-            transition: all 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+        .sub-card {
+            height: 110px;
+            min-height: 96px;
         }
-        .glass-card:hover {
-            background: rgba(20, 20, 20, 0.85);
+        .category-card::before, .sub-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255, 215, 0, 0.12), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .category-card:hover::before, .sub-card:hover::before {
+            opacity: 1;
+        }
+        .category-card:hover {
+            transform: translateY(-6px) scale(1.01);
+            background: linear-gradient(145deg, rgba(45, 38, 15, 0.9), rgba(20, 17, 5, 0.95));
             border-color: rgba(255, 215, 0, 0.6);
-            box-shadow: 0 20px 40px -12px rgba(255, 215, 0, 0.15), 0 0 0 1px rgba(255, 215, 0, 0.08);
-            transform: translateY(-4px) scale(1.01);
+            box-shadow: 0 20px 40px -12px rgba(255, 215, 0, 0.25), 0 0 0 1px rgba(255, 215, 0, 0.15);
         }
-        .gold-glow {
-            box-shadow: 0 0 40px -8px rgba(255, 215, 0, 0.12);
+        .sub-card:hover {
+            transform: translateY(-4px);
+            background: linear-gradient(145deg, rgba(45, 38, 15, 0.9), rgba(20, 17, 5, 0.95));
+            border-color: rgba(255, 215, 0, 0.45);
+            box-shadow: 0 12px 30px -10px rgba(255, 215, 0, 0.15);
+        }
+        .category-card::after, .sub-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.06), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .category-card:hover::after, .sub-card:hover::after {
+            opacity: 1;
+        }
+        .card-image-container {
+            width: 35%;
+            position: relative;
+            overflow: hidden;
+            border-right: 1px solid rgba(255, 215, 0, 0.15);
+            flex-shrink: 0;
+            z-index: 2;
+            height: 100%;
+        }
+        .card-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .category-card:hover .card-image-container img,
+        .sub-card:hover .card-image-container img {
+            transform: scale(1.08);
+        }
+        .card-image-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0.7));
+        }
+        .card-content-area {
+            width: 65%;
+            padding: 0.5rem 0.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.1rem;
+            position: relative;
+            z-index: 2;
+            height: 100%;
+        }
+        .card-content-area h3, .card-content-area h4 {
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+            font-size: 0.9rem;
+            line-height: 1.2;
+            font-weight: 700;
+            color: #fff;
+        }
+        .card-content-area .price-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #e6b800;
+        }
+        .card-content-area .sub-cat-name {
+            font-size: 0.7rem;
+            color: #bbb;
+            font-weight: 500;
+        }
+        .card-content-area .cat-english {
+            font-size: 0.65rem;
+            color: #999;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+        .text-gold-dark { color: #e6b800; }
+        .text-gold-shine { color: #ffd700; text-shadow: 0 0 15px rgba(255,215,0,0.15); }
+
+        /* Project cards */
+        .project-card {
+            background: linear-gradient(145deg, rgba(30, 25, 10, 0.85), rgba(15, 12, 5, 0.95));
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+        }
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 215, 0, 0.5);
+            box-shadow: 0 20px 40px -12px rgba(255, 215, 0, 0.2);
+        }
+        .project-card .project-img {
+            height: 180px;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .project-card:hover .project-img {
+            transform: scale(1.05);
         }
 
-        /* ----- HEADER (golden border, original logo + STIWORLD OFFICIAL) ----- */
-        .header-gold {
-            background: rgba(10, 10, 10, 0.92);
-            backdrop-filter: blur(32px) saturate(200%);
-            border-bottom: 2px solid rgba(255, 215, 0, 0.4);
-            box-shadow: 0 4px 40px rgba(255, 215, 0, 0.06);
+        /* Header - exactly from ai.html */
+        .glass-header {
+            margin: 1rem auto 0 auto; 
+            border-radius: 50px; 
+            width: calc(100% - 2rem);
+            max-width: 900px; 
+            background-color: #050505; 
+            border: 3px solid #FFD700; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 40;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1.5rem; 
+            height: 70px; 
+        }
+        .golden-border-anim {
+            animation: goldGlowPulse 2.5s infinite alternate ease-in-out;
+        }
+        @keyframes goldGlowPulse {
+            0% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.4), inset 0 0 5px rgba(255, 215, 0, 0.2); }
+            100% { box-shadow: 0 0 25px rgba(255, 215, 0, 0.8), inset 0 0 15px rgba(255, 215, 0, 0.5); }
         }
         .header-logo {
-            height: 44px;
-            width: 44px;
-            object-fit: contain;
-            border-radius: 10px;
-            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.2));
+            height: 48px; width: 48px; object-fit: contain; border-radius: 12px; flex-shrink: 0;
         }
-        .brand-name {
-            font-family: 'Cinzel', serif;
-            font-weight: 900;
-            font-size: 1.2rem;
-            letter-spacing: 0.1em;
-            background: linear-gradient(135deg, #FFD700 0%, #fff 50%, #FFD700 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
+        .header-title-img {
+            height: 32px; max-width: 50%; object-fit: contain; flex-grow: 1; margin: 0 1rem;
         }
         @media (max-width: 640px) {
-            .brand-name {
-                font-size: 0.95rem;
-                letter-spacing: 0.05em;
-            }
-            .header-logo {
-                height: 36px;
-                width: 36px;
-            }
+            .glass-header { height: 60px; padding: 0.25rem 1rem; border-width: 2px; }
+            .header-logo { height: 40px; width: 40px; }
+            .header-title-img { height: 24px; }
         }
 
-        /* ----- custom scroll ----- */
-        ::-webkit-scrollbar {
-            width: 5px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0a0a0a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(255, 215, 0, 0.25);
-            border-radius: 20px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 215, 0, 0.5);
-        }
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: rgba(255,215,0,0.25); border-radius: 20px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(255,215,0,0.5); }
 
-        /* ----- floating whatsapp (golden) ----- */
-        .wa-float {
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            box-shadow: 0 0 40px rgba(255, 215, 0, 0.06);
-        }
-        .wa-float:hover {
-            background: rgba(20, 20, 20, 0.9);
-            border-color: rgba(255, 215, 0, 0.7);
-            box-shadow: 0 0 60px rgba(255, 215, 0, 0.12);
-        }
-
-        /* ----- modal gold ----- */
+        /* Modal */
         .modal-gold {
             background: rgba(10, 10, 10, 0.94);
             backdrop-filter: blur(40px) saturate(220%);
             border: 1px solid rgba(255, 215, 0, 0.2);
             box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 215, 0, 0.05);
         }
-        .sub-card {
-            background: rgba(18, 18, 18, 0.7);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 215, 0, 0.06);
-            transition: all 0.25s ease;
-        }
-        .sub-card:hover {
-            background: rgba(28, 28, 28, 0.85);
-            border-color: rgba(255, 215, 0, 0.3);
-            transform: scale(1.02);
-            box-shadow: 0 12px 30px -10px rgba(255, 215, 0, 0.06);
-        }
-        .project-card {
-            background: rgba(12, 12, 12, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 215, 0, 0.06);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        .project-card:hover {
-            background: rgba(22, 22, 22, 0.85);
-            border-color: rgba(255, 215, 0, 0.25);
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px -12px rgba(255, 215, 0, 0.06);
-        }
-        .chip-gold {
-            background: rgba(255, 215, 0, 0.06);
-            border: 1px solid rgba(255, 215, 0, 0.1);
-            color: #f0d060;
-        }
+        #modal-container.hidden { opacity: 0; pointer-events: none; }
+        #modal-container { transition: opacity 0.3s ease; }
 
-        .font-playfair {
-            font-family: 'Playfair Display', serif;
+        /* iPhone 12 Mini responsive */
+        @media only screen and (max-width: 390px) {
+            .category-card { height: 110px !important; min-height: 100px !important; }
+            .sub-card { height: 100px !important; min-height: 88px !important; }
+            .card-content-area h3, .card-content-area h4 { font-size: 0.75rem !important; }
+            .card-content-area .price-tag { font-size: 0.6rem !important; }
+            .card-content-area .sub-cat-name { font-size: 0.6rem !important; }
+            .card-content-area .cat-english { font-size: 0.55rem !important; }
+            .glass-header { height: 54px !important; padding: 0.25rem 0.75rem !important; }
+            .header-logo { height: 34px !important; width: 34px !important; }
+            .header-title-img { height: 20px !important; }
+            .project-card .project-img { height: 140px !important; }
+            body { padding-top: 68px !important; }
         }
-        .font-cinzel {
-            font-family: 'Cinzel', serif;
-        }
-        .font-montserrat {
-            font-family: 'Montserrat', sans-serif;
-        }
-        .text-gold {
-            color: #FFD700;
-        }
-        .border-gold {
-            border-color: rgba(255, 215, 0, 0.3);
-        }
-        .bg-gold-soft {
-            background: rgba(255, 215, 0, 0.04);
-        }
-
-        /* project video overlay */
-        .project-play-overlay {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0, 0, 0, 0.3);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .project-card:hover .project-play-overlay {
-            opacity: 1;
-        }
-        .project-play-overlay i {
-            font-size: 3rem;
-            color: #FFD700;
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
-        }
-        .project-card:hover .project-play-overlay i {
-            transform: scale(1);
+        @media only screen and (max-width: 360px) {
+            .category-card { height: 96px !important; min-height: 88px !important; }
+            .sub-card { height: 88px !important; min-height: 80px !important; }
+            .card-content-area { padding: 0.3rem 0.5rem; }
+            .card-content-area h3, .card-content-area h4 { font-size: 0.65rem !important; }
+            .card-content-area .price-tag { font-size: 0.55rem !important; }
+            .card-content-area .sub-cat-name { font-size: 0.55rem !important; }
+            .card-content-area .cat-english { font-size: 0.5rem !important; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER with STIWORLD OFFICIAL -->
-    <header class="header-gold fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 sm:px-8 h-[72px]">
-        <img class="header-logo" src="sti.png" alt="Logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2244%22 height=%2244%22 viewBox=%220 0 44 44%22%3E%3Crect width=%2244%22 height=%2244%22 fill=%22%231a1a1a%22 rx=%228%22/%3E%3Ctext x=%2222%22 y=%2228%22 text-anchor=%22middle%22 font-size=%2220%22 fill=%22%23FFD700%22 font-family=%22sans-serif%22 font-weight=%22bold%22%3ES%3C/text%3E%3C/svg%3E'" />
-        <span class="brand-name">STIWORLD OFFICIAL</span>
-        <img class="header-logo" src="sti.png" alt="Logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2244%22 height=%2244%22 viewBox=%220 0 44 44%22%3E%3Crect width=%2244%22 height=%2244%22 fill=%22%231a1a1a%22 rx=%228%22/%3E%3Ctext x=%2222%22 y=%2228%22 text-anchor=%22middle%22 font-size=%2220%22 fill=%22%23FFD700%22 font-family=%22sans-serif%22 font-weight=%22bold%22%3EY%3C/text%3E%3C/svg%3E'" />
+    <!-- HEADER - EXACT SAME AS ai.html -->
+    <header class="glass-header golden-border-anim">
+        <img class="header-logo" src="sti.png" alt="Logo" onerror="this.src='https://placehold.co/48x48/FFD700/000000?text=S'">
+        <img class="header-title-img" src="skillora.png" alt="SKILLI" onerror="this.style.display='none'">
+        <img class="header-logo" src="sti.png" alt="Logo" onerror="this.src='https://placehold.co/48x48/FFD700/000000?text=Y'">
     </header>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 z-10 relative">
-
-        <!-- HERO -->
-        <div class="flex flex-col items-center text-center mb-10 mt-2">
-            <span class="text-[10px] sm:text-xs font-montserrat font-bold tracking-[0.25em] text-gold/50 bg-gold-soft px-5 py-1.5 rounded-full border border-gold/20 uppercase">ai video forge · 2050</span>
-            <h1 class="text-4xl sm:text-6xl font-black font-playfair mt-5 leading-[1.1] text-white drop-shadow-[0_0_30px_rgba(255,215,0,0.08)]">
-                <span class="bg-gradient-to-r from-white via-gold to-white bg-clip-text text-transparent">Create · Evolve</span>
+        <!-- Hero -->
+        <div class="flex flex-col items-center text-center mb-8 mt-1">
+           
+            <h1 class="text-3xl sm:text-5xl font-black font-playfair mt-4 leading-[1.1] text-white drop-shadow-[0_0_30px_rgba(255,215,0,0.08)]">
+                <span class="bg-gradient-to-r from-white via-[#FFD700] to-white bg-clip-text text-transparent">Create · Evolve</span>
             </h1>
-            <p class="text-sm sm:text-base text-white/60 max-w-xl mt-4 font-montserrat font-medium tracking-wide">Hyper‑realistic AI videos · 15s to 5min · neural engine 2050</p>
+            <p class="text-xs sm:text-sm text-white/60 max-w-xl mt-3 font-montserrat font-medium tracking-wide">Hyper‑realistic AI videos · 15s to 60 min ·</p>
         </div>
 
         <!-- CATEGORY GRID -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-14" id="category-grid"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-12" id="category-grid"></div>
 
-        <!-- PROJECTS SHOWCASE - click to play video -->
-        <section class="mt-10 pt-6 border-t border-gold/20">
-            <div class="flex items-center gap-4 mb-7">
-                <i class="fa-regular fa-folder-open text-gold/70 text-xl"></i>
-                <h2 class="text-2xl font-bold font-playfair text-white/90 tracking-tight">project <span class="text-gold">vault</span></h2>
-                <span class="text-[10px] font-montserrat font-bold text-gold/50 bg-gold-soft px-3 py-1 rounded-full border border-gold/20 uppercase tracking-widest">click to play</span>
+        <!-- PROJECTS SHOWCASE -->
+        <section class="mt-8 pt-4 border-t border-[rgba(255,215,0,0.15)]">
+            <div class="flex items-center gap-3 mb-5">
+                <i class="fa-regular fa-folder-open text-[#e6b800]/70 text-lg"></i>
+                <h2 class="text-xl sm:text-2xl font-bold font-playfair text-white/90 tracking-tight">project <span class="text-[#FFD700]">vault</span></h2>
+                <span class="text-[9px] sm:text-[10px] font-montserrat font-bold text-[#e6b800]/50 bg-[rgba(255,215,0,0.04)] px-3 py-1 rounded-full border border-[rgba(255,215,0,0.15)] uppercase tracking-widest">click to play</span>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="project-grid"></div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4" id="project-grid"></div>
         </section>
 
-        <!-- floating CTA (WhatsApp) - GET YOUR SAMPLE -->
+        <!-- floating CTA (WhatsApp) -->
         <div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[92%] max-w-md z-40">
-            <a href="https://wa.me/918395913829" target="_blank" class="wa-float flex items-center justify-center gap-4 w-full py-4 px-5 rounded-full text-white transition-all group">
-                <i class="fa-brands fa-whatsapp text-2xl text-gold drop-shadow-[0_0_12px_rgba(255,215,0,0.2)]"></i>
+            <a href="https://wa.me/918395913829" target="_blank" class="flex items-center justify-center gap-4 w-full py-4 px-5 rounded-full text-white transition-all group" style="background: rgba(10,10,10,0.85); backdrop-filter: blur(16px); border:1px solid rgba(255,215,0,0.3); box-shadow:0 0 40px rgba(255,215,0,0.06);">
+                <i class="fa-brands fa-whatsapp text-2xl text-[#FFD700] drop-shadow-[0_0_12px_rgba(255,215,0,0.2)]"></i>
                 <span class="font-montserrat font-bold text-sm tracking-widest">GET YOUR SAMPLE</span>
-                <i class="fa-regular fa-arrow-right text-gold/50 group-hover:translate-x-1.5 transition-all"></i>
+                <i class="fa-regular fa-arrow-right text-[#FFD700]/50 group-hover:translate-x-1.5 transition-all"></i>
             </a>
         </div>
     </main>
@@ -245,20 +306,20 @@
     <div id="modal-container" class="fixed inset-0 z-[60] flex items-center justify-center p-4 hidden">
         <div id="modal-backdrop" class="absolute inset-0 bg-black/80 backdrop-blur-xl"></div>
         <div id="modal-content" class="modal-gold relative w-full max-w-4xl max-h-[85vh] rounded-2xl overflow-hidden flex flex-col transform scale-95 opacity-0 transition-all duration-300">
-            <div class="flex items-center justify-between p-5 border-b border-gold/20 shrink-0">
-                <div class="flex items-center gap-4">
-                    <div id="modal-icon" class="w-10 h-10 rounded-xl bg-gold-soft flex items-center justify-center text-gold border border-gold/20"></div>
-                    <h3 id="modal-title" class="text-xl font-bold font-playfair text-white/90">category</h3>
+            <div class="flex items-center justify-between p-4 sm:p-5 border-b border-[rgba(255,215,0,0.2)] shrink-0">
+                <div class="flex items-center gap-3">
+                    <div id="modal-icon" class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[rgba(255,215,0,0.06)] flex items-center justify-center text-[#FFD700] border border-[rgba(255,215,0,0.2)]"></div>
+                    <h3 id="modal-title" class="text-lg sm:text-xl font-bold font-playfair text-white/90">category</h3>
                 </div>
-                <button id="close-modal" class="w-8 h-8 rounded-full bg-white/5 hover:bg-gold-soft flex items-center justify-center text-white/50 hover:text-gold transition border border-white/5 hover:border-gold/30">
+                <button id="close-modal" class="w-8 h-8 rounded-full bg-white/5 hover:bg-[rgba(255,215,0,0.1)] flex items-center justify-center text-white/50 hover:text-[#FFD700] transition border border-white/5 hover:border-[rgba(255,215,0,0.3)]">
                     <i class="fa-regular fa-xmark text-lg"></i>
                 </button>
             </div>
-            <div class="p-4 sm:p-5 overflow-y-auto flex-grow bg-black/30">
-                <div id="subcategory-list" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+            <div class="p-3 sm:p-5 overflow-y-auto flex-grow bg-black/30">
+                <div id="subcategory-list" class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"></div>
             </div>
-            <div class="p-4 border-t border-gold/20 flex justify-end bg-black/40 rounded-b-2xl shrink-0">
-                <button onclick="document.getElementById('close-modal').click()" class="bg-gold-soft hover:bg-gold/10 text-gold px-6 py-2.5 rounded-full text-sm font-bold font-montserrat border border-gold/20 hover:border-gold/50 transition tracking-wide">close</button>
+            <div class="p-3 sm:p-4 border-t border-[rgba(255,215,0,0.2)] flex justify-end bg-black/40 rounded-b-2xl shrink-0">
+                <button onclick="document.getElementById('close-modal').click()" class="bg-[rgba(255,215,0,0.06)] hover:bg-[rgba(255,215,0,0.1)] text-[#FFD700] px-5 py-2 rounded-full text-xs sm:text-sm font-bold font-montserrat border border-[rgba(255,215,0,0.2)] hover:border-[rgba(255,215,0,0.5)] transition tracking-wide">close</button>
             </div>
         </div>
     </div>
@@ -266,22 +327,22 @@
     <!-- VIDEO MODAL (Youtube Shorts) -->
     <div id="video-modal-container" class="fixed inset-0 z-[70] flex items-center justify-center p-4 pt-[80px] pb-[100px] hidden">
         <div id="video-modal-backdrop" class="absolute inset-0 bg-black/95 backdrop-blur-xl"></div>
-        <div id="video-modal-content" class="relative w-full max-w-[380px] aspect-[9/16] bg-[#0a0a0a] rounded-3xl border border-gold/30 shadow-[0_0_60px_rgba(255,215,0,0.06)] transform scale-95 opacity-0 transition-all duration-300 overflow-hidden flex flex-col">
+        <div id="video-modal-content" class="relative w-full max-w-[380px] aspect-[9/16] bg-[#0a0a0a] rounded-3xl border border-[rgba(255,215,0,0.3)] shadow-[0_0_60px_rgba(255,215,0,0.06)] transform scale-95 opacity-0 transition-all duration-300 overflow-hidden flex flex-col">
             <div class="absolute top-0 left-0 right-0 p-4 bg-gradient-to-b from-black/90 via-black/50 to-transparent z-20 flex justify-between items-start pointer-events-none">
                 <h3 id="video-modal-title" class="text-white font-bold text-lg font-playfair drop-shadow pr-12 leading-tight">video</h3>
             </div>
-            <button id="close-video-modal" class="absolute top-4 right-4 z-30 w-9 h-9 rounded-full bg-black/70 hover:bg-gold-soft flex items-center justify-center text-white/60 hover:text-gold transition border border-white/10 hover:border-gold/30 backdrop-blur">
+            <button id="close-video-modal" class="absolute top-4 right-4 z-30 w-9 h-9 rounded-full bg-black/70 hover:bg-[rgba(255,215,0,0.1)] flex items-center justify-center text-white/60 hover:text-[#FFD700] transition border border-white/10 hover:border-[rgba(255,215,0,0.3)] backdrop-blur">
                 <i class="fa-regular fa-xmark text-lg"></i>
             </button>
             <div class="w-full h-full flex-grow relative bg-[#0a0a0a]">
                 <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-                    <i class="fa-regular fa-circle-notch fa-spin text-gold/20 text-3xl"></i>
+                    <i class="fa-regular fa-circle-notch fa-spin text-[#FFD700]/20 text-3xl"></i>
                 </div>
                 <iframe id="youtube-iframe" class="absolute inset-0 w-full h-full z-10 rounded-3xl" src="" title="YouTube Shorts" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="absolute bottom-6 left-0 right-0 flex justify-center z-20">
-                <a href="https://wa.me/918395913829" target="_blank" class="bg-gold-soft backdrop-blur-sm border border-gold/30 text-white px-6 py-2.5 rounded-full font-bold font-montserrat text-sm flex items-center gap-2 hover:bg-gold/10 transition shadow-[0_0_20px_rgba(255,215,0,0.03)]">
-                    <i class="fa-brands fa-whatsapp text-gold"></i> get this video
+                <a href="https://wa.me/918395913829" target="_blank" class="bg-[rgba(255,215,0,0.06)] backdrop-blur-sm border border-[rgba(255,215,0,0.3)] text-white px-6 py-2.5 rounded-full font-bold font-montserrat text-sm flex items-center gap-2 hover:bg-[rgba(255,215,0,0.1)] transition shadow-[0_0_20px_rgba(255,215,0,0.03)]">
+                    <i class="fa-brands fa-whatsapp text-[#FFD700]"></i> get this video
                 </a>
             </div>
         </div>
@@ -289,249 +350,187 @@
 
     <script>
         (function() {
-            // ===== DATA =====
             const defaultVideoId = 'dQw4w9WgXcQ';
 
+            // COMPLETE ENGLISH WEBSITE — all categories & subcategories in English only
             const categories = [{
                 id: 'horror',
                 name: 'Horror / Thriller',
                 icon: 'fa-ghost',
-                image: 'oneone.png',
+                image: 'https://images.unsplash.com/photo-1605806616949-1e87b487cb2a?q=80&w=400&auto=format&fit=crop',
                 subcategories: [
                     { name: 'Jump Scares', price: '₹599', img: 'https://images.unsplash.com/photo-1505635552518-3448ff116af3?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Psychological', price: '₹999', img: 'https://images.unsplash.com/photo-1509281373149-e957c6296406?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'Psychological Thriller', price: '₹999', img: 'https://images.unsplash.com/photo-1509281373149-e957c6296406?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
                     { name: 'Ghost Stories', price: '₹799', img: 'https://images.unsplash.com/photo-1627914041796-0155cb47eb79?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Abandoned', price: '₹899', img: 'https://images.unsplash.com/photo-1517594422361-5e18ae175f78?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'Abandoned Places', price: '₹899', img: 'https://images.unsplash.com/photo-1517594422361-5e18ae175f78?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
                     { name: 'Creepypasta', price: '₹499', img: 'https://images.unsplash.com/photo-1582298538104-fe2e74cb30e1?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
                 ]
             }, {
                 id: 'historical',
                 name: 'Historical / Myth',
                 icon: 'fa-landmark',
-                image: 'twotwo.png',
+                image: 'https://images.unsplash.com/photo-1599839619722-39751411ea63?q=80&w=400&auto=format&fit=crop',
                 subcategories: [
                     { name: 'Ancient Battles', price: '₹1499', img: 'https://images.unsplash.com/photo-1622322384735-86f78e4785bc?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
                     { name: 'Gods & Deities', price: '₹999', img: 'https://images.unsplash.com/photo-1604584687590-0938f36cbe46?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'Historical Figures', price: '₹1299', img: 'https://images.unsplash.com/photo-1590159495768-450b38fc6f42?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
                     { name: 'Epic Tales', price: '₹1999', img: 'https://images.unsplash.com/photo-1533038590840-1cbea97d15a5?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
                     { name: 'Lost Civilizations', price: '₹1799', img: 'https://images.unsplash.com/photo-1563212035-7b567115865e?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
                 ]
             }, {
                 id: 'motivational',
-                name: 'Motivation / Fitness',
+                name: 'Motivational / Fitness',
                 icon: 'fa-person-arrow-up-from-line',
-                image: 'threethree.png',
+                image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=400&auto=format&fit=crop',
                 subcategories: [
                     { name: 'Gym / Fitness', price: '₹699', img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
                     { name: 'Study / Student', price: '₹499', img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
                     { name: 'Life Coaching', price: '₹999', img: 'https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Success Stories', price: '₹899', img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
+                    { name: 'Success Stories', price: '₹899', img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'Morning Affirmations', price: '₹399', img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
                 ]
             }, {
                 id: 'product',
                 name: 'Product Promotion',
                 icon: 'fa-box-open',
-                image: 'fourfour.png',
+                image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=400&auto=format&fit=crop',
                 subcategories: [
                     { name: 'Tech Gadgets', price: '₹1499', img: 'https://images.unsplash.com/photo-1498049794561-7780e7231661?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
                     { name: 'Cosmetics', price: '₹1299', img: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Fashion', price: '₹1999', img: 'https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Unboxing', price: '₹799', img: 'https://images.unsplash.com/photo-1601055903647-8f1af6d2315e?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
+                    { name: 'Fashion & Apparel', price: '₹1999', img: 'https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'Food & Beverage', price: '₹999', img: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'Unboxing Videos', price: '₹799', img: 'https://images.unsplash.com/photo-1601055903647-8f1af6d2315e?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
                 ]
             }, {
                 id: 'corporate',
                 name: 'Corporate / Business',
                 icon: 'fa-briefcase',
-                image: 'fivefive.png',
+                image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=400&auto=format&fit=crop',
                 subcategories: [
                     { name: 'Company Profiles', price: '₹2999', img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
                     { name: 'Real Estate', price: '₹3499', img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
                     { name: 'App Promos', price: '₹1999', img: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Startup Pitch', price: '₹2499', img: 'https://images.unsplash.com/photo-1556761175-5973dc0f32b7?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
+                    { name: 'Startup Pitch', price: '₹2499', img: 'https://images.unsplash.com/photo-1556761175-5973dc0f32b7?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'Internal Training', price: '₹1499', img: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
                 ]
             }, {
                 id: 'animation',
                 name: 'Animation / 3D',
                 icon: 'fa-cube',
-                image: 'sixsix.png',
+                image: 'https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=400&auto=format&fit=crop',
                 subcategories: [
                     { name: 'Pixar Style', price: '₹4999', img: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Anime', price: '₹3999', img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'Anime / Manga', price: '₹3999', img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
                     { name: 'Low Poly 3D', price: '₹2999', img: 'https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Motion Graphics', price: '₹3499', img: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
+                    { name: '2D Explainer', price: '₹1999', img: 'https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'Abstract Motion', price: '₹3499', img: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
                 ]
             }, {
                 id: 'devotional',
                 name: 'Devotional / Spiritual',
                 icon: 'fa-om',
-                image: 'sevenseven.png',
+                image: 'https://images.unsplash.com/photo-1582672060674-bc2bd808a8b5?q=80&w=400&auto=format&fit=crop',
                 subcategories: [
-                    { name: 'Bhajans', price: '₹899', img: 'https://images.unsplash.com/photo-1579017308347-86be168a33fa?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'Bhajans & Kirtans', price: '₹899', img: 'https://images.unsplash.com/photo-1579017308347-86be168a33fa?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
                     { name: 'Temple Tours', price: '₹1299', img: 'https://images.unsplash.com/photo-1514222046422-49fa5eb80b33?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
                     { name: 'Festival Greetings', price: '₹399', img: 'https://images.unsplash.com/photo-1533558701576-23c65e0272fb?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Spiritual Quotes', price: '₹299', img: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
+                    { name: 'Spiritual Quotes', price: '₹299', img: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'Daily Darshan', price: '₹499', img: 'https://images.unsplash.com/photo-1605367375253-333e69bb0d81?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
                 ]
             }, {
                 id: 'shortfilm',
                 name: 'Short Films',
                 icon: 'fa-film',
-                image: 'eighteight.png',
+                image: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=400&auto=format&fit=crop',
                 subcategories: [
-                    { name: 'Sci‑Fi', price: '₹8999', img: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Drama', price: '₹4999', img: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Action', price: '₹9999', img: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Documentary', price: '₹5999', img: 'https://images.unsplash.com/photo-1559100578-8318b760a005?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
-                ]
-            }, {
-                id: 'youtube',
-                name: 'YouTube Content',
-                icon: 'fa-youtube',
-                image: 'ninenine.png',
-                subcategories: [
-                    { name: 'Vlogs', price: '₹899', img: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Tutorials', price: '₹699', img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Gaming', price: '₹999', img: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Top 10', price: '₹499', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
-                ]
-            }, {
-                id: 'reels',
-                name: 'Social Media Reels',
-                icon: 'fa-mobile-screen-button',
-                image: 'tenten.png',
-                subcategories: [
-                    { name: 'Trending Audio', price: '₹399', img: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Lip Sync', price: '₹299', img: 'https://images.unsplash.com/photo-1520110120835-c96534a4c984?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Mini Vlog', price: '₹499', img: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Transitions', price: '₹599', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
-                ]
-            }, {
-                id: 'educational',
-                name: 'Educational',
-                icon: 'fa-graduation-cap',
-                image: 'tweletwele.png',
-                subcategories: [
-                    { name: 'Science Explainers', price: '₹1499', img: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'History', price: '₹1299', img: 'https://images.unsplash.com/photo-1599839619722-39751411ea63?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Math Tutorials', price: '₹999', img: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Kids Learning', price: '₹799', img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
-                ]
-            }, {
-                id: 'romance',
-                name: 'Love / Romance',
-                icon: 'fa-heart',
-                image: 'thirteenthirteen.png',
-                subcategories: [
-                    { name: 'Pre‑Wedding', price: '₹3499', img: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Anniversary', price: '₹1499', img: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Proposal', price: '₹1999', img: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Romantic Shayari', price: '₹999', img: 'https://images.unsplash.com/photo-1516726817505-f5ed825624d8?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
-                ]
-            }, {
-                id: 'comedy',
-                name: 'Comedy / Funny',
-                icon: 'fa-face-laugh-squint',
-                image: 'fourteenfourteen.png',
-                subcategories: [
-                    { name: 'Standup', price: '₹899', img: 'https://images.unsplash.com/photo-1585699324551-f6c309eedeca?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Prank', price: '₹999', img: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Meme', price: '₹499', img: 'https://images.unsplash.com/photo-1531256456869-ce942c665c70?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Dubbing', price: '₹799', img: 'https://images.unsplash.com/photo-1516280440502-8610eb675c96?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
-                ]
-            }, {
-                id: 'advertisement',
-                name: 'Ad / Promo',
-                icon: 'fa-bullhorn',
-                image: 'fifteenfifteen.png',
-                subcategories: [
-                    { name: 'Sale Offer', price: '₹1499', img: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Brand Teaser', price: '₹2499', img: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Event Promo', price: '₹1999', img: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
-                    { name: 'Product Launch', price: '₹3499', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
+                    { name: 'Sci-Fi Shorts', price: '₹8999', img: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'Drama / Emotional', price: '₹4999', img: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'Action Sequences', price: '₹9999', img: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'Silent Films', price: '₹2999', img: 'https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId },
+                    { name: 'Documentary Style', price: '₹5999', img: 'https://images.unsplash.com/photo-1559100578-8318b760a005?q=80&w=400&auto=format&fit=crop', videoId: defaultVideoId }
                 ]
             }];
 
-            // Projects with videoId — clicking plays the video
             const projects = [{
                 title: 'Cyberpunk 2077 Teaser',
                 category: 'Animation',
                 img: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=400&auto=format&fit=crop',
-                videoId: 'dQw4w9WgXcQ'
+                videoId: defaultVideoId
             }, {
                 title: 'Brand Launch: NEXUS',
                 category: 'Ad / Promo',
                 img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop',
-                videoId: 'dQw4w9WgXcQ'
+                videoId: defaultVideoId
             }, {
                 title: 'Motivation: "Unstoppable"',
                 category: 'Motivation',
                 img: 'https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=400&auto=format&fit=crop',
-                videoId: 'dQw4w9WgXcQ'
+                videoId: defaultVideoId
             }, {
                 title: 'Horror Short: "Echoes"',
                 category: 'Horror',
                 img: 'https://images.unsplash.com/photo-1505635552518-3448ff116af3?q=80&w=400&auto=format&fit=crop',
-                videoId: 'dQw4w9WgXcQ'
+                videoId: defaultVideoId
             }, {
                 title: 'Historical: "Spartan Rise"',
                 category: 'Historical',
                 img: 'https://images.unsplash.com/photo-1622322384735-86f78e4785bc?q=80&w=400&auto=format&fit=crop',
-                videoId: 'dQw4w9WgXcQ'
+                videoId: defaultVideoId
             }, {
                 title: 'Real Estate Walkthrough',
                 category: 'Corporate',
                 img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop',
-                videoId: 'dQw4w9WgXcQ'
+                videoId: defaultVideoId
             }];
 
-            // ===== RENDER =====
             const grid = document.getElementById('category-grid');
             categories.forEach((cat, idx) => {
                 const card = document.createElement('button');
-                card.className =
-                    `glass-card rounded-2xl p-3 flex items-center gap-4 w-full text-left transition-all duration-300 hover:scale-[1.02]`;
+                card.className = `category-card rounded-2xl p-0 flex items-stretch w-full text-left transition-all duration-300`;
                 card.style.animationDelay = `${idx * 40}ms`;
                 card.innerHTML = `
-                        <div class="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-black/40 border border-gold/20">
-                            <img src="${cat.image}" alt="${cat.name}" class="w-full h-full object-cover" onerror="this.style.display='none'">
+                    <div class="card-image-container">
+                        <img src="${cat.image}" alt="${cat.name}" class="w-full h-full object-cover" onerror="this.style.display='none'">
+                    </div>
+                    <div class="card-content-area">
+                        <h3 class="font-playfair font-bold text-white/95 text-sm sm:text-base truncate">${cat.name}</h3>
+                        <div class="flex items-center gap-2 text-[10px] sm:text-xs text-[#e6b800]/70 mt-0.5 font-montserrat font-medium">
+                            <i class="fa-solid ${cat.icon} text-[#e6b800]/60"></i>
+                            <span>${cat.subcategories.length} styles</span>
                         </div>
-                        <div class="flex-1 min-w-0">
-                            <h3 class="font-playfair font-bold text-white/95 text-base truncate">${cat.name}</h3>
-                            <div class="flex items-center gap-2 text-xs text-gold/50 mt-0.5 font-montserrat font-medium">
-                                <i class="fa-solid ${cat.icon} text-gold/60"></i>
-                                <span>${cat.subcategories.length} styles</span>
-                            </div>
-                        </div>
-                        <i class="fa-regular fa-chevron-right text-gold/30 text-sm"></i>
-                    `;
+                    </div>
+                    <div class="flex items-center pr-3 text-[#e6b800]/40">
+                        <i class="fa-regular fa-chevron-right text-sm"></i>
+                    </div>
+                `;
                 card.addEventListener('click', () => openModal(cat.id));
                 grid.appendChild(card);
             });
 
-            // projects - click to play video
             const projectGrid = document.getElementById('project-grid');
             projects.forEach(p => {
                 const div = document.createElement('div');
-                div.className = 'project-card rounded-2xl overflow-hidden group relative';
+                div.className = 'project-card rounded-2xl overflow-hidden group relative flex flex-col';
                 div.innerHTML = `
-                        <div class="relative h-44 overflow-hidden">
-                            <img src="${p.img}" alt="${p.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-                            <div class="project-play-overlay">
-                                <i class="fa-regular fa-circle-play"></i>
-                            </div>
-                            <div class="absolute bottom-3 left-3 right-3">
-                                <span class="chip-gold text-[10px] font-montserrat font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">${p.category}</span>
-                                <h4 class="text-white font-playfair font-bold text-sm mt-1.5 truncate">${p.title}</h4>
-                            </div>
+                    <div class="relative overflow-hidden">
+                        <img src="${p.img}" alt="${p.title}" class="project-img w-full h-44 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fa-regular fa-circle-play text-5xl text-[#FFD700] drop-shadow-[0_0_30px_rgba(255,215,0,0.4)]"></i>
                         </div>
-                    `;
-                // Click on project card opens video modal
+                        <div class="absolute bottom-3 left-3 right-3">
+                            <span class="text-[10px] font-montserrat font-bold px-2 py-0.5 rounded-full uppercase tracking-wider" style="background:rgba(255,215,0,0.08); border:1px solid rgba(255,215,0,0.15); color:#e6b800;">${p.category}</span>
+                            <h4 class="text-white font-playfair font-bold text-sm mt-1.5 truncate">${p.title}</h4>
+                        </div>
+                    </div>
+                `;
                 div.addEventListener('click', () => {
                     openVideoModal(p.videoId || defaultVideoId, p.title);
                 });
                 projectGrid.appendChild(div);
             });
 
-            // ===== MODAL LOGIC =====
+            // MODAL LOGIC
             const modalContainer = document.getElementById('modal-container');
             const modalBackdrop = document.getElementById('modal-backdrop');
             const modalContent = document.getElementById('modal-content');
@@ -551,20 +550,22 @@
                 const cat = categories.find(c => c.id === categoryId);
                 if (!cat) return;
                 modalTitle.textContent = cat.name;
-                modalIcon.innerHTML = `<i class="fa-solid ${cat.icon} text-gold text-lg"></i>`;
+                modalIcon.innerHTML = `<i class="fa-solid ${cat.icon} text-[#FFD700] text-lg"></i>`;
 
                 subList.innerHTML = cat.subcategories.map((sub, i) => `
-                        <button class="sub-card rounded-xl p-3 flex items-center gap-3 w-full text-left transition-all" onclick="openVideoModal('${sub.videoId}', '${sub.name}')" style="animation-delay:${i*20}ms">
-                            <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-black/50 border border-gold/10">
-                                <img src="${sub.img}" alt="${sub.name}" class="w-full h-full object-cover" onerror="this.style.display='none'">
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <h4 class="text-white/90 font-playfair font-bold text-sm truncate">${sub.name}</h4>
-                                <span class="text-[11px] text-gold/50 font-montserrat font-medium">${sub.price}</span>
-                            </div>
-                            <i class="fa-regular fa-play text-gold/40 text-xs"></i>
-                        </button>
-                    `).join('');
+                    <button class="sub-card rounded-xl p-0 flex items-stretch w-full text-left transition-all" onclick="openVideoModal('${sub.videoId}', '${sub.name}')" style="animation-delay:${i*20}ms">
+                        <div class="card-image-container">
+                            <img src="${sub.img}" alt="${sub.name}" class="w-full h-full object-cover" onerror="this.style.display='none'">
+                        </div>
+                        <div class="card-content-area">
+                            <h4 class="font-playfair font-bold text-white/90 text-sm truncate">${sub.name}</h4>
+                            <span class="price-tag text-[#e6b800] text-xs font-bold">${sub.price}</span>
+                        </div>
+                        <div class="flex items-center pr-3 text-[#e6b800]/40">
+                            <i class="fa-regular fa-play text-sm"></i>
+                        </div>
+                    </button>
+                `).join('');
 
                 modalContainer.classList.remove('hidden');
                 requestAnimationFrame(() => {

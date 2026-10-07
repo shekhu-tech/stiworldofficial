@@ -433,6 +433,42 @@
 
     <script>
         (function() {
+            // ==============================================================================
+            // 🛑🛑🛑 BHAI YAHAN DHYAN DO - SAARI VIDEOS KE LINKS YAHAN BADALNE HAIN 🛑🛑🛑
+            // ==============================================================================
+            // Niche di gayi list me apne hisaab se YouTube shorts ya videos ke link daal do.
+            // Sirf quote mark (' ') ke andar wala link change karna.
+
+            const VIDEO_LINKS = {
+                // 👇 --- CATEGORIES KI VIDEOS YAHAN DALEIN --- 👇
+                horror:       'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O', // Horror & Thriller
+                historical:   'https://youtube.com/shorts/Mo9ZlvobGMM?si=x7SCwwxaPC4zmNIT', // History & Mythology
+                motivational: 'https://youtube.com/shorts/KddsMXljE1Q?si=NJD-AslwuoJEYvtY', // Motivation & Fitness
+                product:      'https://youtube.com/shorts/8HmzFPA8fyo?si=Xj42efTLUGQUkqas', // Product Promo
+                corporate:    'https://youtube.com/shorts/jnqfxjxOMVU?si=VWTmr0vspYVeIeZe', // Corporate Business
+                animation:    'https://youtube.com/shorts/y3VL3DsOQLg?si=czjsX2ENYIZWHdQS', // 3D Animation
+                devotional:   'https://youtube.com/shorts/gPSrE46ugxo?si=izgvS-44y3uRRZSb', // Devotional Vibe
+                shortfilm:    'https://youtube.com/shorts/YFcKWc0_tZs?si=s9Ym_OwqDr1i1tMm', // Cinematic Shorts
+                webseries:    'https://youtube.com/shorts/rEQzbtOuNok?si=x713ScQpNwESPEB3', // Web Series
+                film:         'https://youtube.com/shorts/ViB25Dp3KHU?si=u9TXgQiWQaNIHg3F', // Feature Film
+                musicvideo:   'https://youtube.com/shorts/gybHp8hoMjY?si=_UH8BUr8FIchg1Ru', // Music Videos
+                documentary:  'https://youtube.com/shorts/_afYOnhAqs8?si=L3gYEHjhdr-x7omM', // Documentaries
+                scifi:        'https://youtube.com/shorts/3TvyYxLFeu8?si=efk4y_GNv3OhrmSo', // Sci-Fi & Fantasy
+                comedy:       'https://youtube.com/shorts/G1uzxFnsQDs?si=cXkvNQ6is3pkqKYq', // Comedy Sketches
+                wedding:      'https://youtube.com/shorts/Ygm0P-aWL5I?si=o-fNBhuxPoKYzRxx', // Wedding Cinematic
+
+                // 👇 --- PROJECT VAULT KI VIDEOS YAHAN DALEIN --- 👇
+                project1_cyberpunk:  'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O', 
+                project2_nexus:      'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O', 
+                project3_fitness:    'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O', 
+                project4_horror:     'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O', 
+                project5_history:    'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O', 
+                project6_realestate: 'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O'  
+            };
+            // ==============================================================================
+            // 🛑🛑🛑 UPAR WALI LIST MEIN HI CHANGE KARNA HAI, NEECHE KUCH MAT CHHEDNA 🛑🛑🛑
+            // ==============================================================================
+
             // Helper function to extract YouTube ID automatically from any pasted full link
             function getYouTubeID(url) {
                 if (!url) return '';
@@ -442,35 +478,31 @@
                 return (match && match[2].length === 11) ? match[2] : url;
             }
 
-            // IMPORTANT: Har ek category ke object me 'videoLink' property explicitly di gayi hai.
-            // Yahan aap ALAG-ALAG YouTube short ya video ki link badal sakte hain.
             const categories = [
-                { id: 'horror', name: 'Horror & Thriller', price: 'Starts at ₹499', icon: 'fa-ghost', image: 'oneone.png', fallback: 'https://images.unsplash.com/photo-1505635552518-3448ff116af3?q=80&w=400&auto=format&fit=crop', videoLink: 'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O' },
-                { id: 'historical', name: 'History & Mythology', price: 'Starts at ₹999', icon: 'fa-landmark', image: 'twotwo.png', fallback: 'https://images.unsplash.com/photo-1622322384735-86f78e4785bc?q=80&w=400&auto=format&fit=crop', videoLink: 'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O' },
-                { id: 'motivational', name: 'Motivation & Fitness', price: 'Starts at ₹399', icon: 'fa-bolt', image: 'threethree.png', fallback: 'https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=400&auto=format&fit=crop', videoLink: 'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O' },
-                { id: 'product', name: 'Product Promo', price: 'Starts at ₹799', icon: 'fa-box-open', image: 'fourfour.png', fallback: 'https://images.unsplash.com/photo-1498049794561-7780e7231661?q=80&w=400&auto=format&fit=crop', videoLink: 'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O' },
-                { id: 'corporate', name: 'Corporate Business', price: 'Starts at ₹1499', icon: 'fa-building', image: 'fivefive.png', fallback: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=400&auto=format&fit=crop', videoLink: 'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O' },
-                { id: 'animation', name: '3D Animation', price: 'Starts at ₹1999', icon: 'fa-cube', image: 'sixsix.png', fallback: 'https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=400&auto=format&fit=crop', videoLink: 'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O' },
-                { id: 'devotional', name: 'Devotional Vibe', price: 'Starts at ₹299', icon: 'fa-om', image: 'sevenseven.png', fallback: 'https://images.unsplash.com/photo-1579017308347-86be168a33fa?q=80&w=400&auto=format&fit=crop', videoLink: 'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O' },
-                { id: 'shortfilm', name: 'Cinematic Shorts', price: 'Starts at ₹2999', icon: 'fa-film', image: 'eighteight.png', fallback: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=400&auto=format&fit=crop', videoLink: 'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O' },
-                { id: 'webseries', name: 'Web Series', price: 'Starts at ₹4999', icon: 'fa-tv', image: 'ninenine.png', fallback: 'https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?q=80&w=400&auto=format&fit=crop', videoLink: 'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O' },
-                { id: 'film', name: 'Feature Film', price: 'Starts at ₹9999', icon: 'fa-clapperboard', image: 'tenten.png', fallback: 'https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=400&auto=format&fit=crop', videoLink: 'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O' },
-                { id: 'musicvideo', name: 'Music Videos', price: 'Starts at ₹1999', icon: 'fa-music', image: 'eleveneleven.png', fallback: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=400&auto=format&fit=crop', videoLink: 'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O' },
-                { id: 'documentary', name: 'Documentaries', price: 'Starts at ₹3499', icon: 'fa-video', image: 'twelvetwelve.png', fallback: 'https://images.unsplash.com/photo-1559100578-8318b760a005?q=80&w=400&auto=format&fit=crop', videoLink: 'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O' },
-                { id: 'scifi', name: 'Sci-Fi & Fantasy', price: 'Starts at ₹3999', icon: 'fa-rocket', image: 'thirteenthirteen.png', fallback: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=400&auto=format&fit=crop', videoLink: 'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O' },
-                { id: 'comedy', name: 'Comedy Sketches', price: 'Starts at ₹899', icon: 'fa-masks-theater', image: 'fourteenfourteen.png', fallback: 'https://images.unsplash.com/photo-1585699324551-f6c309eedeca?q=80&w=400&auto=format&fit=crop', videoLink: 'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O' },
-                { id: 'wedding', name: 'Wedding Cinematic', price: 'Starts at ₹2499', icon: 'fa-ring', image: 'fifteenfifteen.png', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=400&auto=format&fit=crop', videoLink: 'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O' }
+                { id: 'horror', name: 'Horror & Thriller', price: 'Starts at ₹499', icon: 'fa-ghost', image: 'oneone.png', fallback: 'https://images.unsplash.com/photo-1505635552518-3448ff116af3?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.horror },
+                { id: 'historical', name: 'History & Mythology', price: 'Starts at ₹999', icon: 'fa-landmark', image: 'twotwo.png', fallback: 'https://images.unsplash.com/photo-1622322384735-86f78e4785bc?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.historical },
+                { id: 'motivational', name: 'Motivation & Fitness', price: 'Starts at ₹399', icon: 'fa-bolt', image: 'threethree.png', fallback: 'https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.motivational },
+                { id: 'product', name: 'Product Promo', price: 'Starts at ₹799', icon: 'fa-box-open', image: 'fourfour.png', fallback: 'https://images.unsplash.com/photo-1498049794561-7780e7231661?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.product },
+                { id: 'corporate', name: 'Corporate Business', price: 'Starts at ₹1499', icon: 'fa-building', image: 'fivefive.png', fallback: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.corporate },
+                { id: 'animation', name: '3D Animation', price: 'Starts at ₹1999', icon: 'fa-cube', image: 'sixsix.png', fallback: 'https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.animation },
+                { id: 'devotional', name: 'Devotional Vibe', price: 'Starts at ₹299', icon: 'fa-om', image: 'sevenseven.png', fallback: 'https://images.unsplash.com/photo-1579017308347-86be168a33fa?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.devotional },
+                { id: 'shortfilm', name: 'Cinematic Shorts', price: 'Starts at ₹2999', icon: 'fa-film', image: 'eighteight.png', fallback: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.shortfilm },
+                { id: 'webseries', name: 'Web Series', price: 'Starts at ₹4999', icon: 'fa-tv', image: 'ninenine.png', fallback: 'https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.webseries },
+                { id: 'film', name: 'Feature Film', price: 'Starts at ₹9999', icon: 'fa-clapperboard', image: 'tenten.png', fallback: 'https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.film },
+                { id: 'musicvideo', name: 'Music Videos', price: 'Starts at ₹1999', icon: 'fa-music', image: 'eleveneleven.png', fallback: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.musicvideo },
+                { id: 'documentary', name: 'Documentaries', price: 'Starts at ₹3499', icon: 'fa-video', image: 'twelvetwelve.png', fallback: 'https://images.unsplash.com/photo-1559100578-8318b760a005?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.documentary },
+                { id: 'scifi', name: 'Sci-Fi & Fantasy', price: 'Starts at ₹3999', icon: 'fa-rocket', image: 'thirteenthirteen.png', fallback: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.scifi },
+                { id: 'comedy', name: 'Comedy Sketches', price: 'Starts at ₹899', icon: 'fa-masks-theater', image: 'fourteenfourteen.png', fallback: 'https://images.unsplash.com/photo-1585699324551-f6c309eedeca?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.comedy },
+                { id: 'wedding', name: 'Wedding Cinematic', price: 'Starts at ₹2499', icon: 'fa-ring', image: 'fifteenfifteen.png', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.wedding }
             ];
 
-            // Yahan Project Vault ki items ke liye alag alag video link dalein,
-            // (Unsplash ki jagah local image name (project1.png) use kiya gaya hai fallback ke sath)
             const projects = [
-                { title: 'Cyberpunk Teaser', category: 'Animation', img: 'project1.png', fallback: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=400&auto=format&fit=crop', videoLink: 'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O' },
-                { title: 'NEXUS Launch', category: 'Commercial', img: 'project2.png', fallback: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop', videoLink: 'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O' },
-                { title: 'Unstoppable Will', category: 'Fitness', img: 'project3.png', fallback: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=400&auto=format&fit=crop', videoLink: 'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O' },
-                { title: 'Echoes of Past', category: 'Horror', img: 'project4.png', fallback: 'https://images.unsplash.com/photo-1505635552518-3448ff116af3?q=80&w=400&auto=format&fit=crop', videoLink: 'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O' },
-                { title: 'Spartan Rise', category: 'History', img: 'project5.png', fallback: 'https://images.unsplash.com/photo-1622322384735-86f78e4785bc?q=80&w=400&auto=format&fit=crop', videoLink: 'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O' },
-                { title: 'Skyline Estates', category: 'Real Estate', img: 'project6.png', fallback: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop', videoLink: 'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O' }
+                { title: 'Cyberpunk Teaser', category: 'Animation', img: 'project1.png', fallback: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.project1_cyberpunk },
+                { title: 'NEXUS Launch', category: 'Commercial', img: 'project2.png', fallback: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.project2_nexus },
+                { title: 'Unstoppable Will', category: 'Fitness', img: 'project3.png', fallback: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.project3_fitness },
+                { title: 'Echoes of Past', category: 'Horror', img: 'project4.png', fallback: 'https://images.unsplash.com/photo-1505635552518-3448ff116af3?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.project4_horror },
+                { title: 'Spartan Rise', category: 'History', img: 'project5.png', fallback: 'https://images.unsplash.com/photo-1622322384735-86f78e4785bc?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.project5_history },
+                { title: 'Skyline Estates', category: 'Real Estate', img: 'project6.png', fallback: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.project6_realestate }
             ];
 
             const grid = document.getElementById('category-grid');

@@ -256,7 +256,6 @@
         <!-- 1. MOBILE AI GRAPHICS CARD (Only visible on Mobile) -->
         <div class="pro-card ai-graphics-theme sm:hidden mb-10" onclick="openGraphicsModal()">
             <div class="card-img-wrapper">
-                <!-- Using one of the category images as requested -->
                 <img src="sixsix.png" alt="AI Graphics Background" onerror="this.src='https://images.unsplash.com/photo-1626785776985-6bb9319e34e5?q=80&w=600&auto=format&fit=crop'">
             </div>
             <div class="card-info">
@@ -264,7 +263,6 @@
                     <i class="fa-solid fa-wand-magic-sparkles text-sm"></i>
                     <span class="text-[10px] font-bold tracking-widest uppercase opacity-90">Studio</span>
                 </div>
-                <!-- Changed title to Image/Graphics -->
                 <h3 class="font-serif font-bold text-white text-lg leading-tight mb-1 pr-4">Image/Graphics</h3>
                 <p class="text-gray-400 text-xs font-semibold">Posters, Ads & More</p>
                 <div class="play-icon-overlay">
@@ -333,10 +331,8 @@
     <div id="video-modal-container" class="fixed inset-0 z-[70] flex items-center justify-center p-4 hidden">
         <div id="video-modal-backdrop" class="absolute inset-0 bg-black/95 backdrop-blur-md"></div>
         
-        <!-- Modal content handles BOTH shorts (9:16) and longs (16:9) safely via JS toggling classes -->
         <div id="video-modal-content" class="relative w-full max-w-[400px] bg-brand-card rounded-2xl border border-yellow-500/30 shadow-[0_0_50px_rgba(255,215,0,0.15)] transform scale-95 opacity-0 transition-all duration-300 flex flex-col overflow-hidden max-h-[95vh]">
             
-            <!-- Modal Header (Safe area for title and close button) -->
             <div class="p-3 sm:p-4 bg-black/90 z-20 flex justify-between items-center border-b border-yellow-500/20 shrink-0">
                 <h3 id="video-modal-title" class="text-white font-bold text-lg font-serif truncate pr-4 text-yellow-400">Video</h3>
                 <button id="close-video-modal" class="w-8 h-8 rounded-full bg-yellow-500/10 hover:bg-yellow-500/30 flex items-center justify-center text-white hover:text-yellow-400 transition-all border border-yellow-500/30 shrink-0">
@@ -344,7 +340,6 @@
                 </button>
             </div>
             
-            <!-- Video Wrapper -->
             <div id="video-wrapper" class="w-full aspect-[9/16] relative bg-black shrink">
                 <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
                     <i class="fa-solid fa-circle-notch fa-spin text-yellow-500/30 text-4xl"></i>
@@ -352,15 +347,15 @@
                 <iframe id="youtube-iframe" class="absolute inset-0 w-full h-full z-10" src="" title="Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             
-            <!-- Bottom CTA with Dynamic WhatsApp Message -->
             <div class="p-3 sm:p-4 bg-black/90 z-20 flex justify-center border-t border-yellow-500/20 shrink-0">
                 <a id="modal-wa-btn" href="#" target="_blank" class="bg-gradient-to-r from-green-600 to-green-500 text-white px-6 py-3 rounded-full font-bold font-sans text-sm flex items-center gap-3 hover:scale-105 transition-all shadow-[0_0_15px_rgba(34,197,94,0.3)] w-full justify-center">
-                    <i class="fa-brands fa-whatsapp text-xl"></i> <span>MESSGE FOR SIMILAR VIDEO</span>
+                    <i class="fa-brands fa-whatsapp text-xl"></i> <span>MESSAGE FOR SIMILAR VIDEO</span>
                 </a>
             </div>
         </div>
     </div>
 
+    <!-- Graphics Modal (Cards updated to link directly to WhatsApp) -->
     <div id="graphics-modal-container" class="fixed inset-0 z-[70] flex items-center justify-center p-4 hidden">
         <div id="graphics-modal-backdrop" class="absolute inset-0 bg-black/95 backdrop-blur-md"></div>
         <div id="graphics-modal-content" class="relative w-full max-w-2xl bg-brand-card rounded-3xl border border-cyan-500/30 shadow-[0_0_50px_rgba(6,182,212,0.15)] transform scale-95 opacity-0 transition-all duration-300 overflow-hidden flex flex-col max-h-[85vh]">
@@ -374,42 +369,42 @@
             
             <div class="p-4 sm:p-6 overflow-y-auto bg-black/20 flex-grow z-10">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <a href="poster.html" target="_blank" class="flex items-center p-4 rounded-xl border border-cyan-500/20 bg-black/40 hover:bg-cyan-500/10 hover:border-cyan-400 transition-all group">
+                    <a href="https://wa.me/918395913829?text=Hi%20STIWORLD%2C%20I%20need%20high-res%20cinematic%20AI%20Posters." target="_blank" class="flex items-center p-4 rounded-xl border border-cyan-500/20 bg-black/40 hover:bg-cyan-500/10 hover:border-cyan-400 transition-all group">
                         <div class="w-12 h-12 rounded-lg bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl mr-4 group-hover:scale-110 transition-transform"><i class="fa-solid fa-image"></i></div>
                         <div>
                             <h4 class="text-white font-bold text-lg group-hover:text-cyan-300">AI Posters</h4>
                             <p class="text-gray-400 text-xs mt-1">High-res cinematic posters</p>
                         </div>
                     </a>
-                    <a href="ecommerce.html" target="_blank" class="flex items-center p-4 rounded-xl border border-cyan-500/20 bg-black/40 hover:bg-cyan-500/10 hover:border-cyan-400 transition-all group">
+                    <a href="https://wa.me/918395913829?text=Hi%20STIWORLD%2C%20I%20need%20E-Commerce%20Product%20Listing%20Images." target="_blank" class="flex items-center p-4 rounded-xl border border-cyan-500/20 bg-black/40 hover:bg-cyan-500/10 hover:border-cyan-400 transition-all group">
                         <div class="w-12 h-12 rounded-lg bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl mr-4 group-hover:scale-110 transition-transform"><i class="fa-solid fa-cart-shopping"></i></div>
                         <div>
                             <h4 class="text-white font-bold text-lg group-hover:text-cyan-300">E-Commerce Listings</h4>
                             <p class="text-gray-400 text-xs mt-1">Amazon/Flipkart product images</p>
                         </div>
                     </a>
-                    <a href="thumbnails.html" target="_blank" class="flex items-center p-4 rounded-xl border border-cyan-500/20 bg-black/40 hover:bg-cyan-500/10 hover:border-cyan-400 transition-all group">
+                    <a href="https://wa.me/918395913829?text=Hi%20STIWORLD%2C%20I%20need%20High%20CTR%20YouTube%20Thumbnails." target="_blank" class="flex items-center p-4 rounded-xl border border-cyan-500/20 bg-black/40 hover:bg-cyan-500/10 hover:border-cyan-400 transition-all group">
                         <div class="w-12 h-12 rounded-lg bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl mr-4 group-hover:scale-110 transition-transform"><i class="fa-brands fa-youtube"></i></div>
                         <div>
                             <h4 class="text-white font-bold text-lg group-hover:text-cyan-300">YouTube Thumbnails</h4>
                             <p class="text-gray-400 text-xs mt-1">High CTR viral thumbnails</p>
                         </div>
                     </a>
-                    <a href="mockups.html" target="_blank" class="flex items-center p-4 rounded-xl border border-cyan-500/20 bg-black/40 hover:bg-cyan-500/10 hover:border-cyan-400 transition-all group">
+                    <a href="https://wa.me/918395913829?text=Hi%20STIWORLD%2C%20I%20need%20Photorealistic%20Product%20Mockups." target="_blank" class="flex items-center p-4 rounded-xl border border-cyan-500/20 bg-black/40 hover:bg-cyan-500/10 hover:border-cyan-400 transition-all group">
                         <div class="w-12 h-12 rounded-lg bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl mr-4 group-hover:scale-110 transition-transform"><i class="fa-solid fa-box-open"></i></div>
                         <div>
                             <h4 class="text-white font-bold text-lg group-hover:text-cyan-300">Product Mockups</h4>
                             <p class="text-gray-400 text-xs mt-1">Photorealistic 3D product rendering</p>
                         </div>
                     </a>
-                    <a href="ads.html" target="_blank" class="flex items-center p-4 rounded-xl border border-cyan-500/20 bg-black/40 hover:bg-cyan-500/10 hover:border-cyan-400 transition-all group">
+                    <a href="https://wa.me/918395913829?text=Hi%20STIWORLD%2C%20I%20need%20Social%20Media%20Ad%20Creatives." target="_blank" class="flex items-center p-4 rounded-xl border border-cyan-500/20 bg-black/40 hover:bg-cyan-500/10 hover:border-cyan-400 transition-all group">
                         <div class="w-12 h-12 rounded-lg bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl mr-4 group-hover:scale-110 transition-transform"><i class="fa-solid fa-bullhorn"></i></div>
                         <div>
                             <h4 class="text-white font-bold text-lg group-hover:text-cyan-300">Social Media Ads</h4>
                             <p class="text-gray-400 text-xs mt-1">Instagram & FB ad creatives</p>
                         </div>
                     </a>
-                    <a href="logo.html" target="_blank" class="flex items-center p-4 rounded-xl border border-cyan-500/20 bg-black/40 hover:bg-cyan-500/10 hover:border-cyan-400 transition-all group">
+                    <a href="https://wa.me/918395913829?text=Hi%20STIWORLD%2C%20I%20need%20a%20Next-gen%20AI%20Logo." target="_blank" class="flex items-center p-4 rounded-xl border border-cyan-500/20 bg-black/40 hover:bg-cyan-500/10 hover:border-cyan-400 transition-all group">
                         <div class="w-12 h-12 rounded-lg bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl mr-4 group-hover:scale-110 transition-transform"><i class="fa-solid fa-pen-nib"></i></div>
                         <div>
                             <h4 class="text-white font-bold text-lg group-hover:text-cyan-300">Logo & Branding</h4>
@@ -424,11 +419,7 @@
 
     <script>
         (function() {
-            // ==============================================================================
-            // 🛑🛑🛑 BHAI YAHAN DHYAN DO - SAARI VIDEOS KE LINKS YAHAN BADALNE HAIN 🛑🛑🛑
-            // ==============================================================================
             const VIDEO_LINKS = {
-                // 👇 --- CATEGORIES KI VIDEOS (SHORTS FORMAT) --- 👇
                 horror:       'https://youtube.com/shorts/B8dirBSDiak?si=jcWFdiGZ7cp0j69O',
                 historical:   'https://youtube.com/shorts/Mo9ZlvobGMM?si=x7SCwwxaPC4zmNIT',
                 motivational: 'https://youtube.com/shorts/KddsMXljE1Q?si=NJD-AslwuoJEYvtY',
@@ -441,23 +432,22 @@
                 film:         'https://youtube.com/shorts/ViB25Dp3KHU?si=u9TXgQiWQaNIHg3F',
                 musicvideo:   'https://youtube.com/shorts/gybHp8hoMjY?si=_UH8BUr8FIchg1Ru',
                 documentary:  'https://youtube.com/shorts/_afYOnhAqs8?si=L3gYEHjhdr-x7omM',
-                scifi:        'https://youtube.com/shorts/3TvyYxLFeu8?si=efk4y_GNv3OhrmSo',
+                scifi:        'https://youtube.com/shorts/62RfySFyxiY?si=DIz4ZsRCwd88zjB9',
                 comedy:       'https://youtube.com/shorts/G1uzxFnsQDs?si=cXkvNQ6is3pkqKYq',
                 wedding:      'https://youtube.com/shorts/Ygm0P-aWL5I?si=o-fNBhuxPoKYzRxx',
 
-                // 👇 --- PROJECT VAULT KI VIDEOS (LONG FORMAT YOUTUBE LINKS) --- 👇
                 Opration_Sindoor: 'https://youtu.be/7W4zx1mkOHk?si=roxmYatVrQ1A66_A', 
                 Captain_smit:     'https://youtu.be/MMaEB4ASGyw?si=HgOaflGhXnZ1wH-b', 
-                project3_fitness: 'https://youtu.be/UfbJU7i6o18?si=ONr1F7dM3sDKfgM2', // REPLACE THIS
-                project4_horror:  'https://youtu.be/C7nR441_wFY?si=cdQVWnxhAh6MAy3l', // REPLACE THIS
-                project5_history: 'https://youtu.be/httuAw4rCYA?si=aZnjqQYmIZmUa1EG', // REPLACE THIS
+                project3_fitness: 'https://youtu.be/UfbJU7i6o18?si=ONr1F7dM3sDKfgM2', 
+                project4_horror:  'https://youtu.be/C7nR441_wFY?si=cdQVWnxhAh6MAy3l', 
+                project5_history: 'https://youtu.be/httuAw4rCYA?si=aZnjqQYmIZmUa1EG', 
                 project6_real:    'https://youtu.be/aPcNst4CX-4?si=KB6IKTL6qiwmPMqy',
-                project7_new:     'https://youtu.be/E7hTcyqDPKk?si=WKPjgcTx30Pi5ISR',// REPLACE THIS
+                project7_new:     'https://youtu.be/E7hTcyqDPKk?si=WKPjgcTx30Pi5ISR',
                 project8_space:   'https://youtu.be/FLut01D0WX4?si=WbwtK6kIOxnOQvXJ',
-                project9_clbdnc:   'https://youtu.be/wSIelYYUVSs?si=DpIVy590WVOnX1DE',
-                project10_song1:   'https://youtu.be/co-yU4rmfyE?si=GS7g9H4Pj4dJqdaw',
-                project11_song2:   'https://youtu.be/GM6hoYMgTP8?si=gPK9KLb95AZaN-Mm',
-                 project12_clbintro:   'https://youtu.be/H9brGQlXs8c?si=DjfNVAtMiOIIChw8'
+                project9_clbdnc:  'https://youtu.be/wSIelYYUVSs?si=DpIVy590WVOnX1DE',
+                project10_song1:  'https://youtu.be/co-yU4rmfyE?si=GS7g9H4Pj4dJqdaw',
+                project11_song2:  'https://youtu.be/GM6hoYMgTP8?si=gPK9KLb95AZaN-Mm',
+                project12_clbintro: 'https://youtu.be/H9brGQlXs8c?si=DjfNVAtMiOIIChw8'
             };
 
             function getYouTubeID(url) {
@@ -487,8 +477,6 @@
             ];
 
             const projects = [
-                // 👇 PROJECT TITLE AUR CATEGORY YAHAN SE CHANGE KAREIN 👇
-                // (Note: type: 'long' set kiya hai taki YouTube ka wide video player open ho)
                 { title: 'Operation Sindoor', category: 'low Poly Webseries', type: 'long', img: 'project1.png', fallback: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.Opration_Sindoor },
                 { title: 'Captain Smit', category: 'Low Poly Webseries', type: 'long', img: 'project2.png', fallback: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.Captain_smit },
                 { title: 'Shivadhiraj ', category: 'Animated Webseries', type: 'long', img: 'project3.png', fallback: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.project3_fitness },
@@ -497,19 +485,18 @@
                 { title: 'Maping Guilty Theme', category: 'Maping', type: 'long', img: 'project6.png', fallback: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.project6_real },
                 { title: 'Maping Forest Theme', category: 'Maping', type: 'long', img: 'project7.png', fallback: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.project7_new },
                 { title: 'Maping Space Theme', category: 'Maping', type: 'long', img: 'project8.png', fallback: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.project8_space },
-                 { title: 'Maping club Dance', category: 'Maping', type: 'long', img: 'project8.png', fallback: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.project9_clbdnc },
+                { title: 'Maping club Dance', category: 'Maping', type: 'long', img: 'project8.png', fallback: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.project9_clbdnc },
                 { title: 'Bum Bum Ki Dhun', category: 'Song', type: 'long', img: 'project8.png', fallback: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.project10_song1 },
                 { title: 'Agar Pakka Irada ', category: 'Song', type: 'long', img: 'project8.png', fallback: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.project11_song2 },
                 { title: 'club intro', category: 'Marketing Video', type: 'long', img: 'project8.png', fallback: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.project12_clbintro }
             ];
             
-
             const grid = document.getElementById('category-grid');
             categories.forEach(cat => {
                 const card = document.createElement('div');
-                card.className = `pro-card group`;
+                card.className = `pro-card group relative`;
                 card.innerHTML = `
-                    <div class="card-img-wrapper">
+                    <div class="card-img-wrapper relative">
                         <img src="${cat.image}" alt="${cat.name}" onerror="this.onerror=null; this.src='${cat.fallback}';">
                     </div>
                     <div class="card-info">
@@ -522,21 +509,38 @@
                         <div class="play-icon-overlay"><i class="fa-solid fa-play ml-1 text-sm"></i></div>
                     </div>
                 `;
-                // Tag 'short' passed for 9:16 aspect ratio
-                card.addEventListener('click', () => openVideoModal(cat.videoLink, cat.name, 'short'));
+
+                // --- NEW DYNAMIC WHATSAPP BUTTON ---
+                const waBtn = document.createElement('a');
+                waBtn.href = `https://wa.me/918395913829?text=${encodeURIComponent('*' + cat.name + '*\n\nHi STIWORLD,\nMujhe aisi video banvani hai.')}`;
+                waBtn.target = '_blank';
+                // Initially hidden (opacity-0, scale-50, pointer-events-none)
+                waBtn.className = 'absolute top-2 left-2 z-30 bg-green-500 hover:bg-green-400 text-white px-2.5 py-1 rounded-full flex items-center gap-1.5 shadow-[0_0_15px_rgba(34,197,94,0.6)] transition-all duration-500 opacity-0 scale-50 pointer-events-none';
+                waBtn.innerHTML = '<i class="fa-brands fa-whatsapp text-sm"></i> <span class="text-[10px] font-bold tracking-wider">ORDER</span>';
+                
+                waBtn.addEventListener('click', (e) => e.stopPropagation());
+                card.appendChild(waBtn);
+
+                card.addEventListener('click', () => {
+                    openVideoModal(cat.videoLink, cat.name, 'short');
+                    // Show WhatsApp button dynamically after clicking the card
+                    setTimeout(() => {
+                        waBtn.classList.remove('opacity-0', 'scale-50', 'pointer-events-none');
+                        waBtn.classList.add('opacity-100', 'scale-100');
+                    }, 800);
+                });
+
                 grid.appendChild(card);
             });
 
             const projectGrid = document.getElementById('project-grid');
             projects.forEach(p => {
-                // Fetch YouTube ID and automatically generate YouTube Thumbnail URLs
                 const ytId = getYouTubeID(p.videoLink);
                 const ytThumbnail = ytId ? `https://img.youtube.com/vi/${ytId}/maxresdefault.jpg` : p.fallback;
-                // Fallback to lower quality thumbnail if HD isn't available for that video
                 const ytThumbnailFallback = ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : p.fallback;
 
                 const div = document.createElement('div');
-                div.className = 'project-item group';
+                div.className = 'project-item group relative';
                 div.innerHTML = `
                     <div class="relative overflow-hidden h-48 sm:h-56">
                         <img src="${ytThumbnail}" alt="${p.title}" onerror="this.onerror=null; this.src='${ytThumbnailFallback}';" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100">
@@ -554,8 +558,27 @@
                         </div>
                     </div>
                 `;
-                // Pass p.type (which is 'long') to activate the 16:9 YouTube aspect ratio
-                div.addEventListener('click', () => openVideoModal(p.videoLink, p.title, p.type));
+
+                // --- NEW DYNAMIC WHATSAPP BUTTON (FOR VAULT) ---
+                const waBtn = document.createElement('a');
+                waBtn.href = `https://wa.me/918395913829?text=${encodeURIComponent('*' + p.title + '*\n\nHi STIWORLD,\nMujhe aisi video banvani hai.')}`;
+                waBtn.target = '_blank';
+                // Initially hidden
+                waBtn.className = 'absolute top-3 right-3 z-30 bg-green-500 hover:bg-green-400 text-white px-3 py-1.5 rounded-full flex items-center gap-2 shadow-[0_0_15px_rgba(34,197,94,0.6)] transition-all duration-500 opacity-0 scale-50 pointer-events-none';
+                waBtn.innerHTML = '<i class="fa-brands fa-whatsapp text-lg"></i> <span class="text-xs font-bold">ORDER</span>';
+                
+                waBtn.addEventListener('click', (e) => e.stopPropagation());
+                div.appendChild(waBtn);
+
+                div.addEventListener('click', () => {
+                    openVideoModal(p.videoLink, p.title, p.type);
+                    // Show WhatsApp button dynamically after clicking the vault card
+                    setTimeout(() => {
+                        waBtn.classList.remove('opacity-0', 'scale-50', 'pointer-events-none');
+                        waBtn.classList.add('opacity-100', 'scale-100');
+                    }, 800);
+                });
+
                 projectGrid.appendChild(div);
             });
 
@@ -592,15 +615,12 @@
             if(closeGraphicsBtn) closeGraphicsBtn.addEventListener('click', closeGraphicsModal);
             if(graphicsModalBackdrop) graphicsModalBackdrop.addEventListener('click', closeGraphicsModal);
 
-            // Dynamic Modal Logic (Handles Both Short & Long Aspect Ratios + WhatsApp Text)
             window.openVideoModal = (videoLink, title, type = 'short') => {
                 videoModalTitle.textContent = title || 'Video Output';
                 
-                // 1. Dynamic WhatsApp Message Setup
                 const waMessage = `*${title}*\n\nHi STIWORLD,\nMujhe isi type ki video banvani hai.`;
                 modalWaBtn.href = `https://wa.me/918395913829?text=${encodeURIComponent(waMessage)}`;
 
-                // 2. Aspect Ratio Logic
                 if (type === 'long') {
                     videoModalContent.classList.replace('max-w-[400px]', 'max-w-[800px]');
                     videoWrapper.classList.replace('aspect-[9/16]', 'aspect-video');

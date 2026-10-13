@@ -435,6 +435,7 @@
                 scifi:        'https://youtube.com/shorts/62RfySFyxiY?si=DIz4ZsRCwd88zjB9',
                 comedy:       'https://youtube.com/shorts/G1uzxFnsQDs?si=cXkvNQ6is3pkqKYq',
                 wedding:      'https://youtube.com/shorts/Ygm0P-aWL5I?si=o-fNBhuxPoKYzRxx',
+                voiceover:      'https://youtube.com/shorts/OtMGhg1-VqI?si=3drDypQ7KxHqQ8Y_',
 
                 Opration_Sindoor: 'https://youtu.be/7W4zx1mkOHk?si=roxmYatVrQ1A66_A', 
                 Captain_smit:     'https://youtu.be/MMaEB4ASGyw?si=HgOaflGhXnZ1wH-b', 
@@ -447,7 +448,8 @@
                 project9_clbdnc:  'https://youtu.be/wSIelYYUVSs?si=DpIVy590WVOnX1DE',
                 project10_song1:  'https://youtu.be/co-yU4rmfyE?si=GS7g9H4Pj4dJqdaw',
                 project11_song2:  'https://youtu.be/GM6hoYMgTP8?si=gPK9KLb95AZaN-Mm',
-                project12_clbintro: 'https://youtu.be/H9brGQlXs8c?si=DjfNVAtMiOIIChw8'
+                project12_clbintro: 'https://youtu.be/H9brGQlXs8c?si=DjfNVAtMiOIIChw8',
+                project13_prsrm: 'https://youtu.be/ZJqdgzxtzgQ?si=pneUuhDRdM4ggHYg'
             };
 
             function getYouTubeID(url) {
@@ -473,7 +475,8 @@
                 { id: 'documentary', name: 'Documentaries', price: 'Starts at ₹3499', icon: 'fa-video', image: 'twelvetwelve.png', fallback: 'https://images.unsplash.com/photo-1559100578-8318b760a005?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.documentary },
                 { id: 'scifi', name: 'Sci-Fi & Fantasy', price: 'Starts at ₹3999', icon: 'fa-rocket', image: 'thirteenthirteen.png', fallback: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.scifi },
                 { id: 'comedy', name: 'Comedy Sketches', price: 'Starts at ₹899', icon: 'fa-masks-theater', image: 'fourteenfourteen.png', fallback: 'https://images.unsplash.com/photo-1585699324551-f6c309eedeca?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.comedy },
-                { id: 'wedding', name: 'Wedding Cinematic', price: 'Starts at ₹2499', icon: 'fa-ring', image: 'fifteenfifteen.png', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.wedding }
+                { id: 'wedding', name: 'Wedding Cinematic', price: 'Starts at ₹2499', icon: 'fa-ring', image: 'fifteenfifteen.png', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.wedding },
+                { id: 'voiceover', name: 'Wedding Cinematic', price: 'Starts at ₹2499', icon: 'fa-ring', image: 'fifteenfifteen.png', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.wedding }
             ];
 
             const projects = [
@@ -488,7 +491,9 @@
                 { title: 'Maping club Dance', category: 'Maping', type: 'long', img: 'project8.png', fallback: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.project9_clbdnc },
                 { title: 'Bum Bum Ki Dhun', category: 'Song', type: 'long', img: 'project8.png', fallback: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.project10_song1 },
                 { title: 'Agar Pakka Irada ', category: 'Song', type: 'long', img: 'project8.png', fallback: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.project11_song2 },
-                { title: 'club intro', category: 'Marketing Video', type: 'long', img: 'project8.png', fallback: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.project12_clbintro }
+                { title: 'club intro', category: 'Marketing Video', type: 'long', img: 'project8.png', fallback: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.project12_clbintro },
+                 { title: 'Bhagwan Parsuram', category: 'Pro-Voice-Over', type: 'long', img: 'project8.png', fallback: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop', videoLink: VIDEO_LINKS.project12_prsrm },
+                
             ];
             
             const grid = document.getElementById('category-grid');
